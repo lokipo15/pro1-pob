@@ -5,7 +5,6 @@
 #ifndef GAMEBOARD_H
 #define GAMEBOARD_H
 
-#include <QPoint>
 #include <QPainter>
 #include <vector>
 #include <set>
@@ -33,9 +32,9 @@ public:
     std::vector<QPoint> getGhostStartPositions() const;
 
 private:
-    static constexpr int BOARD_WIDTH = 20;
-    static constexpr int BOARD_HEIGHT = 20;
-    static constexpr int CELL_SIZE = 30;
+    static const int BOARD_WIDTH = 20;
+    static const int BOARD_HEIGHT = 20;
+    static const int CELL_SIZE = 30;
 
     // 0 = puste, 1 = ściana, 2 = punkt do zebrania, 3 = start Pacmana, 4 = start ducha
     int board[BOARD_HEIGHT][BOARD_WIDTH];

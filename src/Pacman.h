@@ -5,8 +5,7 @@
 #ifndef PACMAN_H
 #define PACMAN_H
 
-#include <QPoint>
-#include <QPainter>
+
 #include "GameBoard.h"
 
 class Pacman {
@@ -26,7 +25,7 @@ private:
     Direction currentDirection;
     Direction nextDirection;
 
-    static constexpr int CELL_SIZE = 30;
+    static const int CELL_SIZE = 30;
 };
 
 

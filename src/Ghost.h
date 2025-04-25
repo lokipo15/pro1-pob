@@ -5,9 +5,7 @@
 #ifndef GHOST_H
 #define GHOST_H
 
-#include <QPoint>
-#include <QPainter>
-#include <QColor>
+
 #include "GameBoard.h"
 
 class Ghost {
@@ -26,7 +24,7 @@ private:
     Direction direction;
     QColor color;
 
-    static constexpr int CELL_SIZE = 30;
+    static const int CELL_SIZE = 30;
 
     Direction getRandomDirection();
 };
