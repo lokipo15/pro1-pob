@@ -11,7 +11,7 @@ find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
 if (NOT Qt6_FOUND)
     find_package(Qt5 COMPONENTS Core Gui Widgets REQUIRED)
 endif()
-
+# Pliki z logiką
 set(SOURCES
         src/main.cpp
         src/Game.cpp
@@ -20,7 +20,7 @@ set(SOURCES
         src/Pacman.cpp
         src/Ghost.cpp
 )
-
+# Pliki z klasami/metodami
 set(HEADERS
         src/Game.h
         src/GameBoard.h

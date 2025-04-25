@@ -7,7 +7,7 @@
 #include <ctime>
 
 Ghost::Ghost(const QPoint &startPos)
-    : position(startPos), direction(static_cast<Direction>(rand() % 4)) {
+    : position(startPos), direction(static_cast<Direction>(rand() % 4)) { // Konstruktor klasy Ghost.
 
     // Inicjalizacja generatora liczb losowych
     static bool seeded = false;
@@ -23,19 +23,19 @@ Ghost::Ghost(const QPoint &startPos)
     color = QColor(r, g, b);
 }
 
-void Ghost::draw(QPainter &painter) {
-    painter.setPen(Qt::NoPen);
-    painter.setBrush(color);
+void Ghost::draw(QPainter &painter) { // Rysowanie ducha na planszy
+    painter.setPen(Qt::NoPen); // Bez obramówki
+    painter.setBrush(color); // Wypełnienia kolorem
 
     QRect rect(position.x() * CELL_SIZE, position.y() * CELL_SIZE, CELL_SIZE, CELL_SIZE);
-    painter.drawEllipse(rect);
+    painter.drawEllipse(rect); // Rysuj ducha jako koło
 }
-
+// Losowe poruszanie się ducha
 void Ghost::move(GameBoard *board) {
     // Próba kontynuacji ruchu w aktualnym kierunku
     QPoint nextPos = position;
 
-    switch (direction) {
+    switch (direction) { // Wyznaczenie następnej pozycji
         case Up:
             nextPos.setY(position.y() - 1);
         break;
@@ -56,19 +56,19 @@ void Ghost::move(GameBoard *board) {
         return;
     }
 
-    // Ruch
+    // Ruch / aktualizacja
     position = nextPos;
 
-    // Czasami losowo zmienia kierunek
+    // Losowa zmiana kierunku (10% szansa na zmianę)
     if (rand() % 10 == 0) {
         direction = getRandomDirection();
     }
 }
 
-QPoint Ghost::getPosition() const {
+QPoint Ghost::getPosition() const { // Zwraca aktualną pozycję ducha
     return position;
 }
 
-Ghost::Direction Ghost::getRandomDirection() {
+Ghost::Direction Ghost::getRandomDirection() { // Generuje kierunek losowo
     return static_cast<Direction>(rand() % 4);
 }
