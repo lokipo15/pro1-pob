@@ -1,3 +1,9 @@
+//
+// Created by Gabriel Boruń on 25/04/2025.
+// Co-authored by Konrad Gębski on 25/04/2025.
+//
+
+
 #include "GameBoard.h"
 
 GameBoard::GameBoard() { // Konstruktor klasy GameBoard

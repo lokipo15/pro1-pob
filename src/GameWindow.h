@@ -1,5 +1,6 @@
 //
 // Created by Gabriel Boruń on 25/04/2025.
+// Co-authored by Konrad Gębski on 25/04/2025.
 //
 
 #ifndef GAMEWINDOW_H
@@ -8,15 +9,15 @@
 #include <QMainWindow>
 #include "Game.h"
 
-class GameWindow : public QMainWindow {
+class GameWindow : public QMainWindow { // Główne okno gry
     Q_OBJECT
 
 public:
-    GameWindow(QWidget *parent = nullptr);
-    ~GameWindow();
+    GameWindow(QWidget *parent = nullptr); // Konstruktor
+    ~GameWindow(); // Destruktor
 
 private:
-    Game *game;
+    Game *game; // wskaźnik na główny element interfejsu - obiekt Game
 };
 
 

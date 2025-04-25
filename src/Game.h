@@ -1,5 +1,6 @@
 //
 // Created by Gabriel Boruń on 25/04/2025.
+// Co-authored by Konrad Gębski on 25/04/2025.
 //
 
 #ifndef GAME_H
@@ -12,30 +13,30 @@
 #include "Ghost.h"
 #include <vector>
 
-class Game : public QWidget {
+class Game : public QWidget { // Główna klasa - logika gry
     Q_OBJECT
 
 public:
-    Game(QWidget *parent = nullptr);
-    ~Game();
+    Game(QWidget *parent = nullptr); // Konstruktor
+    ~Game(); // Destruktor
 
 protected:
-    void paintEvent(QPaintEvent *event) override;
-    void keyPressEvent(QKeyEvent *event) override;
+    void paintEvent(QPaintEvent *event) override; // Obsługuje "rysowanie"
+    void keyPressEvent(QKeyEvent *event) override; // Obsługuje naciśnięcie klawisza / keystroke
 
-    private slots:
+    private slots: // Cykliczny slot do aktualizacji stanu gry / jej planszy
         void update();
 
 private:
-    QTimer *timer;
-    GameBoard *board;
-    Pacman *pacman;
-    std::vector<Ghost*> ghosts;
-    int score;
-    bool gameOver;
+    QTimer *timer; // Timer do aktualizacji
+    GameBoard *board; // Wskaźnik na planszę
+    Pacman *pacman; // Wskaźnik na Pacmana
+    std::vector<Ghost*> ghosts; // Wektor wskaźników na duchy
+    int score; // Zdobytre punkty
+    bool gameOver; // Flaga Game Over
 
-    void checkCollisions();
-    void drawScore(QPainter &painter);
+    void checkCollisions(); // Sprawdza kolizje między Pacmanem-duchem i Pacmanem-ścianą
+    void drawScore(QPainter &painter); // Pokazuje/rysuje wynik gry
 };
 
 
