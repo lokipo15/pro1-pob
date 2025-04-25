@@ -1,0 +1,5 @@
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/cmake-build-release/CMakeFiles/PacmanGame.dir
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/cmake-build-release/CMakeFiles/edit_cache.dir
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/cmake-build-release/CMakeFiles/PacmanGame_autogen_timestamp_deps.dir
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/cmake-build-release/CMakeFiles/PacmanGame_autogen.dir

@@ -1,0 +1,43 @@
+cmake_minimum_required(VERSION 3.14)
+project(PacmanGame LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
+if (NOT Qt6_FOUND)
+    find_package(Qt5 COMPONENTS Core Gui Widgets REQUIRED)
+endif()
+
+set(SOURCES
+        src/main.cpp
+        src/Game.cpp
+        src/GameBoard.cpp
+        src/GameWindow.cpp
+        src/Pacman.cpp
+        src/Ghost.cpp
+)
+
+set(HEADERS
+        src/Game.h
+        src/GameBoard.h
+        src/GameWindow.h
+        src/Pacman.h
+        src/Ghost.h
+)
+
+# Zasoby gry
+set(RESOURCES
+        resources/resources.qrc
+)
+
+add_executable(PacmanGame ${SOURCES} ${HEADERS} ${RESOURCES})
+
+if (Qt6_FOUND)
+    target_link_libraries(PacmanGame PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets)
+else()
+    target_link_libraries(PacmanGame PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets)
+endif()
