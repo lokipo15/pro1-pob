@@ -28,6 +28,8 @@ set(SOURCES
         src/PowerPellet.cpp
         src/MainMenu.cpp
         src/GameOverScreen.cpp
+        src/ScoreboardWidget.cpp
+        src/ScoreManager.cpp
 )
 # Pliki z klasami/metodami
 set(HEADERS
@@ -45,6 +47,8 @@ set(HEADERS
         src/PowerPellet.h
         src/MainMenu.h
         src/GameOverScreen.h
+        src/ScoreboardWidget.h
+        src/ScoreManager.h
 )
 
 # Zasoby gry

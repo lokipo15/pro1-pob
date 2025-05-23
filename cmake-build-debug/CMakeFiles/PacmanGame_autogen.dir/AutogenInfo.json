@@ -483,6 +483,18 @@
 			"MU",
 			"UVLADIE3JM/moc_PowerUp.cpp",
 			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/ScoreManager.h",
+			"MU",
+			"UVLADIE3JM/moc_ScoreManager.cpp",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/ScoreboardWidget.h",
+			"MU",
+			"UVLADIE3JM/moc_ScoreboardWidget.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -611,6 +623,16 @@
 		],
 		[
 			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/PowerUp.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/ScoreManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/ScoreboardWidget.cpp",
 			"MU",
 			null
 		],

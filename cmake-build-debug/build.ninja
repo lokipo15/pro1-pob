@@ -177,6 +177,22 @@ build CMakeFiles/PacmanGame.dir/src/GameOverScreen.cpp.o: CXX_COMPILER__PacmanGa
   OBJECT_DIR = CMakeFiles/PacmanGame.dir
   OBJECT_FILE_DIR = CMakeFiles/PacmanGame.dir/src
 
+build CMakeFiles/PacmanGame.dir/src/ScoreboardWidget.cpp.o: CXX_COMPILER__PacmanGame_unscanned_Debug /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/ScoreboardWidget.cpp || cmake_object_order_depends_target_PacmanGame
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/PacmanGame.dir/src/ScoreboardWidget.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/PacmanGame_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtWidgets.framework/Headers
+  OBJECT_DIR = CMakeFiles/PacmanGame.dir
+  OBJECT_FILE_DIR = CMakeFiles/PacmanGame.dir/src
+
+build CMakeFiles/PacmanGame.dir/src/ScoreManager.cpp.o: CXX_COMPILER__PacmanGame_unscanned_Debug /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/ScoreManager.cpp || cmake_object_order_depends_target_PacmanGame
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/PacmanGame.dir/src/ScoreManager.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/PacmanGame_autogen/include -isystem /opt/homebrew/lib/QtCore.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/lib/QtWidgets.framework/Headers
+  OBJECT_DIR = CMakeFiles/PacmanGame.dir
+  OBJECT_FILE_DIR = CMakeFiles/PacmanGame.dir/src
+
 build CMakeFiles/PacmanGame.dir/PacmanGame_autogen/3YJK5W5UP7/qrc_resources.cpp.o: CXX_COMPILER__PacmanGame_unscanned_Debug /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/PacmanGame_autogen/3YJK5W5UP7/qrc_resources.cpp || cmake_object_order_depends_target_PacmanGame
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/PacmanGame.dir/PacmanGame_autogen/3YJK5W5UP7/qrc_resources.cpp.o.d
@@ -193,7 +209,7 @@ build CMakeFiles/PacmanGame.dir/PacmanGame_autogen/3YJK5W5UP7/qrc_resources.cpp.
 #############################################
 # Link the executable PacmanGame
 
-build PacmanGame: CXX_EXECUTABLE_LINKER__PacmanGame_Debug CMakeFiles/PacmanGame.dir/PacmanGame_autogen/mocs_compilation.cpp.o CMakeFiles/PacmanGame.dir/src/main.cpp.o CMakeFiles/PacmanGame.dir/src/Game.cpp.o CMakeFiles/PacmanGame.dir/src/GameBoard.cpp.o CMakeFiles/PacmanGame.dir/src/GameWindow.cpp.o CMakeFiles/PacmanGame.dir/src/Pacman.cpp.o CMakeFiles/PacmanGame.dir/src/Ghost.cpp.o CMakeFiles/PacmanGame.dir/src/Entity.cpp.o CMakeFiles/PacmanGame.dir/src/Blinky.cpp.o CMakeFiles/PacmanGame.dir/src/Clyde.cpp.o CMakeFiles/PacmanGame.dir/src/Inky.cpp.o CMakeFiles/PacmanGame.dir/src/Pinky.cpp.o CMakeFiles/PacmanGame.dir/src/PowerUp.cpp.o CMakeFiles/PacmanGame.dir/src/PowerPellet.cpp.o CMakeFiles/PacmanGame.dir/src/MainMenu.cpp.o CMakeFiles/PacmanGame.dir/src/GameOverScreen.cpp.o CMakeFiles/PacmanGame.dir/PacmanGame_autogen/3YJK5W5UP7/qrc_resources.cpp.o | /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore || PacmanGame_autogen PacmanGame_autogen_timestamp_deps
+build PacmanGame: CXX_EXECUTABLE_LINKER__PacmanGame_Debug CMakeFiles/PacmanGame.dir/PacmanGame_autogen/mocs_compilation.cpp.o CMakeFiles/PacmanGame.dir/src/main.cpp.o CMakeFiles/PacmanGame.dir/src/Game.cpp.o CMakeFiles/PacmanGame.dir/src/GameBoard.cpp.o CMakeFiles/PacmanGame.dir/src/GameWindow.cpp.o CMakeFiles/PacmanGame.dir/src/Pacman.cpp.o CMakeFiles/PacmanGame.dir/src/Ghost.cpp.o CMakeFiles/PacmanGame.dir/src/Entity.cpp.o CMakeFiles/PacmanGame.dir/src/Blinky.cpp.o CMakeFiles/PacmanGame.dir/src/Clyde.cpp.o CMakeFiles/PacmanGame.dir/src/Inky.cpp.o CMakeFiles/PacmanGame.dir/src/Pinky.cpp.o CMakeFiles/PacmanGame.dir/src/PowerUp.cpp.o CMakeFiles/PacmanGame.dir/src/PowerPellet.cpp.o CMakeFiles/PacmanGame.dir/src/MainMenu.cpp.o CMakeFiles/PacmanGame.dir/src/GameOverScreen.cpp.o CMakeFiles/PacmanGame.dir/src/ScoreboardWidget.cpp.o CMakeFiles/PacmanGame.dir/src/ScoreManager.cpp.o CMakeFiles/PacmanGame.dir/PacmanGame_autogen/3YJK5W5UP7/qrc_resources.cpp.o | /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore || PacmanGame_autogen PacmanGame_autogen_timestamp_deps
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets  /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui  -framework AGL  -framework AppKit  -framework OpenGL  -framework ImageIO  -framework Metal  /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore  -framework IOKit  -framework DiskArbitration  -framework UniformTypeIdentifiers
   LINK_PATH = -F/opt/homebrew/lib

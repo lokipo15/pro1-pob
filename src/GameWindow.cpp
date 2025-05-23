@@ -26,6 +26,7 @@ void GameWindow::setupUI() {
     // Tworzenie menu głównego
     mainMenu = new MainMenu(this);
     connect(mainMenu, &MainMenu::startGameRequested, this, &GameWindow::onStartGameRequested);
+    connect(mainMenu, &MainMenu::scoreboardRequested, this, &GameWindow::onScoreboardRequested);
     connect(mainMenu, &MainMenu::exitRequested, this, &GameWindow::onExitRequested);
     stackedWidget->addWidget(mainMenu);
 
@@ -38,8 +39,14 @@ void GameWindow::setupUI() {
     gameOverScreen = new GameOverScreen(this);
     connect(gameOverScreen, &GameOverScreen::restartRequested, this, &GameWindow::onRestartRequested);
     connect(gameOverScreen, &GameOverScreen::mainMenuRequested, this, &GameWindow::onMainMenuRequested);
+    connect(gameOverScreen, &GameOverScreen::scoreboardRequested, this, &GameWindow::onScoreboardRequested);
     connect(gameOverScreen, &GameOverScreen::exitRequested, this, &GameWindow::onExitRequested);
     stackedWidget->addWidget(gameOverScreen);
+
+    // Tworzenie tablicy wyników
+    scoreboardWidget = new ScoreboardWidget(this);
+    connect(scoreboardWidget, &ScoreboardWidget::backRequested, this, &GameWindow::onScoreboardBackRequested);
+    stackedWidget->addWidget(scoreboardWidget);
 
     // Ustaw menu główne jako domyślny widok
     showMainMenu();
@@ -61,6 +68,12 @@ void GameWindow::showGameOver() {
     gameOverScreen->setFocus();
 }
 
+void GameWindow::showScoreboard() {
+    scoreboardWidget->refreshScores();
+    stackedWidget->setCurrentWidget(scoreboardWidget);
+    scoreboardWidget->setFocus();
+}
+
 void GameWindow::onStartGameRequested() {
     game->startGame();
     showGame();
@@ -76,9 +89,18 @@ void GameWindow::onMainMenuRequested() {
     showMainMenu();
 }
 
+void GameWindow::onScoreboardRequested() {
+    showScoreboard();
+}
+
+void GameWindow::onScoreboardBackRequested() {
+    showMainMenu();
+}
+
 void GameWindow::onExitRequested() {
     QApplication::quit();
 }
+
 
 void GameWindow::onGameStateChanged(GameState newState) {
     switch (newState) {

@@ -44,9 +44,12 @@ template <> constexpr inline auto GameOverScreen::qt_create_metaobjectdata<qt_me
         "",
         "mainMenuRequested",
         "exitRequested",
+        "scoreboardRequested",
         "onRestartClicked",
         "onMainMenuClicked",
-        "onExitClicked"
+        "onExitClicked",
+        "onScoreboardClicked",
+        "onSaveScoreClicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -56,12 +59,18 @@ template <> constexpr inline auto GameOverScreen::qt_create_metaobjectdata<qt_me
         QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'exitRequested'
         QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'scoreboardRequested'
+        QtMocHelpers::SignalData<void()>(5, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'onRestartClicked'
-        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onMainMenuClicked'
         QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onExitClicked'
+        // Slot 'onMainMenuClicked'
         QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onExitClicked'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onScoreboardClicked'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onSaveScoreClicked'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -88,9 +97,12 @@ void GameOverScreen::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 0: _t->restartRequested(); break;
         case 1: _t->mainMenuRequested(); break;
         case 2: _t->exitRequested(); break;
-        case 3: _t->onRestartClicked(); break;
-        case 4: _t->onMainMenuClicked(); break;
-        case 5: _t->onExitClicked(); break;
+        case 3: _t->scoreboardRequested(); break;
+        case 4: _t->onRestartClicked(); break;
+        case 5: _t->onMainMenuClicked(); break;
+        case 6: _t->onExitClicked(); break;
+        case 7: _t->onScoreboardClicked(); break;
+        case 8: _t->onSaveScoreClicked(); break;
         default: ;
         }
     }
@@ -100,6 +112,8 @@ void GameOverScreen::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         if (QtMocHelpers::indexOfMethod<void (GameOverScreen::*)()>(_a, &GameOverScreen::mainMenuRequested, 1))
             return;
         if (QtMocHelpers::indexOfMethod<void (GameOverScreen::*)()>(_a, &GameOverScreen::exitRequested, 2))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (GameOverScreen::*)()>(_a, &GameOverScreen::scoreboardRequested, 3))
             return;
     }
 }
@@ -123,14 +137,14 @@ int GameOverScreen::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 9;
     }
     return _id;
 }
@@ -151,5 +165,11 @@ void GameOverScreen::mainMenuRequested()
 void GameOverScreen::exitRequested()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
+}
+
+// SIGNAL 3
+void GameOverScreen::scoreboardRequested()
+{
+    QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 QT_WARNING_POP

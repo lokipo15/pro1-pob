@@ -167,7 +167,7 @@ void Game::paintEvent(QPaintEvent *event) {
     if (gameOver && currentState == PLAYING) {
         painter.setPen(Qt::red);
         painter.setFont(QFont("Arial", 24, QFont::Bold));
-        painter.drawText(rect(), Qt::AlignCenter, "GAME OVER");3
+        painter.drawText(rect(), Qt::AlignCenter, "GAME OVER");
 
         painter.setPen(Qt::white);
         painter.setFont(QFont("Arial", 12));

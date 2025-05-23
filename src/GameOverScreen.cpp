@@ -8,7 +8,7 @@
 #include <QFont>
 
 GameOverScreen::GameOverScreen(QWidget *parent)
-    : QWidget(parent), selectedButton(0), finalScore(0) {
+    : QWidget(parent), selectedButton(0), finalScore(0), isNewHighScore(false), scoreSaved(false) {
 
     setFixedSize(600, 650);
     setFocusPolicy(Qt::StrongFocus);
@@ -29,6 +29,45 @@ GameOverScreen::GameOverScreen(QWidget *parent)
     scoreLabel->setAlignment(Qt::AlignCenter);
     scoreLabel->setStyleSheet("QLabel { color: yellow; font-size: 24px; font-weight: bold; }");
     layout->addWidget(scoreLabel);
+
+    // Layout dla wprowadzania imienia (domyślnie ukryty)
+    nameLayout = new QHBoxLayout();
+    nameLabel = new QLabel("Wprowadź imię:", this);
+    nameLabel->setStyleSheet("QLabel { color: white; font-size: 16px; }");
+    nameInput = new QLineEdit(this);
+    nameInput->setMaxLength(15);
+    nameInput->setPlaceholderText("Twoje imię...");
+    nameInput->setStyleSheet(
+        "QLineEdit { "
+        "background-color: white; "
+        "color: black; "
+        "font-size: 14px; "
+        "padding: 5px; "
+        "border: 2px solid #3498db; "
+        "border-radius: 5px; "
+        "}"
+    );
+
+    saveScoreButton = new QPushButton("ZAPISZ", this);
+    saveScoreButton->setStyleSheet(
+        "QPushButton { "
+        "background-color: #27ae60; "
+        "color: white; "
+        "font-size: 14px; "
+        "font-weight: bold; "
+        "padding: 8px 15px; "
+        "border: 2px solid #2ecc71; "
+        "border-radius: 5px; "
+        "}"
+    );
+    connect(saveScoreButton, &QPushButton::clicked, this, &GameOverScreen::onSaveScoreClicked);
+
+    nameLayout->addWidget(nameLabel);
+    nameLayout->addWidget(nameInput);
+    nameLayout->addWidget(saveScoreButton);
+    layout->addLayout(nameLayout);
+
+    hideNameInput(); // Domyślnie ukryj
 
     // Odstęp
     layout->addSpacing(30);
@@ -65,6 +104,22 @@ GameOverScreen::GameOverScreen(QWidget *parent)
     connect(mainMenuButton, &QPushButton::clicked, this, &GameOverScreen::onMainMenuClicked);
     layout->addWidget(mainMenuButton);
 
+    // Przycisk Tablica Wyników
+    scoreboardButton = new QPushButton("NAJLEPSZE WYNIKI", this);
+    scoreboardButton->setStyleSheet(
+        "QPushButton { "
+        "background-color: #9b59b6; "
+        "color: white; "
+        "font-size: 16px; "
+        "font-weight: bold; "
+        "padding: 12px 25px; "
+        "border: 2px solid #8e44ad; "
+        "border-radius: 8px; "
+        "}"
+    );
+    connect(scoreboardButton, &QPushButton::clicked, this, &GameOverScreen::onScoreboardClicked);
+    layout->addWidget(scoreboardButton);
+
     // Przycisk Wyjście
     exitButton = new QPushButton("WYJŚCIE", this);
     exitButton->setStyleSheet(
@@ -87,6 +142,35 @@ GameOverScreen::GameOverScreen(QWidget *parent)
 void GameOverScreen::setScore(int score) {
     finalScore = score;
     scoreLabel->setText(QString("Wynik: %1").arg(score));
+    scoreSaved = false;
+    checkHighScore();
+}
+
+void GameOverScreen::checkHighScore() {
+    isNewHighScore = scoreManager.isHighScore(finalScore);
+
+    if (isNewHighScore) {
+        scoreLabel->setStyleSheet("QLabel { color: gold; font-size: 24px; font-weight: bold; }");
+        scoreLabel->setText(QString("NOWY REKORD: %1!").arg(finalScore));
+        setupNameInput();
+    } else {
+        scoreLabel->setStyleSheet("QLabel { color: yellow; font-size: 24px; font-weight: bold; }");
+        hideNameInput();
+    }
+}
+
+void GameOverScreen::setupNameInput() {
+    nameLabel->show();
+    nameInput->show();
+    saveScoreButton->show();
+    nameInput->setFocus();
+    nameInput->clear();
+}
+
+void GameOverScreen::hideNameInput() {
+    nameLabel->hide();
+    nameInput->hide();
+    saveScoreButton->hide();
 }
 
 void GameOverScreen::paintEvent(QPaintEvent *event) {
@@ -98,21 +182,40 @@ void GameOverScreen::paintEvent(QPaintEvent *event) {
     // Instrukcje nawigacji
     painter.setPen(Qt::white);
     painter.setFont(QFont("Arial", 12));
-    painter.drawText(10, height() - 60, "Użyj strzałek ↑↓ do nawigacji");
-    painter.drawText(10, height() - 40, "Naciśnij ENTER aby wybrać");
-    painter.drawText(10, height() - 20, "Naciśnij ESC aby wyjść");
+    painter.drawText(10, height() - 80, "Użyj strzałek ↑↓ do nawigacji");
+    painter.drawText(10, height() - 60, "Naciśnij ENTER aby wybrać");
+    painter.drawText(10, height() - 40, "Naciśnij ESC aby wyjść");
+
+    if (isNewHighScore && !scoreSaved) {
+        painter.setPen(Qt::yellow);
+        painter.drawText(10, height() - 20, "Gratulacje! Osiągnąłeś wysoki wynik!");
+    }
 
     QWidget::paintEvent(event);
 }
 
 void GameOverScreen::keyPressEvent(QKeyEvent *event) {
+    // Jeśli pole imienia jest aktywne, obsłuż wprowadzanie tekstu
+    if (isNewHighScore && !scoreSaved && nameInput->hasFocus()) {
+        if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {
+            onSaveScoreClicked();
+            return;
+        } else if (event->key() == Qt::Key_Escape) {
+            nameInput->clearFocus();
+            return;
+        }
+        // Pozwól na normalne wprowadzanie tekstu
+        QWidget::keyPressEvent(event);
+        return;
+    }
+
     switch (event->key()) {
         case Qt::Key_Up:
-            selectedButton = (selectedButton - 1 + 3) % 3;
+            selectedButton = (selectedButton - 1 + 4) % 4;
             updateButtonSelection();
             break;
         case Qt::Key_Down:
-            selectedButton = (selectedButton + 1) % 3;
+            selectedButton = (selectedButton + 1) % 4;
             updateButtonSelection();
             break;
         case Qt::Key_Return:
@@ -121,6 +224,8 @@ void GameOverScreen::keyPressEvent(QKeyEvent *event) {
                 onRestartClicked();
             } else if (selectedButton == 1) {
                 onMainMenuClicked();
+            } else if (selectedButton == 2) {
+                onScoreboardClicked();
             } else {
                 onExitClicked();
             }
@@ -148,6 +253,7 @@ void GameOverScreen::updateButtonSelection() {
 
     restartButton->setStyleSheet(normalStyle.arg("#27ae60", "#2ecc71"));
     mainMenuButton->setStyleSheet(normalStyle.arg("#2c3e50", "#34495e"));
+    scoreboardButton->setStyleSheet(normalStyle.arg("#9b59b6", "#8e44ad"));
     exitButton->setStyleSheet(normalStyle.arg("#e74c3c", "#c0392b"));
 
     // Podświetl wybrany przycisk
@@ -166,8 +272,26 @@ void GameOverScreen::updateButtonSelection() {
         restartButton->setStyleSheet(selectedStyle.arg("#2ecc71"));
     } else if (selectedButton == 1) {
         mainMenuButton->setStyleSheet(selectedStyle.arg("#34495e"));
+    } else if (selectedButton == 2) {
+        scoreboardButton->setStyleSheet(selectedStyle.arg("#8e44ad"));
     } else {
         exitButton->setStyleSheet(selectedStyle.arg("#c0392b"));
+    }
+}
+
+void GameOverScreen::onSaveScoreClicked() {
+    QString playerName = nameInput->text().trimmed();
+
+    if (playerName.isEmpty()) {
+        playerName = "ANONIM";
+    }
+
+    if (scoreManager.saveScore(playerName, finalScore)) {
+        scoreSaved = true;
+        hideNameInput();
+        scoreLabel->setText(QString("Wynik %1 zapisany!").arg(finalScore));
+    } else {
+        scoreLabel->setText("Błąd zapisu wyniku!");
     }
 }
 
@@ -177,6 +301,10 @@ void GameOverScreen::onRestartClicked() {
 
 void GameOverScreen::onMainMenuClicked() {
     emit mainMenuRequested();
+}
+
+void GameOverScreen::onScoreboardClicked() {
+    emit scoreboardRequested();
 }
 
 void GameOverScreen::onExitClicked() {

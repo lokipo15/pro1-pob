@@ -48,6 +48,26 @@ MainMenu::MainMenu(QWidget *parent)
     connect(startButton, &QPushButton::clicked, this, &MainMenu::onStartGameClicked);
     layout->addWidget(startButton);
 
+    // Przycisk Najlepsze Wyniki
+    scoreboardButton = new QPushButton("NAJLEPSZE WYNIKI", this);
+    scoreboardButton->setStyleSheet(
+        "QPushButton { "
+        "background-color: #2c3e50; "
+        "color: white; "
+        "font-size: 18px; "
+        "font-weight: bold; "
+        "padding: 15px 30px; "
+        "border: 2px solid #34495e; "
+        "border-radius: 10px; "
+        "} "
+        "QPushButton:hover { "
+        "background-color: #34495e; "
+        "border-color: #3498db; "
+        "}"
+    );
+    connect(scoreboardButton, &QPushButton::clicked, this, &MainMenu::onScoreboardClicked);
+    layout->addWidget(scoreboardButton);
+
     // Przycisk Exit
     exitButton = new QPushButton("WYJŚCIE", this);
     exitButton->setStyleSheet(
@@ -90,17 +110,19 @@ void MainMenu::paintEvent(QPaintEvent *event) {
 void MainMenu::keyPressEvent(QKeyEvent *event) {
     switch (event->key()) {
         case Qt::Key_Up:
-            selectedButton = (selectedButton - 1 + 2) % 2;
+            selectedButton = (selectedButton - 1 + 3) % 3;
             updateButtonSelection();
             break;
         case Qt::Key_Down:
-            selectedButton = (selectedButton + 1) % 2;
+            selectedButton = (selectedButton + 1) % 3;
             updateButtonSelection();
             break;
         case Qt::Key_Return:
         case Qt::Key_Enter:
             if (selectedButton == 0) {
                 onStartGameClicked();
+            } else if (selectedButton == 1) {
+                onScoreboardClicked();
             } else {
                 onExitClicked();
             }
@@ -116,6 +138,18 @@ void MainMenu::keyPressEvent(QKeyEvent *event) {
 void MainMenu::updateButtonSelection() {
     // Reset stylów
     startButton->setStyleSheet(
+        "QPushButton { "
+        "background-color: #2c3e50; "
+        "color: white; "
+        "font-size: 18px; "
+        "font-weight: bold; "
+        "padding: 15px 30px; "
+        "border: 2px solid #34495e; "
+        "border-radius: 10px; "
+        "}"
+    );
+
+    scoreboardButton->setStyleSheet(
         "QPushButton { "
         "background-color: #2c3e50; "
         "color: white; "
@@ -153,6 +187,8 @@ void MainMenu::updateButtonSelection() {
 
     if (selectedButton == 0) {
         startButton->setStyleSheet(selectedStyle);
+    } else if (selectedButton == 1) {
+        scoreboardButton->setStyleSheet(selectedStyle);
     } else {
         exitButton->setStyleSheet(selectedStyle);
     }
@@ -160,6 +196,10 @@ void MainMenu::updateButtonSelection() {
 
 void MainMenu::onStartGameClicked() {
     emit startGameRequested();
+}
+
+void MainMenu::onScoreboardClicked() {
+    emit scoreboardRequested();
 }
 
 void MainMenu::onExitClicked() {

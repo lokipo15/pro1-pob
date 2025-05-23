@@ -11,6 +11,7 @@
 #include "Game.h"
 #include "MainMenu.h"
 #include "GameOverScreen.h"
+#include "ScoreboardWidget.h"
 
 class GameWindow : public QMainWindow { // Główne okno gry
     Q_OBJECT
@@ -24,6 +25,8 @@ private slots:
     void onRestartRequested();
     void onMainMenuRequested();
     void onExitRequested();
+    void onScoreboardRequested();
+    void onScoreboardBackRequested();
     void onGameStateChanged(GameState newState);
 
 private:
@@ -31,12 +34,13 @@ private:
     Game *game; // wskaźnik na główny element interfejsu - obiekt Game
     MainMenu *mainMenu; // wskaźnik na menu główne
     GameOverScreen *gameOverScreen; // wskaźnik na ekran końca gry
+    ScoreboardWidget *scoreboardWidget; // wskaźnik na tablicę wyników
 
     void setupUI(); // Konfiguracja interfejsu użytkownika
     void showMainMenu();
     void showGame();
     void showGameOver();
+    void showScoreboard();
 };
-
 
 #endif //GAMEWINDOW_H

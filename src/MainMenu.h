@@ -1,5 +1,6 @@
 //
-// Created by Gabriel Boruń on 23/05/2025.
+// Created by Gabriel Boruń on 25/04/2025.
+// Co-authored by Konrad Gębski on 25/04/2025.
 //
 
 #ifndef MAINMENU_H
@@ -19,6 +20,7 @@ public:
 
     signals:
         void startGameRequested();
+    void scoreboardRequested();
     void exitRequested();
 
 protected:
@@ -27,17 +29,18 @@ protected:
 
 private slots:
     void onStartGameClicked();
+    void onScoreboardClicked();
     void onExitClicked();
 
 private:
     QPushButton *startButton;
+    QPushButton *scoreboardButton;
     QPushButton *exitButton;
     QLabel *titleLabel;
     QVBoxLayout *layout;
 
-    int selectedButton; // 0 = start, 1 = exit
+    int selectedButton; // 0 = start, 1 = scoreboard, 2 = exit
     void updateButtonSelection();
 };
-
 
 #endif //MAINMENU_H

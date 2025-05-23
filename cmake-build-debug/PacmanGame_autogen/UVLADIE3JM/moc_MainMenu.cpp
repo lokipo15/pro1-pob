@@ -42,20 +42,26 @@ template <> constexpr inline auto MainMenu::qt_create_metaobjectdata<qt_meta_tag
         "MainMenu",
         "startGameRequested",
         "",
+        "scoreboardRequested",
         "exitRequested",
         "onStartGameClicked",
+        "onScoreboardClicked",
         "onExitClicked"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'startGameRequested'
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'exitRequested'
+        // Signal 'scoreboardRequested'
         QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'exitRequested'
+        QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'onStartGameClicked'
-        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onExitClicked'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onScoreboardClicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onExitClicked'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -80,16 +86,20 @@ void MainMenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->startGameRequested(); break;
-        case 1: _t->exitRequested(); break;
-        case 2: _t->onStartGameClicked(); break;
-        case 3: _t->onExitClicked(); break;
+        case 1: _t->scoreboardRequested(); break;
+        case 2: _t->exitRequested(); break;
+        case 3: _t->onStartGameClicked(); break;
+        case 4: _t->onScoreboardClicked(); break;
+        case 5: _t->onExitClicked(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (MainMenu::*)()>(_a, &MainMenu::startGameRequested, 0))
             return;
-        if (QtMocHelpers::indexOfMethod<void (MainMenu::*)()>(_a, &MainMenu::exitRequested, 1))
+        if (QtMocHelpers::indexOfMethod<void (MainMenu::*)()>(_a, &MainMenu::scoreboardRequested, 1))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (MainMenu::*)()>(_a, &MainMenu::exitRequested, 2))
             return;
     }
 }
@@ -113,14 +123,14 @@ int MainMenu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 6;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 6)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 6;
     }
     return _id;
 }
@@ -132,8 +142,14 @@ void MainMenu::startGameRequested()
 }
 
 // SIGNAL 1
-void MainMenu::exitRequested()
+void MainMenu::scoreboardRequested()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+}
+
+// SIGNAL 2
+void MainMenu::exitRequested()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 QT_WARNING_POP
