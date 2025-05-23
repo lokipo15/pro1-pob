@@ -19,6 +19,7 @@ set(SOURCES
         src/GameWindow.cpp
         src/Pacman.cpp
         src/Ghost.cpp
+        src/Entity.cpp
 )
 # Pliki z klasami/metodami
 set(HEADERS
@@ -27,6 +28,7 @@ set(HEADERS
         src/GameWindow.h
         src/Pacman.h
         src/Ghost.h
+        src/Entity.h
 )
 
 # Zasoby gry

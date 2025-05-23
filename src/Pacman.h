@@ -6,28 +6,34 @@
 #ifndef PACMAN_H
 #define PACMAN_H
 
+#include "Entity.h"
 
-#include "GameBoard.h"
+class GameBoard;
 
-class Pacman { // Klasa Pacman'a
+class Pacman : public Entity { // Klasa Pacman'a dziedzicząca po Entity
 public:
-    enum Direction { None, Up, Down, Left, Right }; // Dozwolone kierunki ruchu
+    Pacman(const QPointF &startPos); // Konstruktor przyjmuje teraz QPointF
 
-    Pacman(const QPoint &startPos); // Konstruktor
+    // Implementacja metod wirtualnych z Entity
+    void draw(QPainter &painter) override;
+    void move(GameBoard *board, float deltaTime) override;
 
-    void draw(QPainter &painter); // Rysowanie pacmana
-    void move(GameBoard *board); // Poruszanie pacmana
-    void setDirection(Direction dir); // Ustawianie kierunku Pacmana
+    // Metody specyficzne dla Pacmana
+    void setDirection(Direction dir);
 
-    QPoint getPosition() const; // Getter obecnej pozycja pacmana
+    // Getter dla aktualnego kierunku (może być przydatny dla duchów)
+    Direction getCurrentDirection() const { return currentDirection; }
 
 private:
-    QPoint position; // Obecna pozycja pacmana
-    Direction currentDirection; // Kierunek pacmana
-    Direction nextDirection; // Następny krok pacmana
+    // Animacja otwierania i zamykania ust
+    float mouthAngle;
+    bool mouthOpening;
 
-    static const int CELL_SIZE = 30; // Rozm. poj. komórki
+    // Metoda pomocnicza do płynnego ruchu
+    void smoothMove(GameBoard *board, float deltaTime);
+    bool canTurnAt(const QPointF &pos, Direction dir, GameBoard *board) const;
+    QPointF getAlignedPosition(Direction fromDir, Direction toDir) const;
+    void updateMouthAnimation(float deltaTime);
 };
 
-
-#endif //PACMAN_H
+#endif

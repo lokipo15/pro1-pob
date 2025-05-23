@@ -6,28 +6,45 @@
 #ifndef GHOST_H
 #define GHOST_H
 
+#include "Entity.h"
+#include <QColor>
 
-#include "GameBoard.h"
+class GameBoard;
 
-class Ghost { // Klasa ducha
+class Ghost : public Entity { // Klasa ducha dziedzicząca po Entity
 public:
-    enum Direction { Up, Down, Left, Right }; // Dozwolone kierunki
+    // Tryby zachowania ducha (przygotowanie na różne typy duchów)
+    enum Mode { CHASE, SCATTER, FRIGHTENED, EATEN };
 
-    Ghost(const QPoint &startPos); // Konstruktor
+    Ghost(const QPointF &startPos); // Konstruktor przyjmuje teraz QPointF
+    virtual ~Ghost() = default;
 
-    void draw(QPainter &painter); // Rysowanie ducha
-    void move(GameBoard *board); // Ruch ducha po planszy
+    // Implementacja metod wirtualnych z Entity
+    void draw(QPainter &painter) override;
+    void move(GameBoard *board, float deltaTime) override;
 
-    QPoint getPosition() const; // Zwrócenie aktualnej poz. ducha
+    // Metody specyficzne dla duchów
+    void setMode(Mode mode) { currentMode = mode; }
+    Mode getMode() const { return currentMode; }
+    void setColor(const QColor &color) { normalColor = color; }
 
-private:
-    QPoint position; // Pozycja ducha na planszy
-    Direction direction; // Kierunek ducha
-    QColor color; // Kolor ducha
+    // Wirtualna metoda do obliczania celu (dla różnych typów duchów)
+    virtual QPoint calculateTarget(class Pacman *pacman) { return getGridPosition(); }
 
-    static const int CELL_SIZE = 30; // Rozm. poj. komórki
+protected:
+    Mode currentMode;
+    QColor normalColor;     // Normalny kolor ducha
+    QColor frightenedColor; // Kolor gdy przestraszony
 
-    Direction getRandomDirection(); // Losowanie kierunku
+    Direction lastValidDirection; // Ostatni prawidłowy kierunek
+    float directionChangeTimer;   // Timer do losowej zmiany kierunku
+
+    // Metody pomocnicze
+    Direction getRandomDirection();
+    Direction getOppositeDirection(Direction dir);
+    bool isIntersection(const QPoint &pos, GameBoard *board);
+    void chooseDirectionAtIntersection(GameBoard *board);
+    void smoothMove(GameBoard *board, float deltaTime);
 };
 
-#endif //GHOST_H
+#endif
