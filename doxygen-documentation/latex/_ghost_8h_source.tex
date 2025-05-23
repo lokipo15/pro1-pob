@@ -1,0 +1,73 @@
+\doxysection{Ghost.\+h}
+\hypertarget{_ghost_8h_source}{}\label{_ghost_8h_source}\index{src/Ghost.h@{src/Ghost.h}}
+\mbox{\hyperlink{_ghost_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Gabriel\ Boruń\ on\ 25/04/2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Co-\/authored\ by\ Konrad\ Gębski\ on\ 25/04/2025.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ GHOST\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ GHOST\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_8h}{Entity.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QColor>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_board}{GameBoard}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pacman}{Pacman}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ghost_ac13c73d9b6c94786c988e9d129bb19c8}{Ghost}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_entity_a69dceaa4d0b6c30da97723f83a357de3}{Entity}}\ \{\ \textcolor{comment}{//\ Klasa\ ducha\ dziedzicząca\ po\ Entity}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Tryby\ zachowania\ ducha}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}}\ \{\ \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a59b4e4d81b72218ad63002c06697c82a}{CHASE}},\ \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a21aa0aa1406a5ae4b58571826d7e255e}{SCATTER}},\ \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d}{FRIGHTENED}},\ \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041ad4a906903e8e5b135f507b8387ab6f61}{EATEN}}\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_ghost_ac13c73d9b6c94786c988e9d129bb19c8}{Ghost}}(\textcolor{keyword}{const}\ QPointF\ \&startPos);\ \textcolor{comment}{//\ Konstruktor\ przyjmuje\ teraz\ QPointF}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_ghost_ac8a7e59173e4df5251d904e652f71b83}{\string~Ghost}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Implementacja\ metod\ wirtualnych\ z\ Entity}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_a18e4d17093a402c92a4aefee928d96ea}{draw}}(QPainter\ \&painter)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_aff1eed60a7debfad2db280ae68ba2532}{move}}(\mbox{\hyperlink{class_game_board}{GameBoard}}\ *board,\ \textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Nowa\ metoda\ move\ z\ parametrem\ Pacman}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_aff1eed60a7debfad2db280ae68ba2532}{move}}(\mbox{\hyperlink{class_game_board}{GameBoard}}\ *board,\ \textcolor{keywordtype}{float}\ deltaTime,\ \mbox{\hyperlink{class_pacman}{Pacman}}\ *pacman);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ Metody\ specyficzne\ dla\ duchów}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_ac729f7259245beb6fecc30cb829623c8}{setMode}}(\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}}\ mode)\ \{\ \mbox{\hyperlink{class_ghost_ad19d0b307a76e5a538beb8dfd09667f5}{currentMode}}\ =\ mode;\ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}}\ \mbox{\hyperlink{class_ghost_aa7f405a5edca46d02bb778d250e5d7d4}{getMode}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_ghost_ad19d0b307a76e5a538beb8dfd09667f5}{currentMode}};\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_a3d27792b048b42720c8fd36cd43bc38e}{setColor}}(\textcolor{keyword}{const}\ QColor\ \&color)\ \{\ \mbox{\hyperlink{class_ghost_abdb57d9fd26ea4880e3590d9293bbcc3}{normalColor}}\ =\ color;\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Update\ mode\ timing}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_aa2606d94d293abe813f2a7f28270f386}{updateModeTimer}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_ae3811c2cf2d699827b3b864da2f1a8ba}{resetModeTimer}}()\ \{\ \mbox{\hyperlink{class_ghost_aa6672554fa3cbfc5ac7e26dd60b6f3ba}{modeTimer}}\ =\ 0.0f;\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Wirtualna\ metoda\ do\ obliczania\ celu\ (dla\ różnych\ typów\ duchów)}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ QPoint\ \mbox{\hyperlink{class_ghost_af86b5c14ee8e501b6b7fae2cce57efb4}{calculateTarget}}(\mbox{\hyperlink{class_pacman}{Pacman}}\ *pacman)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_entity_ae284253c07a9664cdedb5759f04918c6}{getGridPosition}}();\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Wirtualna\ metoda\ do\ określenia\ rogu\ scatter\ mode}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ QPoint\ \mbox{\hyperlink{class_ghost_a42519c68b15b19840103b636a26eac57}{getScatterCorner}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ QPoint(0,\ 0);\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}}\ \mbox{\hyperlink{class_ghost_ad19d0b307a76e5a538beb8dfd09667f5}{currentMode}};}
+\DoxyCodeLine{00047\ \ \ \ \ QColor\ \mbox{\hyperlink{class_ghost_abdb57d9fd26ea4880e3590d9293bbcc3}{normalColor}};\ \ \ \ \ \textcolor{comment}{//\ Normalny\ kolor\ ducha}}
+\DoxyCodeLine{00048\ \ \ \ \ QColor\ \mbox{\hyperlink{class_ghost_a51a690e2aa3180751554d476c7dd4bc5}{frightenedColor}};\ \textcolor{comment}{//\ Kolor\ gdy\ przestraszony}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ \mbox{\hyperlink{class_ghost_a9539bb2562ccd5b97fba7928baa946fc}{lastValidDirection}};\ \textcolor{comment}{//\ Ostatni\ prawidłowy\ kierunek}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ghost_ad8d5dd74ed4868dad5cd4cba18e38d34}{directionChangeTimer}};\ \ \ \textcolor{comment}{//\ Timer\ do\ losowej\ zmiany\ kierunku}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Mode\ timing}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ghost_aa6672554fa3cbfc5ac7e26dd60b6f3ba}{modeTimer}};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ghost_af9a917a39597484eb07ee118130b4be5}{SCATTER\_TIME}};\ \ \textcolor{comment}{//\ Czas\ trybu\ scatter}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ghost_a85cdfe0e358f58fa8eaa77d10a12c5f7}{CHASE\_TIME}};\ \ \ \ \textcolor{comment}{//\ Czas\ trybu\ chase}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ Metody\ pomocnicze}}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ \mbox{\hyperlink{class_ghost_a612359018e9883141a71c79201bb1194}{getRandomDirection}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ \mbox{\hyperlink{class_ghost_ac77b593eacc6b548df736e85be531354}{getOppositeDirection}}(\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ dir);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ghost_a4b80d47c7b75cfddbf275d07e448a5d9}{isIntersection}}(\textcolor{keyword}{const}\ QPoint\ \&pos,\ \mbox{\hyperlink{class_game_board}{GameBoard}}\ *board);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_a38e474f48134b4d0ecf5ec2d4e464e98}{chooseDirectionAtIntersection}}(\mbox{\hyperlink{class_game_board}{GameBoard}}\ *board);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_a53878184ac765d3ebc6341d7b9b3d45d}{smoothMove}}(\mbox{\hyperlink{class_game_board}{GameBoard}}\ *board,\ \textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_a781aa20f1e8ce4597ce2f124c25fa110}{chooseTargetBasedDirection}}(\textcolor{keyword}{const}\ QPoint\ \&target,\ \mbox{\hyperlink{class_game_board}{GameBoard}}\ *board);}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

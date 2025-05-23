@@ -1,5 +1,5 @@
-/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/CMakeFiles/PacmanGame.dir
-/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/CMakeFiles/PacmanGame_autogen_timestamp_deps.dir
-/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/CMakeFiles/PacmanGame_autogen.dir
+C:/Users/Konrad/Desktop/CLion/pro1-pob/cmake-build-debug/CMakeFiles/PacmanGame.dir
+C:/Users/Konrad/Desktop/CLion/pro1-pob/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Konrad/Desktop/CLion/pro1-pob/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Konrad/Desktop/CLion/pro1-pob/cmake-build-debug/CMakeFiles/PacmanGame_autogen_timestamp_deps.dir
+C:/Users/Konrad/Desktop/CLion/pro1-pob/cmake-build-debug/CMakeFiles/PacmanGame_autogen.dir

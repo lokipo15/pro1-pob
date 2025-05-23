@@ -1,0 +1,29 @@
+\doxysection{Pinky.\+h}
+\hypertarget{_pinky_8h_source}{}\label{_pinky_8h_source}\index{src/Pinky.h@{src/Pinky.h}}
+\mbox{\hyperlink{_pinky_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Gabriel\ Boruń\ on\ 25/04/2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Co-\/authored\ by\ Konrad\ Gębski\ on\ 25/04/2025.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ PINKY\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ PINKY\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ghost_8h}{Ghost.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pinky_a01da22582f2d16cc4f725300a7a7dc7b}{Pinky}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ghost_ac13c73d9b6c94786c988e9d129bb19c8}{Ghost}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_pinky_a01da22582f2d16cc4f725300a7a7dc7b}{Pinky}}(\textcolor{keyword}{const}\ QPointF\ \&startPos);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Override\ target\ calculation\ -\/\ target\ 4\ cells\ ahead\ of\ Pacman}}
+\DoxyCodeLine{00016\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_pinky_ad0fa5f8ebf80a5010197f62e4737f926}{calculateTarget}}(\mbox{\hyperlink{class_pacman}{Pacman}}\ *pacman)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Override\ scatter\ corner\ -\/\ top\ left}}
+\DoxyCodeLine{00019\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_pinky_a8c5b08417feb81a90b12b023eea4e5d6}{getScatterCorner}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00023\ }
+
+\end{DoxyCode}

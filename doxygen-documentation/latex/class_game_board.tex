@@ -1,0 +1,77 @@
+\doxysection{Game\+Board Class Reference}
+\hypertarget{class_game_board}{}\label{class_game_board}\index{GameBoard@{GameBoard}}
+
+
+{\ttfamily \#include $<$Game\+Board.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_board_ac622cadcc81b3ffb71d8feb4506c04ac}{Game\+Board}} ()
+\item 
+void \mbox{\hyperlink{class_game_board_aef097fdd165ec8666d95f22bbeaefd18}{draw}} (QPainter \&painter)
+\item 
+bool \mbox{\hyperlink{class_game_board_a0b8d678d285ef37f476dee7fdd2e8839}{is\+Wall}} (const QPoint \&pos) const
+\item 
+bool \mbox{\hyperlink{class_game_board_a1be80c1b5d2e1272256ef2d773f5988e}{is\+Collectible}} (const QPoint \&pos) const
+\item 
+void \mbox{\hyperlink{class_game_board_a5ab8d16d8938dd12ccbe1ce3604eada4}{remove\+Collectible}} (const QPoint \&pos)
+\item 
+QPoint \mbox{\hyperlink{class_game_board_a990f43e96ff29f23c02e9e9c4cd9ae3d}{get\+Pacman\+Start\+Position}} () const
+\item 
+std\+::vector$<$ QPoint $>$ \mbox{\hyperlink{class_game_board_ad89108697bf601dac4662de386ba2aea}{get\+Ghost\+Start\+Positions}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_game_board_ac622cadcc81b3ffb71d8feb4506c04ac}\index{GameBoard@{GameBoard}!GameBoard@{GameBoard}}
+\index{GameBoard@{GameBoard}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{GameBoard()}{GameBoard()}}
+{\footnotesize\ttfamily \label{class_game_board_ac622cadcc81b3ffb71d8feb4506c04ac} 
+Game\+Board\+::\+Game\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_board_aef097fdd165ec8666d95f22bbeaefd18}\index{GameBoard@{GameBoard}!draw@{draw}}
+\index{draw@{draw}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_game_board_aef097fdd165ec8666d95f22bbeaefd18} 
+void Game\+Board\+::draw (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_game_board_ad89108697bf601dac4662de386ba2aea}\index{GameBoard@{GameBoard}!getGhostStartPositions@{getGhostStartPositions}}
+\index{getGhostStartPositions@{getGhostStartPositions}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{getGhostStartPositions()}{getGhostStartPositions()}}
+{\footnotesize\ttfamily \label{class_game_board_ad89108697bf601dac4662de386ba2aea} 
+std\+::vector$<$ QPoint $>$ Game\+Board\+::get\+Ghost\+Start\+Positions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_game_board_a990f43e96ff29f23c02e9e9c4cd9ae3d}\index{GameBoard@{GameBoard}!getPacmanStartPosition@{getPacmanStartPosition}}
+\index{getPacmanStartPosition@{getPacmanStartPosition}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{getPacmanStartPosition()}{getPacmanStartPosition()}}
+{\footnotesize\ttfamily \label{class_game_board_a990f43e96ff29f23c02e9e9c4cd9ae3d} 
+QPoint Game\+Board\+::get\+Pacman\+Start\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_game_board_a1be80c1b5d2e1272256ef2d773f5988e}\index{GameBoard@{GameBoard}!isCollectible@{isCollectible}}
+\index{isCollectible@{isCollectible}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{isCollectible()}{isCollectible()}}
+{\footnotesize\ttfamily \label{class_game_board_a1be80c1b5d2e1272256ef2d773f5988e} 
+bool Game\+Board\+::is\+Collectible (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_game_board_a0b8d678d285ef37f476dee7fdd2e8839}\index{GameBoard@{GameBoard}!isWall@{isWall}}
+\index{isWall@{isWall}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{isWall()}{isWall()}}
+{\footnotesize\ttfamily \label{class_game_board_a0b8d678d285ef37f476dee7fdd2e8839} 
+bool Game\+Board\+::is\+Wall (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_game_board_a5ab8d16d8938dd12ccbe1ce3604eada4}\index{GameBoard@{GameBoard}!removeCollectible@{removeCollectible}}
+\index{removeCollectible@{removeCollectible}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{removeCollectible()}{removeCollectible()}}
+{\footnotesize\ttfamily \label{class_game_board_a5ab8d16d8938dd12ccbe1ce3604eada4} 
+void Game\+Board\+::remove\+Collectible (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_game_board_8h}{Game\+Board.\+h}}\item 
+src/\mbox{\hyperlink{_game_board_8cpp}{Game\+Board.\+cpp}}\end{DoxyCompactItemize}

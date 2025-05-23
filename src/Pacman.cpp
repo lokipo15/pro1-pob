@@ -33,15 +33,15 @@ void Pacman::draw(QPainter &painter) {
             spanAngle = (360 - 2 * mouthAngle) * 16;
             break;
         case Left:
-            startAngle = (180 - mouthAngle) * 16;
+            startAngle = (180 + mouthAngle) * 16;
             spanAngle = (360 - 2 * mouthAngle) * 16;
             break;
         case Up:
-            startAngle = (90 - mouthAngle) * 16;
+            startAngle = (90 + mouthAngle) * 16;
             spanAngle = (360 - 2 * mouthAngle) * 16;
             break;
         case Down:
-            startAngle = (270 - mouthAngle) * 16;
+            startAngle = (270 + mouthAngle) * 16;
             spanAngle = (360 - 2 * mouthAngle) * 16;
             break;
         default:
@@ -131,8 +131,8 @@ void Pacman::smoothMove(GameBoard *board, float deltaTime) {
         case Down: {
             // Dolna krawędź Pacmana to position.y() + 1
             if (nextPos.y() > position.y()) { // Ruch w dół
-                int newGridY = static_cast<int>(std::floor(nextPos.y() + 0.999f));
-                int currentGridY = static_cast<int>(std::floor(position.y() + 0.999f));
+                int newGridY = static_cast<int>(std::floor(nextPos.y() + 0.899f));
+                int currentGridY = static_cast<int>(std::floor(position.y() + 0.899f));
                 if (newGridY > currentGridY) { // Przekraczamy granicę komórki
                     int checkX = static_cast<int>(std::floor(position.x() + 0.5f));
                     canMove = !board->isWall(QPoint(checkX, newGridY));
@@ -155,8 +155,8 @@ void Pacman::smoothMove(GameBoard *board, float deltaTime) {
         case Right: {
             // Prawa krawędź Pacmana to position.x() + 1
             if (nextPos.x() > position.x()) { // Ruch w prawo
-                int newGridX = static_cast<int>(std::floor(nextPos.x() + 0.999f));
-                int currentGridX = static_cast<int>(std::floor(position.x() + 0.999f));
+                int newGridX = static_cast<int>(std::floor(nextPos.x() + 0.899f));
+                int currentGridX = static_cast<int>(std::floor(position.x() + 0.899f));
                 if (newGridX > currentGridX) { // Przekraczamy granicę komórki
                     int checkY = static_cast<int>(std::floor(position.y() + 0.5f));
                     canMove = !board->isWall(QPoint(newGridX, checkY));

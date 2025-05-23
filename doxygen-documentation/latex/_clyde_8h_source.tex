@@ -1,0 +1,30 @@
+\doxysection{Clyde.\+h}
+\hypertarget{_clyde_8h_source}{}\label{_clyde_8h_source}\index{src/Clyde.h@{src/Clyde.h}}
+\mbox{\hyperlink{_clyde_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Gabriel\ Boruń\ on\ 23/05/2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ CLYDE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ CLYDE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ghost_8h}{Ghost.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_clyde_a9f9ef7d092d79a0d261c9893776e3c8b}{Clyde}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ghost_ac13c73d9b6c94786c988e9d129bb19c8}{Ghost}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_clyde_a9f9ef7d092d79a0d261c9893776e3c8b}{Clyde}}(\textcolor{keyword}{const}\ QPointF\ \&startPos);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Override\ target\ calculation\ -\/\ distance-\/based\ behavior}}
+\DoxyCodeLine{00015\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_clyde_aa9cc3ef515eedfca1cb97ffd4050e663}{calculateTarget}}(\mbox{\hyperlink{class_pacman}{Pacman}}\ *pacman)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Override\ scatter\ corner\ -\/\ bottom\ left}}
+\DoxyCodeLine{00018\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_clyde_a0f1d6a11120150c6aa771d76689830df}{getScatterCorner}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ RETREAT\_DISTANCE;\ \ \textcolor{comment}{//\ Odległość\ przy\ której\ Clyde\ ucieka}}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CLYDE\_H}}
+
+\end{DoxyCode}

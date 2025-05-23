@@ -1,0 +1,32 @@
+\doxysection{Inky.\+h}
+\hypertarget{_inky_8h_source}{}\label{_inky_8h_source}\index{src/Inky.h@{src/Inky.h}}
+\mbox{\hyperlink{_inky_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Gabriel\ Boruń\ on\ 23/05/2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ INKY\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ INKY\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ghost_8h}{Ghost.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_blinky}{Blinky}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_inky_a40a1bd7e49212458b85750630930c92a}{Inky}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ghost_ac13c73d9b6c94786c988e9d129bb19c8}{Ghost}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_inky_a40a1bd7e49212458b85750630930c92a}{Inky}}(\textcolor{keyword}{const}\ QPointF\ \&startPos,\ \mbox{\hyperlink{class_blinky}{Blinky}}\ *blinky);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Override\ target\ calculation\ -\/\ complex\ targeting\ using\ Blinky}}
+\DoxyCodeLine{00017\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_inky_a6449a8e8b604e3b1ed74435327cb32dc}{calculateTarget}}(\mbox{\hyperlink{class_pacman}{Pacman}}\ *pacman)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Override\ scatter\ corner\ -\/\ bottom\ right}}
+\DoxyCodeLine{00020\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_inky_ae3a60782527d776a078d56fc05b45b44}{getScatterCorner}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_blinky}{Blinky}}\ *blinkyRef;\ \ \textcolor{comment}{//\ Referencja\ do\ Blinky'ego\ do\ obliczeń}}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//INKY\_H}}
+
+\end{DoxyCode}

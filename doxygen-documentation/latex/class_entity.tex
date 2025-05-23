@@ -1,0 +1,234 @@
+\doxysection{Entity Class Reference}
+\hypertarget{class_entity}{}\label{class_entity}\index{Entity@{Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+Inheritance diagram for Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_entity}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \{ \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297}{None}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51}{Up}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb}{Down}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c}{Left}}
+, \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362}{Right}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_a69dceaa4d0b6c30da97723f83a357de3}{Entity}} (const QPointF \&start\+Pos)
+\item 
+virtual \mbox{\hyperlink{class_entity_ac479d009ddde62dfb378ca0a70d81307}{\texorpdfstring{$\sim$}{\string~}\+Entity}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_entity_a8d7d83b17cda5e4f2254f0f01070c331}{draw}} (QPainter \&painter)=0
+\item 
+virtual void \mbox{\hyperlink{class_entity_ac60c3042032c2f66bac0bb363addf6ba}{move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time)=0
+\item 
+QPoint \mbox{\hyperlink{class_entity_ae284253c07a9664cdedb5759f04918c6}{get\+Grid\+Position}} () const
+\item 
+QPointF \mbox{\hyperlink{class_entity_a7772c152c566454de1d20144147afb12}{get\+Position}} () const
+\item 
+void \mbox{\hyperlink{class_entity_a659e5b54903bd6416ddf16e1c3993ce1}{set\+Position}} (const QPointF \&pos)
+\item 
+bool \mbox{\hyperlink{class_entity_a69ae771d228bd6f92318754e9632c59c}{is\+At\+Grid\+Center}} () const
+\item 
+QPointF \mbox{\hyperlink{class_entity_a3d98a18fc73a18d340f7309e9ea32f58}{get\+Target\+Position}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_entity_aad253e8a3c79d8bc022c88a32063c546}{calculate\+Next\+Position}} (\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} dir, float delta\+Time) const
+\item 
+bool \mbox{\hyperlink{class_entity_a714d5ff2b037813b99c4d5586558e236}{can\+Move\+To}} (const QPoint \&grid\+Pos, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board) const
+\item 
+void \mbox{\hyperlink{class_entity_af23f754ef82eeeeb2470a049f00f5db3}{update\+Target\+Position}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_entity_a4cafeaa4555283d5839355c498f672a9}{position}}
+\item 
+QPointF \mbox{\hyperlink{class_entity_a341c5a42a6441fd6951d0b9b6d215429}{target\+Position}}
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_entity_ad8036c2cfb6749a5d94134d88c779e5e}{current\+Direction}}
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_entity_a071992c732954678a0393a4e56561adb}{next\+Direction}}
+\item 
+float \mbox{\hyperlink{class_entity_a62588bbdc2d530d9854cd07ca558c9aa}{move\+Speed}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{class_entity_a69d77a7b2efe097c0352d933ea9567f1}{CELL\+\_\+\+SIZE}} = 30
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034}\index{Entity@{Entity}!Direction@{Direction}}
+\index{Direction@{Direction}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \label{class_entity_ac6ff3a9435d7dacb378891eadd127034} 
+enum \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Entity\+::\+Direction}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Entity@{Entity}}\index{Entity@{Entity}!None@{None}}}\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297}\label{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297} 
+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Up@{Up}!Entity@{Entity}}\index{Entity@{Entity}!Up@{Up}}}\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51}\label{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51} 
+Up&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Down@{Down}!Entity@{Entity}}\index{Entity@{Entity}!Down@{Down}}}\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb}\label{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb} 
+Down&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!Entity@{Entity}}\index{Entity@{Entity}!Left@{Left}}}\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c}\label{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c} 
+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!Entity@{Entity}}\index{Entity@{Entity}!Right@{Right}}}\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362}\label{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362} 
+Right&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_entity_a69dceaa4d0b6c30da97723f83a357de3}\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily \label{class_entity_a69dceaa4d0b6c30da97723f83a357de3} 
+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const QPointF \&}]{start\+Pos}{}\end{DoxyParamCaption})}
+
+Komentarz dla \doxylink{class_entity}{Entity} Created by Gabriel Boruń on 25/04/2025. Co-\/authored by Konrad Gębski on 25/04/2025. Koniec komentarza da \doxylink{class_entity}{Entity} \Hypertarget{class_entity_ac479d009ddde62dfb378ca0a70d81307}\index{Entity@{Entity}!````~Entity@{\texorpdfstring{$\sim$}{\string~}Entity}}
+\index{````~Entity@{\texorpdfstring{$\sim$}{\string~}Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Entity()}{\string~Entity()}}
+{\footnotesize\ttfamily \label{class_entity_ac479d009ddde62dfb378ca0a70d81307} 
+virtual Entity\+::\texorpdfstring{$\sim$}{\string~}\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_entity_aad253e8a3c79d8bc022c88a32063c546}\index{Entity@{Entity}!calculateNextPosition@{calculateNextPosition}}
+\index{calculateNextPosition@{calculateNextPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{calculateNextPosition()}{calculateNextPosition()}}
+{\footnotesize\ttfamily \label{class_entity_aad253e8a3c79d8bc022c88a32063c546} 
+QPointF Entity\+::calculate\+Next\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}}]{dir}{, }\item[{float}]{delta\+Time}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_entity_a714d5ff2b037813b99c4d5586558e236}\index{Entity@{Entity}!canMoveTo@{canMoveTo}}
+\index{canMoveTo@{canMoveTo}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{canMoveTo()}{canMoveTo()}}
+{\footnotesize\ttfamily \label{class_entity_a714d5ff2b037813b99c4d5586558e236} 
+bool Entity\+::can\+Move\+To (\begin{DoxyParamCaption}\item[{const QPoint \&}]{grid\+Pos}{, }\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_entity_a8d7d83b17cda5e4f2254f0f01070c331}\index{Entity@{Entity}!draw@{draw}}
+\index{draw@{draw}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_entity_a8d7d83b17cda5e4f2254f0f01070c331} 
+virtual void Entity\+::draw (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_ghost_a18e4d17093a402c92a4aefee928d96ea}{Ghost}}, and \mbox{\hyperlink{class_pacman_af59479cfe7b24f7716ba0421a696161a}{Pacman}}.
+
+\Hypertarget{class_entity_ae284253c07a9664cdedb5759f04918c6}\index{Entity@{Entity}!getGridPosition@{getGridPosition}}
+\index{getGridPosition@{getGridPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getGridPosition()}{getGridPosition()}}
+{\footnotesize\ttfamily \label{class_entity_ae284253c07a9664cdedb5759f04918c6} 
+QPoint Entity\+::get\+Grid\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_entity_a7772c152c566454de1d20144147afb12}\index{Entity@{Entity}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \label{class_entity_a7772c152c566454de1d20144147afb12} 
+QPointF Entity\+::get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_entity_a3d98a18fc73a18d340f7309e9ea32f58}\index{Entity@{Entity}!getTargetPosition@{getTargetPosition}}
+\index{getTargetPosition@{getTargetPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getTargetPosition()}{getTargetPosition()}}
+{\footnotesize\ttfamily \label{class_entity_a3d98a18fc73a18d340f7309e9ea32f58} 
+QPointF Entity\+::get\+Target\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_entity_a69ae771d228bd6f92318754e9632c59c}\index{Entity@{Entity}!isAtGridCenter@{isAtGridCenter}}
+\index{isAtGridCenter@{isAtGridCenter}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{isAtGridCenter()}{isAtGridCenter()}}
+{\footnotesize\ttfamily \label{class_entity_a69ae771d228bd6f92318754e9632c59c} 
+bool Entity\+::is\+At\+Grid\+Center (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_entity_ac60c3042032c2f66bac0bb363addf6ba}\index{Entity@{Entity}!move@{move}}
+\index{move@{move}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \label{class_entity_ac60c3042032c2f66bac0bb363addf6ba} 
+virtual void Entity\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{, }\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_ghost_aff1eed60a7debfad2db280ae68ba2532}{Ghost}}, and \mbox{\hyperlink{class_pacman_a4dcd693ea44f773d483841fe1cfe8179}{Pacman}}.
+
+\Hypertarget{class_entity_a659e5b54903bd6416ddf16e1c3993ce1}\index{Entity@{Entity}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily \label{class_entity_a659e5b54903bd6416ddf16e1c3993ce1} 
+void Entity\+::set\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_entity_af23f754ef82eeeeb2470a049f00f5db3}\index{Entity@{Entity}!updateTargetPosition@{updateTargetPosition}}
+\index{updateTargetPosition@{updateTargetPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{updateTargetPosition()}{updateTargetPosition()}}
+{\footnotesize\ttfamily \label{class_entity_af23f754ef82eeeeb2470a049f00f5db3} 
+void Entity\+::update\+Target\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_entity_a69d77a7b2efe097c0352d933ea9567f1}\index{Entity@{Entity}!CELL\_SIZE@{CELL\_SIZE}}
+\index{CELL\_SIZE@{CELL\_SIZE}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{CELL\_SIZE}{CELL\_SIZE}}
+{\footnotesize\ttfamily \label{class_entity_a69d77a7b2efe097c0352d933ea9567f1} 
+const int Entity\+::\+CELL\+\_\+\+SIZE = 30\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_entity_ad8036c2cfb6749a5d94134d88c779e5e}\index{Entity@{Entity}!currentDirection@{currentDirection}}
+\index{currentDirection@{currentDirection}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{currentDirection}{currentDirection}}
+{\footnotesize\ttfamily \label{class_entity_ad8036c2cfb6749a5d94134d88c779e5e} 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} Entity\+::current\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_entity_a62588bbdc2d530d9854cd07ca558c9aa}\index{Entity@{Entity}!moveSpeed@{moveSpeed}}
+\index{moveSpeed@{moveSpeed}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{moveSpeed}{moveSpeed}}
+{\footnotesize\ttfamily \label{class_entity_a62588bbdc2d530d9854cd07ca558c9aa} 
+float Entity\+::move\+Speed\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_entity_a071992c732954678a0393a4e56561adb}\index{Entity@{Entity}!nextDirection@{nextDirection}}
+\index{nextDirection@{nextDirection}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{nextDirection}{nextDirection}}
+{\footnotesize\ttfamily \label{class_entity_a071992c732954678a0393a4e56561adb} 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} Entity\+::next\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_entity_a4cafeaa4555283d5839355c498f672a9}\index{Entity@{Entity}!position@{position}}
+\index{position@{position}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{class_entity_a4cafeaa4555283d5839355c498f672a9} 
+QPointF Entity\+::position\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_entity_a341c5a42a6441fd6951d0b9b6d215429}\index{Entity@{Entity}!targetPosition@{targetPosition}}
+\index{targetPosition@{targetPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{targetPosition}{targetPosition}}
+{\footnotesize\ttfamily \label{class_entity_a341c5a42a6441fd6951d0b9b6d215429} 
+QPointF Entity\+::target\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
+src/\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}

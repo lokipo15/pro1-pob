@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+bed07f79bd7a56679016d868f29b8d69 CMakeFiles/PacmanGame_autogen
+7235e90fe95902a8124b0ef01d921947 PacmanGame_autogen/3YJK5W5UP7/qrc_resources.cpp
+2ca2ea40aa6f8c762f85ad9ed6fc0800 PacmanGame_autogen/timestamp

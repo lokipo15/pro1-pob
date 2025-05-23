@@ -1,0 +1,59 @@
+\doxysection{Entity.\+h}
+\hypertarget{_entity_8h_source}{}\label{_entity_8h_source}\index{src/Entity.h@{src/Entity.h}}
+\mbox{\hyperlink{_entity_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Gabriel\ Boruń\ on\ 25/04/2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Co-\/authored\ by\ Konrad\ Gębski\ on\ 25/04/2025.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ ENTITY\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ ENTITY\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QPoint>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_board}{GameBoard}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pacman}{Pacman}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_entity_a69dceaa4d0b6c30da97723f83a357de3}{Entity}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Kierunki\ ruchu\ wspólne\ dla\ wszystkich\ encji}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ \{\ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297}{None}},\ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51}{Up}},\ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb}{Down}},\ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c}{Left}},\ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362}{Right}}\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_entity_a69dceaa4d0b6c30da97723f83a357de3}{Entity}}(\textcolor{keyword}{const}\ QPointF\ \&startPos);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_entity_ac479d009ddde62dfb378ca0a70d81307}{\string~Entity}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Wirtualne\ metody,\ aby\ była\ możliwość\ ich\ różnych\ implementacji\ w\ klasach\ pochodnych}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_a8d7d83b17cda5e4f2254f0f01070c331}{draw}}(QPainter\ \&painter)\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_ac60c3042032c2f66bac0bb363addf6ba}{move}}(\mbox{\hyperlink{class_game_board}{GameBoard}}\ *board,\ \textcolor{keywordtype}{float}\ deltaTime)\ =\ 0;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Wspólne\ metody\ dla\ wszystkich\ encji}}
+\DoxyCodeLine{00029\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_entity_ae284253c07a9664cdedb5759f04918c6}{getGridPosition}}()\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Konwersja\ pozycji\ float\ na\ siatkę}}
+\DoxyCodeLine{00030\ \ \ \ \ QPointF\ \mbox{\hyperlink{class_entity_a7772c152c566454de1d20144147afb12}{getPosition}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_entity_a4cafeaa4555283d5839355c498f672a9}{position}};\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_a659e5b54903bd6416ddf16e1c3993ce1}{setPosition}}(\textcolor{keyword}{const}\ QPointF\ \&pos)\ \{\ \mbox{\hyperlink{class_entity_a4cafeaa4555283d5839355c498f672a9}{position}}\ =\ pos;\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_entity_a69ae771d228bd6f92318754e9632c59c}{isAtGridCenter}}()\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Sprawdza\ czy\ encja\ jest\ w\ centrum\ komórki}}
+\DoxyCodeLine{00034\ \ \ \ \ QPointF\ \mbox{\hyperlink{class_entity_a3d98a18fc73a18d340f7309e9ea32f58}{getTargetPosition}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_entity_a341c5a42a6441fd6951d0b9b6d215429}{targetPosition}};\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00037\ \ \ \ \ QPointF\ \mbox{\hyperlink{class_entity_a4cafeaa4555283d5839355c498f672a9}{position}};}
+\DoxyCodeLine{00038\ \ \ \ \ QPointF\ \mbox{\hyperlink{class_entity_a341c5a42a6441fd6951d0b9b6d215429}{targetPosition}};\ \ \ \ \textcolor{comment}{//\ Docelowa\ pozycja\ na\ siatce}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ \mbox{\hyperlink{class_entity_ad8036c2cfb6749a5d94134d88c779e5e}{currentDirection}};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ \mbox{\hyperlink{class_entity_a071992c732954678a0393a4e56561adb}{nextDirection}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_entity_a62588bbdc2d530d9854cd07ca558c9aa}{moveSpeed}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prędkość\ w\ komórkach\ na\ sekundę}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_entity_a69d77a7b2efe097c0352d933ea9567f1}{CELL\_SIZE}}\ =\ 30;\ \ \textcolor{comment}{//\ Rozmiar\ pojedynczej\ komórki}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Pomocnicze\ metody\ dla\ klas\ pochodnych}}
+\DoxyCodeLine{00047\ \ \ \ \ QPointF\ \mbox{\hyperlink{class_entity_aad253e8a3c79d8bc022c88a32063c546}{calculateNextPosition}}(\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ dir,\ \textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_entity_a714d5ff2b037813b99c4d5586558e236}{canMoveTo}}(\textcolor{keyword}{const}\ QPoint\ \&gridPos,\ \mbox{\hyperlink{class_game_board}{GameBoard}}\ *board)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_af23f754ef82eeeeb2470a049f00f5db3}{updateTargetPosition}}();}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ENTITY\_H}}
+\DoxyCodeLine{00053\ }
+
+\end{DoxyCode}

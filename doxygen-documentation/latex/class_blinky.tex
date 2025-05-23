@@ -1,0 +1,185 @@
+\doxysection{Blinky Class Reference}
+\hypertarget{class_blinky}{}\label{class_blinky}\index{Blinky@{Blinky}}
+
+
+{\ttfamily \#include $<$Blinky.\+h$>$}
+
+Inheritance diagram for Blinky\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_blinky}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_blinky_ae5d7b48c9897bd5ea2c69a9796be1a42}{Blinky}} (const QPointF \&start\+Pos)
+\item 
+QPoint \mbox{\hyperlink{class_blinky_abcebbe20d2c6e9c8ab5e75d2de371513}{calculate\+Target}} (\mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}pacman) override
+\item 
+QPoint \mbox{\hyperlink{class_blinky_a04ec5422e9445a33cd225d3a42d9c0a5}{get\+Scatter\+Corner}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_ghost}{Ghost}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ghost_ac13c73d9b6c94786c988e9d129bb19c8}{Ghost}} (const QPointF \&start\+Pos)
+\item 
+virtual \mbox{\hyperlink{class_ghost_ac8a7e59173e4df5251d904e652f71b83}{\texorpdfstring{$\sim$}{\string~}\+Ghost}} ()=default
+\item 
+void \mbox{\hyperlink{class_ghost_a18e4d17093a402c92a4aefee928d96ea}{draw}} (QPainter \&painter) override
+\item 
+void \mbox{\hyperlink{class_ghost_aff1eed60a7debfad2db280ae68ba2532}{move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time) override
+\item 
+virtual void \mbox{\hyperlink{class_ghost_aa5d42ffde6f9ead2fbd66c6235d83bef}{move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time, \mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}pacman)
+\item 
+void \mbox{\hyperlink{class_ghost_ac729f7259245beb6fecc30cb829623c8}{set\+Mode}} (\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} mode)
+\item 
+\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} \mbox{\hyperlink{class_ghost_aa7f405a5edca46d02bb778d250e5d7d4}{get\+Mode}} () const
+\item 
+void \mbox{\hyperlink{class_ghost_a3d27792b048b42720c8fd36cd43bc38e}{set\+Color}} (const QColor \&color)
+\item 
+void \mbox{\hyperlink{class_ghost_aa2606d94d293abe813f2a7f28270f386}{update\+Mode\+Timer}} (float delta\+Time)
+\item 
+void \mbox{\hyperlink{class_ghost_ae3811c2cf2d699827b3b864da2f1a8ba}{reset\+Mode\+Timer}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_a69dceaa4d0b6c30da97723f83a357de3}{Entity}} (const QPointF \&start\+Pos)
+\item 
+virtual \mbox{\hyperlink{class_entity_ac479d009ddde62dfb378ca0a70d81307}{\texorpdfstring{$\sim$}{\string~}\+Entity}} ()=default
+\item 
+QPoint \mbox{\hyperlink{class_entity_ae284253c07a9664cdedb5759f04918c6}{get\+Grid\+Position}} () const
+\item 
+QPointF \mbox{\hyperlink{class_entity_a7772c152c566454de1d20144147afb12}{get\+Position}} () const
+\item 
+void \mbox{\hyperlink{class_entity_a659e5b54903bd6416ddf16e1c3993ce1}{set\+Position}} (const QPointF \&pos)
+\item 
+bool \mbox{\hyperlink{class_entity_a69ae771d228bd6f92318754e9632c59c}{is\+At\+Grid\+Center}} () const
+\item 
+QPointF \mbox{\hyperlink{class_entity_a3d98a18fc73a18d340f7309e9ea32f58}{get\+Target\+Position}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_ghost}{Ghost}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} \{ \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a59b4e4d81b72218ad63002c06697c82a}{CHASE}}
+, \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a21aa0aa1406a5ae4b58571826d7e255e}{SCATTER}}
+, \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d}{FRIGHTENED}}
+, \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041ad4a906903e8e5b135f507b8387ab6f61}{EATEN}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \{ \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297}{None}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51}{Up}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb}{Down}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c}{Left}}
+, \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362}{Right}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_ghost}{Ghost}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_ghost_a612359018e9883141a71c79201bb1194}{get\+Random\+Direction}} ()
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_ghost_ac77b593eacc6b548df736e85be531354}{get\+Opposite\+Direction}} (\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} dir)
+\item 
+bool \mbox{\hyperlink{class_ghost_a4b80d47c7b75cfddbf275d07e448a5d9}{is\+Intersection}} (const QPoint \&pos, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board)
+\item 
+void \mbox{\hyperlink{class_ghost_a38e474f48134b4d0ecf5ec2d4e464e98}{choose\+Direction\+At\+Intersection}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board)
+\item 
+void \mbox{\hyperlink{class_ghost_a53878184ac765d3ebc6341d7b9b3d45d}{smooth\+Move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time)
+\item 
+void \mbox{\hyperlink{class_ghost_a781aa20f1e8ce4597ce2f124c25fa110}{choose\+Target\+Based\+Direction}} (const QPoint \&target, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_entity_aad253e8a3c79d8bc022c88a32063c546}{calculate\+Next\+Position}} (\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} dir, float delta\+Time) const
+\item 
+bool \mbox{\hyperlink{class_entity_a714d5ff2b037813b99c4d5586558e236}{can\+Move\+To}} (const QPoint \&grid\+Pos, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board) const
+\item 
+void \mbox{\hyperlink{class_entity_af23f754ef82eeeeb2470a049f00f5db3}{update\+Target\+Position}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_ghost}{Ghost}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} \mbox{\hyperlink{class_ghost_ad19d0b307a76e5a538beb8dfd09667f5}{current\+Mode}}
+\item 
+QColor \mbox{\hyperlink{class_ghost_abdb57d9fd26ea4880e3590d9293bbcc3}{normal\+Color}}
+\item 
+QColor \mbox{\hyperlink{class_ghost_a51a690e2aa3180751554d476c7dd4bc5}{frightened\+Color}}
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_ghost_a9539bb2562ccd5b97fba7928baa946fc}{last\+Valid\+Direction}}
+\item 
+float \mbox{\hyperlink{class_ghost_ad8d5dd74ed4868dad5cd4cba18e38d34}{direction\+Change\+Timer}}
+\item 
+float \mbox{\hyperlink{class_ghost_aa6672554fa3cbfc5ac7e26dd60b6f3ba}{mode\+Timer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_entity_a4cafeaa4555283d5839355c498f672a9}{position}}
+\item 
+QPointF \mbox{\hyperlink{class_entity_a341c5a42a6441fd6951d0b9b6d215429}{target\+Position}}
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_entity_ad8036c2cfb6749a5d94134d88c779e5e}{current\+Direction}}
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_entity_a071992c732954678a0393a4e56561adb}{next\+Direction}}
+\item 
+float \mbox{\hyperlink{class_entity_a62588bbdc2d530d9854cd07ca558c9aa}{move\+Speed}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_ghost}{Ghost}}}
+\begin{DoxyCompactItemize}
+\item 
+static const float \mbox{\hyperlink{class_ghost_af9a917a39597484eb07ee118130b4be5}{SCATTER\+\_\+\+TIME}} = 7.\+0f
+\item 
+static const float \mbox{\hyperlink{class_ghost_a85cdfe0e358f58fa8eaa77d10a12c5f7}{CHASE\+\_\+\+TIME}} = 20.\+0f
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{class_entity_a69d77a7b2efe097c0352d933ea9567f1}{CELL\+\_\+\+SIZE}} = 30
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_blinky_ae5d7b48c9897bd5ea2c69a9796be1a42}\index{Blinky@{Blinky}!Blinky@{Blinky}}
+\index{Blinky@{Blinky}!Blinky@{Blinky}}
+\doxysubsubsection{\texorpdfstring{Blinky()}{Blinky()}}
+{\footnotesize\ttfamily \label{class_blinky_ae5d7b48c9897bd5ea2c69a9796be1a42} 
+Blinky\+::\+Blinky (\begin{DoxyParamCaption}\item[{const QPointF \&}]{start\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_blinky_abcebbe20d2c6e9c8ab5e75d2de371513}\index{Blinky@{Blinky}!calculateTarget@{calculateTarget}}
+\index{calculateTarget@{calculateTarget}!Blinky@{Blinky}}
+\doxysubsubsection{\texorpdfstring{calculateTarget()}{calculateTarget()}}
+{\footnotesize\ttfamily \label{class_blinky_abcebbe20d2c6e9c8ab5e75d2de371513} 
+QPoint Blinky\+::calculate\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}}]{pacman}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_ghost_af86b5c14ee8e501b6b7fae2cce57efb4}{Ghost}}.
+
+\Hypertarget{class_blinky_a04ec5422e9445a33cd225d3a42d9c0a5}\index{Blinky@{Blinky}!getScatterCorner@{getScatterCorner}}
+\index{getScatterCorner@{getScatterCorner}!Blinky@{Blinky}}
+\doxysubsubsection{\texorpdfstring{getScatterCorner()}{getScatterCorner()}}
+{\footnotesize\ttfamily \label{class_blinky_a04ec5422e9445a33cd225d3a42d9c0a5} 
+QPoint Blinky\+::get\+Scatter\+Corner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_ghost_a42519c68b15b19840103b636a26eac57}{Ghost}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_blinky_8h}{Blinky.\+h}}\item 
+src/\mbox{\hyperlink{_blinky_8cpp}{Blinky.\+cpp}}\end{DoxyCompactItemize}

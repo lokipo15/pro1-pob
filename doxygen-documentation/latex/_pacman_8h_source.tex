@@ -1,0 +1,45 @@
+\doxysection{Pacman.\+h}
+\hypertarget{_pacman_8h_source}{}\label{_pacman_8h_source}\index{src/Pacman.h@{src/Pacman.h}}
+\mbox{\hyperlink{_pacman_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Gabriel\ Boruń\ on\ 25/04/2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Co-\/authored\ by\ Konrad\ Gębski\ on\ 25/04/2025.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ PACMAN\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ PACMAN\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_8h}{Entity.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_board}{GameBoard}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pacman_ad310d8b2057930b25ea17f88dc697894}{Pacman}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_entity_a69dceaa4d0b6c30da97723f83a357de3}{Entity}}\ \{\ \textcolor{comment}{//\ Klasa\ Pacman'a\ dziedzicząca\ po\ Entity}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_pacman_ad310d8b2057930b25ea17f88dc697894}{Pacman}}(\textcolor{keyword}{const}\ QPointF\ \&startPos);\ \textcolor{comment}{//\ Konstruktor\ przyjmuje\ teraz\ QPointF}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Implementacja\ metod\ wirtualnych\ z\ Entity}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pacman_af59479cfe7b24f7716ba0421a696161a}{draw}}(QPainter\ \&painter)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pacman_a4dcd693ea44f773d483841fe1cfe8179}{move}}(\mbox{\hyperlink{class_game_board}{GameBoard}}\ *board,\ \textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Metody\ specyficzne\ dla\ Pacmana}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pacman_ab6497d11aa5d490bb77c23dfa5f1d270}{setDirection}}(\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ dir);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Getter\ dla\ aktualnego\ kierunku\ (może\ być\ przydatny\ dla\ duchów)}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ \mbox{\hyperlink{class_pacman_abd1a9876a5e2e1694a80b1b850b76f3e}{getCurrentDirection}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_entity_ad8036c2cfb6749a5d94134d88c779e5e}{currentDirection}};\ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Animacja\ otwierania\ i\ zamykania\ ust}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ mouthAngle;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ mouthOpening;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Metoda\ pomocnicza\ do\ płynnego\ ruchu}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ smoothMove(\mbox{\hyperlink{class_game_board}{GameBoard}}\ *board,\ \textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ canTurnAt(\textcolor{keyword}{const}\ QPointF\ \&pos,\ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ dir,\ \mbox{\hyperlink{class_game_board}{GameBoard}}\ *board)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ QPointF\ getAlignedPosition(\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ fromDir,\ \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}\ toDir)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ updateMouthAnimation(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

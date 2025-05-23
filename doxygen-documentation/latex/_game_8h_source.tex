@@ -1,0 +1,64 @@
+\doxysection{Game.\+h}
+\hypertarget{_game_8h_source}{}\label{_game_8h_source}\index{src/Game.h@{src/Game.h}}
+\mbox{\hyperlink{_game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Gabriel\ Boruń\ on\ 25/04/2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Co-\/authored\ by\ Konrad\ Gębski\ on\ 25/04/2025.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ GAME\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ GAME\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QElapsedTimer>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_board_8h}{GameBoard.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pacman_8h}{Pacman.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ghost_8h}{Ghost.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_blinky_8h}{Blinky.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pinky_8h}{Pinky.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_inky_8h}{Inky.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_clyde_8h}{Clyde.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_ac1a9dde49041f68e14234a41a862865d}{Game}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{\ \textcolor{comment}{//\ Główna\ klasa\ -\/\ logika\ gry}}
+\DoxyCodeLine{00022\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_game_ac1a9dde49041f68e14234a41a862865d}{Game}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});\ \textcolor{comment}{//\ Konstruktor}}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{\string~Game}}();\ \textcolor{comment}{//\ Destruktor}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ae3d960780bb03ab5d6713e5d3343f6fc}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};\ \textcolor{comment}{//\ Obsługuje\ "{}rysowanie"{}}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a11472607ec18247e34b70de047ca5e4a}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};\ \textcolor{comment}{//\ Obsługuje\ naciśnięcie\ klawisza\ /\ keystroke}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}\ slots:\ \textcolor{comment}{//\ Cykliczny\ slot\ do\ aktualizacji\ stanu\ gry\ /\ jej\ planszy}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ update();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ QTimer\ *timer;\ \textcolor{comment}{//\ Timer\ do\ aktualizacji}}
+\DoxyCodeLine{00037\ \ \ \ \ QElapsedTimer\ elapsedTimer;\ \textcolor{comment}{//\ Timer\ do\ pomiaru\ delta\ time}}
+\DoxyCodeLine{00038\ \ \ \ \ qint64\ lastUpdateTime;\ \textcolor{comment}{//\ Czas\ ostatniej\ aktualizacji}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_game_board}{GameBoard}}\ *board;\ \textcolor{comment}{//\ Wskaźnik\ na\ planszę}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_pacman}{Pacman}}\ *pacman;\ \textcolor{comment}{//\ Wskaźnik\ na\ Pacmana}}
+\DoxyCodeLine{00042\ \ \ \ \ std::vector<Ghost*>\ ghosts;\ \textcolor{comment}{//\ Wektor\ wskaźników\ na\ duchy}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Specific\ ghost\ references\ for\ complex\ behaviors}}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_blinky}{Blinky}}\ *blinky;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_pinky}{Pinky}}\ *pinky;}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_inky}{Inky}}\ *inky;}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_clyde}{Clyde}}\ *clyde;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ score;\ \textcolor{comment}{//\ Zdobyte\ punkty}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ gameOver;\ \textcolor{comment}{//\ Flaga\ Game\ Over}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ checkCollisions();\ \textcolor{comment}{//\ Sprawdza\ kolizje\ między\ Pacmanem-\/duchem\ i\ Pacmanem-\/punktem}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ drawScore(QPainter\ \&painter);\ \textcolor{comment}{//\ Pokazuje/rysuje\ wynik\ gry}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ updateGhostModes(\textcolor{keywordtype}{float}\ deltaTime);\ \textcolor{comment}{//\ Aktualizuje\ tryby\ duchów}}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GAME\_H}}
+
+\end{DoxyCode}

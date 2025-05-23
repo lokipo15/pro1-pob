@@ -1,0 +1,132 @@
+\doxysection{Pacman Class Reference}
+\hypertarget{class_pacman}{}\label{class_pacman}\index{Pacman@{Pacman}}
+
+
+{\ttfamily \#include $<$Pacman.\+h$>$}
+
+Inheritance diagram for Pacman\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pacman}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pacman_ad310d8b2057930b25ea17f88dc697894}{Pacman}} (const QPointF \&start\+Pos)
+\item 
+void \mbox{\hyperlink{class_pacman_af59479cfe7b24f7716ba0421a696161a}{draw}} (QPainter \&painter) override
+\item 
+void \mbox{\hyperlink{class_pacman_a4dcd693ea44f773d483841fe1cfe8179}{move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time) override
+\item 
+void \mbox{\hyperlink{class_pacman_ab6497d11aa5d490bb77c23dfa5f1d270}{set\+Direction}} (\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} dir)
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_pacman_abd1a9876a5e2e1694a80b1b850b76f3e}{get\+Current\+Direction}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_a69dceaa4d0b6c30da97723f83a357de3}{Entity}} (const QPointF \&start\+Pos)
+\item 
+virtual \mbox{\hyperlink{class_entity_ac479d009ddde62dfb378ca0a70d81307}{\texorpdfstring{$\sim$}{\string~}\+Entity}} ()=default
+\item 
+QPoint \mbox{\hyperlink{class_entity_ae284253c07a9664cdedb5759f04918c6}{get\+Grid\+Position}} () const
+\item 
+QPointF \mbox{\hyperlink{class_entity_a7772c152c566454de1d20144147afb12}{get\+Position}} () const
+\item 
+void \mbox{\hyperlink{class_entity_a659e5b54903bd6416ddf16e1c3993ce1}{set\+Position}} (const QPointF \&pos)
+\item 
+bool \mbox{\hyperlink{class_entity_a69ae771d228bd6f92318754e9632c59c}{is\+At\+Grid\+Center}} () const
+\item 
+QPointF \mbox{\hyperlink{class_entity_a3d98a18fc73a18d340f7309e9ea32f58}{get\+Target\+Position}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \{ \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297}{None}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51}{Up}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb}{Down}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c}{Left}}
+, \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362}{Right}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_entity_aad253e8a3c79d8bc022c88a32063c546}{calculate\+Next\+Position}} (\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} dir, float delta\+Time) const
+\item 
+bool \mbox{\hyperlink{class_entity_a714d5ff2b037813b99c4d5586558e236}{can\+Move\+To}} (const QPoint \&grid\+Pos, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board) const
+\item 
+void \mbox{\hyperlink{class_entity_af23f754ef82eeeeb2470a049f00f5db3}{update\+Target\+Position}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_entity_a4cafeaa4555283d5839355c498f672a9}{position}}
+\item 
+QPointF \mbox{\hyperlink{class_entity_a341c5a42a6441fd6951d0b9b6d215429}{target\+Position}}
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_entity_ad8036c2cfb6749a5d94134d88c779e5e}{current\+Direction}}
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_entity_a071992c732954678a0393a4e56561adb}{next\+Direction}}
+\item 
+float \mbox{\hyperlink{class_entity_a62588bbdc2d530d9854cd07ca558c9aa}{move\+Speed}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{class_entity_a69d77a7b2efe097c0352d933ea9567f1}{CELL\+\_\+\+SIZE}} = 30
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pacman_ad310d8b2057930b25ea17f88dc697894}\index{Pacman@{Pacman}!Pacman@{Pacman}}
+\index{Pacman@{Pacman}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{Pacman()}{Pacman()}}
+{\footnotesize\ttfamily \label{class_pacman_ad310d8b2057930b25ea17f88dc697894} 
+Pacman\+::\+Pacman (\begin{DoxyParamCaption}\item[{const QPointF \&}]{start\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pacman_af59479cfe7b24f7716ba0421a696161a}\index{Pacman@{Pacman}!draw@{draw}}
+\index{draw@{draw}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_pacman_af59479cfe7b24f7716ba0421a696161a} 
+void Pacman\+::draw (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_entity_a8d7d83b17cda5e4f2254f0f01070c331}{Entity}}.
+
+\Hypertarget{class_pacman_abd1a9876a5e2e1694a80b1b850b76f3e}\index{Pacman@{Pacman}!getCurrentDirection@{getCurrentDirection}}
+\index{getCurrentDirection@{getCurrentDirection}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{getCurrentDirection()}{getCurrentDirection()}}
+{\footnotesize\ttfamily \label{class_pacman_abd1a9876a5e2e1694a80b1b850b76f3e} 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} Pacman\+::get\+Current\+Direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_pacman_a4dcd693ea44f773d483841fe1cfe8179}\index{Pacman@{Pacman}!move@{move}}
+\index{move@{move}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \label{class_pacman_a4dcd693ea44f773d483841fe1cfe8179} 
+void Pacman\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{, }\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_entity_ac60c3042032c2f66bac0bb363addf6ba}{Entity}}.
+
+\Hypertarget{class_pacman_ab6497d11aa5d490bb77c23dfa5f1d270}\index{Pacman@{Pacman}!setDirection@{setDirection}}
+\index{setDirection@{setDirection}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{setDirection()}{setDirection()}}
+{\footnotesize\ttfamily \label{class_pacman_ab6497d11aa5d490bb77c23dfa5f1d270} 
+void Pacman\+::set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}}]{dir}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_pacman_8h}{Pacman.\+h}}\item 
+src/\mbox{\hyperlink{_pacman_8cpp}{Pacman.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,54 @@
+\doxysection{Game\+Board.\+h}
+\hypertarget{_game_board_8h_source}{}\label{_game_board_8h_source}\index{src/GameBoard.h@{src/GameBoard.h}}
+\mbox{\hyperlink{_game_board_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Gabriel\ Boruń\ on\ 25/04/2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Co-\/authored\ by\ Konrad\ Gębski\ on\ 25/04/2025.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ GAMEBOARD\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ GAMEBOARD\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_q_point_compare}{QPointCompare}}\ \{\ \textcolor{comment}{//\ Porównanie\ QPoint'ów}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_q_point_compare_a0ff23e5411c85dc5c8d5ae37c14a698e}{operator()}}(\textcolor{keyword}{const}\ QPoint\&\ a,\ \textcolor{keyword}{const}\ QPoint\&\ b)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a.y()\ !=\ b.y())\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.y()\ <\ b.y();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.x()\ <\ b.x();}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_board_ac622cadcc81b3ffb71d8feb4506c04ac}{GameBoard}}\ \{\ \textcolor{comment}{//\ Plansza\ gry}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_game_board_ac622cadcc81b3ffb71d8feb4506c04ac}{GameBoard}}();\ \textcolor{comment}{//\ Konstruktor\ planszy}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_board_aef097fdd165ec8666d95f22bbeaefd18}{draw}}(QPainter\ \&painter);\ \textcolor{comment}{//\ Rysowanie\ planszy}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_board_a0b8d678d285ef37f476dee7fdd2e8839}{isWall}}(\textcolor{keyword}{const}\ QPoint\ \&pos)\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Sprawdzenie\ czy\ ściana}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_board_a1be80c1b5d2e1272256ef2d773f5988e}{isCollectible}}(\textcolor{keyword}{const}\ QPoint\ \&pos)\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Sprawdzenie\ czy\ punkt}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_board_a5ab8d16d8938dd12ccbe1ce3604eada4}{removeCollectible}}(\textcolor{keyword}{const}\ QPoint\ \&pos);\ \textcolor{comment}{//\ Usuwanie\ punktu\ z\ planszy}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_game_board_a990f43e96ff29f23c02e9e9c4cd9ae3d}{getPacmanStartPosition}}()\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Pozycja\ startowa\ Pacmana}}
+\DoxyCodeLine{00033\ \ \ \ \ std::vector<QPoint>\ \mbox{\hyperlink{class_game_board_ad89108697bf601dac4662de386ba2aea}{getGhostStartPositions}}()\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Pozycje\ startowe\ duchów}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ BOARD\_WIDTH\ =\ 20;\ \textcolor{comment}{//\ szerokość\ planszy}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ BOARD\_HEIGHT\ =\ 20;\ \textcolor{comment}{//\ wysokość\ planszy}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ CELL\_SIZE\ =\ 30;\ \textcolor{comment}{//\ rozmiar\ pojedymczej\ komórki\ planszy}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ 0\ =\ puste,\ 1\ =\ ściana,\ 2\ =\ punkt\ do\ zebrania,\ 3\ =\ start\ Pacmana,\ 4\ =\ start\ ducha}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ board[BOARD\_HEIGHT][BOARD\_WIDTH];}
+\DoxyCodeLine{00042\ \ \ \ \ std::set<QPoint,\ QPointCompare>\ collectibles;\ \textcolor{comment}{//\ zbiór\ punktów\ do\ zebrania}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeBoard();\ \textcolor{comment}{//\ Inicjalizacja\ planszy\ (punkty\ ściany\ poz.\ startowe)}}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GAMEBOARD\_H}}
+
+\end{DoxyCode}
