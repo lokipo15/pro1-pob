@@ -10,7 +10,8 @@
 
 // Inicjalizacja planszy i obiektów
 Game::Game(QWidget *parent) : QWidget(parent), lastUpdateTime(0), score(0), gameOver(false),
-    blinky(nullptr), pinky(nullptr), inky(nullptr), clyde(nullptr) {
+    blinky(nullptr), pinky(nullptr), inky(nullptr), clyde(nullptr),
+    powerUpTimer(0.0f), powerUpActive(false), ghostEatenMultiplier(1) {
     // Ustawienie focus policy, aby otrzymywać zdarzenia klawiatury
     setFocusPolicy(Qt::StrongFocus);
 
@@ -48,6 +49,13 @@ Game::Game(QWidget *parent) : QWidget(parent), lastUpdateTime(0), score(0), game
         }
     }
 
+    // Tworzenie power-upów TYLKO jeśli są pozycje na planszy
+    std::vector<QPoint> powerUpPositions = board->getPowerUpPositions();
+    for (const QPoint &pos : powerUpPositions) {
+        PowerPellet *powerPellet = new PowerPellet(QPointF(pos.x(), pos.y()));
+        powerUps.push_back(powerPellet);
+    }
+
     // Uruchomienie timera czasu
     elapsedTimer.start();
 
@@ -66,13 +74,20 @@ Game::~Game() {
     for (Ghost *ghost : ghosts) {
         delete ghost;
     }
+
+    for (PowerUp *powerUp : powerUps) {
+        delete powerUp;
+    }
 }
 
 void Game::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
 
-    // Rysowanie planszy
+    // Rysowanie planszy (zawiera power-upy z GameBoard)
     board->draw(painter);
+
+    // NIE rysuj power-upów z vectora powerUps, bo są już narysowane przez board->draw()
+    // Power-upy są rysowane przez GameBoard::draw() na podstawie board array i powerUps set
 
     // Rysowanie Pacmana
     pacman->draw(painter);
@@ -148,6 +163,9 @@ void Game::update() {
     // Aktualizacja trybów duchów
     updateGhostModes(deltaTime);
 
+    // Aktualizacja timera power-upów
+    updatePowerUpTimer(deltaTime);
+
     // POPRAWKA: Użyj nowej metody move z parametrem Pacman
     for (Ghost *ghost : ghosts) {
         ghost->move(board, deltaTime, pacman);
@@ -169,6 +187,29 @@ void Game::updateGhostModes(float deltaTime) {
     }
 }
 
+void Game::updatePowerUpTimer(float deltaTime) {
+    if (powerUpActive) {
+        powerUpTimer -= deltaTime;
+        if (powerUpTimer <= 0.0f) {
+            powerUpActive = false;
+            ghostEatenMultiplier = 1;
+        }
+    }
+}
+
+void Game::activatePowerUp() {
+    powerUpActive = true;
+    powerUpTimer = 10.0f; // 10 sekund trybu frightened
+    ghostEatenMultiplier = 1; // Reset mnożnika
+
+    // Przełącz wszystkie duchy w tryb frightened
+    for (Ghost *ghost : ghosts) {
+        if (ghost->getMode() != Ghost::EATEN) {
+            ghost->enterFrightenedMode(10.0f);
+        }
+    }
+}
+
 // System kolizji
 void Game::checkCollisions() {
     // Sprawdzanie kolizji z punktami do zbierania
@@ -176,6 +217,24 @@ void Game::checkCollisions() {
     if (board->isCollectible(pacmanGridPos)) {
         board->removeCollectible(pacmanGridPos);
         score += 10;
+    }
+
+    // Sprawdzanie kolizji z power-upami
+    if (board->isPowerUp(pacmanGridPos)) {
+        board->removePowerUp(pacmanGridPos);
+
+        // Usuń power-up z listy powerUps w Game i zwolnij pamięć
+        for (auto it = powerUps.begin(); it != powerUps.end(); ++it) {
+            if ((*it)->getGridPosition() == pacmanGridPos) {
+                score += (*it)->getScore();
+                delete *it;
+                powerUps.erase(it);
+                break;
+            }
+        }
+
+        // Aktywuj power-up
+        activatePowerUp();
     }
 
     // Sprawdzanie kolizji z duchami
@@ -190,9 +249,16 @@ void Game::checkCollisions() {
 
         // Kolizja gdy odległość jest mniejsza niż 0.5 komórki
         if (distance < 0.5f) {
-            gameOver = true;
-            // Nie zamykamy aplikacji automatycznie, pozwalamy graczowi zobaczyć "Game Over"
-            break;
+            if (ghost->isVulnerable()) {
+                // Pacman zjada ducha
+                ghost->eatGhost();
+                score += 200 * ghostEatenMultiplier;
+                ghostEatenMultiplier *= 2; // Podwajaj punkty za kolejne duchy
+            } else if (ghost->getMode() != Ghost::EATEN) {
+                // Duch zjada Pacmana
+                gameOver = true;
+                break;
+            }
         }
     }
 }
@@ -202,4 +268,9 @@ void Game::drawScore(QPainter &painter) {
     painter.setPen(Qt::white);
     painter.setFont(QFont("Arial", 12));
     painter.drawText(10, 20, QString("Wynik: %1").arg(score));
+
+    // Pokaż timer power-up jeśli aktywny
+    if (powerUpActive) {
+        painter.drawText(10, 40, QString("Power-up: %1s").arg(static_cast<int>(powerUpTimer) + 1));
+    }
 }

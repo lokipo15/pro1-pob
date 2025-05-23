@@ -33,13 +33,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 47,
+				"line" : 51,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 50,
+				"line" : 54,
 				"parent" : 0
 			},
 			{
@@ -204,18 +204,20 @@
 				9,
 				10,
 				11,
-				24
+				12,
+				13,
+				28
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "PacmanGame_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "PacmanGame_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "PacmanGame_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "PacmanGame::@6890427a1f51a3e7e1df",
@@ -321,15 +323,15 @@
 				9,
 				10,
 				11,
-				24
+				12,
+				13,
+				28
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				12,
-				13,
 				14,
 				15,
 				16,
@@ -337,23 +339,27 @@
 				18,
 				19,
 				20,
-				21
+				21,
+				22,
+				23,
+				24,
+				25
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				22,
-				23
+				26,
+				27
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				25,
-				26
+				29,
+				30
 			]
 		}
 	],
@@ -434,6 +440,18 @@
 		},
 		{
 			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/PowerUp.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/PowerPellet.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
 			"path" : "src/Game.h",
 			"sourceGroupIndex" : 1
 		},
@@ -480,6 +498,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/Pinky.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/PowerUp.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/PowerPellet.h",
 			"sourceGroupIndex" : 1
 		},
 		{

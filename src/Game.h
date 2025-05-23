@@ -16,6 +16,8 @@
 #include "Pinky.h"
 #include "Inky.h"
 #include "Clyde.h"
+#include "PowerUp.h"
+#include "PowerPellet.h"
 #include <vector>
 
 class Game : public QWidget { // Główna klasa - logika gry
@@ -47,12 +49,21 @@ private:
     Inky *inky;
     Clyde *clyde;
 
+    // Power-up system
+    std::vector<PowerUp*> powerUps; // Wektor power-upów
+    float powerUpTimer; // Timer dla aktywnych power-upów
+    bool powerUpActive; // Czy power-up jest aktywny
+    int ghostEatenMultiplier; // Mnożnik punktów za zjedzenie duchów
+
     int score; // Zdobyte punkty
     bool gameOver; // Flaga Game Over
 
     void checkCollisions(); // Sprawdza kolizje między Pacmanem-duchem i Pacmanem-punktem
     void drawScore(QPainter &painter); // Pokazuje/rysuje wynik gry
     void updateGhostModes(float deltaTime); // Aktualizuje tryby duchów
+    void activatePowerUp(); // Aktywuje power-up
+    void updatePowerUpTimer(float deltaTime); // Aktualizuje timer power-upów
 };
+
 
 #endif //GAME_H

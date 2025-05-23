@@ -459,6 +459,18 @@
 			"MU",
 			"UVLADIE3JM/moc_Pinky.cpp",
 			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/PowerPellet.h",
+			"MU",
+			"UVLADIE3JM/moc_PowerPellet.cpp",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/PowerUp.h",
+			"MU",
+			"UVLADIE3JM/moc_PowerUp.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -567,6 +579,16 @@
 		],
 		[
 			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Pinky.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/PowerPellet.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/PowerUp.cpp",
 			"MU",
 			null
 		],

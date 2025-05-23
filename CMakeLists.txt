@@ -24,6 +24,8 @@ set(SOURCES
         src/Clyde.cpp
         src/Inky.cpp
         src/Pinky.cpp
+        src/PowerUp.cpp
+        src/PowerPellet.cpp
 )
 # Pliki z klasami/metodami
 set(HEADERS
@@ -37,6 +39,8 @@ set(HEADERS
         src/Clyde.h
         src/Inky.h
         src/Pinky.h
+        src/PowerUp.h
+        src/PowerPellet.h
 )
 
 # Zasoby gry

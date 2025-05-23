@@ -40,7 +40,17 @@ void Ghost::draw(QPainter &painter) {
 
     // Wybór koloru w zależności od trybu
     if (currentMode == FRIGHTENED) {
-        painter.setBrush(frightenedColor);
+        // Mruganie pod koniec trybu frightened
+        if (frightenedTimer > frightenedDuration * 0.7f) {
+            // Mrugaj między niebieskim a białym
+            if (static_cast<int>(blinkTimer * 8) % 2 == 0) {
+                painter.setBrush(frightenedColor);
+            } else {
+                painter.setBrush(Qt::white);
+            }
+        } else {
+            painter.setBrush(frightenedColor);
+        }
     } else if (currentMode == EATEN) {
         painter.setBrush(QColor(200, 200, 200, 100));  // Przezroczysty
     } else {
@@ -69,12 +79,20 @@ void Ghost::draw(QPainter &painter) {
         painter.drawEllipse(leftEye);
         painter.drawEllipse(rightEye);
 
-        // Źrenice
+        // Źrenice - kierunek zależy od trybu
         painter.setBrush(Qt::black);
-        QRect leftPupil(leftEye.x() + 2, leftEye.y() + 2, 2, 2);
-        QRect rightPupil(rightEye.x() + 2, rightEye.y() + 2, 2, 2);
-        painter.drawEllipse(leftPupil);
-        painter.drawEllipse(rightPupil);
+        if (currentMode == FRIGHTENED) {
+            // W trybie frightened oczy są większe i "przestraszone"
+            QRect leftPupil(leftEye.x() + 1, leftEye.y() + 3, 4, 2);
+            QRect rightPupil(rightEye.x() + 1, rightEye.y() + 3, 4, 2);
+            painter.drawEllipse(leftPupil);
+            painter.drawEllipse(rightPupil);
+        } else {
+            QRect leftPupil(leftEye.x() + 2, leftEye.y() + 2, 2, 2);
+            QRect rightPupil(rightEye.x() + 2, rightEye.y() + 2, 2, 2);
+            painter.drawEllipse(leftPupil);
+            painter.drawEllipse(rightPupil);
+        }
     }
 }
 
@@ -101,6 +119,9 @@ void Ghost::move(GameBoard *board, float deltaTime) {
 
 // Nowa metoda move (z Pacmanem) - używa inteligentnego ruchu
 void Ghost::move(GameBoard *board, float deltaTime, Pacman *pacman) {
+    // Aktualizuj tryb frightened jeśli aktywny
+    updateFrightenedMode(deltaTime);
+
     directionChangeTimer -= deltaTime;
 
     // Sprawdź czy jesteśmy na skrzyżowaniu i czy trzeba wybrać nowy kierunek
@@ -115,6 +136,10 @@ void Ghost::move(GameBoard *board, float deltaTime, Pacman *pacman) {
 
             if (currentMode == FRIGHTENED) {
                 chooseDirectionAtIntersection(board);
+            } else if (currentMode == EATEN) {
+                // W trybie eaten kieruj się do pozycji startowej
+                // Dla uproszczenia używamy pozycji (10, 10)
+                chooseTargetBasedDirection(QPoint(10, 10), board);
             } else {
                 // POPRAWKA: Prawidłowa logika wyboru targetu
                 QPoint target;
@@ -125,7 +150,7 @@ void Ghost::move(GameBoard *board, float deltaTime, Pacman *pacman) {
                 }
                 chooseTargetBasedDirection(target, board);
             }
-        }
+            }
     }
 
     // Płynny ruch
@@ -323,4 +348,41 @@ void Ghost::chooseDirectionAtIntersection(GameBoard *board) {
         // Jeśli brak opcji, zawróć
         currentDirection = opposite;
     }
+}
+
+void Ghost::enterFrightenedMode(float duration) {
+    currentMode = FRIGHTENED;
+    frightenedTimer = 0.0f;
+    frightenedDuration = duration;
+    blinkTimer = 0.0f;
+
+    // Zmień kierunek na przeciwny (jeśli się porusza)
+    if (currentDirection != None) {
+        currentDirection = getOppositeDirection(currentDirection);
+        lastValidDirection = currentDirection;
+    }
+
+    // Zmniejsz prędkość w trybie frightened
+    moveSpeed = 4.0f; // Wolniejszy od normalnej prędkości (6.0f)
+}
+
+void Ghost::updateFrightenedMode(float deltaTime) {
+    if (currentMode != FRIGHTENED) return;
+
+    frightenedTimer += deltaTime;
+    blinkTimer += deltaTime;
+
+    // Sprawdź czy czas frightened się kończy
+    if (frightenedTimer >= frightenedDuration) {
+        currentMode = CHASE; // Wróć do trybu chase
+        moveSpeed = 6.0f; // Przywróć normalną prędkość
+        modeTimer = 0.0f; // Reset mode timer
+    }
+}
+
+void Ghost::eatGhost() {
+    currentMode = EATEN;
+    moveSpeed = 12.0f; // Bardzo szybki powrót do bazy
+    // W prawdziwym Pacmanie duch wraca do bazy, ale dla uproszczenia
+    // możemy go po prostu zrestartować po krótkiej chwili
 }

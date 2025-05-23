@@ -36,6 +36,12 @@ public:
     void updateModeTimer(float deltaTime);
     void resetModeTimer() { modeTimer = 0.0f; }
 
+    // Frightened mode methods
+    void enterFrightenedMode(float duration);
+    void updateFrightenedMode(float deltaTime);
+    bool isVulnerable() const { return currentMode == FRIGHTENED; }
+    void eatGhost(); // Gdy duch zostaje zjedzony
+
     // Wirtualna metoda do obliczania celu (dla różnych typów duchów)
     virtual QPoint calculateTarget(Pacman *pacman) { return getGridPosition(); }
 
@@ -54,6 +60,11 @@ protected:
     float modeTimer;
     static const float SCATTER_TIME;  // Czas trybu scatter
     static const float CHASE_TIME;    // Czas trybu chase
+
+    // Frightened mode timing
+    float frightenedTimer;
+    float frightenedDuration;
+    float blinkTimer; // Timer for blinking when frightened time is ending
 
     // Metody pomocnicze
     Direction getRandomDirection();
