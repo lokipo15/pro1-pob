@@ -20,6 +20,10 @@ set(SOURCES
         src/Pacman.cpp
         src/Ghost.cpp
         src/Entity.cpp
+        src/Blinky.cpp
+        src/Clyde.cpp
+        src/Inky.cpp
+        src/Pinky.cpp
 )
 # Pliki z klasami/metodami
 set(HEADERS
@@ -29,6 +33,10 @@ set(HEADERS
         src/Pacman.h
         src/Ghost.h
         src/Entity.h
+        src/Blinky.h
+        src/Clyde.h
+        src/Inky.h
+        src/Pinky.h
 )
 
 # Zasoby gry

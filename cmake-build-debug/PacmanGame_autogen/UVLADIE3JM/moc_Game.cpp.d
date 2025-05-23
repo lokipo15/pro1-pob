@@ -891,10 +891,14 @@
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg_va_list.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/limits.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdarg.h \
+  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Blinky.h \
+  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Clyde.h \
   /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Entity.h \
   /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/GameBoard.h \
   /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Ghost.h \
+  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Inky.h \
   /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Pacman.h \
+  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Pinky.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QElapsedTimer \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QPoint \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QPointF \

@@ -11,6 +11,7 @@
 #include <QPainter>
 
 class GameBoard;
+class Pacman;
 
 class Entity {
 public:

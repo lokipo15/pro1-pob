@@ -12,6 +12,10 @@
 #include "GameBoard.h"
 #include "Pacman.h"
 #include "Ghost.h"
+#include "Blinky.h"
+#include "Pinky.h"
+#include "Inky.h"
+#include "Clyde.h"
 #include <vector>
 
 class Game : public QWidget { // Główna klasa - logika gry
@@ -36,11 +40,19 @@ private:
     GameBoard *board; // Wskaźnik na planszę
     Pacman *pacman; // Wskaźnik na Pacmana
     std::vector<Ghost*> ghosts; // Wektor wskaźników na duchy
+
+    // Specific ghost references for complex behaviors
+    Blinky *blinky;
+    Pinky *pinky;
+    Inky *inky;
+    Clyde *clyde;
+
     int score; // Zdobyte punkty
     bool gameOver; // Flaga Game Over
 
     void checkCollisions(); // Sprawdza kolizje między Pacmanem-duchem i Pacmanem-punktem
     void drawScore(QPainter &painter); // Pokazuje/rysuje wynik gry
+    void updateGhostModes(float deltaTime); // Aktualizuje tryby duchów
 };
 
 #endif //GAME_H

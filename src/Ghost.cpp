@@ -5,13 +5,18 @@
 
 #include "Ghost.h"
 #include "GameBoard.h"
+#include "Pacman.h"
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
 
+// Mode timing constants
+const float Ghost::SCATTER_TIME = 7.0f;  // 7 sekund w trybie scatter
+const float Ghost::CHASE_TIME = 20.0f;   // 20 sekund w trybie chase
+
 Ghost::Ghost(const QPointF &startPos)
-    : Entity(startPos), currentMode(CHASE), frightenedColor(Qt::blue),
-      lastValidDirection(None), directionChangeTimer(0.0f) {
+    : Entity(startPos), currentMode(SCATTER), frightenedColor(Qt::blue),
+      lastValidDirection(None), directionChangeTimer(0.0f), modeTimer(0.0f) {
 
     // Inicjalizacja generatora liczb losowych
     static bool seeded = false;
@@ -73,6 +78,7 @@ void Ghost::draw(QPainter &painter) {
     }
 }
 
+// Stara metoda move (bez Pacmana) - używa losowego ruchu
 void Ghost::move(GameBoard *board, float deltaTime) {
     directionChangeTimer -= deltaTime;
 
@@ -91,6 +97,100 @@ void Ghost::move(GameBoard *board, float deltaTime) {
 
     // Płynny ruch
     smoothMove(board, deltaTime);
+}
+
+// Nowa metoda move (z Pacmanem) - używa inteligentnego ruchu
+void Ghost::move(GameBoard *board, float deltaTime, Pacman *pacman) {
+    directionChangeTimer -= deltaTime;
+
+    // Sprawdź czy jesteśmy na skrzyżowaniu i czy trzeba wybrać nowy kierunek
+    if (isAtGridCenter()) {
+        QPoint currentGrid = getGridPosition();
+
+        if (isIntersection(currentGrid, board) ||
+            !canMoveTo(currentGrid + QPoint(
+                currentDirection == Left ? -1 : currentDirection == Right ? 1 : 0,
+                currentDirection == Up ? -1 : currentDirection == Down ? 1 : 0
+            ), board)) {
+
+            if (currentMode == FRIGHTENED) {
+                chooseDirectionAtIntersection(board);
+            } else {
+                // POPRAWKA: Prawidłowa logika wyboru targetu
+                QPoint target;
+                if (currentMode == SCATTER) {
+                    target = getScatterCorner();
+                } else { // CHASE
+                    target = calculateTarget(pacman);
+                }
+                chooseTargetBasedDirection(target, board);
+            }
+        }
+    }
+
+    // Płynny ruch
+    smoothMove(board, deltaTime);
+}
+
+void Ghost::updateModeTimer(float deltaTime) {
+    if (currentMode == FRIGHTENED || currentMode == EATEN) {
+        return; // Nie aktualizuj timera w specjalnych trybach
+    }
+
+    modeTimer += deltaTime;
+
+    if (currentMode == SCATTER && modeTimer >= SCATTER_TIME) {
+        currentMode = CHASE;
+        modeTimer = 0.0f;
+    } else if (currentMode == CHASE && modeTimer >= CHASE_TIME) {
+        currentMode = SCATTER;
+        modeTimer = 0.0f;
+    }
+}
+
+void Ghost::chooseTargetBasedDirection(const QPoint &target, GameBoard *board) {
+    QPoint currentGrid = getGridPosition();
+    Direction opposite = getOppositeDirection(lastValidDirection);
+
+    std::vector<Direction> possibleDirs;
+    std::vector<float> distances;
+
+    for (int d = 1; d <= 4; d++) {
+        Direction dir = static_cast<Direction>(d);
+        if (dir == opposite) continue;  // Nie zawracaj
+
+        QPoint testPos = currentGrid;
+        switch (dir) {
+            case Up: testPos.setY(currentGrid.y() - 1); break;
+            case Down: testPos.setY(currentGrid.y() + 1); break;
+            case Left: testPos.setX(currentGrid.x() - 1); break;
+            case Right: testPos.setX(currentGrid.x() + 1); break;
+            default: break;
+        }
+
+        if (canMoveTo(testPos, board)) {
+            possibleDirs.push_back(dir);
+
+            // Oblicz odległość do celu
+            float dx = testPos.x() - target.x();
+            float dy = testPos.y() - target.y();
+            distances.push_back(sqrt(dx*dx + dy*dy));
+        }
+    }
+
+    // Wybierz kierunek z najmniejszą odległością do celu
+    if (!possibleDirs.empty()) {
+        int bestIndex = 0;
+        for (int i = 1; i < possibleDirs.size(); i++) {
+            if (distances[i] < distances[bestIndex]) {
+                bestIndex = i;
+            }
+        }
+        currentDirection = possibleDirs[bestIndex];
+    } else {
+        // Jeśli brak opcji, zawróć
+        currentDirection = opposite;
+    }
 }
 
 void Ghost::smoothMove(GameBoard *board, float deltaTime) {

@@ -1,19 +1,5 @@
 /Users/gabriel/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Users/gabriel/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -S /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program -B /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug
--- The CXX compiler identification is AppleClang 16.0.0.16000026
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE
--- Performing Test HAVE_STDATOMIC
--- Performing Test HAVE_STDATOMIC - Success
--- Found WrapAtomic: TRUE
--- Found OpenGL: /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/System/Library/Frameworks/OpenGL.framework
--- Found WrapOpenGL: TRUE
 -- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
--- Configuring done (1.7s)
--- Generating done (0.2s)
+-- Configuring done (0.5s)
+-- Generating done (0.3s)
 -- Build files have been written to: /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug

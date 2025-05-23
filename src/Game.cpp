@@ -9,21 +9,43 @@
 #include <QApplication>
 
 // Inicjalizacja planszy i obiektów
-Game::Game(QWidget *parent) : QWidget(parent), score(0), gameOver(false), lastUpdateTime(0) {
+Game::Game(QWidget *parent) : QWidget(parent), lastUpdateTime(0), score(0), gameOver(false),
+    blinky(nullptr), pinky(nullptr), inky(nullptr), clyde(nullptr) {
     // Ustawienie focus policy, aby otrzymywać zdarzenia klawiatury
     setFocusPolicy(Qt::StrongFocus);
 
     // Tworzenie planszy gry
     board = new GameBoard();
 
-    // Tworzenie Pacmana z pozycją jako QPointF
+    // Tworzenie Pacmana
     QPoint gridPos = board->getPacmanStartPosition();
     pacman = new Pacman(QPointF(gridPos.x(), gridPos.y()));
 
-    // Tworzenie duchów z pozycjami jako QPointF
-    for (const QPoint &pos : board->getGhostStartPositions()) {
-        Ghost *ghost = new Ghost(QPointF(pos.x(), pos.y()));
-        ghosts.push_back(ghost);
+    // Tworzenie konkretnych typów duchów
+    std::vector<QPoint> ghostPositions = board->getGhostStartPositions();
+
+    if (ghostPositions.size() >= 4) {
+        // Blinky - czerwony duch (pierwsza pozycja)
+        blinky = new Blinky(QPointF(ghostPositions[0].x(), ghostPositions[0].y()));
+        ghosts.push_back(blinky);
+
+        // Pinky - różowy duch (druga pozycja)
+        pinky = new Pinky(QPointF(ghostPositions[1].x(), ghostPositions[1].y()));
+        ghosts.push_back(pinky);
+
+        // Inky - niebieski duch (trzecia pozycja) - potrzebuje referencji do Blinky
+        inky = new Inky(QPointF(ghostPositions[2].x(), ghostPositions[2].y()), blinky);
+        ghosts.push_back(inky);
+
+        // Clyde - pomarańczowy duch (czwarta pozycja)
+        clyde = new Clyde(QPointF(ghostPositions[3].x(), ghostPositions[3].y()));
+        ghosts.push_back(clyde);
+    } else {
+        // Fallback - stwórz przynajmniej jeden duch jeśli nie ma 4 pozycji
+        for (const QPoint &pos : ghostPositions) {
+            Ghost *ghost = new Ghost(QPointF(pos.x(), pos.y()));
+            ghosts.push_back(ghost);
+        }
     }
 
     // Uruchomienie timera czasu
@@ -123,9 +145,12 @@ void Game::update() {
     // Poruszanie Pacmana z delta time
     pacman->move(board, deltaTime);
 
-    // Ruch duchów z delta time
+    // Aktualizacja trybów duchów
+    updateGhostModes(deltaTime);
+
+    // POPRAWKA: Użyj nowej metody move z parametrem Pacman
     for (Ghost *ghost : ghosts) {
-        ghost->move(board, deltaTime);
+        ghost->move(board, deltaTime, pacman);
     }
 
     // Sprawdzanie kolizji
@@ -133,6 +158,15 @@ void Game::update() {
 
     // Odświeżanie widoku
     repaint();
+}
+
+void Game::updateGhostModes(float deltaTime) {
+    // Aktualizuj timery trybów dla wszystkich duchów
+    for (Ghost *ghost : ghosts) {
+        if (ghost->getMode() != Ghost::FRIGHTENED && ghost->getMode() != Ghost::EATEN) {
+            ghost->updateModeTimer(deltaTime);
+        }
+    }
 }
 
 // System kolizji

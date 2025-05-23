@@ -49,6 +49,7 @@ void GameBoard::initializeBoard() { // Inicjalizacja planszy
     board[1][BOARD_WIDTH - 2] = 4;
     board[BOARD_HEIGHT - 2][BOARD_WIDTH - 2] = 4;
     board[1][1] = 4;
+    board[8][8] = 4;
 }
 
 void GameBoard::draw(QPainter &painter) { // Rysuowanie planszy

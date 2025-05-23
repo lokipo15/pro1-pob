@@ -401,6 +401,18 @@
 	"HEADERS" : 
 	[
 		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Blinky.h",
+			"MU",
+			"UVLADIE3JM/moc_Blinky.cpp",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Clyde.h",
+			"MU",
+			"UVLADIE3JM/moc_Clyde.cpp",
+			null
+		],
+		[
 			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Entity.h",
 			"MU",
 			"UVLADIE3JM/moc_Entity.cpp",
@@ -431,9 +443,21 @@
 			null
 		],
 		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Inky.h",
+			"MU",
+			"UVLADIE3JM/moc_Inky.cpp",
+			null
+		],
+		[
 			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Pacman.h",
 			"MU",
 			"UVLADIE3JM/moc_Pacman.cpp",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Pinky.h",
+			"MU",
+			"UVLADIE3JM/moc_Pinky.cpp",
 			null
 		]
 	],
@@ -497,6 +521,16 @@
 	"SOURCES" : 
 	[
 		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Blinky.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Clyde.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Entity.cpp",
 			"MU",
 			null
@@ -522,7 +556,17 @@
 			null
 		],
 		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Inky.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Pacman.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Pinky.cpp",
 			"MU",
 			null
 		],
