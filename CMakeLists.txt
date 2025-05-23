@@ -26,6 +26,8 @@ set(SOURCES
         src/Pinky.cpp
         src/PowerUp.cpp
         src/PowerPellet.cpp
+        src/MainMenu.cpp
+        src/GameOverScreen.cpp
 )
 # Pliki z klasami/metodami
 set(HEADERS
@@ -41,6 +43,8 @@ set(HEADERS
         src/Pinky.h
         src/PowerUp.h
         src/PowerPellet.h
+        src/MainMenu.h
+        src/GameOverScreen.h
 )
 
 # Zasoby gry

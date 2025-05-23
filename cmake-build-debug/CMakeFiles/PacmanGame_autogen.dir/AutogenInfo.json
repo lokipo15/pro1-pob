@@ -431,6 +431,12 @@
 			null
 		],
 		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/GameOverScreen.h",
+			"MU",
+			"UVLADIE3JM/moc_GameOverScreen.cpp",
+			null
+		],
+		[
 			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/GameWindow.h",
 			"MU",
 			"UVLADIE3JM/moc_GameWindow.cpp",
@@ -446,6 +452,12 @@
 			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Inky.h",
 			"MU",
 			"UVLADIE3JM/moc_Inky.cpp",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/MainMenu.h",
+			"MU",
+			"UVLADIE3JM/moc_MainMenu.cpp",
 			null
 		],
 		[
@@ -558,6 +570,11 @@
 			null
 		],
 		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/GameOverScreen.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/GameWindow.cpp",
 			"MU",
 			null
@@ -569,6 +586,11 @@
 		],
 		[
 			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Inky.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/MainMenu.cpp",
 			"MU",
 			null
 		],

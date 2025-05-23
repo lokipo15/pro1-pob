@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../../src/GameWindow.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -38,10 +39,30 @@ template <> constexpr inline auto GameWindow::qt_create_metaobjectdata<qt_meta_t
 {
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
-        "GameWindow"
+        "GameWindow",
+        "onStartGameRequested",
+        "",
+        "onRestartRequested",
+        "onMainMenuRequested",
+        "onExitRequested",
+        "onGameStateChanged",
+        "GameState",
+        "newState"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Slot 'onStartGameRequested'
+        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onRestartRequested'
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onMainMenuRequested'
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onExitRequested'
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onGameStateChanged'
+        QtMocHelpers::SlotData<void(GameState)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 7, 8 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -63,10 +84,16 @@ Q_CONSTINIT const QMetaObject GameWindow::staticMetaObject = { {
 void GameWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     auto *_t = static_cast<GameWindow *>(_o);
-    (void)_t;
-    (void)_c;
-    (void)_id;
-    (void)_a;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: _t->onStartGameRequested(); break;
+        case 1: _t->onRestartRequested(); break;
+        case 2: _t->onMainMenuRequested(); break;
+        case 3: _t->onExitRequested(); break;
+        case 4: _t->onGameStateChanged((*reinterpret_cast< std::add_pointer_t<GameState>>(_a[1]))); break;
+        default: ;
+        }
+    }
 }
 
 const QMetaObject *GameWindow::metaObject() const
@@ -85,6 +112,18 @@ void *GameWindow::qt_metacast(const char *_clname)
 int GameWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 5)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 5;
+    }
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 5)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 5;
+    }
     return _id;
 }
 QT_WARNING_POP

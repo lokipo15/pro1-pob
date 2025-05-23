@@ -1,4 +1,4 @@
-/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/PacmanGame_autogen/UVLADIE3JM/moc_GameWindow.cpp: /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/GameWindow.h \
+/Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/PacmanGame_autogen/UVLADIE3JM/moc_GameOverScreen.cpp: /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/GameOverScreen.h \
   /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/cmake-build-debug/PacmanGame_autogen/moc_predefs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.1.sdk/usr/include/AvailabilityInternal.h \
@@ -891,28 +891,11 @@
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/__stdarg_va_list.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/limits.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdarg.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Blinky.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Clyde.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Entity.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Game.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/GameBoard.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/GameOverScreen.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Ghost.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Inky.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/MainMenu.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Pacman.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/Pinky.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/PowerPellet.h \
-  /Users/gabriel/Documents/Studia/PO1.PRO.1IZ11B.KONRAD.GEBSKI.GABRIEL.BORUN.KM1/program/src/PowerUp.h \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QElapsedTimer \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QList \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QObject \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QPoint \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QPointF \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QRect \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QSize \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QSizeF \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QTimer \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/q17memory.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/q20functional.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/q20iterator.h \
@@ -1033,7 +1016,6 @@
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qtenvironmentvariables.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qtextstream.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qtformat_impl.h \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qtimer.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qtmetamacros.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qtnoop.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qtpreprocessorsupport.h \
@@ -1051,9 +1033,7 @@
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/QColor \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/QKeyEvent \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/QPainter \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/QTransform \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qaction.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qbitmap.h \
@@ -1074,9 +1054,7 @@
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qinputmethod.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qpainter.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qpen.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qpicture.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
@@ -1088,7 +1066,6 @@
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qscreen.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qscreen_platform.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qtextdocument.h \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qtextoption.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \
@@ -1097,9 +1074,7 @@
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qvectornd.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/QLabel \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/QMainWindow \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/QPushButton \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/QStackedWidget \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/QVBoxLayout \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/QWidget \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qabstractbutton.h \
@@ -1109,11 +1084,8 @@
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qlabel.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qlayout.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qlayoutitem.h \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qmainwindow.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qpushbutton.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qstackedwidget.h \
-  /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qtabwidget.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h \
