@@ -18,6 +18,7 @@
 #include "Clyde.h"
 #include "PowerUp.h"
 #include "PowerPellet.h"
+#include "AudioManager.h"
 #include <vector>
 
 // Enum stanów gry
@@ -25,7 +26,8 @@ enum GameState {
     MENU,
     PLAYING,
     PAUSED,
-    GAME_OVER
+    GAME_OVER,
+    WIN
 };
 
 class Game : public QWidget { // Główna klasa - logika gry
@@ -42,10 +44,13 @@ public:
     void resetGame();
     GameState getCurrentState() const { return currentState; }
     int getScore() const { return score; }
+    int getLives() const { return lives; }
+    AudioManager* getAudioManager() { return audioManager; }
 
 signals:
     void gameStateChanged(GameState newState);
     void scoreChanged(int newScore);
+    void livesChanged(int newLives);
 
 protected:
     void paintEvent(QPaintEvent *event) override; // Obsługuje "rysowanie"
@@ -79,12 +84,17 @@ private:
     int ghostEatenMultiplier; // Mnożnik punktów za zjedzenie duchów
 
     int score; // Zdobyte punkty
+    int lives; // Pozostałe życia
     bool gameOver; // Flaga Game Over
+    
+    AudioManager *audioManager; // Menedżer dźwięków
 
     void initializeGame(); // Inicjalizacja gry
     void checkCollisions(); // Sprawdza kolizje między Pacmanem-duchem i Pacmanem-punktem
     void drawScore(QPainter &painter); // Pokazuje/rysuje wynik gry
     void drawPauseScreen(QPainter &painter); // Rysuje ekran pauzy
+    void respawnPacman(); // Respawn Pacmana po śmierci
+    void checkWinCondition(); // Sprawdza warunek wygranej
     void updateGhostModes(float deltaTime); // Aktualizuje tryby duchów
     void activatePowerUp(); // Aktywuje power-up
     void updatePowerUpTimer(float deltaTime); // Aktualizuje timer power-upów

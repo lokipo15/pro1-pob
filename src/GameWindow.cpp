@@ -43,6 +43,14 @@ void GameWindow::setupUI() {
     connect(gameOverScreen, &GameOverScreen::exitRequested, this, &GameWindow::onExitRequested);
     stackedWidget->addWidget(gameOverScreen);
 
+    // Tworzenie ekranu wygranej
+    winScreen = new WinScreen(this);
+    connect(winScreen, &WinScreen::saveScoreRequested, this, &GameWindow::onWinSaveScoreRequested);
+    connect(winScreen, &WinScreen::viewScoreboardRequested, this, &GameWindow::onWinViewScoreboardRequested);
+    connect(winScreen, &WinScreen::playAgainRequested, this, &GameWindow::onWinPlayAgainRequested);
+    connect(winScreen, &WinScreen::exitRequested, this, &GameWindow::onWinExitRequested);
+    stackedWidget->addWidget(winScreen);
+
     // Tworzenie tablicy wyników
     scoreboardWidget = new ScoreboardWidget(this);
     connect(scoreboardWidget, &ScoreboardWidget::backRequested, this, &GameWindow::onScoreboardBackRequested);
@@ -66,6 +74,13 @@ void GameWindow::showGameOver() {
     gameOverScreen->setScore(game->getScore());
     stackedWidget->setCurrentWidget(gameOverScreen);
     gameOverScreen->setFocus();
+}
+
+void GameWindow::showWin() {
+    winScreen->setScore(game->getScore());
+    winScreen->setScoreManager(gameOverScreen->getScoreManager());
+    stackedWidget->setCurrentWidget(winScreen);
+    winScreen->setFocus();
 }
 
 void GameWindow::showScoreboard() {
@@ -113,8 +128,30 @@ void GameWindow::onGameStateChanged(GameState newState) {
         case GAME_OVER:
             showGameOver();
             break;
+        case WIN:
+            showWin();
+            break;
         case PAUSED:
             // Gra pozostaje widoczna, ale wyświetla informację o pauzie
             break;
     }
+}
+
+void GameWindow::onWinSaveScoreRequested(const QString &playerName, int score) {
+    gameOverScreen->getScoreManager()->saveScore(playerName, score);
+    showScoreboard();
+}
+
+void GameWindow::onWinViewScoreboardRequested() {
+    showScoreboard();
+}
+
+void GameWindow::onWinPlayAgainRequested() {
+    game->resetGame();
+    game->startGame();
+    showGame();
+}
+
+void GameWindow::onWinExitRequested() {
+    QApplication::quit();
 }

@@ -34,6 +34,7 @@ public:
     QPoint getPacmanStartPosition() const; // Pozycja startowa Pacmana
     std::vector<QPoint> getGhostStartPositions() const; // Pozycje startowe duchów
     std::vector<QPoint> getPowerUpPositions() const; // Pozycje power-upów
+    const std::set<QPoint, QPointCompare>& getCollectibles() const { return collectibles; }
 
 private:
     static const int BOARD_WIDTH = 20; // szerokość planszy

@@ -21,6 +21,7 @@ class GameOverScreen : public QWidget {
 public:
     explicit GameOverScreen(QWidget *parent = nullptr);
     void setScore(int score);
+    ScoreManager* getScoreManager() { return &scoreManager; }
 
     signals:
         void restartRequested();

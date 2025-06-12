@@ -7,9 +7,9 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 # Szuka QT6, jezeli nie ma to próbuje QT5
-find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
+find_package(Qt6 COMPONENTS Core Gui Widgets Multimedia REQUIRED)
 if (NOT Qt6_FOUND)
-    find_package(Qt5 COMPONENTS Core Gui Widgets REQUIRED)
+    find_package(Qt5 COMPONENTS Core Gui Widgets Multimedia REQUIRED)
 endif()
 # Pliki z logiką
 set(SOURCES
@@ -28,6 +28,8 @@ set(SOURCES
         src/PowerPellet.cpp
         src/MainMenu.cpp
         src/GameOverScreen.cpp
+        src/WinScreen.cpp
+        src/AudioManager.cpp
         src/ScoreboardWidget.cpp
         src/ScoreManager.cpp
 )
@@ -47,6 +49,8 @@ set(HEADERS
         src/PowerPellet.h
         src/MainMenu.h
         src/GameOverScreen.h
+        src/WinScreen.h
+        src/AudioManager.h
         src/ScoreboardWidget.h
         src/ScoreManager.h
 )
@@ -59,9 +63,9 @@ set(RESOURCES
 add_executable(PacmanGame ${SOURCES} ${HEADERS} ${RESOURCES})
 
 if (Qt6_FOUND)
-    target_link_libraries(PacmanGame PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets)
+    target_link_libraries(PacmanGame PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Multimedia)
 else()
-    target_link_libraries(PacmanGame PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets)
+    target_link_libraries(PacmanGame PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Multimedia)
 endif()
 
 # Problemy z odnalezieniem QT przez Debuger Konrada na Win 10...

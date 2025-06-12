@@ -1,19 +1,25 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'GameOverScreen.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
+** Created by: The Qt Meta Object Compiler version 69 (Qt 6.9.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include <memory>
 #include "../../../src/GameOverScreen.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
+
+#include <QtCore/qtmochelpers.h>
+
+#include <memory>
+
+
+#include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'GameOverScreen.h' doesn't include <QObject>."
-#elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.4.2. It"
+#elif Q_MOC_OUTPUT_REVISION != 69
+#error "This file was generated using the moc from 6.9.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -22,133 +28,71 @@
 #define Q_CONSTINIT
 #endif
 
-QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
+QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_stringdata_GameOverScreen_t {
-    uint offsetsAndSizes[22];
-    char stringdata0[15];
-    char stringdata1[17];
-    char stringdata2[1];
-    char stringdata3[18];
-    char stringdata4[14];
-    char stringdata5[20];
-    char stringdata6[17];
-    char stringdata7[18];
-    char stringdata8[14];
-    char stringdata9[20];
-    char stringdata10[19];
-};
-#define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_GameOverScreen_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_GameOverScreen_t qt_meta_stringdata_GameOverScreen = {
-    {
-        QT_MOC_LITERAL(0, 14),  // "GameOverScreen"
-        QT_MOC_LITERAL(15, 16),  // "restartRequested"
-        QT_MOC_LITERAL(32, 0),  // ""
-        QT_MOC_LITERAL(33, 17),  // "mainMenuRequested"
-        QT_MOC_LITERAL(51, 13),  // "exitRequested"
-        QT_MOC_LITERAL(65, 19),  // "scoreboardRequested"
-        QT_MOC_LITERAL(85, 16),  // "onRestartClicked"
-        QT_MOC_LITERAL(102, 17),  // "onMainMenuClicked"
-        QT_MOC_LITERAL(120, 13),  // "onExitClicked"
-        QT_MOC_LITERAL(134, 19),  // "onScoreboardClicked"
-        QT_MOC_LITERAL(154, 18)   // "onSaveScoreClicked"
-    },
-    "GameOverScreen",
-    "restartRequested",
-    "",
-    "mainMenuRequested",
-    "exitRequested",
-    "scoreboardRequested",
-    "onRestartClicked",
-    "onMainMenuClicked",
-    "onExitClicked",
-    "onScoreboardClicked",
-    "onSaveScoreClicked"
-};
-#undef QT_MOC_LITERAL
+struct qt_meta_tag_ZN14GameOverScreenE_t {};
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_GameOverScreen[] = {
+template <> constexpr inline auto GameOverScreen::qt_create_metaobjectdata<qt_meta_tag_ZN14GameOverScreenE_t>()
+{
+    namespace QMC = QtMocConstants;
+    QtMocHelpers::StringRefStorage qt_stringData {
+        "GameOverScreen",
+        "restartRequested",
+        "",
+        "mainMenuRequested",
+        "exitRequested",
+        "scoreboardRequested",
+        "onRestartClicked",
+        "onMainMenuClicked",
+        "onExitClicked",
+        "onScoreboardClicked",
+        "onSaveScoreClicked"
+    };
 
- // content:
-      10,       // revision
-       0,       // classname
-       0,    0, // classinfo
-       9,   14, // methods
-       0,    0, // properties
-       0,    0, // enums/sets
-       0,    0, // constructors
-       0,       // flags
-       4,       // signalCount
-
- // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   68,    2, 0x06,    1 /* Public */,
-       3,    0,   69,    2, 0x06,    2 /* Public */,
-       4,    0,   70,    2, 0x06,    3 /* Public */,
-       5,    0,   71,    2, 0x06,    4 /* Public */,
-
- // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       6,    0,   72,    2, 0x08,    5 /* Private */,
-       7,    0,   73,    2, 0x08,    6 /* Private */,
-       8,    0,   74,    2, 0x08,    7 /* Private */,
-       9,    0,   75,    2, 0x08,    8 /* Private */,
-      10,    0,   76,    2, 0x08,    9 /* Private */,
-
- // signals: parameters
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-
- // slots: parameters
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-
-       0        // eod
-};
-
+    QtMocHelpers::UintData qt_methods {
+        // Signal 'restartRequested'
+        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'mainMenuRequested'
+        QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'exitRequested'
+        QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'scoreboardRequested'
+        QtMocHelpers::SignalData<void()>(5, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'onRestartClicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onMainMenuClicked'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onExitClicked'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onScoreboardClicked'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onSaveScoreClicked'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+    };
+    QtMocHelpers::UintData qt_properties {
+    };
+    QtMocHelpers::UintData qt_enums {
+    };
+    return QtMocHelpers::metaObjectData<GameOverScreen, qt_meta_tag_ZN14GameOverScreenE_t>(QMC::MetaObjectFlag{}, qt_stringData,
+            qt_methods, qt_properties, qt_enums);
+}
 Q_CONSTINIT const QMetaObject GameOverScreen::staticMetaObject = { {
     QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
-    qt_meta_stringdata_GameOverScreen.offsetsAndSizes,
-    qt_meta_data_GameOverScreen,
+    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN14GameOverScreenE_t>.stringdata,
+    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN14GameOverScreenE_t>.data,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_GameOverScreen_t,
-        // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<GameOverScreen, std::true_type>,
-        // method 'restartRequested'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'mainMenuRequested'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'exitRequested'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'scoreboardRequested'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onRestartClicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onMainMenuClicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onExitClicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onScoreboardClicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onSaveScoreClicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
-    >,
+    qt_staticMetaObjectRelocatingContent<qt_meta_tag_ZN14GameOverScreenE_t>.metaTypes,
     nullptr
 } };
 
 void GameOverScreen::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
+    auto *_t = static_cast<GameOverScreen *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<GameOverScreen *>(_o);
-        (void)_t;
         switch (_id) {
         case 0: _t->restartRequested(); break;
         case 1: _t->mainMenuRequested(); break;
@@ -161,38 +105,17 @@ void GameOverScreen::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 8: _t->onSaveScoreClicked(); break;
         default: ;
         }
-    } else if (_c == QMetaObject::IndexOfMethod) {
-        int *result = reinterpret_cast<int *>(_a[0]);
-        {
-            using _t = void (GameOverScreen::*)();
-            if (_t _q_method = &GameOverScreen::restartRequested; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
-                *result = 0;
-                return;
-            }
-        }
-        {
-            using _t = void (GameOverScreen::*)();
-            if (_t _q_method = &GameOverScreen::mainMenuRequested; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
-                *result = 1;
-                return;
-            }
-        }
-        {
-            using _t = void (GameOverScreen::*)();
-            if (_t _q_method = &GameOverScreen::exitRequested; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
-                *result = 2;
-                return;
-            }
-        }
-        {
-            using _t = void (GameOverScreen::*)();
-            if (_t _q_method = &GameOverScreen::scoreboardRequested; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
-                *result = 3;
-                return;
-            }
-        }
     }
-    (void)_a;
+    if (_c == QMetaObject::IndexOfMethod) {
+        if (QtMocHelpers::indexOfMethod<void (GameOverScreen::*)()>(_a, &GameOverScreen::restartRequested, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (GameOverScreen::*)()>(_a, &GameOverScreen::mainMenuRequested, 1))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (GameOverScreen::*)()>(_a, &GameOverScreen::exitRequested, 2))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (GameOverScreen::*)()>(_a, &GameOverScreen::scoreboardRequested, 3))
+            return;
+    }
 }
 
 const QMetaObject *GameOverScreen::metaObject() const
@@ -203,7 +126,7 @@ const QMetaObject *GameOverScreen::metaObject() const
 void *GameOverScreen::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_GameOverScreen.stringdata0))
+    if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN14GameOverScreenE_t>.strings))
         return static_cast<void*>(this);
     return QWidget::qt_metacast(_clname);
 }
@@ -217,7 +140,8 @@ int GameOverScreen::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
         _id -= 9;
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+    }
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 9;
@@ -249,4 +173,3 @@ void GameOverScreen::scoreboardRequested()
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 QT_WARNING_POP
-QT_END_MOC_NAMESPACE

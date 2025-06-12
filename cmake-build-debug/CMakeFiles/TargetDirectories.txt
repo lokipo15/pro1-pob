@@ -1,5 +1,5 @@
-C:/Users/Konrad/Desktop/CLion/pro1-pob/cmake-build-debug/CMakeFiles/PacmanGame.dir
-C:/Users/Konrad/Desktop/CLion/pro1-pob/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Konrad/Desktop/CLion/pro1-pob/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Konrad/Desktop/CLion/pro1-pob/cmake-build-debug/CMakeFiles/PacmanGame_autogen_timestamp_deps.dir
-C:/Users/Konrad/Desktop/CLion/pro1-pob/cmake-build-debug/CMakeFiles/PacmanGame_autogen.dir
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/cmake-build-debug/CMakeFiles/PacmanGame.dir
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/cmake-build-debug/CMakeFiles/PacmanGame_autogen_timestamp_deps.dir
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/cmake-build-debug/CMakeFiles/PacmanGame_autogen.dir

@@ -9,7 +9,7 @@
 #include <QApplication>
 
 // Inicjalizacja planszy i obiektów
-Game::Game(QWidget *parent) : QWidget(parent), currentState(MENU), lastUpdateTime(0), score(0), gameOver(false),
+Game::Game(QWidget *parent) : QWidget(parent), currentState(MENU), lastUpdateTime(0), score(0), lives(3), gameOver(false),
     blinky(nullptr), pinky(nullptr), inky(nullptr), clyde(nullptr),
     powerUpTimer(0.0f), powerUpActive(false), ghostEatenMultiplier(1) {
 
@@ -24,6 +24,15 @@ Game::Game(QWidget *parent) : QWidget(parent), currentState(MENU), lastUpdateTim
 
     // Inicjalizacja komponentów gry (ale nie rozpoczynamy gry)
     initializeGame();
+    
+    // Inicjalizacja AudioManager
+    audioManager = new AudioManager(this);
+    
+    // Konfiguracja ścieżek do plików dźwiękowych (można zmienić przez użytkownika)
+    audioManager->setBackgroundMusicPath("sounds/background.wav");
+    audioManager->setPowerUpSoundPath("sounds/powerup.wav");
+    audioManager->setGhostEatingSoundPath("sounds/ghost_eat.wav");
+    audioManager->setDeathSoundPath("sounds/death.wav");
 }
 
 // Destruktor
@@ -110,12 +119,14 @@ void Game::startGame() {
     currentState = PLAYING;
     elapsedTimer.restart();
     lastUpdateTime = 0;
+    audioManager->playBackgroundMusic();
     emit gameStateChanged(currentState);
 }
 
 void Game::pauseGame() {
     if (currentState == PLAYING) {
         currentState = PAUSED;
+        audioManager->pauseBackgroundMusic();
         emit gameStateChanged(currentState);
     }
 }
@@ -125,14 +136,18 @@ void Game::resumeGame() {
         currentState = PLAYING;
         elapsedTimer.restart();
         lastUpdateTime = 0;
+        audioManager->resumeBackgroundMusic();
         emit gameStateChanged(currentState);
     }
 }
 
 void Game::resetGame() {
+    lives = 3;
     initializeGame();
     currentState = MENU;
+    audioManager->stopBackgroundMusic();
     emit gameStateChanged(currentState);
+    emit livesChanged(lives);
 }
 
 void Game::paintEvent(QPaintEvent *event) {
@@ -278,6 +293,9 @@ void Game::update() {
 
     // Sprawdzanie kolizji
     checkCollisions();
+    
+    // Sprawdzenie warunku wygranej
+    checkWinCondition();
 
     // Sprawdzenie czy gra się skończyła
     if (gameOver && currentState == PLAYING) {
@@ -347,6 +365,7 @@ void Game::checkCollisions() {
 
         // Aktywuj power-up
         activatePowerUp();
+        audioManager->playPowerUpSound();
     }
 
     // Sprawdzanie kolizji z duchami
@@ -367,12 +386,55 @@ void Game::checkCollisions() {
                 score += 200 * ghostEatenMultiplier;
                 emit scoreChanged(score);
                 ghostEatenMultiplier *= 2; // Podwajaj punkty za kolejne duchy
+                audioManager->playGhostEatingSound();
             } else if (ghost->getMode() != Ghost::EATEN) {
-                // Duch zjada Pacmana
-                gameOver = true;
+                // Duch zjada Pacmana - odejmij życie
+                lives--;
+                emit livesChanged(lives);
+                audioManager->playDeathSound();
+                
+                if (lives <= 0) {
+                    gameOver = true;
+                } else {
+                    respawnPacman();
+                }
                 break;
             }
         }
+    }
+}
+
+// Respawn Pacmana po śmierci
+void Game::respawnPacman() {
+    // Resetuj pozycję Pacmana do pozycji startowej
+    QPoint gridPos = board->getPacmanStartPosition();
+    pacman->setPosition(QPointF(gridPos.x(), gridPos.y()));
+    pacman->setDirection(Entity::None);
+    
+    // Resetuj duchy do pozycji startowych i trybu SCATTER
+    std::vector<QPoint> ghostPositions = board->getGhostStartPositions();
+    if (ghostPositions.size() >= 4) {
+        blinky->setPosition(QPointF(ghostPositions[0].x(), ghostPositions[0].y()));
+        pinky->setPosition(QPointF(ghostPositions[1].x(), ghostPositions[1].y()));
+        inky->setPosition(QPointF(ghostPositions[2].x(), ghostPositions[2].y()));
+        clyde->setPosition(QPointF(ghostPositions[3].x(), ghostPositions[3].y()));
+    }
+    
+    for (Ghost *ghost : ghosts) {
+        ghost->setMode(Ghost::SCATTER);
+    }
+    
+    // Resetuj power-up system
+    powerUpActive = false;
+    powerUpTimer = 0.0f;
+    ghostEatenMultiplier = 1;
+}
+
+// Sprawdź warunek wygranej
+void Game::checkWinCondition() {
+    if (board->getCollectibles().empty()) {
+        currentState = WIN;
+        emit gameStateChanged(currentState);
     }
 }
 
@@ -381,6 +443,7 @@ void Game::drawScore(QPainter &painter) {
     painter.setPen(Qt::white);
     painter.setFont(QFont("Arial", 12));
     painter.drawText(10, 20, QString("Wynik: %1").arg(score));
+    painter.drawText(10, 60, QString("Życia: %1").arg(lives));
 
     // Pokaż timer power-up jeśli aktywny
     if (powerUpActive) {
