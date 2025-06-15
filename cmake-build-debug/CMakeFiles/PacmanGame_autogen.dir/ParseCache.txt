@@ -2104,12 +2104,9 @@
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/QAudioOutput
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/QMediaPlayer
+ mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/QSoundEffect
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qaudio.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qaudiooutput.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qmediaplayer.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtaudio.h
+ mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qsoundeffect.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimedia-config.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimediaexports.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimediaglobal.h
@@ -4295,12 +4292,9 @@
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qtransform.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/QAudioOutput
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/QMediaPlayer
+ mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/QSoundEffect
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qaudio.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qaudiooutput.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qmediaplayer.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtaudio.h
+ mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qsoundeffect.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimedia-config.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimediaexports.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimediaglobal.h
@@ -5420,12 +5414,9 @@
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qvector2d.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qvectornd.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/QAudioOutput
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/QMediaPlayer
+ mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/QSoundEffect
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qaudio.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qaudiooutput.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qmediaplayer.h
- mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtaudio.h
+ mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qsoundeffect.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimedia-config.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimediaexports.h
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtMultimedia.framework/Versions/A/Headers/qtmultimediaglobal.h
@@ -7681,5 +7672,5 @@
  mdp:/opt/homebrew/Cellar/qt/6.9.0/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h
 /Users/gabriel/Documents/Studia/pob-pro-1-pacman/src/ScoreManager.cpp
 /Users/gabriel/Documents/Studia/pob-pro-1-pacman/src/GameOverScreen.cpp
-/Users/gabriel/Documents/Studia/pob-pro-1-pacman/src/Inky.cpp
 /Users/gabriel/Documents/Studia/pob-pro-1-pacman/src/Game.cpp
+/Users/gabriel/Documents/Studia/pob-pro-1-pacman/src/Inky.cpp

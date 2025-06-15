@@ -1,7 +1,10 @@
-//
-// Created by Gabriel Boruń on 25/04/2025.
-// Co-authored by Konrad Gębski on 25/04/2025.
-//
+/**
+ * @file Pacman.h
+ * @brief Klasa reprezentująca główną postać gracza - Pacmana
+ * @author Gabriel Boruń
+ * @author Konrad Gębski
+ * @date 25/04/2025
+ */
 
 #ifndef PACMAN_H
 #define PACMAN_H
@@ -10,29 +13,77 @@
 
 class GameBoard;
 
-class Pacman : public Entity { // Klasa Pacman'a dziedzicząca po Entity
+/**
+ * @brief Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza
+ * 
+ * Klasa dziedziczy po Entity i implementuje specyficzne zachowania Pacmana,
+ * takie jak animacja ust i reagowanie na sterowanie gracza.
+ */
+class Pacman : public Entity {
 public:
-    Pacman(const QPointF &startPos); // Konstruktor przyjmuje teraz QPointF
+    /**
+     * @brief Konstruktor Pacmana
+     * @param startPos Pozycja startowa jako QPointF
+     */
+    Pacman(const QPointF &startPos);
 
-    // Implementacja metod wirtualnych z Entity
+    /**
+     * @brief Rysuje Pacmana na ekranie z animacją ust
+     * @param painter Obiekt do rysowania
+     */
     void draw(QPainter &painter) override;
+    
+    /**
+     * @brief Porusza Pacmanem na planszy
+     * @param board Wskaźnik na planszę gry
+     * @param deltaTime Czas od ostatniej aktualizacji
+     */
     void move(GameBoard *board, float deltaTime) override;
 
-    // Metody specyficzne dla Pacmana
+    /**
+     * @brief Ustawia kierunek ruchu Pacmana
+     * @param dir Nowy kierunek ruchu
+     */
     void setDirection(Direction dir);
 
-    // Getter dla aktualnego kierunku (może być przydatny dla duchów)
+    /**
+     * @brief Zwraca aktualny kierunek ruchu Pacmana
+     * @return Aktualny kierunek ruchu
+     */
     Direction getCurrentDirection() const { return currentDirection; }
 
 private:
-    // Animacja otwierania i zamykania ust
-    float mouthAngle;
-    bool mouthOpening;
+    float mouthAngle; ///< Kąt otwarcia ust do animacji
+    bool mouthOpening; ///< Flaga określająca czy usta się otwierają
 
-    // Metoda pomocnicza do płynnego ruchu
+    /**
+     * @brief Wykonuje płynny ruch Pacmana
+     * @param board Wskaźnik na planszę gry
+     * @param deltaTime Czas od ostatniej aktualizacji
+     */
     void smoothMove(GameBoard *board, float deltaTime);
+    
+    /**
+     * @brief Sprawdza czy można skręcić w danej pozycji
+     * @param pos Pozycja do sprawdzenia
+     * @param dir Kierunek skrętu
+     * @param board Wskaźnik na planszę gry
+     * @return true jeśli można skręcić
+     */
     bool canTurnAt(const QPointF &pos, Direction dir, GameBoard *board) const;
+    
+    /**
+     * @brief Zwraca wyrównaną pozycję przy zmianie kierunku
+     * @param fromDir Kierunek z którego się poruszamy
+     * @param toDir Kierunek do którego się poruszamy
+     * @return Wyrównana pozycja
+     */
     QPointF getAlignedPosition(Direction fromDir, Direction toDir) const;
+    
+    /**
+     * @brief Aktualizuje animację otwierania i zamykania ust
+     * @param deltaTime Czas od ostatniej aktualizacji
+     */
     void updateMouthAnimation(float deltaTime);
 };
 

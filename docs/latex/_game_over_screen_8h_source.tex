@@ -1,0 +1,72 @@
+\doxysection{Game\+Over\+Screen.\+h}
+\hypertarget{_game_over_screen_8h_source}{}\label{_game_over_screen_8h_source}\index{src/GameOverScreen.h@{src/GameOverScreen.h}}
+\mbox{\hyperlink{_game_over_screen_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ GAMEOVERSCREEN\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ GAMEOVERSCREEN\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QHBoxLayout>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_score_manager_8h}{ScoreManager.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_over_screen_a9669afefc6737cff26040a2478a7e54b}{GameOverScreen}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_game_over_screen_a9669afefc6737cff26040a2478a7e54b}{GameOverScreen}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_over_screen_a6cdbca91cb1724bf1941b7f2d3964635}{setScore}}(\textcolor{keywordtype}{int}\ score);}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_score_manager}{ScoreManager}}*\ \mbox{\hyperlink{class_game_over_screen_a15bb6c2fbaa3abe054c8fb8079c95126}{getScoreManager}}()\ \{\ \textcolor{keywordflow}{return}\ \&scoreManager;\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ signals:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_over_screen_a1b79d9c4ac3235e512f6ef6ffcf2b9a6}{restartRequested}}();\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_over_screen_accc00b88ffe8b9394d39291a4a2d39a7}{mainMenuRequested}}();\ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_over_screen_a06ce6f5d42076741b21251fc9737e826}{exitRequested}}();\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_over_screen_aeac5ea5af3e0d23dbdbb5202945329ae}{scoreboardRequested}}();\ \ \ \ \ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_over_screen_ab9a28f0ea6fe584f32e119c896e0c9b9}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_over_screen_ab50690d1eb493edb0a41cf2bd006ee7f}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ onRestartClicked();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ onMainMenuClicked();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ onExitClicked();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ onScoreboardClicked();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ onSaveScoreClicked();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00087\ \ \ \ \ QPushButton\ *restartButton;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ QPushButton\ *mainMenuButton;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ QPushButton\ *exitButton;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ QPushButton\ *scoreboardButton;\ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ QPushButton\ *saveScoreButton;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ QLabel\ *gameOverLabel;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ QLabel\ *scoreLabel;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ QLabel\ *nameLabel;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ QLineEdit\ *nameInput;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ QVBoxLayout\ *layout;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ QHBoxLayout\ *nameLayout;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ selectedButton;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{int}\ finalScore;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ isNewHighScore;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ scoreSaved;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_score_manager}{ScoreManager}}\ scoreManager;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ updateButtonSelection();}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ checkHighScore();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ setupNameInput();}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ hideNameInput();}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

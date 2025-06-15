@@ -1,7 +1,7 @@
-//
-// Created by Gabriel Boruń on 25/04/2025.
-// Co-authored by Konrad Gębski on 25/04/2025.
-//
+///
+/// Created by Gabriel Boruń on 25/04/2025.
+/// Co-authored by Konrad Gębski on 25/04/2025.
+///
 
 #include "ScoreManager.h"
 #include <QFile>
@@ -17,13 +17,13 @@ ScoreManager::ScoreManager() {
 }
 
 bool ScoreManager::saveScore(const QString &playerName, int score) {
-    // Wczytaj istniejące wyniki z pliku
+    /// Wczytaj istniejące wyniki z pliku
     loadScores();
 
     scores.append(ScoreEntry(playerName, score));
     sortScores();
 
-    // Zachowaj tylko top 10 wyników
+    /// Zachowaj tylko top 10 wyników
     if (scores.size() > MAX_SCORES) {
         scores.resize(MAX_SCORES);
     }
@@ -32,13 +32,13 @@ bool ScoreManager::saveScore(const QString &playerName, int score) {
 }
 
 QVector<ScoreEntry> ScoreManager::loadTopScores() {
-    // Zawsze wczytaj najnowsze dane z pliku
+    /// Zawsze wczytaj najnowsze dane z pliku
     loadScores();
     return scores;
 }
 
 bool ScoreManager::isHighScore(int score) {
-    // Zawsze sprawdź najnowsze dane z pliku
+    /// Zawsze sprawdź najnowsze dane z pliku
     loadScores();
 
     if (scores.size() < MAX_SCORES) {
@@ -57,7 +57,7 @@ bool ScoreManager::loadScores() {
 
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly)) {
-        return true; // Brak pliku nie jest błędem
+        return true; /// Brak pliku nie jest błędem
     }
 
     QDataStream in(&file);

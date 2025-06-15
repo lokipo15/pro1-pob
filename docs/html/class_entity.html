@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POB Pro 1 - PacMan: Dokumentacja klasy Entity</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POB Pro 1 - PacMan
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_entity.html','','class_entity-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy Entity<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Bazowa klasa dla wszystkich ruchomych obiektów w grze.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_entity_8h_source.html">Entity.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla Entity</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_entity.png" usemap="#Entity_map" alt=""/>
+  <map id="Entity_map" name="Entity_map">
+<area href="class_ghost.html" title="Klasa bazowa reprezentująca ducha w grze Pacman." alt="Ghost" shape="rect" coords="100,56,157,80"/>
+<area href="class_pacman.html" title="Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza." alt="Pacman" shape="rect" coords="167,56,224,80"/>
+<area href="class_blinky.html" title="Klasa reprezentująca ducha Blinky (czerwony duch)" alt="Blinky" shape="rect" coords="0,112,57,136"/>
+<area href="class_clyde.html" title="Klasa reprezentująca ducha Clyde (pomarańczowy duch)" alt="Clyde" shape="rect" coords="67,112,124,136"/>
+<area href="class_inky.html" title="Klasa reprezentująca ducha Inky (niebieski duch)" alt="Inky" shape="rect" coords="134,112,191,136"/>
+<area href="class_pinky.html" title="Klasa reprezentująca ducha Pinky (różowy duch)" alt="Pinky" shape="rect" coords="201,112,258,136"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Typy publiczne</h2></td></tr>
+<tr class="memitem:ac6ff3a9435d7dacb378891eadd127034" id="r_ac6ff3a9435d7dacb378891eadd127034"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6ff3a9435d7dacb378891eadd127034">Direction</a> { <br />
+&#160;&#160;<a class="el" href="#ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297">None</a>
+, <a class="el" href="#ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51">Up</a>
+, <a class="el" href="#ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb">Down</a>
+, <a class="el" href="#ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c">Left</a>
+, <br />
+&#160;&#160;<a class="el" href="#ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362">Right</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ac6ff3a9435d7dacb378891eadd127034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeracja kierunków ruchu.  <a href="#ac6ff3a9435d7dacb378891eadd127034">Więcej...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a69dceaa4d0b6c30da97723f83a357de3" id="r_a69dceaa4d0b6c30da97723f83a357de3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69dceaa4d0b6c30da97723f83a357de3">Entity</a> (const QPointF &amp;startPos)</td></tr>
+<tr class="memdesc:a69dceaa4d0b6c30da97723f83a357de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor encji.  <br /></td></tr>
+<tr class="memitem:ac479d009ddde62dfb378ca0a70d81307" id="r_ac479d009ddde62dfb378ca0a70d81307"><td class="memItemLeft" align="right" valign="top"><a id="ac479d009ddde62dfb378ca0a70d81307" name="ac479d009ddde62dfb378ca0a70d81307"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Entity</b> ()=default</td></tr>
+<tr class="memdesc:ac479d009ddde62dfb378ca0a70d81307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wirtualny destruktor. <br /></td></tr>
+<tr class="memitem:a8d7d83b17cda5e4f2254f0f01070c331" id="r_a8d7d83b17cda5e4f2254f0f01070c331"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d7d83b17cda5e4f2254f0f01070c331">draw</a> (QPainter &amp;painter)=0</td></tr>
+<tr class="memdesc:a8d7d83b17cda5e4f2254f0f01070c331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje encję na ekranie.  <br /></td></tr>
+<tr class="memitem:ac60c3042032c2f66bac0bb363addf6ba" id="r_ac60c3042032c2f66bac0bb363addf6ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac60c3042032c2f66bac0bb363addf6ba">move</a> (<a class="el" href="class_game_board.html">GameBoard</a> *board, float deltaTime)=0</td></tr>
+<tr class="memdesc:ac60c3042032c2f66bac0bb363addf6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Porusza encją na planszy.  <br /></td></tr>
+<tr class="memitem:ae284253c07a9664cdedb5759f04918c6" id="r_ae284253c07a9664cdedb5759f04918c6"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae284253c07a9664cdedb5759f04918c6">getGridPosition</a> () const</td></tr>
+<tr class="memdesc:ae284253c07a9664cdedb5759f04918c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca pozycję encji na siatce.  <br /></td></tr>
+<tr class="memitem:a7772c152c566454de1d20144147afb12" id="r_a7772c152c566454de1d20144147afb12"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7772c152c566454de1d20144147afb12">getPosition</a> () const</td></tr>
+<tr class="memdesc:a7772c152c566454de1d20144147afb12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca aktualną pozycję encji.  <br /></td></tr>
+<tr class="memitem:a659e5b54903bd6416ddf16e1c3993ce1" id="r_a659e5b54903bd6416ddf16e1c3993ce1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a659e5b54903bd6416ddf16e1c3993ce1">setPosition</a> (const QPointF &amp;pos)</td></tr>
+<tr class="memdesc:a659e5b54903bd6416ddf16e1c3993ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia nową pozycję encji.  <br /></td></tr>
+<tr class="memitem:a69ae771d228bd6f92318754e9632c59c" id="r_a69ae771d228bd6f92318754e9632c59c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69ae771d228bd6f92318754e9632c59c">isAtGridCenter</a> () const</td></tr>
+<tr class="memdesc:a69ae771d228bd6f92318754e9632c59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy encja jest w centrum komórki siatki.  <br /></td></tr>
+<tr class="memitem:a3d98a18fc73a18d340f7309e9ea32f58" id="r_a3d98a18fc73a18d340f7309e9ea32f58"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d98a18fc73a18d340f7309e9ea32f58">getTargetPosition</a> () const</td></tr>
+<tr class="memdesc:a3d98a18fc73a18d340f7309e9ea32f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca docelową pozycję encji.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Metody chronione</h2></td></tr>
+<tr class="memitem:aad253e8a3c79d8bc022c88a32063c546" id="r_aad253e8a3c79d8bc022c88a32063c546"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad253e8a3c79d8bc022c88a32063c546">calculateNextPosition</a> (<a class="el" href="#ac6ff3a9435d7dacb378891eadd127034">Direction</a> dir, float deltaTime) const</td></tr>
+<tr class="memdesc:aad253e8a3c79d8bc022c88a32063c546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oblicza następną pozycję na podstawie kierunku i czasu.  <br /></td></tr>
+<tr class="memitem:a714d5ff2b037813b99c4d5586558e236" id="r_a714d5ff2b037813b99c4d5586558e236"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a714d5ff2b037813b99c4d5586558e236">canMoveTo</a> (const QPoint &amp;gridPos, <a class="el" href="class_game_board.html">GameBoard</a> *board) const</td></tr>
+<tr class="memdesc:a714d5ff2b037813b99c4d5586558e236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy można przejść na daną pozycję  <br /></td></tr>
+<tr class="memitem:af23f754ef82eeeeb2470a049f00f5db3" id="r_af23f754ef82eeeeb2470a049f00f5db3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af23f754ef82eeeeb2470a049f00f5db3">updateTargetPosition</a> ()</td></tr>
+<tr class="memdesc:af23f754ef82eeeeb2470a049f00f5db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualizuje docelową pozycję encji.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Atrybuty chronione</h2></td></tr>
+<tr class="memitem:a4cafeaa4555283d5839355c498f672a9" id="r_a4cafeaa4555283d5839355c498f672a9"><td class="memItemLeft" align="right" valign="top"><a id="a4cafeaa4555283d5839355c498f672a9" name="a4cafeaa4555283d5839355c498f672a9"></a>
+QPointF&#160;</td><td class="memItemRight" valign="bottom"><b>position</b></td></tr>
+<tr class="memdesc:a4cafeaa4555283d5839355c498f672a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualna pozycja encji w pikselach. <br /></td></tr>
+<tr class="memitem:a341c5a42a6441fd6951d0b9b6d215429" id="r_a341c5a42a6441fd6951d0b9b6d215429"><td class="memItemLeft" align="right" valign="top"><a id="a341c5a42a6441fd6951d0b9b6d215429" name="a341c5a42a6441fd6951d0b9b6d215429"></a>
+QPointF&#160;</td><td class="memItemRight" valign="bottom"><b>targetPosition</b></td></tr>
+<tr class="memdesc:a341c5a42a6441fd6951d0b9b6d215429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Docelowa pozycja na siatce. <br /></td></tr>
+<tr class="memitem:ad8036c2cfb6749a5d94134d88c779e5e" id="r_ad8036c2cfb6749a5d94134d88c779e5e"><td class="memItemLeft" align="right" valign="top"><a id="ad8036c2cfb6749a5d94134d88c779e5e" name="ad8036c2cfb6749a5d94134d88c779e5e"></a>
+<a class="el" href="#ac6ff3a9435d7dacb378891eadd127034">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>currentDirection</b></td></tr>
+<tr class="memdesc:ad8036c2cfb6749a5d94134d88c779e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualny kierunek ruchu. <br /></td></tr>
+<tr class="memitem:a071992c732954678a0393a4e56561adb" id="r_a071992c732954678a0393a4e56561adb"><td class="memItemLeft" align="right" valign="top"><a id="a071992c732954678a0393a4e56561adb" name="a071992c732954678a0393a4e56561adb"></a>
+<a class="el" href="#ac6ff3a9435d7dacb378891eadd127034">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>nextDirection</b></td></tr>
+<tr class="memdesc:a071992c732954678a0393a4e56561adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Następny kierunek ruchu (buforowany) <br /></td></tr>
+<tr class="memitem:a62588bbdc2d530d9854cd07ca558c9aa" id="r_a62588bbdc2d530d9854cd07ca558c9aa"><td class="memItemLeft" align="right" valign="top"><a id="a62588bbdc2d530d9854cd07ca558c9aa" name="a62588bbdc2d530d9854cd07ca558c9aa"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>moveSpeed</b></td></tr>
+<tr class="memdesc:a62588bbdc2d530d9854cd07ca558c9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prędkość ruchu w komórkach na sekundę <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-attribs" class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
+Statyczne atrybuty chronione</h2></td></tr>
+<tr class="memitem:a69d77a7b2efe097c0352d933ea9567f1" id="r_a69d77a7b2efe097c0352d933ea9567f1"><td class="memItemLeft" align="right" valign="top"><a id="a69d77a7b2efe097c0352d933ea9567f1" name="a69d77a7b2efe097c0352d933ea9567f1"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><b>CELL_SIZE</b> = 30</td></tr>
+<tr class="memdesc:a69d77a7b2efe097c0352d933ea9567f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rozmiar pojedynczej komórki siatki w pikselach. <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Bazowa klasa dla wszystkich ruchomych obiektów w grze. </p>
+<p>Klasa abstrakcyjna definiująca wspólny interfejs i funkcjonalność dla Pacmana, duchów i innych ruchomych obiektów. </p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Dokumentacja składowych wyliczanych</h2>
+<a id="ac6ff3a9435d7dacb378891eadd127034" name="ac6ff3a9435d7dacb378891eadd127034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6ff3a9435d7dacb378891eadd127034">&#9670;&#160;</a></span>Direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ac6ff3a9435d7dacb378891eadd127034">Entity::Direction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumeracja kierunków ruchu. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Wartości wyliczeń</th></tr><tr><td class="fieldname"><a id="ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297" name="ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297"></a>None&#160;</td><td class="fielddoc"><p>Brak ruchu. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51" name="ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51"></a>Up&#160;</td><td class="fielddoc"><p>Ruch w górę </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb" name="ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb"></a>Down&#160;</td><td class="fielddoc"><p>Ruch w dół </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c" name="ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c"></a>Left&#160;</td><td class="fielddoc"><p>Ruch w lewo. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362" name="ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362"></a>Right&#160;</td><td class="fielddoc"><p>Ruch w prawo. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a69dceaa4d0b6c30da97723f83a357de3" name="a69dceaa4d0b6c30da97723f83a357de3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69dceaa4d0b6c30da97723f83a357de3">&#9670;&#160;</a></span>Entity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Entity::Entity </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;</td>          <td class="paramname"><span class="paramname"><em>startPos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor encji. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startPos</td><td>Pozycja startowa encji</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Created by Gabriel Boruń on 25/04/2025. Co-authored by Konrad Gębski on 25/04/2025. </p>
+<p>Domyślna prędkość: 5 komórek na sekundę</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="aad253e8a3c79d8bc022c88a32063c546" name="aad253e8a3c79d8bc022c88a32063c546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad253e8a3c79d8bc022c88a32063c546">&#9670;&#160;</a></span>calculateNextPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF Entity::calculateNextPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac6ff3a9435d7dacb378891eadd127034">Direction</a></td>          <td class="paramname"><span class="paramname"><em>dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Oblicza następną pozycję na podstawie kierunku i czasu. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Kierunek ruchu </td></tr>
+    <tr><td class="paramname">deltaTime</td><td>Czas od ostatniej aktualizacji </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Obliczona pozycja </dd></dl>
+
+</div>
+</div>
+<a id="a714d5ff2b037813b99c4d5586558e236" name="a714d5ff2b037813b99c4d5586558e236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a714d5ff2b037813b99c4d5586558e236">&#9670;&#160;</a></span>canMoveTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Entity::canMoveTo </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;</td>          <td class="paramname"><span class="paramname"><em>gridPos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_game_board.html">GameBoard</a> *</td>          <td class="paramname"><span class="paramname"><em>board</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sprawdza czy można przejść na daną pozycję </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gridPos</td><td>Pozycja na siatce do sprawdzenia </td></tr>
+    <tr><td class="paramname">board</td><td>Wskaźnik na planszę gry </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>true jeśli ruch jest możliwy </dd></dl>
+
+</div>
+</div>
+<a id="a8d7d83b17cda5e4f2254f0f01070c331" name="a8d7d83b17cda5e4f2254f0f01070c331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d7d83b17cda5e4f2254f0f01070c331">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Entity::draw </td>
+          <td>(</td>
+          <td class="paramtype">QPainter &amp;</td>          <td class="paramname"><span class="paramname"><em>painter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rysuje encję na ekranie. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">painter</td><td>Obiekt do rysowania </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementowany w <a class="el" href="class_ghost.html#a18e4d17093a402c92a4aefee928d96ea">Ghost</a> i <a class="el" href="class_pacman.html#af59479cfe7b24f7716ba0421a696161a">Pacman</a>.</p>
+
+</div>
+</div>
+<a id="ae284253c07a9664cdedb5759f04918c6" name="ae284253c07a9664cdedb5759f04918c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae284253c07a9664cdedb5759f04918c6">&#9670;&#160;</a></span>getGridPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint Entity::getGridPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zwraca pozycję encji na siatce. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Pozycja na siatce jako QPoint </dd></dl>
+<p>Konwersja pozycji float na pozycję na siatce</p>
+
+</div>
+</div>
+<a id="a7772c152c566454de1d20144147afb12" name="a7772c152c566454de1d20144147afb12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7772c152c566454de1d20144147afb12">&#9670;&#160;</a></span>getPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF Entity::getPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca aktualną pozycję encji. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Pozycja jako QPointF </dd></dl>
+
+</div>
+</div>
+<a id="a3d98a18fc73a18d340f7309e9ea32f58" name="a3d98a18fc73a18d340f7309e9ea32f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d98a18fc73a18d340f7309e9ea32f58">&#9670;&#160;</a></span>getTargetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF Entity::getTargetPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca docelową pozycję encji. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Docelowa pozycja jako QPointF </dd></dl>
+
+</div>
+</div>
+<a id="a69ae771d228bd6f92318754e9632c59c" name="a69ae771d228bd6f92318754e9632c59c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69ae771d228bd6f92318754e9632c59c">&#9670;&#160;</a></span>isAtGridCenter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Entity::isAtGridCenter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sprawdza czy encja jest w centrum komórki siatki. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true jeśli encja jest wycentrowana </dd></dl>
+<p>Sprawdzenie czy encja jest wystarczająco blisko centrum komórki</p>
+<p>Zwiększona tolerancja dla łatwiejszego skręcania</p>
+<p>Sprawdzamy czy jesteśmy blisko środka komórki (0.5, 0.5)</p>
+<p>Lub blisko krawędzi komórki (0.0 lub 1.0)</p>
+
+</div>
+</div>
+<a id="ac60c3042032c2f66bac0bb363addf6ba" name="ac60c3042032c2f66bac0bb363addf6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac60c3042032c2f66bac0bb363addf6ba">&#9670;&#160;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Entity::move </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_board.html">GameBoard</a> *</td>          <td class="paramname"><span class="paramname"><em>board</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Porusza encją na planszy. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>Wskaźnik na planszę gry </td></tr>
+    <tr><td class="paramname">deltaTime</td><td>Czas od ostatniej aktualizacji </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implementowany w <a class="el" href="class_ghost.html#aff1eed60a7debfad2db280ae68ba2532">Ghost</a> i <a class="el" href="class_pacman.html#a4dcd693ea44f773d483841fe1cfe8179">Pacman</a>.</p>
+
+</div>
+</div>
+<a id="a659e5b54903bd6416ddf16e1c3993ce1" name="a659e5b54903bd6416ddf16e1c3993ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659e5b54903bd6416ddf16e1c3993ce1">&#9670;&#160;</a></span>setPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entity::setPosition </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ustawia nową pozycję encji. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Nowa pozycja </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af23f754ef82eeeeb2470a049f00f5db3" name="af23f754ef82eeeeb2470a049f00f5db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af23f754ef82eeeeb2470a049f00f5db3">&#9670;&#160;</a></span>updateTargetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entity::updateTargetPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualizuje docelową pozycję encji. </p>
+<p>Aktualizuje pozycję docelową na podstawie obecnego kierunku</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>src/<a class="el" href="_entity_8h_source.html">Entity.h</a></li>
+<li>src/<b>Entity.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_entity.html">Entity</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+\doxysection{Audio\+Manager.\+h}
+\hypertarget{_audio_manager_8h_source}{}\label{_audio_manager_8h_source}\index{src/AudioManager.h@{src/AudioManager.h}}
+\mbox{\hyperlink{_audio_manager_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ AUDIOMANAGER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ AUDIOMANAGER\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QSoundEffect>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_audio_manager_ab2ad9c3998482ad52bc74696844cb2e7}{AudioManager}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_audio_manager_ab2ad9c3998482ad52bc74696844cb2e7}{AudioManager}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_audio_manager_ad94dc46723c6d7cf8c81fc3772a842aa}{\string~AudioManager}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_a11b968de3b0735407d87d5983240c252}{setBackgroundMusicPath}}(\textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_af526326b9fe558cea2fb26cf22b9edbb}{setPowerUpSoundPath}}(\textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_a2873a51c53dd3fa0b528b4f736ca222f}{setGhostEatingSoundPath}}(\textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_a0d184c0118dfcb6cdbc835f632c346ab}{setDeathSoundPath}}(\textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_a5bf9194a419f951b280b2ea54e426a8b}{playBackgroundMusic}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_aecff551d854e3900d78c7b4a2f8020f3}{stopBackgroundMusic}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_a95370b0ffb6513251ec1f56a4635864b}{pauseBackgroundMusic}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_ad6de66e9f3b20cad22df31c2dd269afd}{resumeBackgroundMusic}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_a832d9af1e511585533d81cd39a73bd18}{playPowerUpSound}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_adc2266ce67007199a9901481b458446e}{playGhostEatingSound}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_a5b7eddf2680c00d84a0b9ca66e739189}{playDeathSound}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_a0b67478424e9a402031154242dcc4b7e}{setSoundEffectsVolume}}(\textcolor{keywordtype}{int}\ volume);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_audio_manager_a60bb785b6e0a2326e3bff74294325c30}{setAudioEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_audio_manager_a74d5e75dbdbb5f3e29ab5bf9876525a3}{isAudioEnabled}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ audioEnabled;\ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00104\ \ \ \ \ QSoundEffect\ *backgroundMusic;\ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ QSoundEffect\ *powerUpSound;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ QSoundEffect\ *ghostEatingSound;\ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ QSoundEffect\ *deathSound;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ QString\ backgroundMusicPath;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ QString\ powerUpSoundPath;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ QString\ ghostEatingSoundPath;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ QString\ deathSoundPath;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ musicVolume;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{int}\ soundEffectsVolume;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{bool}\ audioEnabled;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AUDIOMANAGER\_H}}
+
+\end{DoxyCode}

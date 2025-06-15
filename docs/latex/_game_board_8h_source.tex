@@ -1,0 +1,55 @@
+\doxysection{Game\+Board.\+h}
+\hypertarget{_game_board_8h_source}{}\label{_game_board_8h_source}\index{src/GameBoard.h@{src/GameBoard.h}}
+\mbox{\hyperlink{_game_board_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ GAMEBOARD\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ GAMEBOARD\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_q_point_compare}{QPointCompare}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_q_point_compare_a0ff23e5411c85dc5c8d5ae37c14a698e}{operator()}}(\textcolor{keyword}{const}\ QPoint\&\ a,\ \textcolor{keyword}{const}\ QPoint\&\ b)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a.y()\ !=\ b.y())\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.y()\ <\ b.y();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.x()\ <\ b.x();}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_board_ac622cadcc81b3ffb71d8feb4506c04ac}{GameBoard}}\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_game_board_ac622cadcc81b3ffb71d8feb4506c04ac}{GameBoard}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_board_aef097fdd165ec8666d95f22bbeaefd18}{draw}}(QPainter\ \&painter);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_board_a0b8d678d285ef37f476dee7fdd2e8839}{isWall}}(\textcolor{keyword}{const}\ QPoint\ \&pos)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_board_a1be80c1b5d2e1272256ef2d773f5988e}{isCollectible}}(\textcolor{keyword}{const}\ QPoint\ \&pos)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_board_a60425a1139d7d304211ad2febcdd1d95}{isPowerUp}}(\textcolor{keyword}{const}\ QPoint\ \&pos)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_board_a5ab8d16d8938dd12ccbe1ce3604eada4}{removeCollectible}}(\textcolor{keyword}{const}\ QPoint\ \&pos);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_board_ac632b0408e33210b21cd9ac72c5f07cd}{removePowerUp}}(\textcolor{keyword}{const}\ QPoint\ \&pos);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_game_board_a990f43e96ff29f23c02e9e9c4cd9ae3d}{getPacmanStartPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ \ \ \ \ std::vector<QPoint>\ \mbox{\hyperlink{class_game_board_ad89108697bf601dac4662de386ba2aea}{getGhostStartPositions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ \ \ \ \ std::vector<QPoint>\ \mbox{\hyperlink{class_game_board_aad694ac050802816b1a58ff64bfef679}{getPowerUpPositions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{const}\ std::set<QPoint,\ QPointCompare>\&\ \mbox{\hyperlink{class_game_board_aa2c14bbe3a67a9b309dcbdc3ca835c99}{getCollectibles}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ collectibles;\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ BOARD\_WIDTH\ =\ 20;\ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ BOARD\_HEIGHT\ =\ 20;\ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ CELL\_SIZE\ =\ 30;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ board[BOARD\_HEIGHT][BOARD\_WIDTH];}
+\DoxyCodeLine{00115\ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ std::set<QPoint,\ QPointCompare>\ collectibles;\ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ std::set<QPoint,\ QPointCompare>\ powerUps;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeBoard();}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

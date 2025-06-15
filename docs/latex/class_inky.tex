@@ -1,0 +1,249 @@
+\doxysection{Dokumentacja klasy Inky}
+\hypertarget{class_inky}{}\label{class_inky}\index{Inky@{Inky}}
+
+
+Klasa reprezentująca ducha \doxylink{class_inky}{Inky} (niebieski duch)  
+
+
+
+
+{\ttfamily \#include $<$Inky.\+h$>$}
+
+Diagram dziedziczenia dla Inky\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_inky}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_inky_a40a1bd7e49212458b85750630930c92a}{Inky}} (const QPointF \&start\+Pos, \mbox{\hyperlink{class_blinky}{Blinky}} \texorpdfstring{$\ast$}{*}blinky)
+\begin{DoxyCompactList}\small\item\em Konstruktor ducha \doxylink{class_inky}{Inky}. \end{DoxyCompactList}\item 
+QPoint \mbox{\hyperlink{class_inky_a6449a8e8b604e3b1ed74435327cb32dc}{calculate\+Target}} (\mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}pacman) override
+\begin{DoxyCompactList}\small\item\em Oblicza cel dla \doxylink{class_inky}{Inky} -\/ inteligentne określanie ruchu. \end{DoxyCompactList}\item 
+QPoint \mbox{\hyperlink{class_inky_ae3a60782527d776a078d56fc05b45b44}{get\+Scatter\+Corner}} () const override
+\begin{DoxyCompactList}\small\item\em Zwraca róg planszy dla trybu SCATTER. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_ghost}{Ghost}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ghost_ac13c73d9b6c94786c988e9d129bb19c8}{Ghost}} (const QPointF \&start\+Pos)
+\begin{DoxyCompactList}\small\item\em Konstruktor ducha. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ghost} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a18e4d17093a402c92a4aefee928d96ea}{draw}} (QPainter \&painter) override
+\begin{DoxyCompactList}\small\item\em Rysuje ducha na ekranie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_aff1eed60a7debfad2db280ae68ba2532}{move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Porusza duchem na planszy. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_ghost_aa5d42ffde6f9ead2fbd66c6235d83bef}{move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time, \mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}pacman)
+\begin{DoxyCompactList}\small\item\em Porusza duchem z uwzględnieniem pozycji Pacmana. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_ac729f7259245beb6fecc30cb829623c8}{set\+Mode}} (\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} mode)
+\begin{DoxyCompactList}\small\item\em Ustawia tryb zachowania ducha. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} \mbox{\hyperlink{class_ghost_aa7f405a5edca46d02bb778d250e5d7d4}{get\+Mode}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera aktualny tryb ducha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a3d27792b048b42720c8fd36cd43bc38e}{set\+Color}} (const QColor \&color)
+\begin{DoxyCompactList}\small\item\em Ustawia kolor ducha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_aa2606d94d293abe813f2a7f28270f386}{update\+Mode\+Timer}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Aktualizuje licznik czasu trybu. \end{DoxyCompactList}\item 
+void {\bfseries reset\+Mode\+Timer} ()
+\begin{DoxyCompactList}\small\item\em Resetuje licznik czasu trybu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_aceb07fd1ccf6223fa32545bd0cc53b0a}{enter\+Frightened\+Mode}} (float duration)
+\begin{DoxyCompactList}\small\item\em Wprowadza ducha w tryb przestraszenia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a82ccb928d0b0176cb6392f1bd69cd834}{update\+Frightened\+Mode}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Aktualizuje tryb przestraszenia. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ghost_afe3fcf86acc302ad0690d877b93864f9}{is\+Vulnerable}} () const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy duch jest podatny na zjedzenie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a5b4b8e6ca0b6bcada10dcdc24f97a065}{eat\+Ghost}} ()
+\begin{DoxyCompactList}\small\item\em Obsługuje zjedzenie ducha przez Pacmana. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_a69dceaa4d0b6c30da97723f83a357de3}{Entity}} (const QPointF \&start\+Pos)
+\begin{DoxyCompactList}\small\item\em Konstruktor encji. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Entity} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor. \end{DoxyCompactList}\item 
+QPoint \mbox{\hyperlink{class_entity_ae284253c07a9664cdedb5759f04918c6}{get\+Grid\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca pozycję encji na siatce. \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_entity_a7772c152c566454de1d20144147afb12}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca aktualną pozycję encji. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_a659e5b54903bd6416ddf16e1c3993ce1}{set\+Position}} (const QPointF \&pos)
+\begin{DoxyCompactList}\small\item\em Ustawia nową pozycję encji. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entity_a69ae771d228bd6f92318754e9632c59c}{is\+At\+Grid\+Center}} () const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy encja jest w centrum komórki siatki. \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_entity_a3d98a18fc73a18d340f7309e9ea32f58}{get\+Target\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca docelową pozycję encji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Dodatkowe dziedziczone składowe}
+\doxysubsection*{Typy publiczne dziedziczone z \mbox{\hyperlink{class_ghost}{Ghost}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} \{ \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a59b4e4d81b72218ad63002c06697c82a}{CHASE}}
+, \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a21aa0aa1406a5ae4b58571826d7e255e}{SCATTER}}
+, \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d}{FRIGHTENED}}
+, \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041ad4a906903e8e5b135f507b8387ab6f61}{EATEN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Wyliczenie trybów zachowania ducha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typy publiczne dziedziczone z \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \{ \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297}{None}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51}{Up}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb}{Down}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c}{Left}}
+, \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362}{Right}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeracja kierunków ruchu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody chronione dziedziczone z \mbox{\hyperlink{class_ghost}{Ghost}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_ghost_a612359018e9883141a71c79201bb1194}{get\+Random\+Direction}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca losowy kierunek ruchu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_ghost_ac77b593eacc6b548df736e85be531354}{get\+Opposite\+Direction}} (\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} dir)
+\begin{DoxyCompactList}\small\item\em Zwraca kierunek przeciwny do podanego. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ghost_a4b80d47c7b75cfddbf275d07e448a5d9}{is\+Intersection}} (const QPoint \&pos, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Sprawdza czy pozycja jest skrzyżowaniem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a38e474f48134b4d0ecf5ec2d4e464e98}{choose\+Direction\+At\+Intersection}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Wybiera kierunek na skrzyżowaniu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a53878184ac765d3ebc6341d7b9b3d45d}{smooth\+Move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Wykonuje płynny ruch ducha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a781aa20f1e8ce4597ce2f124c25fa110}{choose\+Target\+Based\+Direction}} (const QPoint \&target, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Wybiera kierunek na podstawie pozycji celu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody chronione dziedziczone z \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_entity_aad253e8a3c79d8bc022c88a32063c546}{calculate\+Next\+Position}} (\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} dir, float delta\+Time) const
+\begin{DoxyCompactList}\small\item\em Oblicza następną pozycję na podstawie kierunku i czasu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entity_a714d5ff2b037813b99c4d5586558e236}{can\+Move\+To}} (const QPoint \&grid\+Pos, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board) const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy można przejść na daną pozycję \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_af23f754ef82eeeeb2470a049f00f5db3}{update\+Target\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Aktualizuje docelową pozycję encji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty chronione dziedziczone z \mbox{\hyperlink{class_ghost}{Ghost}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} {\bfseries current\+Mode}
+\begin{DoxyCompactList}\small\item\em Aktualny tryb zachowania ducha. \end{DoxyCompactList}\item 
+QColor {\bfseries normal\+Color}
+\begin{DoxyCompactList}\small\item\em Normalny kolor ducha. \end{DoxyCompactList}\item 
+QColor {\bfseries frightened\+Color}
+\begin{DoxyCompactList}\small\item\em Kolor gdy przestraszony. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} {\bfseries last\+Valid\+Direction}
+\begin{DoxyCompactList}\small\item\em Ostatni prawidłowy kierunek ruchu. \end{DoxyCompactList}\item 
+float {\bfseries direction\+Change\+Timer}
+\begin{DoxyCompactList}\small\item\em Timer do losowej zmiany kierunku. \end{DoxyCompactList}\item 
+float {\bfseries mode\+Timer}
+\begin{DoxyCompactList}\small\item\em Licznik czasu aktualnego trybu. \end{DoxyCompactList}\item 
+float {\bfseries frightened\+Timer}
+\begin{DoxyCompactList}\small\item\em Licznik czasu trybu przestraszenia. \end{DoxyCompactList}\item 
+float {\bfseries frightened\+Duration}
+\begin{DoxyCompactList}\small\item\em Czas trwania trybu przestraszenia. \end{DoxyCompactList}\item 
+float {\bfseries blink\+Timer}
+\begin{DoxyCompactList}\small\item\em Timer do animacji "{}błyskania"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty chronione dziedziczone z \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Aktualna pozycja encji w pikselach. \end{DoxyCompactList}\item 
+QPointF {\bfseries target\+Position}
+\begin{DoxyCompactList}\small\item\em Docelowa pozycja na siatce. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} {\bfseries current\+Direction}
+\begin{DoxyCompactList}\small\item\em Aktualny kierunek ruchu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} {\bfseries next\+Direction}
+\begin{DoxyCompactList}\small\item\em Następny kierunek ruchu (buforowany) \end{DoxyCompactList}\item 
+float {\bfseries move\+Speed}
+\begin{DoxyCompactList}\small\item\em Prędkość ruchu w komórkach na sekundę \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Statyczne atrybuty chronione dziedziczone z \mbox{\hyperlink{class_ghost}{Ghost}}}
+\begin{DoxyCompactItemize}
+\item 
+static const float \mbox{\hyperlink{class_ghost_af9a917a39597484eb07ee118130b4be5}{SCATTER\+\_\+\+TIME}} = 7.\+0f
+\begin{DoxyCompactList}\small\item\em Czas trwania trybu scatter. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{class_ghost_a85cdfe0e358f58fa8eaa77d10a12c5f7}{CHASE\+\_\+\+TIME}} = 20.\+0f
+\begin{DoxyCompactList}\small\item\em Czas trwania trybu chase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Statyczne atrybuty chronione dziedziczone z \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bfseries CELL\+\_\+\+SIZE} = 30
+\begin{DoxyCompactList}\small\item\em Rozmiar pojedynczej komórki siatki w pikselach. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa reprezentująca ducha \doxylink{class_inky}{Inky} (niebieski duch) 
+
+\doxylink{class_inky}{Inky} to najbardziej nieprzewidywalny duch, który używa inteligentnej strategii opierającej się na pozycji \doxylink{class_blinky}{Blinky}\textquotesingle{}ego. 
+
+\label{doc-constructors}
+\Hypertarget{class_inky_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_inky_a40a1bd7e49212458b85750630930c92a}\index{Inky@{Inky}!Inky@{Inky}}
+\index{Inky@{Inky}!Inky@{Inky}}
+\doxysubsubsection{\texorpdfstring{Inky()}{Inky()}}
+{\footnotesize\ttfamily \label{class_inky_a40a1bd7e49212458b85750630930c92a} 
+Inky\+::\+Inky (\begin{DoxyParamCaption}\item[{const QPointF \&}]{start\+Pos}{, }\item[{\mbox{\hyperlink{class_blinky}{Blinky}} \texorpdfstring{$\ast$}{*}}]{blinky}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor ducha \doxylink{class_inky}{Inky}. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em start\+Pos} & Pozycja startowa na planszy \\
+\hline
+{\em blinky} & Wskaźnik na ducha \doxylink{class_blinky}{Blinky} (potrzebny do obliczeń)\\
+\hline
+\end{DoxyParams}
+Created by Gabriel Boruń on 25/04/2025. Co-\/authored by Konrad Gębski on 25/04/2025. Cyan/niebieski kolor
+
+\label{doc-func-members}
+\Hypertarget{class_inky_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_inky_a6449a8e8b604e3b1ed74435327cb32dc}\index{Inky@{Inky}!calculateTarget@{calculateTarget}}
+\index{calculateTarget@{calculateTarget}!Inky@{Inky}}
+\doxysubsubsection{\texorpdfstring{calculateTarget()}{calculateTarget()}}
+{\footnotesize\ttfamily \label{class_inky_a6449a8e8b604e3b1ed74435327cb32dc} 
+QPoint Inky\+::calculate\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}}]{pacman}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Oblicza cel dla \doxylink{class_inky}{Inky} -\/ inteligentne określanie ruchu. 
+
+Używa pozycji \doxylink{class_blinky}{Blinky}\textquotesingle{}ego do obliczenia zaawansowanej strategii atakojącej. 
+\begin{DoxyParams}{Parametry}
+{\em pacman} & Wskaźnik na obiekt Pacmana \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Pozycja celu na siatce planszy 
+\end{DoxyReturn}
+\doxylink{class_inky}{Inky} używa złożonego algorytmu z \doxylink{class_blinky}{Blinky}
+
+Punkt 2 komórki przed Pacmanem
+
+Wektor od \doxylink{class_blinky}{Blinky} do punktu przed Pacmanem
+
+Podwój wektor (target to punkt przeciwny do \doxylink{class_blinky}{Blinky} przez punkt przed Pacmanem)
+
+Reimplementowana z \mbox{\hyperlink{class_ghost_af86b5c14ee8e501b6b7fae2cce57efb4}{Ghost}}.
+
+\Hypertarget{class_inky_ae3a60782527d776a078d56fc05b45b44}\index{Inky@{Inky}!getScatterCorner@{getScatterCorner}}
+\index{getScatterCorner@{getScatterCorner}!Inky@{Inky}}
+\doxysubsubsection{\texorpdfstring{getScatterCorner()}{getScatterCorner()}}
+{\footnotesize\ttfamily \label{class_inky_ae3a60782527d776a078d56fc05b45b44} 
+QPoint Inky\+::get\+Scatter\+Corner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Zwraca róg planszy dla trybu SCATTER. 
+
+\begin{DoxyReturn}{Zwraca}
+Pozycja prawego dolnego rogu planszy 
+\end{DoxyReturn}
+Prawy dolny róg planszy
+
+Reimplementowana z \mbox{\hyperlink{class_ghost_a42519c68b15b19840103b636a26eac57}{Ghost}}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_inky_8h}{Inky.\+h}}\item 
+src/Inky.\+cpp\end{DoxyCompactItemize}

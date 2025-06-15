@@ -1,0 +1,648 @@
+\doxysection{Dokumentacja klasy Ghost}
+\hypertarget{class_ghost}{}\label{class_ghost}\index{Ghost@{Ghost}}
+
+
+Klasa bazowa reprezentująca ducha w grze \doxylink{class_pacman}{Pacman}.  
+
+
+
+
+{\ttfamily \#include $<$Ghost.\+h$>$}
+
+Diagram dziedziczenia dla Ghost\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ghost}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Typy publiczne}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} \{ \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a59b4e4d81b72218ad63002c06697c82a}{CHASE}}
+, \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a21aa0aa1406a5ae4b58571826d7e255e}{SCATTER}}
+, \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d}{FRIGHTENED}}
+, \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041ad4a906903e8e5b135f507b8387ab6f61}{EATEN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Wyliczenie trybów zachowania ducha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typy publiczne dziedziczone z \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \{ \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297}{None}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51}{Up}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb}{Down}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c}{Left}}
+, \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362}{Right}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeracja kierunków ruchu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ghost_ac13c73d9b6c94786c988e9d129bb19c8}{Ghost}} (const QPointF \&start\+Pos)
+\begin{DoxyCompactList}\small\item\em Konstruktor ducha. \end{DoxyCompactList}\item 
+\Hypertarget{class_ghost_ac8a7e59173e4df5251d904e652f71b83}\label{class_ghost_ac8a7e59173e4df5251d904e652f71b83} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ghost} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a18e4d17093a402c92a4aefee928d96ea}{draw}} (QPainter \&painter) override
+\begin{DoxyCompactList}\small\item\em Rysuje ducha na ekranie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_aff1eed60a7debfad2db280ae68ba2532}{move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Porusza duchem na planszy. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_ghost_aa5d42ffde6f9ead2fbd66c6235d83bef}{move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time, \mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}pacman)
+\begin{DoxyCompactList}\small\item\em Porusza duchem z uwzględnieniem pozycji Pacmana. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_ac729f7259245beb6fecc30cb829623c8}{set\+Mode}} (\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} mode)
+\begin{DoxyCompactList}\small\item\em Ustawia tryb zachowania ducha. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} \mbox{\hyperlink{class_ghost_aa7f405a5edca46d02bb778d250e5d7d4}{get\+Mode}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera aktualny tryb ducha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a3d27792b048b42720c8fd36cd43bc38e}{set\+Color}} (const QColor \&color)
+\begin{DoxyCompactList}\small\item\em Ustawia kolor ducha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_aa2606d94d293abe813f2a7f28270f386}{update\+Mode\+Timer}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Aktualizuje licznik czasu trybu. \end{DoxyCompactList}\item 
+\Hypertarget{class_ghost_ae3811c2cf2d699827b3b864da2f1a8ba}\label{class_ghost_ae3811c2cf2d699827b3b864da2f1a8ba} 
+void {\bfseries reset\+Mode\+Timer} ()
+\begin{DoxyCompactList}\small\item\em Resetuje licznik czasu trybu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_aceb07fd1ccf6223fa32545bd0cc53b0a}{enter\+Frightened\+Mode}} (float duration)
+\begin{DoxyCompactList}\small\item\em Wprowadza ducha w tryb przestraszenia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a82ccb928d0b0176cb6392f1bd69cd834}{update\+Frightened\+Mode}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Aktualizuje tryb przestraszenia. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ghost_afe3fcf86acc302ad0690d877b93864f9}{is\+Vulnerable}} () const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy duch jest podatny na zjedzenie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a5b4b8e6ca0b6bcada10dcdc24f97a065}{eat\+Ghost}} ()
+\begin{DoxyCompactList}\small\item\em Obsługuje zjedzenie ducha przez Pacmana. \end{DoxyCompactList}\item 
+virtual QPoint \mbox{\hyperlink{class_ghost_af86b5c14ee8e501b6b7fae2cce57efb4}{calculate\+Target}} (\mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}pacman)
+\begin{DoxyCompactList}\small\item\em Oblicza cel ruchu ducha (implementowane w klasach potomnych) \end{DoxyCompactList}\item 
+virtual QPoint \mbox{\hyperlink{class_ghost_a42519c68b15b19840103b636a26eac57}{get\+Scatter\+Corner}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca róg planszy dla trybu SCATTER (implementowane w klasach potomnych) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_a69dceaa4d0b6c30da97723f83a357de3}{Entity}} (const QPointF \&start\+Pos)
+\begin{DoxyCompactList}\small\item\em Konstruktor encji. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Entity} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor. \end{DoxyCompactList}\item 
+QPoint \mbox{\hyperlink{class_entity_ae284253c07a9664cdedb5759f04918c6}{get\+Grid\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca pozycję encji na siatce. \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_entity_a7772c152c566454de1d20144147afb12}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca aktualną pozycję encji. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_a659e5b54903bd6416ddf16e1c3993ce1}{set\+Position}} (const QPointF \&pos)
+\begin{DoxyCompactList}\small\item\em Ustawia nową pozycję encji. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entity_a69ae771d228bd6f92318754e9632c59c}{is\+At\+Grid\+Center}} () const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy encja jest w centrum komórki siatki. \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_entity_a3d98a18fc73a18d340f7309e9ea32f58}{get\+Target\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca docelową pozycję encji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_ghost_a612359018e9883141a71c79201bb1194}{get\+Random\+Direction}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca losowy kierunek ruchu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \mbox{\hyperlink{class_ghost_ac77b593eacc6b548df736e85be531354}{get\+Opposite\+Direction}} (\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} dir)
+\begin{DoxyCompactList}\small\item\em Zwraca kierunek przeciwny do podanego. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ghost_a4b80d47c7b75cfddbf275d07e448a5d9}{is\+Intersection}} (const QPoint \&pos, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Sprawdza czy pozycja jest skrzyżowaniem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a38e474f48134b4d0ecf5ec2d4e464e98}{choose\+Direction\+At\+Intersection}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Wybiera kierunek na skrzyżowaniu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a53878184ac765d3ebc6341d7b9b3d45d}{smooth\+Move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Wykonuje płynny ruch ducha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a781aa20f1e8ce4597ce2f124c25fa110}{choose\+Target\+Based\+Direction}} (const QPoint \&target, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board)
+\begin{DoxyCompactList}\small\item\em Wybiera kierunek na podstawie pozycji celu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody chronione dziedziczone z \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_entity_aad253e8a3c79d8bc022c88a32063c546}{calculate\+Next\+Position}} (\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} dir, float delta\+Time) const
+\begin{DoxyCompactList}\small\item\em Oblicza następną pozycję na podstawie kierunku i czasu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entity_a714d5ff2b037813b99c4d5586558e236}{can\+Move\+To}} (const QPoint \&grid\+Pos, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board) const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy można przejść na daną pozycję \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_af23f754ef82eeeeb2470a049f00f5db3}{update\+Target\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Aktualizuje docelową pozycję encji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ghost_ad19d0b307a76e5a538beb8dfd09667f5}\label{class_ghost_ad19d0b307a76e5a538beb8dfd09667f5} 
+\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} {\bfseries current\+Mode}
+\begin{DoxyCompactList}\small\item\em Aktualny tryb zachowania ducha. \end{DoxyCompactList}\item 
+\Hypertarget{class_ghost_abdb57d9fd26ea4880e3590d9293bbcc3}\label{class_ghost_abdb57d9fd26ea4880e3590d9293bbcc3} 
+QColor {\bfseries normal\+Color}
+\begin{DoxyCompactList}\small\item\em Normalny kolor ducha. \end{DoxyCompactList}\item 
+\Hypertarget{class_ghost_a51a690e2aa3180751554d476c7dd4bc5}\label{class_ghost_a51a690e2aa3180751554d476c7dd4bc5} 
+QColor {\bfseries frightened\+Color}
+\begin{DoxyCompactList}\small\item\em Kolor gdy przestraszony. \end{DoxyCompactList}\item 
+\Hypertarget{class_ghost_a9539bb2562ccd5b97fba7928baa946fc}\label{class_ghost_a9539bb2562ccd5b97fba7928baa946fc} 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} {\bfseries last\+Valid\+Direction}
+\begin{DoxyCompactList}\small\item\em Ostatni prawidłowy kierunek ruchu. \end{DoxyCompactList}\item 
+\Hypertarget{class_ghost_ad8d5dd74ed4868dad5cd4cba18e38d34}\label{class_ghost_ad8d5dd74ed4868dad5cd4cba18e38d34} 
+float {\bfseries direction\+Change\+Timer}
+\begin{DoxyCompactList}\small\item\em Timer do losowej zmiany kierunku. \end{DoxyCompactList}\item 
+\Hypertarget{class_ghost_aa6672554fa3cbfc5ac7e26dd60b6f3ba}\label{class_ghost_aa6672554fa3cbfc5ac7e26dd60b6f3ba} 
+float {\bfseries mode\+Timer}
+\begin{DoxyCompactList}\small\item\em Licznik czasu aktualnego trybu. \end{DoxyCompactList}\item 
+\Hypertarget{class_ghost_a6d21d8ebcdaf2efbd43e449e878b8023}\label{class_ghost_a6d21d8ebcdaf2efbd43e449e878b8023} 
+float {\bfseries frightened\+Timer}
+\begin{DoxyCompactList}\small\item\em Licznik czasu trybu przestraszenia. \end{DoxyCompactList}\item 
+\Hypertarget{class_ghost_aaed9453e051bcda53fff5649d72990d2}\label{class_ghost_aaed9453e051bcda53fff5649d72990d2} 
+float {\bfseries frightened\+Duration}
+\begin{DoxyCompactList}\small\item\em Czas trwania trybu przestraszenia. \end{DoxyCompactList}\item 
+\Hypertarget{class_ghost_a2e4ddae07a63a0e05e5143e678ba1599}\label{class_ghost_a2e4ddae07a63a0e05e5143e678ba1599} 
+float {\bfseries blink\+Timer}
+\begin{DoxyCompactList}\small\item\em Timer do animacji "{}błyskania"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty chronione dziedziczone z \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Aktualna pozycja encji w pikselach. \end{DoxyCompactList}\item 
+QPointF {\bfseries target\+Position}
+\begin{DoxyCompactList}\small\item\em Docelowa pozycja na siatce. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} {\bfseries current\+Direction}
+\begin{DoxyCompactList}\small\item\em Aktualny kierunek ruchu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} {\bfseries next\+Direction}
+\begin{DoxyCompactList}\small\item\em Następny kierunek ruchu (buforowany) \end{DoxyCompactList}\item 
+float {\bfseries move\+Speed}
+\begin{DoxyCompactList}\small\item\em Prędkość ruchu w komórkach na sekundę \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Statyczne atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+static const float \mbox{\hyperlink{class_ghost_af9a917a39597484eb07ee118130b4be5}{SCATTER\+\_\+\+TIME}} = 7.\+0f
+\begin{DoxyCompactList}\small\item\em Czas trwania trybu scatter. \end{DoxyCompactList}\item 
+static const float \mbox{\hyperlink{class_ghost_a85cdfe0e358f58fa8eaa77d10a12c5f7}{CHASE\+\_\+\+TIME}} = 20.\+0f
+\begin{DoxyCompactList}\small\item\em Czas trwania trybu chase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Statyczne atrybuty chronione dziedziczone z \mbox{\hyperlink{class_entity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bfseries CELL\+\_\+\+SIZE} = 30
+\begin{DoxyCompactList}\small\item\em Rozmiar pojedynczej komórki siatki w pikselach. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa bazowa reprezentująca ducha w grze \doxylink{class_pacman}{Pacman}. 
+
+Dziedziczy po \doxylink{class_entity}{Entity} i implementuje zachowania specyficzne dla duchów\+: różne tryby (CHASE, SCATTER, FRIGHTENED, EATEN), sztuczną inteligencję i interakcje z Pacmanem. 
+
+\label{doc-enum-members}
+\Hypertarget{class_ghost_doc-enum-members}
+\doxysubsection{Dokumentacja składowych wyliczanych}
+\Hypertarget{class_ghost_aad5b34c7031d2460db0fbae9b5428041}\index{Ghost@{Ghost}!Mode@{Mode}}
+\index{Mode@{Mode}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily \label{class_ghost_aad5b34c7031d2460db0fbae9b5428041} 
+enum \mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Ghost\+::\+Mode}}}
+
+
+
+Wyliczenie trybów zachowania ducha. 
+
+\begin{DoxyEnumFields}[2]{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHASE@{CHASE}!Ghost@{Ghost}}\index{Ghost@{Ghost}!CHASE@{CHASE}}}\Hypertarget{class_ghost_aad5b34c7031d2460db0fbae9b5428041a59b4e4d81b72218ad63002c06697c82a}\label{class_ghost_aad5b34c7031d2460db0fbae9b5428041a59b4e4d81b72218ad63002c06697c82a} 
+CHASE&Tryb pogoni za Pacmanem. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCATTER@{SCATTER}!Ghost@{Ghost}}\index{Ghost@{Ghost}!SCATTER@{SCATTER}}}\Hypertarget{class_ghost_aad5b34c7031d2460db0fbae9b5428041a21aa0aa1406a5ae4b58571826d7e255e}\label{class_ghost_aad5b34c7031d2460db0fbae9b5428041a21aa0aa1406a5ae4b58571826d7e255e} 
+SCATTER&Tryb rozproszenia -\/ udają się do swoich rogów. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRIGHTENED@{FRIGHTENED}!Ghost@{Ghost}}\index{Ghost@{Ghost}!FRIGHTENED@{FRIGHTENED}}}\Hypertarget{class_ghost_aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d}\label{class_ghost_aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d} 
+FRIGHTENED&Tryb przestraszenia -\/ można ich zjeść \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EATEN@{EATEN}!Ghost@{Ghost}}\index{Ghost@{Ghost}!EATEN@{EATEN}}}\Hypertarget{class_ghost_aad5b34c7031d2460db0fbae9b5428041ad4a906903e8e5b135f507b8387ab6f61}\label{class_ghost_aad5b34c7031d2460db0fbae9b5428041ad4a906903e8e5b135f507b8387ab6f61} 
+EATEN&Tryb po zjedzeniu -\/ wracają do bazy. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_ghost_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_ghost_ac13c73d9b6c94786c988e9d129bb19c8}\index{Ghost@{Ghost}!Ghost@{Ghost}}
+\index{Ghost@{Ghost}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{Ghost()}{Ghost()}}
+{\footnotesize\ttfamily \label{class_ghost_ac13c73d9b6c94786c988e9d129bb19c8} 
+Ghost\+::\+Ghost (\begin{DoxyParamCaption}\item[{const QPointF \&}]{start\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor ducha. 
+
+20 sekund w trybie chase
+
+
+\begin{DoxyParams}{Parametry}
+{\em start\+Pos} & Pozycja startowa ducha na planszy \\
+\hline
+\end{DoxyParams}
+Inicjalizacja generatora liczb losowych
+
+Losowy kolor
+
+Duchy są wolniejsze od Pacmana
+
+\label{doc-func-members}
+\Hypertarget{class_ghost_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_ghost_af86b5c14ee8e501b6b7fae2cce57efb4}\index{Ghost@{Ghost}!calculateTarget@{calculateTarget}}
+\index{calculateTarget@{calculateTarget}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{calculateTarget()}{calculateTarget()}}
+{\footnotesize\ttfamily \label{class_ghost_af86b5c14ee8e501b6b7fae2cce57efb4} 
+virtual QPoint Ghost\+::calculate\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}}]{pacman}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Oblicza cel ruchu ducha (implementowane w klasach potomnych) 
+
+
+\begin{DoxyParams}{Parametry}
+{\em pacman} & Wskaźnik na obiekt Pacmana \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Pozycja celu na siatce planszy 
+\end{DoxyReturn}
+
+
+Reimplementowana w \mbox{\hyperlink{class_blinky_abcebbe20d2c6e9c8ab5e75d2de371513}{Blinky}}, \mbox{\hyperlink{class_clyde_aa9cc3ef515eedfca1cb97ffd4050e663}{Clyde}}, \mbox{\hyperlink{class_inky_a6449a8e8b604e3b1ed74435327cb32dc}{Inky}} i \mbox{\hyperlink{class_pinky_ad0fa5f8ebf80a5010197f62e4737f926}{Pinky}}.
+
+\Hypertarget{class_ghost_a38e474f48134b4d0ecf5ec2d4e464e98}\index{Ghost@{Ghost}!chooseDirectionAtIntersection@{chooseDirectionAtIntersection}}
+\index{chooseDirectionAtIntersection@{chooseDirectionAtIntersection}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{chooseDirectionAtIntersection()}{chooseDirectionAtIntersection()}}
+{\footnotesize\ttfamily \label{class_ghost_a38e474f48134b4d0ecf5ec2d4e464e98} 
+void Ghost\+::choose\+Direction\+At\+Intersection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Wybiera kierunek na skrzyżowaniu. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em board} & Wskaźnik na planszę gry \\
+\hline
+\end{DoxyParams}
+Lista możliwych kierunków (bez zawracania)
+
+Nie zawracaj
+
+Wybierz losowy kierunek z dostępnych
+
+Jeśli brak opcji, zawróć\Hypertarget{class_ghost_a781aa20f1e8ce4597ce2f124c25fa110}\index{Ghost@{Ghost}!chooseTargetBasedDirection@{chooseTargetBasedDirection}}
+\index{chooseTargetBasedDirection@{chooseTargetBasedDirection}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{chooseTargetBasedDirection()}{chooseTargetBasedDirection()}}
+{\footnotesize\ttfamily \label{class_ghost_a781aa20f1e8ce4597ce2f124c25fa110} 
+void Ghost\+::choose\+Target\+Based\+Direction (\begin{DoxyParamCaption}\item[{const QPoint \&}]{target}{, }\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Wybiera kierunek na podstawie pozycji celu. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em target} & Pozycja celu \\
+\hline
+{\em board} & Wskaźnik na planszę gry \\
+\hline
+\end{DoxyParams}
+Nie zawracaj
+
+Oblicz odległość do celu
+
+Wybierz kierunek z najmniejszą odległością do celu
+
+Jeśli brak opcji, zawróć\Hypertarget{class_ghost_a18e4d17093a402c92a4aefee928d96ea}\index{Ghost@{Ghost}!draw@{draw}}
+\index{draw@{draw}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_ghost_a18e4d17093a402c92a4aefee928d96ea} 
+void Ghost\+::draw (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Rysuje ducha na ekranie. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em painter} & Obiekt do rysowania \\
+\hline
+\end{DoxyParams}
+Wybór koloru w zależności od trybu
+
+Mruganie pod koniec trybu frightened
+
+Mrugaj między niebieskim a białym
+
+Przezroczysty
+
+Konwersja pozycji float na piksele
+
+Rysowanie ducha
+
+Górna część (półkole)
+
+Dolna część (prostokąt z falowanym dołem)
+
+Oczy (tylko gdy nie jest zjedzony)
+
+Źrenice -\/ kierunek zależy od trybu
+
+W trybie frightened oczy są większe i "{}przestraszone"{}
+
+Implementuje \mbox{\hyperlink{class_entity_a8d7d83b17cda5e4f2254f0f01070c331}{Entity}}.
+
+\Hypertarget{class_ghost_a5b4b8e6ca0b6bcada10dcdc24f97a065}\index{Ghost@{Ghost}!eatGhost@{eatGhost}}
+\index{eatGhost@{eatGhost}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{eatGhost()}{eatGhost()}}
+{\footnotesize\ttfamily \label{class_ghost_a5b4b8e6ca0b6bcada10dcdc24f97a065} 
+void Ghost\+::eat\+Ghost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obsługuje zjedzenie ducha przez Pacmana. 
+
+Bardzo szybki powrót do bazy
+
+W prawdziwym Pacmanie duch wraca do bazy, ale dla uproszczenia możemy go po prostu zrestartować po krótkiej chwili\Hypertarget{class_ghost_aceb07fd1ccf6223fa32545bd0cc53b0a}\index{Ghost@{Ghost}!enterFrightenedMode@{enterFrightenedMode}}
+\index{enterFrightenedMode@{enterFrightenedMode}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{enterFrightenedMode()}{enterFrightenedMode()}}
+{\footnotesize\ttfamily \label{class_ghost_aceb07fd1ccf6223fa32545bd0cc53b0a} 
+void Ghost\+::enter\+Frightened\+Mode (\begin{DoxyParamCaption}\item[{float}]{duration}{}\end{DoxyParamCaption})}
+
+
+
+Wprowadza ducha w tryb przestraszenia. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em duration} & Czas trwania trybu przestraszenia \\
+\hline
+\end{DoxyParams}
+Zmień kierunek na przeciwny (jeśli się porusza)
+
+Zmniejsz prędkość w trybie frightened
+
+Wolniejszy od normalnej prędkości (6.\+0f)\Hypertarget{class_ghost_aa7f405a5edca46d02bb778d250e5d7d4}\index{Ghost@{Ghost}!getMode@{getMode}}
+\index{getMode@{getMode}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{getMode()}{getMode()}}
+{\footnotesize\ttfamily \label{class_ghost_aa7f405a5edca46d02bb778d250e5d7d4} 
+\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}} Ghost\+::get\+Mode (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera aktualny tryb ducha. 
+
+\begin{DoxyReturn}{Zwraca}
+Aktualny tryb zachowania 
+\end{DoxyReturn}
+\Hypertarget{class_ghost_ac77b593eacc6b548df736e85be531354}\index{Ghost@{Ghost}!getOppositeDirection@{getOppositeDirection}}
+\index{getOppositeDirection@{getOppositeDirection}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{getOppositeDirection()}{getOppositeDirection()}}
+{\footnotesize\ttfamily \label{class_ghost_ac77b593eacc6b548df736e85be531354} 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Entity\+::\+Direction}} Ghost\+::get\+Opposite\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}}]{dir}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwraca kierunek przeciwny do podanego. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em dir} & Kierunek wejściowy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Kierunek przeciwny 
+\end{DoxyReturn}
+\Hypertarget{class_ghost_a612359018e9883141a71c79201bb1194}\index{Ghost@{Ghost}!getRandomDirection@{getRandomDirection}}
+\index{getRandomDirection@{getRandomDirection}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{getRandomDirection()}{getRandomDirection()}}
+{\footnotesize\ttfamily \label{class_ghost_a612359018e9883141a71c79201bb1194} 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Entity\+::\+Direction}} Ghost\+::get\+Random\+Direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Zwraca losowy kierunek ruchu. 
+
+\begin{DoxyReturn}{Zwraca}
+Losowy kierunek 
+\end{DoxyReturn}
+1-\/4 (pomijamy None)\Hypertarget{class_ghost_a42519c68b15b19840103b636a26eac57}\index{Ghost@{Ghost}!getScatterCorner@{getScatterCorner}}
+\index{getScatterCorner@{getScatterCorner}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{getScatterCorner()}{getScatterCorner()}}
+{\footnotesize\ttfamily \label{class_ghost_a42519c68b15b19840103b636a26eac57} 
+virtual QPoint Ghost\+::get\+Scatter\+Corner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Zwraca róg planszy dla trybu SCATTER (implementowane w klasach potomnych) 
+
+\begin{DoxyReturn}{Zwraca}
+Pozycja rogu na siatce planszy 
+\end{DoxyReturn}
+
+
+Reimplementowana w \mbox{\hyperlink{class_blinky_a04ec5422e9445a33cd225d3a42d9c0a5}{Blinky}}, \mbox{\hyperlink{class_clyde_a0f1d6a11120150c6aa771d76689830df}{Clyde}}, \mbox{\hyperlink{class_inky_ae3a60782527d776a078d56fc05b45b44}{Inky}} i \mbox{\hyperlink{class_pinky_a8c5b08417feb81a90b12b023eea4e5d6}{Pinky}}.
+
+\Hypertarget{class_ghost_a4b80d47c7b75cfddbf275d07e448a5d9}\index{Ghost@{Ghost}!isIntersection@{isIntersection}}
+\index{isIntersection@{isIntersection}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{isIntersection()}{isIntersection()}}
+{\footnotesize\ttfamily \label{class_ghost_a4b80d47c7b75cfddbf275d07e448a5d9} 
+bool Ghost\+::is\+Intersection (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos}{, }\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sprawdza czy pozycja jest skrzyżowaniem. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em pos} & Pozycja do sprawdzenia \\
+\hline
+{\em board} & Wskaźnik na planszę gry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+True jeśli pozycja jest skrzyżowaniem 
+\end{DoxyReturn}
+Sprawdź każdy kierunek
+
+Więcej niż 2 kierunki = skrzyżowanie\Hypertarget{class_ghost_afe3fcf86acc302ad0690d877b93864f9}\index{Ghost@{Ghost}!isVulnerable@{isVulnerable}}
+\index{isVulnerable@{isVulnerable}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{isVulnerable()}{isVulnerable()}}
+{\footnotesize\ttfamily \label{class_ghost_afe3fcf86acc302ad0690d877b93864f9} 
+bool Ghost\+::is\+Vulnerable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sprawdza czy duch jest podatny na zjedzenie. 
+
+\begin{DoxyReturn}{Zwraca}
+True jeśli duch może zostać zjedzony 
+\end{DoxyReturn}
+\Hypertarget{class_ghost_aff1eed60a7debfad2db280ae68ba2532}\index{Ghost@{Ghost}!move@{move}}
+\index{move@{move}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ghost_aff1eed60a7debfad2db280ae68ba2532} 
+void Ghost\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{, }\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Porusza duchem na planszy. 
+
+Stara metoda move (bez Pacmana) -\/ używa losowego ruchu.
+
+
+\begin{DoxyParams}{Parametry}
+{\em board} & Wskaźnik na planszę gry \\
+\hline
+{\em delta\+Time} & Czas który upłynął od ostatniej klatki \\
+\hline
+\end{DoxyParams}
+Sprawdź czy jesteśmy na skrzyżowaniu i czy trzeba wybrać nowy kierunek
+
+Płynny ruch
+
+Implementuje \mbox{\hyperlink{class_entity_ac60c3042032c2f66bac0bb363addf6ba}{Entity}}.
+
+\Hypertarget{class_ghost_aa5d42ffde6f9ead2fbd66c6235d83bef}\index{Ghost@{Ghost}!move@{move}}
+\index{move@{move}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ghost_aa5d42ffde6f9ead2fbd66c6235d83bef} 
+void Ghost\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{, }\item[{float}]{delta\+Time}{, }\item[{\mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}}]{pacman}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Porusza duchem z uwzględnieniem pozycji Pacmana. 
+
+Nowa metoda move (z Pacmanem) -\/ używa inteligentnego ruchu.
+
+
+\begin{DoxyParams}{Parametry}
+{\em board} & Wskaźnik na planszę gry \\
+\hline
+{\em delta\+Time} & Czas który upłynął od ostatniej klatki \\
+\hline
+{\em pacman} & Wskaźnik na obiekt Pacmana \\
+\hline
+\end{DoxyParams}
+Aktualizuj tryb frightened jeśli aktywny
+
+Sprawdź czy jesteśmy na skrzyżowaniu i czy trzeba wybrać nowy kierunek
+
+W trybie eaten kieruj się do pozycji startowej Dla uproszczenia używamy pozycji (10, 10)
+
+POPRAWKA\+: Prawidłowa logika wyboru targetu
+
+CHASE
+
+Płynny ruch\Hypertarget{class_ghost_a3d27792b048b42720c8fd36cd43bc38e}\index{Ghost@{Ghost}!setColor@{setColor}}
+\index{setColor@{setColor}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily \label{class_ghost_a3d27792b048b42720c8fd36cd43bc38e} 
+void Ghost\+::set\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ustawia kolor ducha. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em color} & Nowy kolor ducha \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ghost_ac729f7259245beb6fecc30cb829623c8}\index{Ghost@{Ghost}!setMode@{setMode}}
+\index{setMode@{setMode}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
+{\footnotesize\ttfamily \label{class_ghost_ac729f7259245beb6fecc30cb829623c8} 
+void Ghost\+::set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ghost_aad5b34c7031d2460db0fbae9b5428041}{Mode}}}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ustawia tryb zachowania ducha. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em mode} & Nowy tryb ducha \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ghost_a53878184ac765d3ebc6341d7b9b3d45d}\index{Ghost@{Ghost}!smoothMove@{smoothMove}}
+\index{smoothMove@{smoothMove}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{smoothMove()}{smoothMove()}}
+{\footnotesize\ttfamily \label{class_ghost_a53878184ac765d3ebc6341d7b9b3d45d} 
+void Ghost\+::smooth\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{, }\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Wykonuje płynny ruch ducha. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em board} & Wskaźnik na planszę gry \\
+\hline
+{\em delta\+Time} & Czas który upłynął od ostatniej klatki \\
+\hline
+\end{DoxyParams}
+Oblicz następną pozycję
+
+Sprawdź kolizję tak samo jak \doxylink{class_pacman}{Pacman}
+
+Zatrzymaj i wybierz nowy kierunek\Hypertarget{class_ghost_a82ccb928d0b0176cb6392f1bd69cd834}\index{Ghost@{Ghost}!updateFrightenedMode@{updateFrightenedMode}}
+\index{updateFrightenedMode@{updateFrightenedMode}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{updateFrightenedMode()}{updateFrightenedMode()}}
+{\footnotesize\ttfamily \label{class_ghost_a82ccb928d0b0176cb6392f1bd69cd834} 
+void Ghost\+::update\+Frightened\+Mode (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Aktualizuje tryb przestraszenia. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em delta\+Time} & Czas który upłynął od ostatniej klatki \\
+\hline
+\end{DoxyParams}
+Sprawdź czy czas frightened się kończy
+
+Wróć do trybu chase
+
+Przywróć normalną prędkość
+
+Reset mode timer\Hypertarget{class_ghost_aa2606d94d293abe813f2a7f28270f386}\index{Ghost@{Ghost}!updateModeTimer@{updateModeTimer}}
+\index{updateModeTimer@{updateModeTimer}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{updateModeTimer()}{updateModeTimer()}}
+{\footnotesize\ttfamily \label{class_ghost_aa2606d94d293abe813f2a7f28270f386} 
+void Ghost\+::update\+Mode\+Timer (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Aktualizuje licznik czasu trybu. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em delta\+Time} & Czas który upłynął od ostatniej klatki \\
+\hline
+\end{DoxyParams}
+Nie aktualizuj timera w specjalnych trybach
+
+\label{doc-variable-members}
+\Hypertarget{class_ghost_doc-variable-members}
+\doxysubsection{Dokumentacja atrybutów składowych}
+\Hypertarget{class_ghost_a85cdfe0e358f58fa8eaa77d10a12c5f7}\index{Ghost@{Ghost}!CHASE\_TIME@{CHASE\_TIME}}
+\index{CHASE\_TIME@{CHASE\_TIME}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{CHASE\_TIME}{CHASE\_TIME}}
+{\footnotesize\ttfamily \label{class_ghost_a85cdfe0e358f58fa8eaa77d10a12c5f7} 
+const float Ghost\+::\+CHASE\+\_\+\+TIME = 20.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Czas trwania trybu chase. 
+
+7 sekund w trybie scatter \Hypertarget{class_ghost_af9a917a39597484eb07ee118130b4be5}\index{Ghost@{Ghost}!SCATTER\_TIME@{SCATTER\_TIME}}
+\index{SCATTER\_TIME@{SCATTER\_TIME}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{SCATTER\_TIME}{SCATTER\_TIME}}
+{\footnotesize\ttfamily \label{class_ghost_af9a917a39597484eb07ee118130b4be5} 
+const float Ghost\+::\+SCATTER\+\_\+\+TIME = 7.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Czas trwania trybu scatter. 
+
+stałe czasowe
+
+Created by Gabriel Boruń on 25/04/2025. Co-\/authored by Konrad Gębski on 25/04/2025. 
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_ghost_8h}{Ghost.\+h}}\item 
+src/Ghost.\+cpp\end{DoxyCompactItemize}

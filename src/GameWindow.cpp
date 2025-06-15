@@ -1,41 +1,41 @@
-//
-// Created by Gabriel Boruń on 25/04/2025.
-// Co-authored by Konrad Gębski on 25/04/2025.
-//
+///
+/// Created by Gabriel Boruń on 25/04/2025.
+/// Co-authored by Konrad Gębski on 25/04/2025.
+///
 
 #include "GameWindow.h"
 #include <QApplication>
 
 GameWindow::GameWindow(QWidget *parent) : QMainWindow(parent) {
-    setWindowTitle("Pacman"); // Ustawia tytuł okna na "Pacman"
-    setFixedSize(600, 650); // Ustawia stały rozmiar okna na 600x650 pikseli
+    setWindowTitle("Pacman"); /// Ustawia tytuł okna na "Pacman"
+    setFixedSize(600, 650); /// Ustawia stały rozmiar okna na 600x650 pikseli
 
     setupUI();
 }
 
-// Destruktor
+/// Destruktor
 GameWindow::~GameWindow() {
-    // Wszystkie obiekty będą automatycznie usunięte, ponieważ są widgetami potomnymi
+    /// Wszystkie obiekty będą automatycznie usunięte, ponieważ są widgetami potomnymi
 }
 
 void GameWindow::setupUI() {
-    // Tworzenie QStackedWidget jako centralnego widget'u
+    /// Tworzenie QStackedWidget jako centralnego widget'u
     stackedWidget = new QStackedWidget(this);
     setCentralWidget(stackedWidget);
 
-    // Tworzenie menu głównego
+    /// Tworzenie menu głównego
     mainMenu = new MainMenu(this);
     connect(mainMenu, &MainMenu::startGameRequested, this, &GameWindow::onStartGameRequested);
     connect(mainMenu, &MainMenu::scoreboardRequested, this, &GameWindow::onScoreboardRequested);
     connect(mainMenu, &MainMenu::exitRequested, this, &GameWindow::onExitRequested);
     stackedWidget->addWidget(mainMenu);
 
-    // Tworzenie gry
+    /// Tworzenie gry
     game = new Game(this);
     connect(game, &Game::gameStateChanged, this, &GameWindow::onGameStateChanged);
     stackedWidget->addWidget(game);
 
-    // Tworzenie ekranu końca gry
+    /// Tworzenie ekranu końca gry
     gameOverScreen = new GameOverScreen(this);
     connect(gameOverScreen, &GameOverScreen::restartRequested, this, &GameWindow::onRestartRequested);
     connect(gameOverScreen, &GameOverScreen::mainMenuRequested, this, &GameWindow::onMainMenuRequested);
@@ -43,7 +43,7 @@ void GameWindow::setupUI() {
     connect(gameOverScreen, &GameOverScreen::exitRequested, this, &GameWindow::onExitRequested);
     stackedWidget->addWidget(gameOverScreen);
 
-    // Tworzenie ekranu wygranej
+    /// Tworzenie ekranu wygranej
     winScreen = new WinScreen(this);
     connect(winScreen, &WinScreen::saveScoreRequested, this, &GameWindow::onWinSaveScoreRequested);
     connect(winScreen, &WinScreen::viewScoreboardRequested, this, &GameWindow::onWinViewScoreboardRequested);
@@ -51,12 +51,12 @@ void GameWindow::setupUI() {
     connect(winScreen, &WinScreen::exitRequested, this, &GameWindow::onWinExitRequested);
     stackedWidget->addWidget(winScreen);
 
-    // Tworzenie tablicy wyników
+    /// Tworzenie tablicy wyników
     scoreboardWidget = new ScoreboardWidget(this);
     connect(scoreboardWidget, &ScoreboardWidget::backRequested, this, &GameWindow::onScoreboardBackRequested);
     stackedWidget->addWidget(scoreboardWidget);
 
-    // Ustaw menu główne jako domyślny widok
+    /// Ustaw menu główne jako domyślny widok
     showMainMenu();
 }
 
@@ -132,7 +132,7 @@ void GameWindow::onGameStateChanged(GameState newState) {
             showWin();
             break;
         case PAUSED:
-            // Gra pozostaje widoczna, ale wyświetla informację o pauzie
+            /// Gra pozostaje widoczna, ale wyświetla informację o pauzie
             break;
     }
 }

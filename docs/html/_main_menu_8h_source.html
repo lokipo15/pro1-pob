@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POB Pro 1 - PacMan: Plik źródłowy src/MainMenu.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POB Pro 1 - PacMan
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_main_menu_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MainMenu.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_main_menu_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef MAINMENU_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define MAINMENU_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QKeyEvent&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_main_menu.html">   23</a></span><span class="keyword">class </span><a class="code hl_function" href="class_main_menu.html#a891bed1e0edb5492671c332cb89b7a9a">MainMenu</a> : <span class="keyword">public</span> QWidget {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Q_OBJECT</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_main_menu.html#a891bed1e0edb5492671c332cb89b7a9a">MainMenu</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>signals:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_main_menu.html#afb3263b635b40a05db3b0233f3f00286">   34</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_main_menu.html#afb3263b635b40a05db3b0233f3f00286">startGameRequested</a>();      </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_main_menu.html#a77c0b1974a11c043f8a2d85ff415de52">   35</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_main_menu.html#a77c0b1974a11c043f8a2d85ff415de52">scoreboardRequested</a>();     </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_main_menu.html#a3768d6fe72b1cc5251aab2f907936b7e">   36</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_main_menu.html#a3768d6fe72b1cc5251aab2f907936b7e">exitRequested</a>();           </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_menu.html#acc36a8493c79209a87245746de1eefbc">keyPressEvent</a>(QKeyEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_menu.html#a7b6293713be897285b91db8cb849da6b">paintEvent</a>(QPaintEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> onStartGameClicked();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> onScoreboardClicked();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> onExitClicked();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    QPushButton *startButton;           </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    QPushButton *scoreboardButton;      </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    QPushButton *exitButton;            </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    QLabel *titleLabel;                 </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    QVBoxLayout *layout;                </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">int</span> selectedButton;                 </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">void</span> updateButtonSelection();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span></div>
+<div class="ttc" id="aclass_main_menu_html_a3768d6fe72b1cc5251aab2f907936b7e"><div class="ttname"><a href="class_main_menu.html#a3768d6fe72b1cc5251aab2f907936b7e">MainMenu::exitRequested</a></div><div class="ttdeci">void exitRequested()</div><div class="ttdoc">Sygnał wyjścia z gry.</div></div>
+<div class="ttc" id="aclass_main_menu_html_a77c0b1974a11c043f8a2d85ff415de52"><div class="ttname"><a href="class_main_menu.html#a77c0b1974a11c043f8a2d85ff415de52">MainMenu::scoreboardRequested</a></div><div class="ttdeci">void scoreboardRequested()</div><div class="ttdoc">Sygnał wyświetlenia tablicy wyników.</div></div>
+<div class="ttc" id="aclass_main_menu_html_a7b6293713be897285b91db8cb849da6b"><div class="ttname"><a href="class_main_menu.html#a7b6293713be897285b91db8cb849da6b">MainMenu::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *event) override</div><div class="ttdoc">Obsługuje malowanie widget&#39;u.</div><div class="ttdef"><b>Definicja</b> MainMenu.cpp:94</div></div>
+<div class="ttc" id="aclass_main_menu_html_a891bed1e0edb5492671c332cb89b7a9a"><div class="ttname"><a href="class_main_menu.html#a891bed1e0edb5492671c332cb89b7a9a">MainMenu::MainMenu</a></div><div class="ttdeci">MainMenu(QWidget *parent=nullptr)</div><div class="ttdoc">Konstruktor menu głównego.</div><div class="ttdef"><b>Definicja</b> MainMenu.cpp:11</div></div>
+<div class="ttc" id="aclass_main_menu_html_acc36a8493c79209a87245746de1eefbc"><div class="ttname"><a href="class_main_menu.html#acc36a8493c79209a87245746de1eefbc">MainMenu::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">Obsługuje zdarzenia klawiatury.</div><div class="ttdef"><b>Definicja</b> MainMenu.cpp:110</div></div>
+<div class="ttc" id="aclass_main_menu_html_afb3263b635b40a05db3b0233f3f00286"><div class="ttname"><a href="class_main_menu.html#afb3263b635b40a05db3b0233f3f00286">MainMenu::startGameRequested</a></div><div class="ttdeci">void startGameRequested()</div><div class="ttdoc">Sygnał żądania rozpoczęcia gry.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="_main_menu_8h.html">MainMenu.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

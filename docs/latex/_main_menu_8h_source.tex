@@ -1,0 +1,50 @@
+\doxysection{Main\+Menu.\+h}
+\hypertarget{_main_menu_8h_source}{}\label{_main_menu_8h_source}\index{src/MainMenu.h@{src/MainMenu.h}}
+\mbox{\hyperlink{_main_menu_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ MAINMENU\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MAINMENU\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_menu_a891bed1e0edb5492671c332cb89b7a9a}{MainMenu}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_main_menu_a891bed1e0edb5492671c332cb89b7a9a}{MainMenu}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ signals:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_afb3263b635b40a05db3b0233f3f00286}{startGameRequested}}();\ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_a77c0b1974a11c043f8a2d85ff415de52}{scoreboardRequested}}();\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_a3768d6fe72b1cc5251aab2f907936b7e}{exitRequested}}();\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_acc36a8493c79209a87245746de1eefbc}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_a7b6293713be897285b91db8cb849da6b}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ onStartGameClicked();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ onScoreboardClicked();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ onExitClicked();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00065\ \ \ \ \ QPushButton\ *startButton;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ QPushButton\ *scoreboardButton;\ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ QPushButton\ *exitButton;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ QLabel\ *titleLabel;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ QVBoxLayout\ *layout;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ selectedButton;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ updateButtonSelection();}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

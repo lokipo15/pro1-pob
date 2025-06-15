@@ -1,7 +1,7 @@
-//
-// Created by Gabriel Boruń on 25/04/2025.
-// Co-authored by Konrad Gębski on 25/04/2025.
-//
+///
+/// Created by Gabriel Boruń on 25/04/2025.
+/// Co-authored by Konrad Gębski on 25/04/2025.
+///
 
 #include "PowerUp.h"
 #include <cmath>

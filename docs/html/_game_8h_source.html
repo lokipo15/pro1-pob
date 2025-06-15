@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POB Pro 1 - PacMan: Plik źródłowy src/Game.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POB Pro 1 - PacMan
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_game_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Game.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_game_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef GAME_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define GAME_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QElapsedTimer&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_game_board_8h.html">GameBoard.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_pacman_8h.html">Pacman.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="_ghost_8h.html">Ghost.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="_blinky_8h.html">Blinky.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="_pinky_8h.html">Pinky.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="_inky_8h.html">Inky.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="_clyde_8h.html">Clyde.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="_power_up_8h.html">PowerUp.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="_power_pellet_8h.html">PowerPellet.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="_audio_manager_8h.html">AudioManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">   30</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285a4c40e60bc71a32b924ce1f08d57f9721">   31</a></span>    <a class="code hl_enumvalue" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285a4c40e60bc71a32b924ce1f08d57f9721">MENU</a>,       </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8">   32</a></span>    <a class="code hl_enumvalue" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8">PLAYING</a>,    </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285ad4bb05915de3c370d3a33d4f51389655">   33</a></span>    <a class="code hl_enumvalue" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285ad4bb05915de3c370d3a33d4f51389655">PAUSED</a>,     </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285a871723195985a4ae22d7e10d99bf8a00">   34</a></span>    <a class="code hl_enumvalue" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285a871723195985a4ae22d7e10d99bf8a00">GAME_OVER</a>,  </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285a843dff91ff0b0e5b98a110a512b2f531">   35</a></span>    <a class="code hl_enumvalue" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285a843dff91ff0b0e5b98a110a512b2f531">WIN</a>         </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_game.html">   44</a></span><span class="keyword">class </span><a class="code hl_function" href="class_game.html#ac1a9dde49041f68e14234a41a862865d">Game</a> : <span class="keyword">public</span> QWidget {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Q_OBJECT</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="class_game.html#ac1a9dde49041f68e14234a41a862865d">Game</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_function" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#ae8638ccdb0ef3bf39a6affa30aa1258f">startGame</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a9d9a79a0f7df3c7e55a3103c04ecbc87">pauseGame</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a5ec2daf2a7fe95ee03dea84b4f5d6883">resumeGame</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a47c726a80fd133c0a4f6b8fba56d8832">resetGame</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_game.html#adbbfae184c044c2d544b382704b2bacd">   83</a></span>    <a class="code hl_enumeration" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a> <a class="code hl_function" href="class_game.html#adbbfae184c044c2d544b382704b2bacd">getCurrentState</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> currentState; }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_game.html#adff34c2ddf03af26dcddad0a942bbcf7">   89</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_game.html#adff34c2ddf03af26dcddad0a942bbcf7">getScore</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> score; }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_game.html#af7962212d039de623b8eebc538ff7140">   95</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_game.html#af7962212d039de623b8eebc538ff7140">getLives</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lives; }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_game.html#a84d700bd37042ce4ab36a8070fe309db">  101</a></span>    <a class="code hl_class" href="class_audio_manager.html">AudioManager</a>* <a class="code hl_function" href="class_game.html#a84d700bd37042ce4ab36a8070fe309db">getAudioManager</a>() { <span class="keywordflow">return</span> audioManager; }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>signals:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_game.html#a3828738518a273ce13a090006f246849">  108</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_game.html#a3828738518a273ce13a090006f246849">gameStateChanged</a>(<a class="code hl_enumeration" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a> newState);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="class_game.html#a4d5fb2ed620bbffc75a399d263d19be0">  114</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_game.html#a4d5fb2ed620bbffc75a399d263d19be0">scoreChanged</a>(<span class="keywordtype">int</span> newScore);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_game.html#a2521a818da4804e7d79c4b02347cc764">  120</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_game.html#a2521a818da4804e7d79c4b02347cc764">livesChanged</a>(<span class="keywordtype">int</span> newLives);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#ae3d960780bb03ab5d6713e5d3343f6fc">paintEvent</a>(QPaintEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game.html#a11472607ec18247e34b70de047ca5e4a">keyPressEvent</a>(QKeyEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> update();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <a class="code hl_enumeration" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a> currentState; </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    QTimer *timer; </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    QElapsedTimer elapsedTimer; </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    qint64 lastUpdateTime; </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_class" href="class_game_board.html">GameBoard</a> *board; </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <a class="code hl_class" href="class_pacman.html">Pacman</a> *pacman; </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    std::vector&lt;Ghost*&gt; ghosts; </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_class" href="class_blinky.html">Blinky</a> *blinky; </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_class" href="class_pinky.html">Pinky</a> *pinky; </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_class" href="class_inky.html">Inky</a> *inky; </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_class" href="class_clyde.html">Clyde</a> *clyde; </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    std::vector&lt;PowerUp*&gt; powerUps; </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">float</span> powerUpTimer; </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordtype">bool</span> powerUpActive; </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">int</span> ghostEatenMultiplier; </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">int</span> score; </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">int</span> lives; </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordtype">bool</span> gameOver; </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <a class="code hl_class" href="class_audio_manager.html">AudioManager</a> *audioManager; </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordtype">void</span> initializeGame();</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordtype">void</span> checkCollisions();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordtype">void</span> drawScore(QPainter &amp;painter);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">void</span> drawPauseScreen(QPainter &amp;painter);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">void</span> respawnPacman();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordtype">void</span> checkWinCondition();</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordtype">void</span> updateGhostModes(<span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordtype">void</span> activatePowerUp();</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordtype">void</span> updatePowerUpTimer(<span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>};</div>
+</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="preprocessor">#endif </span></div>
+<div class="ttc" id="a_audio_manager_8h_html"><div class="ttname"><a href="_audio_manager_8h.html">AudioManager.h</a></div><div class="ttdoc">Zarządzanie dźwiękami w grze Pacman.</div></div>
+<div class="ttc" id="a_blinky_8h_html"><div class="ttname"><a href="_blinky_8h.html">Blinky.h</a></div><div class="ttdoc">Implementacja ducha Blinky.</div></div>
+<div class="ttc" id="a_clyde_8h_html"><div class="ttname"><a href="_clyde_8h.html">Clyde.h</a></div><div class="ttdoc">Implementacja ducha Clyde.</div></div>
+<div class="ttc" id="a_game_8h_html_a7899b65f1ea0f655e4bbf8d2a5714285"><div class="ttname"><a href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a></div><div class="ttdeci">GameState</div><div class="ttdoc">Enumeracja stanów gry.</div><div class="ttdef"><b>Definicja</b> Game.h:30</div></div>
+<div class="ttc" id="a_game_8h_html_a7899b65f1ea0f655e4bbf8d2a5714285a4c40e60bc71a32b924ce1f08d57f9721"><div class="ttname"><a href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285a4c40e60bc71a32b924ce1f08d57f9721">MENU</a></div><div class="ttdeci">@ MENU</div><div class="ttdoc">Stan menu głównego.</div><div class="ttdef"><b>Definicja</b> Game.h:31</div></div>
+<div class="ttc" id="a_game_8h_html_a7899b65f1ea0f655e4bbf8d2a5714285a843dff91ff0b0e5b98a110a512b2f531"><div class="ttname"><a href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285a843dff91ff0b0e5b98a110a512b2f531">WIN</a></div><div class="ttdeci">@ WIN</div><div class="ttdoc">Stan wygranej.</div><div class="ttdef"><b>Definicja</b> Game.h:35</div></div>
+<div class="ttc" id="a_game_8h_html_a7899b65f1ea0f655e4bbf8d2a5714285a871723195985a4ae22d7e10d99bf8a00"><div class="ttname"><a href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285a871723195985a4ae22d7e10d99bf8a00">GAME_OVER</a></div><div class="ttdeci">@ GAME_OVER</div><div class="ttdoc">Stan przegranej.</div><div class="ttdef"><b>Definicja</b> Game.h:34</div></div>
+<div class="ttc" id="a_game_8h_html_a7899b65f1ea0f655e4bbf8d2a5714285ad4bb05915de3c370d3a33d4f51389655"><div class="ttname"><a href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285ad4bb05915de3c370d3a33d4f51389655">PAUSED</a></div><div class="ttdeci">@ PAUSED</div><div class="ttdoc">Stan pauzy.</div><div class="ttdef"><b>Definicja</b> Game.h:33</div></div>
+<div class="ttc" id="a_game_8h_html_a7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8"><div class="ttname"><a href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8">PLAYING</a></div><div class="ttdeci">@ PLAYING</div><div class="ttdoc">Stan rozgrywki.</div><div class="ttdef"><b>Definicja</b> Game.h:32</div></div>
+<div class="ttc" id="a_game_board_8h_html"><div class="ttname"><a href="_game_board_8h.html">GameBoard.h</a></div><div class="ttdoc">Klasa reprezentująca planszę gry Pacman.</div></div>
+<div class="ttc" id="a_ghost_8h_html"><div class="ttname"><a href="_ghost_8h.html">Ghost.h</a></div><div class="ttdoc">Klasa bazowa dla wszystkich duchów w grze.</div></div>
+<div class="ttc" id="a_inky_8h_html"><div class="ttname"><a href="_inky_8h.html">Inky.h</a></div><div class="ttdoc">Implementacja ducha Inky.</div></div>
+<div class="ttc" id="a_pacman_8h_html"><div class="ttname"><a href="_pacman_8h.html">Pacman.h</a></div><div class="ttdoc">Klasa reprezentująca główną postać gracza - Pacmana.</div></div>
+<div class="ttc" id="a_pinky_8h_html"><div class="ttname"><a href="_pinky_8h.html">Pinky.h</a></div><div class="ttdoc">Implementacja ducha Pinky.</div></div>
+<div class="ttc" id="a_power_pellet_8h_html"><div class="ttname"><a href="_power_pellet_8h.html">PowerPellet.h</a></div><div class="ttdoc">Implementacja power-pellet (duży punkt mocy)</div></div>
+<div class="ttc" id="a_power_up_8h_html"><div class="ttname"><a href="_power_up_8h.html">PowerUp.h</a></div><div class="ttdoc">Klasa bazowa dla wszystkich power-upów.</div></div>
+<div class="ttc" id="aclass_audio_manager_html"><div class="ttname"><a href="class_audio_manager.html">AudioManager</a></div><div class="ttdoc">Klasa zarządzająca dźwiękami w grze.</div><div class="ttdef"><b>Definicja</b> AudioManager.h:21</div></div>
+<div class="ttc" id="aclass_blinky_html"><div class="ttname"><a href="class_blinky.html">Blinky</a></div><div class="ttdoc">Klasa reprezentująca ducha Blinky (czerwony duch)</div><div class="ttdef"><b>Definicja</b> Blinky.h:19</div></div>
+<div class="ttc" id="aclass_clyde_html"><div class="ttname"><a href="class_clyde.html">Clyde</a></div><div class="ttdoc">Klasa reprezentująca ducha Clyde (pomarańczowy duch)</div><div class="ttdef"><b>Definicja</b> Clyde.h:19</div></div>
+<div class="ttc" id="aclass_game_board_html"><div class="ttname"><a href="class_game_board.html">GameBoard</a></div><div class="ttdoc">Klasa reprezentująca planszę gry Pacman.</div><div class="ttdef"><b>Definicja</b> GameBoard.h:41</div></div>
+<div class="ttc" id="aclass_game_html_a11472607ec18247e34b70de047ca5e4a"><div class="ttname"><a href="class_game.html#a11472607ec18247e34b70de047ca5e4a">Game::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">Obsługuje naciśnięcie klawisza.</div><div class="ttdef"><b>Definicja</b> Game.cpp:210</div></div>
+<div class="ttc" id="aclass_game_html_a2521a818da4804e7d79c4b02347cc764"><div class="ttname"><a href="class_game.html#a2521a818da4804e7d79c4b02347cc764">Game::livesChanged</a></div><div class="ttdeci">void livesChanged(int newLives)</div><div class="ttdoc">Sygnał emitowany przy zmianie liczby żyć</div></div>
+<div class="ttc" id="aclass_game_html_a3828738518a273ce13a090006f246849"><div class="ttname"><a href="class_game.html#a3828738518a273ce13a090006f246849">Game::gameStateChanged</a></div><div class="ttdeci">void gameStateChanged(GameState newState)</div><div class="ttdoc">Sygnał emitowany przy zmianie stanu gry.</div></div>
+<div class="ttc" id="aclass_game_html_a47c726a80fd133c0a4f6b8fba56d8832"><div class="ttname"><a href="class_game.html#a47c726a80fd133c0a4f6b8fba56d8832">Game::resetGame</a></div><div class="ttdeci">void resetGame()</div><div class="ttdoc">Resetuje grę do stanu początkowego.</div><div class="ttdef"><b>Definicja</b> Game.cpp:144</div></div>
+<div class="ttc" id="aclass_game_html_a4d5fb2ed620bbffc75a399d263d19be0"><div class="ttname"><a href="class_game.html#a4d5fb2ed620bbffc75a399d263d19be0">Game::scoreChanged</a></div><div class="ttdeci">void scoreChanged(int newScore)</div><div class="ttdoc">Sygnał emitowany przy zmianie wyniku.</div></div>
+<div class="ttc" id="aclass_game_html_a5ec2daf2a7fe95ee03dea84b4f5d6883"><div class="ttname"><a href="class_game.html#a5ec2daf2a7fe95ee03dea84b4f5d6883">Game::resumeGame</a></div><div class="ttdeci">void resumeGame()</div><div class="ttdoc">Wznawia zatrzymaną grę</div><div class="ttdef"><b>Definicja</b> Game.cpp:134</div></div>
+<div class="ttc" id="aclass_game_html_a84d700bd37042ce4ab36a8070fe309db"><div class="ttname"><a href="class_game.html#a84d700bd37042ce4ab36a8070fe309db">Game::getAudioManager</a></div><div class="ttdeci">AudioManager * getAudioManager()</div><div class="ttdoc">Zwraca wskaźnik na menedżer audio.</div><div class="ttdef"><b>Definicja</b> Game.h:101</div></div>
+<div class="ttc" id="aclass_game_html_a9d9a79a0f7df3c7e55a3103c04ecbc87"><div class="ttname"><a href="class_game.html#a9d9a79a0f7df3c7e55a3103c04ecbc87">Game::pauseGame</a></div><div class="ttdeci">void pauseGame()</div><div class="ttdoc">Zatrzymuje grę (pauza)</div><div class="ttdef"><b>Definicja</b> Game.cpp:126</div></div>
+<div class="ttc" id="aclass_game_html_ac1a9dde49041f68e14234a41a862865d"><div class="ttname"><a href="class_game.html#ac1a9dde49041f68e14234a41a862865d">Game::Game</a></div><div class="ttdeci">Game(QWidget *parent=nullptr)</div><div class="ttdoc">Konstruktor klasy Game.</div><div class="ttdef"><b>Definicja</b> Game.cpp:12</div></div>
+<div class="ttc" id="aclass_game_html_adbbfae184c044c2d544b382704b2bacd"><div class="ttname"><a href="class_game.html#adbbfae184c044c2d544b382704b2bacd">Game::getCurrentState</a></div><div class="ttdeci">GameState getCurrentState() const</div><div class="ttdoc">Zwraca aktualny stan gry.</div><div class="ttdef"><b>Definicja</b> Game.h:83</div></div>
+<div class="ttc" id="aclass_game_html_adff34c2ddf03af26dcddad0a942bbcf7"><div class="ttname"><a href="class_game.html#adff34c2ddf03af26dcddad0a942bbcf7">Game::getScore</a></div><div class="ttdeci">int getScore() const</div><div class="ttdoc">Zwraca aktualny wynik gracza.</div><div class="ttdef"><b>Definicja</b> Game.h:89</div></div>
+<div class="ttc" id="aclass_game_html_ae3d112ca6e0e55150d2fdbc704474530"><div class="ttname"><a href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">Game::~Game</a></div><div class="ttdeci">~Game()</div><div class="ttdoc">Destruktor klasy Game.</div><div class="ttdef"><b>Definicja</b> Game.cpp:39</div></div>
+<div class="ttc" id="aclass_game_html_ae3d960780bb03ab5d6713e5d3343f6fc"><div class="ttname"><a href="class_game.html#ae3d960780bb03ab5d6713e5d3343f6fc">Game::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *event) override</div><div class="ttdoc">Obsługuje zdarzenie rysowania.</div><div class="ttdef"><b>Definicja</b> Game.cpp:153</div></div>
+<div class="ttc" id="aclass_game_html_ae8638ccdb0ef3bf39a6affa30aa1258f"><div class="ttname"><a href="class_game.html#ae8638ccdb0ef3bf39a6affa30aa1258f">Game::startGame</a></div><div class="ttdeci">void startGame()</div><div class="ttdoc">Rozpoczyna nową grę</div><div class="ttdef"><b>Definicja</b> Game.cpp:118</div></div>
+<div class="ttc" id="aclass_game_html_af7962212d039de623b8eebc538ff7140"><div class="ttname"><a href="class_game.html#af7962212d039de623b8eebc538ff7140">Game::getLives</a></div><div class="ttdeci">int getLives() const</div><div class="ttdoc">Zwraca liczbę pozostałych żyć</div><div class="ttdef"><b>Definicja</b> Game.h:95</div></div>
+<div class="ttc" id="aclass_inky_html"><div class="ttname"><a href="class_inky.html">Inky</a></div><div class="ttdoc">Klasa reprezentująca ducha Inky (niebieski duch)</div><div class="ttdef"><b>Definicja</b> Inky.h:21</div></div>
+<div class="ttc" id="aclass_pacman_html"><div class="ttname"><a href="class_pacman.html">Pacman</a></div><div class="ttdoc">Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza.</div><div class="ttdef"><b>Definicja</b> Pacman.h:22</div></div>
+<div class="ttc" id="aclass_pinky_html"><div class="ttname"><a href="class_pinky.html">Pinky</a></div><div class="ttdoc">Klasa reprezentująca ducha Pinky (różowy duch)</div><div class="ttdef"><b>Definicja</b> Pinky.h:19</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="_game_8h.html">Game.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

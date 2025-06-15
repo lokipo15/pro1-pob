@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POB Pro 1 - PacMan: Dokumentacja klasy Game</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POB Pro 1 - PacMan
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_game.html','','class_game-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy Game</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Główna klasa zarządzająca logiką gry <a class="el" href="class_pacman.html" title="Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza.">Pacman</a>.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_game_8h_source.html">Game.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla Game</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_game.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
+Sygnały</h2></td></tr>
+<tr class="memitem:a3828738518a273ce13a090006f246849" id="r_a3828738518a273ce13a090006f246849"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3828738518a273ce13a090006f246849">gameStateChanged</a> (<a class="el" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a> newState)</td></tr>
+<tr class="memdesc:a3828738518a273ce13a090006f246849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sygnał emitowany przy zmianie stanu gry.  <br /></td></tr>
+<tr class="memitem:a4d5fb2ed620bbffc75a399d263d19be0" id="r_a4d5fb2ed620bbffc75a399d263d19be0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d5fb2ed620bbffc75a399d263d19be0">scoreChanged</a> (int newScore)</td></tr>
+<tr class="memdesc:a4d5fb2ed620bbffc75a399d263d19be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sygnał emitowany przy zmianie wyniku.  <br /></td></tr>
+<tr class="memitem:a2521a818da4804e7d79c4b02347cc764" id="r_a2521a818da4804e7d79c4b02347cc764"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2521a818da4804e7d79c4b02347cc764">livesChanged</a> (int newLives)</td></tr>
+<tr class="memdesc:a2521a818da4804e7d79c4b02347cc764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sygnał emitowany przy zmianie liczby żyć  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ac1a9dde49041f68e14234a41a862865d" id="r_ac1a9dde49041f68e14234a41a862865d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1a9dde49041f68e14234a41a862865d">Game</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:ac1a9dde49041f68e14234a41a862865d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor klasy <a class="el" href="class_game.html" title="Główna klasa zarządzająca logiką gry Pacman.">Game</a>.  <br /></td></tr>
+<tr class="memitem:ae3d112ca6e0e55150d2fdbc704474530" id="r_ae3d112ca6e0e55150d2fdbc704474530"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3d112ca6e0e55150d2fdbc704474530">~Game</a> ()</td></tr>
+<tr class="memdesc:ae3d112ca6e0e55150d2fdbc704474530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor klasy <a class="el" href="class_game.html" title="Główna klasa zarządzająca logiką gry Pacman.">Game</a>.  <br /></td></tr>
+<tr class="memitem:ae8638ccdb0ef3bf39a6affa30aa1258f" id="r_ae8638ccdb0ef3bf39a6affa30aa1258f"><td class="memItemLeft" align="right" valign="top"><a id="ae8638ccdb0ef3bf39a6affa30aa1258f" name="ae8638ccdb0ef3bf39a6affa30aa1258f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>startGame</b> ()</td></tr>
+<tr class="memdesc:ae8638ccdb0ef3bf39a6affa30aa1258f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rozpoczyna nową grę <br /></td></tr>
+<tr class="memitem:a9d9a79a0f7df3c7e55a3103c04ecbc87" id="r_a9d9a79a0f7df3c7e55a3103c04ecbc87"><td class="memItemLeft" align="right" valign="top"><a id="a9d9a79a0f7df3c7e55a3103c04ecbc87" name="a9d9a79a0f7df3c7e55a3103c04ecbc87"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>pauseGame</b> ()</td></tr>
+<tr class="memdesc:a9d9a79a0f7df3c7e55a3103c04ecbc87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zatrzymuje grę (pauza) <br /></td></tr>
+<tr class="memitem:a5ec2daf2a7fe95ee03dea84b4f5d6883" id="r_a5ec2daf2a7fe95ee03dea84b4f5d6883"><td class="memItemLeft" align="right" valign="top"><a id="a5ec2daf2a7fe95ee03dea84b4f5d6883" name="a5ec2daf2a7fe95ee03dea84b4f5d6883"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>resumeGame</b> ()</td></tr>
+<tr class="memdesc:a5ec2daf2a7fe95ee03dea84b4f5d6883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wznawia zatrzymaną grę <br /></td></tr>
+<tr class="memitem:a47c726a80fd133c0a4f6b8fba56d8832" id="r_a47c726a80fd133c0a4f6b8fba56d8832"><td class="memItemLeft" align="right" valign="top"><a id="a47c726a80fd133c0a4f6b8fba56d8832" name="a47c726a80fd133c0a4f6b8fba56d8832"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>resetGame</b> ()</td></tr>
+<tr class="memdesc:a47c726a80fd133c0a4f6b8fba56d8832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetuje grę do stanu początkowego. <br /></td></tr>
+<tr class="memitem:adbbfae184c044c2d544b382704b2bacd" id="r_adbbfae184c044c2d544b382704b2bacd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbbfae184c044c2d544b382704b2bacd">getCurrentState</a> () const</td></tr>
+<tr class="memdesc:adbbfae184c044c2d544b382704b2bacd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca aktualny stan gry.  <br /></td></tr>
+<tr class="memitem:adff34c2ddf03af26dcddad0a942bbcf7" id="r_adff34c2ddf03af26dcddad0a942bbcf7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adff34c2ddf03af26dcddad0a942bbcf7">getScore</a> () const</td></tr>
+<tr class="memdesc:adff34c2ddf03af26dcddad0a942bbcf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca aktualny wynik gracza.  <br /></td></tr>
+<tr class="memitem:af7962212d039de623b8eebc538ff7140" id="r_af7962212d039de623b8eebc538ff7140"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7962212d039de623b8eebc538ff7140">getLives</a> () const</td></tr>
+<tr class="memdesc:af7962212d039de623b8eebc538ff7140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca liczbę pozostałych żyć  <br /></td></tr>
+<tr class="memitem:a84d700bd37042ce4ab36a8070fe309db" id="r_a84d700bd37042ce4ab36a8070fe309db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_audio_manager.html">AudioManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84d700bd37042ce4ab36a8070fe309db">getAudioManager</a> ()</td></tr>
+<tr class="memdesc:a84d700bd37042ce4ab36a8070fe309db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca wskaźnik na menedżer audio.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Metody chronione</h2></td></tr>
+<tr class="memitem:ae3d960780bb03ab5d6713e5d3343f6fc" id="r_ae3d960780bb03ab5d6713e5d3343f6fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3d960780bb03ab5d6713e5d3343f6fc">paintEvent</a> (QPaintEvent *event) override</td></tr>
+<tr class="memdesc:ae3d960780bb03ab5d6713e5d3343f6fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje zdarzenie rysowania.  <br /></td></tr>
+<tr class="memitem:a11472607ec18247e34b70de047ca5e4a" id="r_a11472607ec18247e34b70de047ca5e4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11472607ec18247e34b70de047ca5e4a">keyPressEvent</a> (QKeyEvent *event) override</td></tr>
+<tr class="memdesc:a11472607ec18247e34b70de047ca5e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obsługuje naciśnięcie klawisza.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Główna klasa zarządzająca logiką gry <a class="el" href="class_pacman.html" title="Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza.">Pacman</a>. </p>
+<p>Klasa odpowiedzialna za kontrolę stanu gry, aktualizację obiektów, obsługę kolizji i renderowanie interfejsu gry. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="ac1a9dde49041f68e14234a41a862865d" name="ac1a9dde49041f68e14234a41a862865d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1a9dde49041f68e14234a41a862865d">&#9670;&#160;</a></span>Game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Game::Game </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor klasy <a class="el" href="class_game.html" title="Główna klasa zarządzająca logiką gry Pacman.">Game</a>. </p>
+<p>Inicjalizacja planszy i obiektów.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Wskaźnik na rodzica widget'u</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Created by Gabriel Boruń on 25/04/2025. Co-authored by Konrad Gębski on 25/04/2025. </p>
+<p>Ustawienie focus policy, aby otrzymywać zdarzenia klawiatury</p>
+<p>Tworzenie i uruchamianie timera do aktualizacji gry</p>
+<p>Timer ustawiony na 16ms dla 60 FPS</p>
+<p>Inicjalizacja komponentów gry (ale nie rozpoczynamy gry)</p>
+<p>Inicjalizacja <a class="el" href="class_audio_manager.html" title="Klasa zarządzająca dźwiękami w grze.">AudioManager</a></p>
+<p>Konfiguracja ścieżek do plików dźwiękowych</p>
+
+</div>
+</div>
+<a id="ae3d112ca6e0e55150d2fdbc704474530" name="ae3d112ca6e0e55150d2fdbc704474530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3d112ca6e0e55150d2fdbc704474530">&#9670;&#160;</a></span>~Game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Game::~Game </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destruktor klasy <a class="el" href="class_game.html" title="Główna klasa zarządzająca logiką gry Pacman.">Game</a>. </p>
+<p>Destruktor. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a3828738518a273ce13a090006f246849" name="a3828738518a273ce13a090006f246849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3828738518a273ce13a090006f246849">&#9670;&#160;</a></span>gameStateChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::gameStateChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a></td>          <td class="paramname"><span class="paramname"><em>newState</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sygnał emitowany przy zmianie stanu gry. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newState</td><td>Nowy stan gry </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a84d700bd37042ce4ab36a8070fe309db" name="a84d700bd37042ce4ab36a8070fe309db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84d700bd37042ce4ab36a8070fe309db">&#9670;&#160;</a></span>getAudioManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_audio_manager.html">AudioManager</a> * Game::getAudioManager </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca wskaźnik na menedżer audio. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Wskaźnik na <a class="el" href="class_audio_manager.html" title="Klasa zarządzająca dźwiękami w grze.">AudioManager</a> </dd></dl>
+
+</div>
+</div>
+<a id="adbbfae184c044c2d544b382704b2bacd" name="adbbfae184c044c2d544b382704b2bacd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbbfae184c044c2d544b382704b2bacd">&#9670;&#160;</a></span>getCurrentState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_game_8h.html#a7899b65f1ea0f655e4bbf8d2a5714285">GameState</a> Game::getCurrentState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca aktualny stan gry. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Aktualny stan gry </dd></dl>
+
+</div>
+</div>
+<a id="af7962212d039de623b8eebc538ff7140" name="af7962212d039de623b8eebc538ff7140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7962212d039de623b8eebc538ff7140">&#9670;&#160;</a></span>getLives()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::getLives </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca liczbę pozostałych żyć </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Liczba żyć gracza </dd></dl>
+
+</div>
+</div>
+<a id="adff34c2ddf03af26dcddad0a942bbcf7" name="adff34c2ddf03af26dcddad0a942bbcf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adff34c2ddf03af26dcddad0a942bbcf7">&#9670;&#160;</a></span>getScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::getScore </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zwraca aktualny wynik gracza. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Liczba zdobytych punktów </dd></dl>
+
+</div>
+</div>
+<a id="a11472607ec18247e34b70de047ca5e4a" name="a11472607ec18247e34b70de047ca5e4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11472607ec18247e34b70de047ca5e4a">&#9670;&#160;</a></span>keyPressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje naciśnięcie klawisza. </p>
+<p>Movement/ruch gracza.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Zdarzenie klawiatury </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2521a818da4804e7d79c4b02347cc764" name="a2521a818da4804e7d79c4b02347cc764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2521a818da4804e7d79c4b02347cc764">&#9670;&#160;</a></span>livesChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::livesChanged </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>newLives</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sygnał emitowany przy zmianie liczby żyć </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newLives</td><td>Nowa liczba żyć </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae3d960780bb03ab5d6713e5d3343f6fc" name="ae3d960780bb03ab5d6713e5d3343f6fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3d960780bb03ab5d6713e5d3343f6fc">&#9670;&#160;</a></span>paintEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::paintEvent </td>
+          <td>(</td>
+          <td class="paramtype">QPaintEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obsługuje zdarzenie rysowania. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Zdarzenie rysowania </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Nie rysuj nic, menu jest obsługiwane przez <a class="el" href="class_main_menu.html" title="Klasa reprezentująca menu główne gry.">MainMenu</a> widget</p>
+<p>Rysowanie planszy (zawiera power-upy z <a class="el" href="class_game_board.html" title="Klasa reprezentująca planszę gry Pacman.">GameBoard</a>)</p>
+<p>Rysowanie Pacmana</p>
+<p>Rysowanie duchów</p>
+<p>Rysowanie wyniku</p>
+<p>Rysowanie ekranu pauzy</p>
+<p>Rysowanie "Game Over" jeśli gra się skończyła</p>
+
+</div>
+</div>
+<a id="a4d5fb2ed620bbffc75a399d263d19be0" name="a4d5fb2ed620bbffc75a399d263d19be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d5fb2ed620bbffc75a399d263d19be0">&#9670;&#160;</a></span>scoreChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::scoreChanged </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>newScore</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sygnał emitowany przy zmianie wyniku. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newScore</td><td>Nowy wynik </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>src/<a class="el" href="_game_8h_source.html">Game.h</a></li>
+<li>src/<b>Game.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_game.html">Game</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

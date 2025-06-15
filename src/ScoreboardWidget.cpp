@@ -1,7 +1,7 @@
-//
-// Created by Gabriel Boruń on 25/04/2025.
-// Co-authored by Konrad Gębski on 25/04/2025.
-//
+///
+/// Created by Gabriel Boruń on 25/04/2025.
+/// Co-authored by Konrad Gębski on 25/04/2025.
+///
 
 #include "ScoreboardWidget.h"
 #include <QPainter>
@@ -23,13 +23,13 @@ void ScoreboardWidget::setupUI() {
     layout->setSpacing(20);
     layout->setContentsMargins(50, 50, 50, 50);
 
-    // Tytuł
+    /// Tytuł
     titleLabel = new QLabel("NAJLEPSZE WYNIKI", this);
     titleLabel->setAlignment(Qt::AlignCenter);
     titleLabel->setStyleSheet("QLabel { color: yellow; font-size: 28px; font-weight: bold; }");
     layout->addWidget(titleLabel);
 
-    // Obszar przewijania dla wyników
+    /// Obszar przewijania dla wyników
     scrollArea = new QScrollArea(this);
     scrollArea->setFixedHeight(400);
     scrollArea->setWidgetResizable(true);
@@ -47,7 +47,7 @@ void ScoreboardWidget::setupUI() {
     scrollArea->setWidget(scoresWidget);
     layout->addWidget(scrollArea);
 
-    // Przycisk powrotu
+    /// Przycisk powrotu
     backButton = new QPushButton("POWRÓT", this);
     backButton->setStyleSheet(
         "QPushButton { "
@@ -69,7 +69,7 @@ void ScoreboardWidget::refreshScores() {
 }
 
 void ScoreboardWidget::updateScoreDisplay() {
-    // Wyczyść poprzednie wyniki
+    /// Wyczyść poprzednie wyniki
     QLayoutItem *child;
     while ((child = scoresLayout->takeAt(0)) != nullptr) {
         delete child->widget();
@@ -96,7 +96,7 @@ void ScoreboardWidget::updateScoreDisplay() {
             scoreLabel->setAlignment(Qt::AlignLeft);
             scoreLabel->setStyleSheet(
                 QString("QLabel { color: %1; font-size: 14px; font-family: 'Courier New'; padding: 5px; }")
-                .arg(i < 3 ? "gold" : "white")  // Top 3 w kolorze złotym
+                .arg(i < 3 ? "gold" : "white")  /// Top 3 w kolorze złotym
             );
             scoresLayout->addWidget(scoreLabel);
         }
@@ -107,7 +107,7 @@ void ScoreboardWidget::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.fillRect(rect(), Qt::black);
 
-    // Instrukcje
+    /// Instrukcje
     painter.setPen(Qt::white);
     painter.setFont(QFont("Arial", 12));
     painter.drawText(10, height() - 20, "Naciśnij ESC lub ENTER aby wrócić");

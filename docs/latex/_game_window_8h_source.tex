@@ -1,0 +1,56 @@
+\doxysection{Game\+Window.\+h}
+\hypertarget{_game_window_8h_source}{}\label{_game_window_8h_source}\index{src/GameWindow.h@{src/GameWindow.h}}
+\mbox{\hyperlink{_game_window_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ GAMEWINDOW\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ GAMEWINDOW\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QStackedWidget>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_8h}{Game.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_main_menu_8h}{MainMenu.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_over_screen_8h}{GameOverScreen.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_win_screen_8h}{WinScreen.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_scoreboard_widget_8h}{ScoreboardWidget.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_window_ac3eeb92ff59cb36fd579f290013db4d5}{GameWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_game_window_ac3eeb92ff59cb36fd579f290013db4d5}{GameWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_game_window_a55b071c0390e45c064a160c1e6baaa08}{\string~GameWindow}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ onStartGameRequested();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ onRestartRequested();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ onMainMenuRequested();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ onExitRequested();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ onScoreboardRequested();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ onScoreboardBackRequested();}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ onGameStateChanged(\mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\ newState);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ onWinSaveScoreRequested(\textcolor{keyword}{const}\ QString\ \&playerName,\ \textcolor{keywordtype}{int}\ score);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ onWinViewScoreboardRequested();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ onWinPlayAgainRequested();}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ onWinExitRequested();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ \ \ \ \ QStackedWidget\ *stackedWidget;\ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}\ *game;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_main_menu}{MainMenu}}\ *mainMenu;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_game_over_screen}{GameOverScreen}}\ *gameOverScreen;\ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_win_screen}{WinScreen}}\ *winScreen;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_scoreboard_widget}{ScoreboardWidget}}\ *scoreboardWidget;\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUI();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ showMainMenu();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ showGame();}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ showGameOver();}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ showWin();}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ showScoreboard();}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

@@ -1,0 +1,320 @@
+\doxysection{Dokumentacja klasy Entity}
+\hypertarget{class_entity}{}\label{class_entity}\index{Entity@{Entity}}
+
+
+Bazowa klasa dla wszystkich ruchomych obiektów w grze.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+Diagram dziedziczenia dla Entity\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_entity}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Typy publiczne}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} \{ \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297}{None}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51}{Up}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb}{Down}}
+, \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c}{Left}}
+, \newline
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362}{Right}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeracja kierunków ruchu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_a69dceaa4d0b6c30da97723f83a357de3}{Entity}} (const QPointF \&start\+Pos)
+\begin{DoxyCompactList}\small\item\em Konstruktor encji. \end{DoxyCompactList}\item 
+\Hypertarget{class_entity_ac479d009ddde62dfb378ca0a70d81307}\label{class_entity_ac479d009ddde62dfb378ca0a70d81307} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Entity} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_entity_a8d7d83b17cda5e4f2254f0f01070c331}{draw}} (QPainter \&painter)=0
+\begin{DoxyCompactList}\small\item\em Rysuje encję na ekranie. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_entity_ac60c3042032c2f66bac0bb363addf6ba}{move}} (\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board, float delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Porusza encją na planszy. \end{DoxyCompactList}\item 
+QPoint \mbox{\hyperlink{class_entity_ae284253c07a9664cdedb5759f04918c6}{get\+Grid\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca pozycję encji na siatce. \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_entity_a7772c152c566454de1d20144147afb12}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca aktualną pozycję encji. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_a659e5b54903bd6416ddf16e1c3993ce1}{set\+Position}} (const QPointF \&pos)
+\begin{DoxyCompactList}\small\item\em Ustawia nową pozycję encji. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entity_a69ae771d228bd6f92318754e9632c59c}{is\+At\+Grid\+Center}} () const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy encja jest w centrum komórki siatki. \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_entity_a3d98a18fc73a18d340f7309e9ea32f58}{get\+Target\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca docelową pozycję encji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_entity_aad253e8a3c79d8bc022c88a32063c546}{calculate\+Next\+Position}} (\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} dir, float delta\+Time) const
+\begin{DoxyCompactList}\small\item\em Oblicza następną pozycję na podstawie kierunku i czasu. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_entity_a714d5ff2b037813b99c4d5586558e236}{can\+Move\+To}} (const QPoint \&grid\+Pos, \mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}board) const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy można przejść na daną pozycję \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_af23f754ef82eeeeb2470a049f00f5db3}{update\+Target\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Aktualizuje docelową pozycję encji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_entity_a4cafeaa4555283d5839355c498f672a9}\label{class_entity_a4cafeaa4555283d5839355c498f672a9} 
+QPointF {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Aktualna pozycja encji w pikselach. \end{DoxyCompactList}\item 
+\Hypertarget{class_entity_a341c5a42a6441fd6951d0b9b6d215429}\label{class_entity_a341c5a42a6441fd6951d0b9b6d215429} 
+QPointF {\bfseries target\+Position}
+\begin{DoxyCompactList}\small\item\em Docelowa pozycja na siatce. \end{DoxyCompactList}\item 
+\Hypertarget{class_entity_ad8036c2cfb6749a5d94134d88c779e5e}\label{class_entity_ad8036c2cfb6749a5d94134d88c779e5e} 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} {\bfseries current\+Direction}
+\begin{DoxyCompactList}\small\item\em Aktualny kierunek ruchu. \end{DoxyCompactList}\item 
+\Hypertarget{class_entity_a071992c732954678a0393a4e56561adb}\label{class_entity_a071992c732954678a0393a4e56561adb} 
+\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}} {\bfseries next\+Direction}
+\begin{DoxyCompactList}\small\item\em Następny kierunek ruchu (buforowany) \end{DoxyCompactList}\item 
+\Hypertarget{class_entity_a62588bbdc2d530d9854cd07ca558c9aa}\label{class_entity_a62588bbdc2d530d9854cd07ca558c9aa} 
+float {\bfseries move\+Speed}
+\begin{DoxyCompactList}\small\item\em Prędkość ruchu w komórkach na sekundę \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Statyczne atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_entity_a69d77a7b2efe097c0352d933ea9567f1}\label{class_entity_a69d77a7b2efe097c0352d933ea9567f1} 
+static const int {\bfseries CELL\+\_\+\+SIZE} = 30
+\begin{DoxyCompactList}\small\item\em Rozmiar pojedynczej komórki siatki w pikselach. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Bazowa klasa dla wszystkich ruchomych obiektów w grze. 
+
+Klasa abstrakcyjna definiująca wspólny interfejs i funkcjonalność dla Pacmana, duchów i innych ruchomych obiektów. 
+
+\label{doc-enum-members}
+\Hypertarget{class_entity_doc-enum-members}
+\doxysubsection{Dokumentacja składowych wyliczanych}
+\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034}\index{Entity@{Entity}!Direction@{Direction}}
+\index{Direction@{Direction}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \label{class_entity_ac6ff3a9435d7dacb378891eadd127034} 
+enum \mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Entity\+::\+Direction}}}
+
+
+
+Enumeracja kierunków ruchu. 
+
+\begin{DoxyEnumFields}[2]{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!Entity@{Entity}}\index{Entity@{Entity}!None@{None}}}\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297}\label{class_entity_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297} 
+None&Brak ruchu. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Up@{Up}!Entity@{Entity}}\index{Entity@{Entity}!Up@{Up}}}\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51}\label{class_entity_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51} 
+Up&Ruch w górę \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Down@{Down}!Entity@{Entity}}\index{Entity@{Entity}!Down@{Down}}}\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb}\label{class_entity_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb} 
+Down&Ruch w dół \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!Entity@{Entity}}\index{Entity@{Entity}!Left@{Left}}}\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c}\label{class_entity_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c} 
+Left&Ruch w lewo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!Entity@{Entity}}\index{Entity@{Entity}!Right@{Right}}}\Hypertarget{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362}\label{class_entity_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362} 
+Right&Ruch w prawo. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_entity_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_entity_a69dceaa4d0b6c30da97723f83a357de3}\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily \label{class_entity_a69dceaa4d0b6c30da97723f83a357de3} 
+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const QPointF \&}]{start\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor encji. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em start\+Pos} & Pozycja startowa encji\\
+\hline
+\end{DoxyParams}
+Created by Gabriel Boruń on 25/04/2025. Co-\/authored by Konrad Gębski on 25/04/2025. Domyślna prędkość\+: 5 komórek na sekundę
+
+\label{doc-func-members}
+\Hypertarget{class_entity_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_entity_aad253e8a3c79d8bc022c88a32063c546}\index{Entity@{Entity}!calculateNextPosition@{calculateNextPosition}}
+\index{calculateNextPosition@{calculateNextPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{calculateNextPosition()}{calculateNextPosition()}}
+{\footnotesize\ttfamily \label{class_entity_aad253e8a3c79d8bc022c88a32063c546} 
+QPointF Entity\+::calculate\+Next\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_ac6ff3a9435d7dacb378891eadd127034}{Direction}}}]{dir}{, }\item[{float}]{delta\+Time}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Oblicza następną pozycję na podstawie kierunku i czasu. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em dir} & Kierunek ruchu \\
+\hline
+{\em delta\+Time} & Czas od ostatniej aktualizacji \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+Obliczona pozycja 
+\end{DoxyReturn}
+\Hypertarget{class_entity_a714d5ff2b037813b99c4d5586558e236}\index{Entity@{Entity}!canMoveTo@{canMoveTo}}
+\index{canMoveTo@{canMoveTo}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{canMoveTo()}{canMoveTo()}}
+{\footnotesize\ttfamily \label{class_entity_a714d5ff2b037813b99c4d5586558e236} 
+bool Entity\+::can\+Move\+To (\begin{DoxyParamCaption}\item[{const QPoint \&}]{grid\+Pos}{, }\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sprawdza czy można przejść na daną pozycję 
+
+
+\begin{DoxyParams}{Parametry}
+{\em grid\+Pos} & Pozycja na siatce do sprawdzenia \\
+\hline
+{\em board} & Wskaźnik na planszę gry \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+true jeśli ruch jest możliwy 
+\end{DoxyReturn}
+\Hypertarget{class_entity_a8d7d83b17cda5e4f2254f0f01070c331}\index{Entity@{Entity}!draw@{draw}}
+\index{draw@{draw}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_entity_a8d7d83b17cda5e4f2254f0f01070c331} 
+virtual void Entity\+::draw (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Rysuje encję na ekranie. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em painter} & Obiekt do rysowania \\
+\hline
+\end{DoxyParams}
+
+
+Implementowany w \mbox{\hyperlink{class_ghost_a18e4d17093a402c92a4aefee928d96ea}{Ghost}} i \mbox{\hyperlink{class_pacman_af59479cfe7b24f7716ba0421a696161a}{Pacman}}.
+
+\Hypertarget{class_entity_ae284253c07a9664cdedb5759f04918c6}\index{Entity@{Entity}!getGridPosition@{getGridPosition}}
+\index{getGridPosition@{getGridPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getGridPosition()}{getGridPosition()}}
+{\footnotesize\ttfamily \label{class_entity_ae284253c07a9664cdedb5759f04918c6} 
+QPoint Entity\+::get\+Grid\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Zwraca pozycję encji na siatce. 
+
+\begin{DoxyReturn}{Zwraca}
+Pozycja na siatce jako QPoint 
+\end{DoxyReturn}
+Konwersja pozycji float na pozycję na siatce\Hypertarget{class_entity_a7772c152c566454de1d20144147afb12}\index{Entity@{Entity}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \label{class_entity_a7772c152c566454de1d20144147afb12} 
+QPointF Entity\+::get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca aktualną pozycję encji. 
+
+\begin{DoxyReturn}{Zwraca}
+Pozycja jako QPointF 
+\end{DoxyReturn}
+\Hypertarget{class_entity_a3d98a18fc73a18d340f7309e9ea32f58}\index{Entity@{Entity}!getTargetPosition@{getTargetPosition}}
+\index{getTargetPosition@{getTargetPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getTargetPosition()}{getTargetPosition()}}
+{\footnotesize\ttfamily \label{class_entity_a3d98a18fc73a18d340f7309e9ea32f58} 
+QPointF Entity\+::get\+Target\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca docelową pozycję encji. 
+
+\begin{DoxyReturn}{Zwraca}
+Docelowa pozycja jako QPointF 
+\end{DoxyReturn}
+\Hypertarget{class_entity_a69ae771d228bd6f92318754e9632c59c}\index{Entity@{Entity}!isAtGridCenter@{isAtGridCenter}}
+\index{isAtGridCenter@{isAtGridCenter}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{isAtGridCenter()}{isAtGridCenter()}}
+{\footnotesize\ttfamily \label{class_entity_a69ae771d228bd6f92318754e9632c59c} 
+bool Entity\+::is\+At\+Grid\+Center (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Sprawdza czy encja jest w centrum komórki siatki. 
+
+\begin{DoxyReturn}{Zwraca}
+true jeśli encja jest wycentrowana 
+\end{DoxyReturn}
+Sprawdzenie czy encja jest wystarczająco blisko centrum komórki
+
+Zwiększona tolerancja dla łatwiejszego skręcania
+
+Sprawdzamy czy jesteśmy blisko środka komórki (0.\+5, 0.\+5)
+
+Lub blisko krawędzi komórki (0.\+0 lub 1.\+0)\Hypertarget{class_entity_ac60c3042032c2f66bac0bb363addf6ba}\index{Entity@{Entity}!move@{move}}
+\index{move@{move}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \label{class_entity_ac60c3042032c2f66bac0bb363addf6ba} 
+virtual void Entity\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_board}{Game\+Board}} \texorpdfstring{$\ast$}{*}}]{board}{, }\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Porusza encją na planszy. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em board} & Wskaźnik na planszę gry \\
+\hline
+{\em delta\+Time} & Czas od ostatniej aktualizacji \\
+\hline
+\end{DoxyParams}
+
+
+Implementowany w \mbox{\hyperlink{class_ghost_aff1eed60a7debfad2db280ae68ba2532}{Ghost}} i \mbox{\hyperlink{class_pacman_a4dcd693ea44f773d483841fe1cfe8179}{Pacman}}.
+
+\Hypertarget{class_entity_a659e5b54903bd6416ddf16e1c3993ce1}\index{Entity@{Entity}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily \label{class_entity_a659e5b54903bd6416ddf16e1c3993ce1} 
+void Entity\+::set\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ustawia nową pozycję encji. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em pos} & Nowa pozycja \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_entity_af23f754ef82eeeeb2470a049f00f5db3}\index{Entity@{Entity}!updateTargetPosition@{updateTargetPosition}}
+\index{updateTargetPosition@{updateTargetPosition}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{updateTargetPosition()}{updateTargetPosition()}}
+{\footnotesize\ttfamily \label{class_entity_af23f754ef82eeeeb2470a049f00f5db3} 
+void Entity\+::update\+Target\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Aktualizuje docelową pozycję encji. 
+
+Aktualizuje pozycję docelową na podstawie obecnego kierunku
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
+src/Entity.\+cpp\end{DoxyCompactItemize}

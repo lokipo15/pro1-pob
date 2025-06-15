@@ -1,0 +1,70 @@
+\doxysection{Win\+Screen.\+h}
+\hypertarget{_win_screen_8h_source}{}\label{_win_screen_8h_source}\index{src/WinScreen.h@{src/WinScreen.h}}
+\mbox{\hyperlink{_win_screen_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ WINSCREEN\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ WINSCREEN\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QHBoxLayout>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_score_manager_8h}{ScoreManager.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_win_screen_aabaec6e5ecbc2e18738920cac9e30810}{WinScreen}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_win_screen_aabaec6e5ecbc2e18738920cac9e30810}{WinScreen}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_win_screen_ad84b3584c150f529ba4056602b4cd45d}{setScore}}(\textcolor{keywordtype}{int}\ score);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_win_screen_afbd9004dc64a21209f8a4b9a5f9d5fe6}{setScoreManager}}(\mbox{\hyperlink{class_score_manager}{ScoreManager}}\ *manager);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ signals:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_win_screen_a162ec025f47b9315b77797a4bfc177ba}{saveScoreRequested}}(\textcolor{keyword}{const}\ QString\ \&playerName,\ \textcolor{keywordtype}{int}\ score);\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_win_screen_ae42b543bbc5dda96494216499807c66b}{viewScoreboardRequested}}();\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_win_screen_afb559559ecce8652a3c795dc9e220386}{playAgainRequested}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_win_screen_a7dcf8f6b7164ad18229a74f30af30539}{exitRequested}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_win_screen_a269e9752a5d7b681dc8c025c81cc631d}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_win_screen_ab16304f6addab075d2d223e60be8595d}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ onSaveScoreClicked();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ onViewScoreboardClicked();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ onPlayAgainClicked();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ onExitClicked();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \ \ \ \ QLabel\ *titleLabel;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ QLabel\ *scoreLabel;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ QLabel\ *namePromptLabel;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ QLineEdit\ *nameInput;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ QPushButton\ *saveScoreButton;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ QPushButton\ *viewScoreboardButton;\ \ }
+\DoxyCodeLine{00090\ \ \ \ \ QPushButton\ *playAgainButton;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ QPushButton\ *exitButton;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ QVBoxLayout\ *mainLayout;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ QHBoxLayout\ *nameLayout;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ QHBoxLayout\ *buttonLayout;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ currentScore;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_score_manager}{ScoreManager}}\ *scoreManager;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ selectedButton;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{bool}\ isHighScore;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ updateButtonSelection();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ checkIfHighScore();}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ setupLayout();}
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

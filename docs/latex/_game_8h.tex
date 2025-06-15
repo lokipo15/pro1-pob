@@ -1,0 +1,88 @@
+\doxysection{Dokumentacja pliku src/\+Game.h}
+\hypertarget{_game_8h}{}\label{_game_8h}\index{src/Game.h@{src/Game.h}}
+
+
+Główna klasa zarządzająca logiką gry \doxylink{class_pacman}{Pacman}.  
+
+
+{\ttfamily \#include $<$QWidget$>$}\newline
+{\ttfamily \#include $<$QTimer$>$}\newline
+{\ttfamily \#include $<$QElapsed\+Timer$>$}\newline
+{\ttfamily \#include "{}Game\+Board.\+h"{}}\newline
+{\ttfamily \#include "{}Pacman.\+h"{}}\newline
+{\ttfamily \#include "{}Ghost.\+h"{}}\newline
+{\ttfamily \#include "{}Blinky.\+h"{}}\newline
+{\ttfamily \#include "{}Pinky.\+h"{}}\newline
+{\ttfamily \#include "{}Inky.\+h"{}}\newline
+{\ttfamily \#include "{}Clyde.\+h"{}}\newline
+{\ttfamily \#include "{}Power\+Up.\+h"{}}\newline
+{\ttfamily \#include "{}Power\+Pellet.\+h"{}}\newline
+{\ttfamily \#include "{}Audio\+Manager.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_game}{Game}}
+\begin{DoxyCompactList}\small\item\em Główna klasa zarządzająca logiką gry \doxylink{class_pacman}{Pacman}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Wyliczenia}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \{ \newline
+\mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a4c40e60bc71a32b924ce1f08d57f9721}{MENU}}
+, \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8}{PLAYING}}
+, \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285ad4bb05915de3c370d3a33d4f51389655}{PAUSED}}
+, \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a871723195985a4ae22d7e10d99bf8a00}{GAME\+\_\+\+OVER}}
+, \newline
+\mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a843dff91ff0b0e5b98a110a512b2f531}{WIN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeracja stanów gry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Główna klasa zarządzająca logiką gry \doxylink{class_pacman}{Pacman}. 
+
+\begin{DoxyAuthor}{Autor}
+Gabriel Boruń 
+
+Konrad Gębski 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+25/04/2025 
+\end{DoxyDate}
+
+
+\label{doc-enum-members}
+\Hypertarget{_game_8h_doc-enum-members}
+\doxysubsection{Dokumentacja typów wyliczanych}
+\Hypertarget{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}\index{Game.h@{Game.h}!GameState@{GameState}}
+\index{GameState@{GameState}!Game.h@{Game.h}}
+\doxysubsubsection{\texorpdfstring{GameState}{GameState}}
+{\footnotesize\ttfamily \label{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285} 
+enum \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}}}
+
+
+
+Enumeracja stanów gry. 
+
+\begin{DoxyEnumFields}[2]{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU@{MENU}!Game.h@{Game.h}}\index{Game.h@{Game.h}!MENU@{MENU}}}\Hypertarget{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a4c40e60bc71a32b924ce1f08d57f9721}\label{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a4c40e60bc71a32b924ce1f08d57f9721} 
+MENU&Stan menu głównego. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAYING@{PLAYING}!Game.h@{Game.h}}\index{Game.h@{Game.h}!PLAYING@{PLAYING}}}\Hypertarget{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8}\label{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8} 
+PLAYING&Stan rozgrywki. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAUSED@{PAUSED}!Game.h@{Game.h}}\index{Game.h@{Game.h}!PAUSED@{PAUSED}}}\Hypertarget{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285ad4bb05915de3c370d3a33d4f51389655}\label{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285ad4bb05915de3c370d3a33d4f51389655} 
+PAUSED&Stan pauzy. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GAME\_OVER@{GAME\_OVER}!Game.h@{Game.h}}\index{Game.h@{Game.h}!GAME\_OVER@{GAME\_OVER}}}\Hypertarget{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a871723195985a4ae22d7e10d99bf8a00}\label{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a871723195985a4ae22d7e10d99bf8a00} 
+GAME\+\_\+\+OVER&Stan przegranej. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIN@{WIN}!Game.h@{Game.h}}\index{Game.h@{Game.h}!WIN@{WIN}}}\Hypertarget{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a843dff91ff0b0e5b98a110a512b2f531}\label{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a843dff91ff0b0e5b98a110a512b2f531} 
+WIN&Stan wygranej. \\
+\hline
+
+\end{DoxyEnumFields}

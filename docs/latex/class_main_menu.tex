@@ -1,0 +1,119 @@
+\doxysection{Dokumentacja klasy Main\+Menu}
+\hypertarget{class_main_menu}{}\label{class_main_menu}\index{MainMenu@{MainMenu}}
+
+
+Klasa reprezentująca menu główne gry.  
+
+
+
+
+{\ttfamily \#include $<$Main\+Menu.\+h$>$}
+
+Diagram dziedziczenia dla Main\+Menu\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_menu}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Sygnały}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_main_menu_afb3263b635b40a05db3b0233f3f00286}\label{class_main_menu_afb3263b635b40a05db3b0233f3f00286} 
+void {\bfseries start\+Game\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał żądania rozpoczęcia gry. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_menu_a77c0b1974a11c043f8a2d85ff415de52}\label{class_main_menu_a77c0b1974a11c043f8a2d85ff415de52} 
+void {\bfseries scoreboard\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał wyświetlenia tablicy wyników. \end{DoxyCompactList}\item 
+\Hypertarget{class_main_menu_a3768d6fe72b1cc5251aab2f907936b7e}\label{class_main_menu_a3768d6fe72b1cc5251aab2f907936b7e} 
+void {\bfseries exit\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał wyjścia z gry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_menu_a891bed1e0edb5492671c332cb89b7a9a}{Main\+Menu}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor menu głównego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_menu_acc36a8493c79209a87245746de1eefbc}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenia klawiatury. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_a7b6293713be897285b91db8cb849da6b}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje malowanie widget\textquotesingle{}u. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa reprezentująca menu główne gry. 
+
+Wyświetla opcje\+: start gry, tablica wyników, wyjście. Obsługuje nawigację klawiaturą i myszką. 
+
+\label{doc-constructors}
+\Hypertarget{class_main_menu_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_main_menu_a891bed1e0edb5492671c332cb89b7a9a}\index{MainMenu@{MainMenu}!MainMenu@{MainMenu}}
+\index{MainMenu@{MainMenu}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{MainMenu()}{MainMenu()}}
+{\footnotesize\ttfamily \label{class_main_menu_a891bed1e0edb5492671c332cb89b7a9a} 
+Main\+Menu\+::\+Main\+Menu (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor menu głównego. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & Rodzic widget\textquotesingle{}u\\
+\hline
+\end{DoxyParams}
+Created by Gabriel Boruń on 25/04/2025. Co-\/authored by Konrad Gębski on 25/04/2025. Tworzenie layoutu
+
+Tytuł gry
+
+Odstęp
+
+Przycisk Start
+
+Przycisk Najlepsze Wyniki
+
+Przycisk Exit
+
+\label{doc-func-members}
+\Hypertarget{class_main_menu_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_main_menu_acc36a8493c79209a87245746de1eefbc}\index{MainMenu@{MainMenu}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily \label{class_main_menu_acc36a8493c79209a87245746de1eefbc} 
+void Main\+Menu\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje zdarzenia klawiatury. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie naciśnięcia klawisza \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_menu_a7b6293713be897285b91db8cb849da6b}\index{MainMenu@{MainMenu}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!MainMenu@{MainMenu}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily \label{class_main_menu_a7b6293713be897285b91db8cb849da6b} 
+void Main\+Menu\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje malowanie widget\textquotesingle{}u. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie malowania \\
+\hline
+\end{DoxyParams}
+Tło
+
+Instrukcje nawigacji
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_main_menu_8h}{Main\+Menu.\+h}}\item 
+src/Main\+Menu.\+cpp\end{DoxyCompactItemize}

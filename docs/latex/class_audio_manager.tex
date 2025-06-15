@@ -1,0 +1,304 @@
+\doxysection{Dokumentacja klasy Audio\+Manager}
+\hypertarget{class_audio_manager}{}\label{class_audio_manager}\index{AudioManager@{AudioManager}}
+
+
+Klasa zarządzająca dźwiękami w grze.  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Manager.\+h$>$}
+
+Diagram dziedziczenia dla Audio\+Manager\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_audio_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_audio_manager_ab2ad9c3998482ad52bc74696844cb2e7}{Audio\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor managera audio. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_audio_manager_ad94dc46723c6d7cf8c81fc3772a842aa}{\texorpdfstring{$\sim$}{\string~}\+Audio\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor managera audio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a11b968de3b0735407d87d5983240c252}{set\+Background\+Music\+Path}} (const QString \&path)
+\begin{DoxyCompactList}\small\item\em Ustawia ścieżkę do pliku muzyki tła. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_af526326b9fe558cea2fb26cf22b9edbb}{set\+Power\+Up\+Sound\+Path}} (const QString \&path)
+\begin{DoxyCompactList}\small\item\em Ustawia ścieżkę do pliku dźwięku power-\/up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a2873a51c53dd3fa0b528b4f736ca222f}{set\+Ghost\+Eating\+Sound\+Path}} (const QString \&path)
+\begin{DoxyCompactList}\small\item\em Ustawia ścieżkę do pliku dźwięku zjadania duchów. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a0d184c0118dfcb6cdbc835f632c346ab}{set\+Death\+Sound\+Path}} (const QString \&path)
+\begin{DoxyCompactList}\small\item\em Ustawia ścieżkę do pliku dźwięku śmierci. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a5bf9194a419f951b280b2ea54e426a8b}{play\+Background\+Music}} ()
+\begin{DoxyCompactList}\small\item\em Rozpoczyna odtwarzanie muzyki tła. \end{DoxyCompactList}\item 
+\Hypertarget{class_audio_manager_aecff551d854e3900d78c7b4a2f8020f3}\label{class_audio_manager_aecff551d854e3900d78c7b4a2f8020f3} 
+void {\bfseries stop\+Background\+Music} ()
+\begin{DoxyCompactList}\small\item\em Zatrzymuje muzykę tła. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a95370b0ffb6513251ec1f56a4635864b}{pause\+Background\+Music}} ()
+\begin{DoxyCompactList}\small\item\em Pauzuje muzykę tła. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_ad6de66e9f3b20cad22df31c2dd269afd}{resume\+Background\+Music}} ()
+\begin{DoxyCompactList}\small\item\em Wznawia odtwarzanie muzyki tła. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a832d9af1e511585533d81cd39a73bd18}{play\+Power\+Up\+Sound}} ()
+\begin{DoxyCompactList}\small\item\em Odtwarza dźwięk power-\/up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_adc2266ce67007199a9901481b458446e}{play\+Ghost\+Eating\+Sound}} ()
+\begin{DoxyCompactList}\small\item\em Odtwarza dźwięk zjadania ducha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a5b7eddf2680c00d84a0b9ca66e739189}{play\+Death\+Sound}} ()
+\begin{DoxyCompactList}\small\item\em Odtwarza dźwięk śmierci gracza. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a0b67478424e9a402031154242dcc4b7e}{set\+Sound\+Effects\+Volume}} (int volume)
+\begin{DoxyCompactList}\small\item\em Ustawia głośność efektów dźwiękowych. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a60bb785b6e0a2326e3bff74294325c30}{set\+Audio\+Enabled}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Włącza lub wyłącza audio. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_audio_manager_a74d5e75dbdbb5f3e29ab5bf9876525a3}{is\+Audio\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy audio jest włączone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa zarządzająca dźwiękami w grze. 
+
+Odpowiada za odtwarzanie muzyki tła, efektów dźwiękowych i kontrolę głośności audio w grze \doxylink{class_pacman}{Pacman}. 
+
+\label{doc-constructors}
+\Hypertarget{class_audio_manager_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_audio_manager_ab2ad9c3998482ad52bc74696844cb2e7}\index{AudioManager@{AudioManager}!AudioManager@{AudioManager}}
+\index{AudioManager@{AudioManager}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{AudioManager()}{AudioManager()}}
+{\footnotesize\ttfamily \label{class_audio_manager_ab2ad9c3998482ad52bc74696844cb2e7} 
+Audio\+Manager\+::\+Audio\+Manager (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Konstruktor managera audio. 
+
+Konstruktor klasy \doxylink{class_audio_manager}{Audio\+Manager}.
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & Rodzic obiektu Qt\\
+\hline
+{\em parent} & Wskaźnik na obiekt nadrzędny\\
+\hline
+\end{DoxyParams}
+Inicjalizuje wszystkie efekty dźwiękowe i ustawia ich parametry domyślne. Inicjalizacja wszystkich efektów dźwiękowych
+
+Ustawienie domyślnej głośności na 80\%
+
+Włączenie wszystkich efektów dźwiękowych
+
+Ustawienie nieskończonej pętli dla muzyki tła\Hypertarget{class_audio_manager_ad94dc46723c6d7cf8c81fc3772a842aa}\index{AudioManager@{AudioManager}!````~AudioManager@{\texorpdfstring{$\sim$}{\string~}AudioManager}}
+\index{````~AudioManager@{\texorpdfstring{$\sim$}{\string~}AudioManager}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AudioManager()}{\string~AudioManager()}}
+{\footnotesize\ttfamily \label{class_audio_manager_ad94dc46723c6d7cf8c81fc3772a842aa} 
+Audio\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Audio\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destruktor managera audio. 
+
+Destruktor klasy \doxylink{class_audio_manager}{Audio\+Manager}.
+
+Zatrzymuje wszystkie odtwarzane dźwięki przed zniszczeniem obiektu. Zatrzymanie muzyki tła przed zniszczeniem
+
+Zatrzymanie efektu dźwiękowego power-\/up
+
+Zatrzymanie efektu dźwiękowego zjadania ducha
+
+Zatrzymanie efektu dźwiękowego śmierci
+
+\label{doc-func-members}
+\Hypertarget{class_audio_manager_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_audio_manager_a74d5e75dbdbb5f3e29ab5bf9876525a3}\index{AudioManager@{AudioManager}!isAudioEnabled@{isAudioEnabled}}
+\index{isAudioEnabled@{isAudioEnabled}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{isAudioEnabled()}{isAudioEnabled()}}
+{\footnotesize\ttfamily \label{class_audio_manager_a74d5e75dbdbb5f3e29ab5bf9876525a3} 
+bool Audio\+Manager\+::is\+Audio\+Enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sprawdza czy audio jest włączone. 
+
+\begin{DoxyReturn}{Zwraca}
+True jeśli audio jest włączone 
+\end{DoxyReturn}
+\Hypertarget{class_audio_manager_a95370b0ffb6513251ec1f56a4635864b}\index{AudioManager@{AudioManager}!pauseBackgroundMusic@{pauseBackgroundMusic}}
+\index{pauseBackgroundMusic@{pauseBackgroundMusic}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{pauseBackgroundMusic()}{pauseBackgroundMusic()}}
+{\footnotesize\ttfamily \label{class_audio_manager_a95370b0ffb6513251ec1f56a4635864b} 
+void Audio\+Manager\+::pause\+Background\+Music (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pauzuje muzykę tła. 
+
+W QSound\+Effect nie ma metody pause(), więc używamy stop(). \Hypertarget{class_audio_manager_a5bf9194a419f951b280b2ea54e426a8b}\index{AudioManager@{AudioManager}!playBackgroundMusic@{playBackgroundMusic}}
+\index{playBackgroundMusic@{playBackgroundMusic}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{playBackgroundMusic()}{playBackgroundMusic()}}
+{\footnotesize\ttfamily \label{class_audio_manager_a5bf9194a419f951b280b2ea54e426a8b} 
+void Audio\+Manager\+::play\+Background\+Music (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Rozpoczyna odtwarzanie muzyki tła. 
+
+Odtwarza muzykę tła.
+
+Muzyka jest odtwarzana w pętli, jeśli audio jest włączone i ścieżka została ustawiona. \Hypertarget{class_audio_manager_a5b7eddf2680c00d84a0b9ca66e739189}\index{AudioManager@{AudioManager}!playDeathSound@{playDeathSound}}
+\index{playDeathSound@{playDeathSound}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{playDeathSound()}{playDeathSound()}}
+{\footnotesize\ttfamily \label{class_audio_manager_a5b7eddf2680c00d84a0b9ca66e739189} 
+void Audio\+Manager\+::play\+Death\+Sound (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Odtwarza dźwięk śmierci gracza. 
+
+Odtwarza dźwięk śmierci.
+
+Dźwięk jest odtwarzany gdy \doxylink{class_pacman}{Pacman} zostaje złapany przez ducha. \Hypertarget{class_audio_manager_adc2266ce67007199a9901481b458446e}\index{AudioManager@{AudioManager}!playGhostEatingSound@{playGhostEatingSound}}
+\index{playGhostEatingSound@{playGhostEatingSound}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{playGhostEatingSound()}{playGhostEatingSound()}}
+{\footnotesize\ttfamily \label{class_audio_manager_adc2266ce67007199a9901481b458446e} 
+void Audio\+Manager\+::play\+Ghost\+Eating\+Sound (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Odtwarza dźwięk zjadania ducha. 
+
+Dźwięk jest odtwarzany gdy \doxylink{class_pacman}{Pacman} zjada ducha w trybie frightened. \Hypertarget{class_audio_manager_a832d9af1e511585533d81cd39a73bd18}\index{AudioManager@{AudioManager}!playPowerUpSound@{playPowerUpSound}}
+\index{playPowerUpSound@{playPowerUpSound}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{playPowerUpSound()}{playPowerUpSound()}}
+{\footnotesize\ttfamily \label{class_audio_manager_a832d9af1e511585533d81cd39a73bd18} 
+void Audio\+Manager\+::play\+Power\+Up\+Sound (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Odtwarza dźwięk power-\/up. 
+
+Dźwięk jest odtwarzany jednorazowo po zebraniu power-\/up przez gracza. \Hypertarget{class_audio_manager_ad6de66e9f3b20cad22df31c2dd269afd}\index{AudioManager@{AudioManager}!resumeBackgroundMusic@{resumeBackgroundMusic}}
+\index{resumeBackgroundMusic@{resumeBackgroundMusic}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{resumeBackgroundMusic()}{resumeBackgroundMusic()}}
+{\footnotesize\ttfamily \label{class_audio_manager_ad6de66e9f3b20cad22df31c2dd269afd} 
+void Audio\+Manager\+::resume\+Background\+Music (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Wznawia odtwarzanie muzyki tła. 
+
+Muzyka jest wznawiania tylko jeśli audio jest włączone. \Hypertarget{class_audio_manager_a60bb785b6e0a2326e3bff74294325c30}\index{AudioManager@{AudioManager}!setAudioEnabled@{setAudioEnabled}}
+\index{setAudioEnabled@{setAudioEnabled}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{setAudioEnabled()}{setAudioEnabled()}}
+{\footnotesize\ttfamily \label{class_audio_manager_a60bb785b6e0a2326e3bff74294325c30} 
+void Audio\+Manager\+::set\+Audio\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+
+
+Włącza lub wyłącza audio. 
+
+Włącza lub wyłącza audio w grze.
+
+
+\begin{DoxyParams}{Parametry}
+{\em enabled} & True aby włączyć, false aby wyłączyć\\
+\hline
+{\em enabled} & true -\/ włącza audio, false -\/ wyłącza audio\\
+\hline
+\end{DoxyParams}
+Gdy audio jest wyłączane, automatycznie zatrzymuje muzykę tła. Zatrzymanie muzyki tła gdy audio jest wyłączane\Hypertarget{class_audio_manager_a11b968de3b0735407d87d5983240c252}\index{AudioManager@{AudioManager}!setBackgroundMusicPath@{setBackgroundMusicPath}}
+\index{setBackgroundMusicPath@{setBackgroundMusicPath}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{setBackgroundMusicPath()}{setBackgroundMusicPath()}}
+{\footnotesize\ttfamily \label{class_audio_manager_a11b968de3b0735407d87d5983240c252} 
+void Audio\+Manager\+::set\+Background\+Music\+Path (\begin{DoxyParamCaption}\item[{const QString \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia ścieżkę do pliku muzyki tła. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em path} & Ścieżka do pliku audio\\
+\hline
+{\em path} & Ścieżka do pliku muzyki (może być zasobem Qt lub plikiem lokalnym)\\
+\hline
+\end{DoxyParams}
+Obsługuje zarówno zasoby Qt (rozpoczynające się od "{}\+:/"{}) jak i lokalne pliki. Konwersja ścieżki zasobu Qt na prawidłowy URL\Hypertarget{class_audio_manager_a0d184c0118dfcb6cdbc835f632c346ab}\index{AudioManager@{AudioManager}!setDeathSoundPath@{setDeathSoundPath}}
+\index{setDeathSoundPath@{setDeathSoundPath}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{setDeathSoundPath()}{setDeathSoundPath()}}
+{\footnotesize\ttfamily \label{class_audio_manager_a0d184c0118dfcb6cdbc835f632c346ab} 
+void Audio\+Manager\+::set\+Death\+Sound\+Path (\begin{DoxyParamCaption}\item[{const QString \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia ścieżkę do pliku dźwięku śmierci. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em path} & Ścieżka do pliku audio\\
+\hline
+{\em path} & Ścieżka do pliku dźwięku (może być zasobem Qt lub plikiem lokalnym) \\
+\hline
+\end{DoxyParams}
+Konwersja ścieżki zasobu Qt na prawidłowy URL\Hypertarget{class_audio_manager_a2873a51c53dd3fa0b528b4f736ca222f}\index{AudioManager@{AudioManager}!setGhostEatingSoundPath@{setGhostEatingSoundPath}}
+\index{setGhostEatingSoundPath@{setGhostEatingSoundPath}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{setGhostEatingSoundPath()}{setGhostEatingSoundPath()}}
+{\footnotesize\ttfamily \label{class_audio_manager_a2873a51c53dd3fa0b528b4f736ca222f} 
+void Audio\+Manager\+::set\+Ghost\+Eating\+Sound\+Path (\begin{DoxyParamCaption}\item[{const QString \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia ścieżkę do pliku dźwięku zjadania duchów. 
+
+Ustawia ścieżkę do pliku dźwięku zjadania ducha.
+
+
+\begin{DoxyParams}{Parametry}
+{\em path} & Ścieżka do pliku audio\\
+\hline
+{\em path} & Ścieżka do pliku dźwięku (może być zasobem Qt lub plikiem lokalnym) \\
+\hline
+\end{DoxyParams}
+Konwersja ścieżki zasobu Qt na prawidłowy URL\Hypertarget{class_audio_manager_af526326b9fe558cea2fb26cf22b9edbb}\index{AudioManager@{AudioManager}!setPowerUpSoundPath@{setPowerUpSoundPath}}
+\index{setPowerUpSoundPath@{setPowerUpSoundPath}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{setPowerUpSoundPath()}{setPowerUpSoundPath()}}
+{\footnotesize\ttfamily \label{class_audio_manager_af526326b9fe558cea2fb26cf22b9edbb} 
+void Audio\+Manager\+::set\+Power\+Up\+Sound\+Path (\begin{DoxyParamCaption}\item[{const QString \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia ścieżkę do pliku dźwięku power-\/up. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em path} & Ścieżka do pliku audio\\
+\hline
+{\em path} & Ścieżka do pliku dźwięku (może być zasobem Qt lub plikiem lokalnym) \\
+\hline
+\end{DoxyParams}
+Konwersja ścieżki zasobu Qt na prawidłowy URL\Hypertarget{class_audio_manager_a0b67478424e9a402031154242dcc4b7e}\index{AudioManager@{AudioManager}!setSoundEffectsVolume@{setSoundEffectsVolume}}
+\index{setSoundEffectsVolume@{setSoundEffectsVolume}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{setSoundEffectsVolume()}{setSoundEffectsVolume()}}
+{\footnotesize\ttfamily \label{class_audio_manager_a0b67478424e9a402031154242dcc4b7e} 
+void Audio\+Manager\+::set\+Sound\+Effects\+Volume (\begin{DoxyParamCaption}\item[{int}]{volume}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia głośność efektów dźwiękowych. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em volume} & Poziom głośności (0-\/100)\\
+\hline
+{\em volume} & Głośność w zakresie 0-\/100\\
+\hline
+\end{DoxyParams}
+Głośność jest automatycznie ograniczona do zakresu 0-\/100. Ograniczenie głośności do zakresu 0-\/100
+
+Konwersja na format float (0.\+0 -\/ 1.\+0)
+
+Aktualizacja głośności wszystkich efektów dźwiękowych
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_audio_manager_8h}{Audio\+Manager.\+h}}\item 
+src/\mbox{\hyperlink{_audio_manager_8cpp}{Audio\+Manager.\+cpp}}\end{DoxyCompactItemize}

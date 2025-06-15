@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POB Pro 1 - PacMan: Dokumentacja klasy AudioManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POB Pro 1 - PacMan
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_audio_manager.html','','class_audio_manager-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy AudioManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa zarządzająca dźwiękami w grze.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_audio_manager_8h_source.html">AudioManager.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla AudioManager</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_audio_manager.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ab2ad9c3998482ad52bc74696844cb2e7" id="r_ab2ad9c3998482ad52bc74696844cb2e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2ad9c3998482ad52bc74696844cb2e7">AudioManager</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:ab2ad9c3998482ad52bc74696844cb2e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor managera audio.  <br /></td></tr>
+<tr class="memitem:ad94dc46723c6d7cf8c81fc3772a842aa" id="r_ad94dc46723c6d7cf8c81fc3772a842aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad94dc46723c6d7cf8c81fc3772a842aa">~AudioManager</a> ()</td></tr>
+<tr class="memdesc:ad94dc46723c6d7cf8c81fc3772a842aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor managera audio.  <br /></td></tr>
+<tr class="memitem:a11b968de3b0735407d87d5983240c252" id="r_a11b968de3b0735407d87d5983240c252"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11b968de3b0735407d87d5983240c252">setBackgroundMusicPath</a> (const QString &amp;path)</td></tr>
+<tr class="memdesc:a11b968de3b0735407d87d5983240c252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia ścieżkę do pliku muzyki tła.  <br /></td></tr>
+<tr class="memitem:af526326b9fe558cea2fb26cf22b9edbb" id="r_af526326b9fe558cea2fb26cf22b9edbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af526326b9fe558cea2fb26cf22b9edbb">setPowerUpSoundPath</a> (const QString &amp;path)</td></tr>
+<tr class="memdesc:af526326b9fe558cea2fb26cf22b9edbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia ścieżkę do pliku dźwięku power-up.  <br /></td></tr>
+<tr class="memitem:a2873a51c53dd3fa0b528b4f736ca222f" id="r_a2873a51c53dd3fa0b528b4f736ca222f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2873a51c53dd3fa0b528b4f736ca222f">setGhostEatingSoundPath</a> (const QString &amp;path)</td></tr>
+<tr class="memdesc:a2873a51c53dd3fa0b528b4f736ca222f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia ścieżkę do pliku dźwięku zjadania duchów.  <br /></td></tr>
+<tr class="memitem:a0d184c0118dfcb6cdbc835f632c346ab" id="r_a0d184c0118dfcb6cdbc835f632c346ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d184c0118dfcb6cdbc835f632c346ab">setDeathSoundPath</a> (const QString &amp;path)</td></tr>
+<tr class="memdesc:a0d184c0118dfcb6cdbc835f632c346ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia ścieżkę do pliku dźwięku śmierci.  <br /></td></tr>
+<tr class="memitem:a5bf9194a419f951b280b2ea54e426a8b" id="r_a5bf9194a419f951b280b2ea54e426a8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bf9194a419f951b280b2ea54e426a8b">playBackgroundMusic</a> ()</td></tr>
+<tr class="memdesc:a5bf9194a419f951b280b2ea54e426a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rozpoczyna odtwarzanie muzyki tła.  <br /></td></tr>
+<tr class="memitem:aecff551d854e3900d78c7b4a2f8020f3" id="r_aecff551d854e3900d78c7b4a2f8020f3"><td class="memItemLeft" align="right" valign="top"><a id="aecff551d854e3900d78c7b4a2f8020f3" name="aecff551d854e3900d78c7b4a2f8020f3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>stopBackgroundMusic</b> ()</td></tr>
+<tr class="memdesc:aecff551d854e3900d78c7b4a2f8020f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zatrzymuje muzykę tła. <br /></td></tr>
+<tr class="memitem:a95370b0ffb6513251ec1f56a4635864b" id="r_a95370b0ffb6513251ec1f56a4635864b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95370b0ffb6513251ec1f56a4635864b">pauseBackgroundMusic</a> ()</td></tr>
+<tr class="memdesc:a95370b0ffb6513251ec1f56a4635864b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauzuje muzykę tła.  <br /></td></tr>
+<tr class="memitem:ad6de66e9f3b20cad22df31c2dd269afd" id="r_ad6de66e9f3b20cad22df31c2dd269afd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6de66e9f3b20cad22df31c2dd269afd">resumeBackgroundMusic</a> ()</td></tr>
+<tr class="memdesc:ad6de66e9f3b20cad22df31c2dd269afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wznawia odtwarzanie muzyki tła.  <br /></td></tr>
+<tr class="memitem:a832d9af1e511585533d81cd39a73bd18" id="r_a832d9af1e511585533d81cd39a73bd18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a832d9af1e511585533d81cd39a73bd18">playPowerUpSound</a> ()</td></tr>
+<tr class="memdesc:a832d9af1e511585533d81cd39a73bd18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odtwarza dźwięk power-up.  <br /></td></tr>
+<tr class="memitem:adc2266ce67007199a9901481b458446e" id="r_adc2266ce67007199a9901481b458446e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc2266ce67007199a9901481b458446e">playGhostEatingSound</a> ()</td></tr>
+<tr class="memdesc:adc2266ce67007199a9901481b458446e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odtwarza dźwięk zjadania ducha.  <br /></td></tr>
+<tr class="memitem:a5b7eddf2680c00d84a0b9ca66e739189" id="r_a5b7eddf2680c00d84a0b9ca66e739189"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b7eddf2680c00d84a0b9ca66e739189">playDeathSound</a> ()</td></tr>
+<tr class="memdesc:a5b7eddf2680c00d84a0b9ca66e739189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odtwarza dźwięk śmierci gracza.  <br /></td></tr>
+<tr class="memitem:a0b67478424e9a402031154242dcc4b7e" id="r_a0b67478424e9a402031154242dcc4b7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b67478424e9a402031154242dcc4b7e">setSoundEffectsVolume</a> (int volume)</td></tr>
+<tr class="memdesc:a0b67478424e9a402031154242dcc4b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia głośność efektów dźwiękowych.  <br /></td></tr>
+<tr class="memitem:a60bb785b6e0a2326e3bff74294325c30" id="r_a60bb785b6e0a2326e3bff74294325c30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60bb785b6e0a2326e3bff74294325c30">setAudioEnabled</a> (bool enabled)</td></tr>
+<tr class="memdesc:a60bb785b6e0a2326e3bff74294325c30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Włącza lub wyłącza audio.  <br /></td></tr>
+<tr class="memitem:a74d5e75dbdbb5f3e29ab5bf9876525a3" id="r_a74d5e75dbdbb5f3e29ab5bf9876525a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74d5e75dbdbb5f3e29ab5bf9876525a3">isAudioEnabled</a> () const</td></tr>
+<tr class="memdesc:a74d5e75dbdbb5f3e29ab5bf9876525a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy audio jest włączone.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Klasa zarządzająca dźwiękami w grze. </p>
+<p>Odpowiada za odtwarzanie muzyki tła, efektów dźwiękowych i kontrolę głośności audio w grze <a class="el" href="class_pacman.html" title="Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza.">Pacman</a>. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="ab2ad9c3998482ad52bc74696844cb2e7" name="ab2ad9c3998482ad52bc74696844cb2e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ad9c3998482ad52bc74696844cb2e7">&#9670;&#160;</a></span>AudioManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioManager::AudioManager </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor managera audio. </p>
+<p>Konstruktor klasy <a class="el" href="class_audio_manager.html" title="Klasa zarządzająca dźwiękami w grze.">AudioManager</a>.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Rodzic obiektu Qt</td></tr>
+    <tr><td class="paramname">parent</td><td>Wskaźnik na obiekt nadrzędny</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Inicjalizuje wszystkie efekty dźwiękowe i ustawia ich parametry domyślne. </p>
+<p>Inicjalizacja wszystkich efektów dźwiękowych</p>
+<p>Ustawienie domyślnej głośności na 80%</p>
+<p>Włączenie wszystkich efektów dźwiękowych</p>
+<p>Ustawienie nieskończonej pętli dla muzyki tła</p>
+
+</div>
+</div>
+<a id="ad94dc46723c6d7cf8c81fc3772a842aa" name="ad94dc46723c6d7cf8c81fc3772a842aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad94dc46723c6d7cf8c81fc3772a842aa">&#9670;&#160;</a></span>~AudioManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioManager::~AudioManager </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destruktor managera audio. </p>
+<p>Destruktor klasy <a class="el" href="class_audio_manager.html" title="Klasa zarządzająca dźwiękami w grze.">AudioManager</a>.</p>
+<p>Zatrzymuje wszystkie odtwarzane dźwięki przed zniszczeniem obiektu. </p>
+<p>Zatrzymanie muzyki tła przed zniszczeniem</p>
+<p>Zatrzymanie efektu dźwiękowego power-up</p>
+<p>Zatrzymanie efektu dźwiękowego zjadania ducha</p>
+<p>Zatrzymanie efektu dźwiękowego śmierci</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a74d5e75dbdbb5f3e29ab5bf9876525a3" name="a74d5e75dbdbb5f3e29ab5bf9876525a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74d5e75dbdbb5f3e29ab5bf9876525a3">&#9670;&#160;</a></span>isAudioEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AudioManager::isAudioEnabled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sprawdza czy audio jest włączone. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>True jeśli audio jest włączone </dd></dl>
+
+</div>
+</div>
+<a id="a95370b0ffb6513251ec1f56a4635864b" name="a95370b0ffb6513251ec1f56a4635864b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95370b0ffb6513251ec1f56a4635864b">&#9670;&#160;</a></span>pauseBackgroundMusic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::pauseBackgroundMusic </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pauzuje muzykę tła. </p>
+<p>W QSoundEffect nie ma metody pause(), więc używamy stop(). </p>
+
+</div>
+</div>
+<a id="a5bf9194a419f951b280b2ea54e426a8b" name="a5bf9194a419f951b280b2ea54e426a8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bf9194a419f951b280b2ea54e426a8b">&#9670;&#160;</a></span>playBackgroundMusic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::playBackgroundMusic </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rozpoczyna odtwarzanie muzyki tła. </p>
+<p>Odtwarza muzykę tła.</p>
+<p>Muzyka jest odtwarzana w pętli, jeśli audio jest włączone i ścieżka została ustawiona. </p>
+
+</div>
+</div>
+<a id="a5b7eddf2680c00d84a0b9ca66e739189" name="a5b7eddf2680c00d84a0b9ca66e739189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b7eddf2680c00d84a0b9ca66e739189">&#9670;&#160;</a></span>playDeathSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::playDeathSound </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Odtwarza dźwięk śmierci gracza. </p>
+<p>Odtwarza dźwięk śmierci.</p>
+<p>Dźwięk jest odtwarzany gdy <a class="el" href="class_pacman.html" title="Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza.">Pacman</a> zostaje złapany przez ducha. </p>
+
+</div>
+</div>
+<a id="adc2266ce67007199a9901481b458446e" name="adc2266ce67007199a9901481b458446e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc2266ce67007199a9901481b458446e">&#9670;&#160;</a></span>playGhostEatingSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::playGhostEatingSound </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Odtwarza dźwięk zjadania ducha. </p>
+<p>Dźwięk jest odtwarzany gdy <a class="el" href="class_pacman.html" title="Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza.">Pacman</a> zjada ducha w trybie frightened. </p>
+
+</div>
+</div>
+<a id="a832d9af1e511585533d81cd39a73bd18" name="a832d9af1e511585533d81cd39a73bd18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a832d9af1e511585533d81cd39a73bd18">&#9670;&#160;</a></span>playPowerUpSound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::playPowerUpSound </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Odtwarza dźwięk power-up. </p>
+<p>Dźwięk jest odtwarzany jednorazowo po zebraniu power-up przez gracza. </p>
+
+</div>
+</div>
+<a id="ad6de66e9f3b20cad22df31c2dd269afd" name="ad6de66e9f3b20cad22df31c2dd269afd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6de66e9f3b20cad22df31c2dd269afd">&#9670;&#160;</a></span>resumeBackgroundMusic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::resumeBackgroundMusic </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wznawia odtwarzanie muzyki tła. </p>
+<p>Muzyka jest wznawiania tylko jeśli audio jest włączone. </p>
+
+</div>
+</div>
+<a id="a60bb785b6e0a2326e3bff74294325c30" name="a60bb785b6e0a2326e3bff74294325c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60bb785b6e0a2326e3bff74294325c30">&#9670;&#160;</a></span>setAudioEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::setAudioEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enabled</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Włącza lub wyłącza audio. </p>
+<p>Włącza lub wyłącza audio w grze.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td>True aby włączyć, false aby wyłączyć</td></tr>
+    <tr><td class="paramname">enabled</td><td>true - włącza audio, false - wyłącza audio</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Gdy audio jest wyłączane, automatycznie zatrzymuje muzykę tła. </p>
+<p>Zatrzymanie muzyki tła gdy audio jest wyłączane</p>
+
+</div>
+</div>
+<a id="a11b968de3b0735407d87d5983240c252" name="a11b968de3b0735407d87d5983240c252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b968de3b0735407d87d5983240c252">&#9670;&#160;</a></span>setBackgroundMusicPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::setBackgroundMusicPath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia ścieżkę do pliku muzyki tła. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Ścieżka do pliku audio</td></tr>
+    <tr><td class="paramname">path</td><td>Ścieżka do pliku muzyki (może być zasobem Qt lub plikiem lokalnym)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Obsługuje zarówno zasoby Qt (rozpoczynające się od ":/") jak i lokalne pliki. </p>
+<p>Konwersja ścieżki zasobu Qt na prawidłowy URL</p>
+
+</div>
+</div>
+<a id="a0d184c0118dfcb6cdbc835f632c346ab" name="a0d184c0118dfcb6cdbc835f632c346ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d184c0118dfcb6cdbc835f632c346ab">&#9670;&#160;</a></span>setDeathSoundPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::setDeathSoundPath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia ścieżkę do pliku dźwięku śmierci. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Ścieżka do pliku audio</td></tr>
+    <tr><td class="paramname">path</td><td>Ścieżka do pliku dźwięku (może być zasobem Qt lub plikiem lokalnym) </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Konwersja ścieżki zasobu Qt na prawidłowy URL</p>
+
+</div>
+</div>
+<a id="a2873a51c53dd3fa0b528b4f736ca222f" name="a2873a51c53dd3fa0b528b4f736ca222f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2873a51c53dd3fa0b528b4f736ca222f">&#9670;&#160;</a></span>setGhostEatingSoundPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::setGhostEatingSoundPath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia ścieżkę do pliku dźwięku zjadania duchów. </p>
+<p>Ustawia ścieżkę do pliku dźwięku zjadania ducha.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Ścieżka do pliku audio</td></tr>
+    <tr><td class="paramname">path</td><td>Ścieżka do pliku dźwięku (może być zasobem Qt lub plikiem lokalnym) </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Konwersja ścieżki zasobu Qt na prawidłowy URL</p>
+
+</div>
+</div>
+<a id="af526326b9fe558cea2fb26cf22b9edbb" name="af526326b9fe558cea2fb26cf22b9edbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af526326b9fe558cea2fb26cf22b9edbb">&#9670;&#160;</a></span>setPowerUpSoundPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::setPowerUpSoundPath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia ścieżkę do pliku dźwięku power-up. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Ścieżka do pliku audio</td></tr>
+    <tr><td class="paramname">path</td><td>Ścieżka do pliku dźwięku (może być zasobem Qt lub plikiem lokalnym) </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Konwersja ścieżki zasobu Qt na prawidłowy URL</p>
+
+</div>
+</div>
+<a id="a0b67478424e9a402031154242dcc4b7e" name="a0b67478424e9a402031154242dcc4b7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b67478424e9a402031154242dcc4b7e">&#9670;&#160;</a></span>setSoundEffectsVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AudioManager::setSoundEffectsVolume </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>volume</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia głośność efektów dźwiękowych. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">volume</td><td>Poziom głośności (0-100)</td></tr>
+    <tr><td class="paramname">volume</td><td>Głośność w zakresie 0-100</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Głośność jest automatycznie ograniczona do zakresu 0-100. </p>
+<p>Ograniczenie głośności do zakresu 0-100</p>
+<p>Konwersja na format float (0.0 - 1.0)</p>
+<p>Aktualizacja głośności wszystkich efektów dźwiękowych</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>src/<a class="el" href="_audio_manager_8h_source.html">AudioManager.h</a></li>
+<li>src/<a class="el" href="_audio_manager_8cpp.html">AudioManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_audio_manager.html">AudioManager</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

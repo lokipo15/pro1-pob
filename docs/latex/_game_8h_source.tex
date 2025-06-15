@@ -1,0 +1,121 @@
+\doxysection{Game.\+h}
+\hypertarget{_game_8h_source}{}\label{_game_8h_source}\index{src/Game.h@{src/Game.h}}
+\mbox{\hyperlink{_game_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ GAME\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ GAME\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QElapsedTimer>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_board_8h}{GameBoard.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pacman_8h}{Pacman.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ghost_8h}{Ghost.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_blinky_8h}{Blinky.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pinky_8h}{Pinky.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_inky_8h}{Inky.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_clyde_8h}{Clyde.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_power_up_8h}{PowerUp.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_power_pellet_8h}{PowerPellet.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_audio_manager_8h}{AudioManager.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a4c40e60bc71a32b924ce1f08d57f9721}{MENU}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8}{PLAYING}},\ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285ad4bb05915de3c370d3a33d4f51389655}{PAUSED}},\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a871723195985a4ae22d7e10d99bf8a00}{GAME\_OVER}},\ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a843dff91ff0b0e5b98a110a512b2f531}{WIN}}\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_ac1a9dde49041f68e14234a41a862865d}{Game}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_game_ac1a9dde49041f68e14234a41a862865d}{Game}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00053\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{\string~Game}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ae8638ccdb0ef3bf39a6affa30aa1258f}{startGame}}();}
+\DoxyCodeLine{00063\ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a9d9a79a0f7df3c7e55a3103c04ecbc87}{pauseGame}}();}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a5ec2daf2a7fe95ee03dea84b4f5d6883}{resumeGame}}();}
+\DoxyCodeLine{00073\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a47c726a80fd133c0a4f6b8fba56d8832}{resetGame}}();}
+\DoxyCodeLine{00078\ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\ \mbox{\hyperlink{class_game_adbbfae184c044c2d544b382704b2bacd}{getCurrentState}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ currentState;\ \}}
+\DoxyCodeLine{00084\ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_adff34c2ddf03af26dcddad0a942bbcf7}{getScore}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ score;\ \}}
+\DoxyCodeLine{00090\ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_af7962212d039de623b8eebc538ff7140}{getLives}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ lives;\ \}}
+\DoxyCodeLine{00096\ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{class_audio_manager}{AudioManager}}*\ \mbox{\hyperlink{class_game_a84d700bd37042ce4ab36a8070fe309db}{getAudioManager}}()\ \{\ \textcolor{keywordflow}{return}\ audioManager;\ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ signals:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a3828738518a273ce13a090006f246849}{gameStateChanged}}(\mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\ newState);}
+\DoxyCodeLine{00109\ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a4d5fb2ed620bbffc75a399d263d19be0}{scoreChanged}}(\textcolor{keywordtype}{int}\ newScore);}
+\DoxyCodeLine{00115\ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a2521a818da4804e7d79c4b02347cc764}{livesChanged}}(\textcolor{keywordtype}{int}\ newLives);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ae3d960780bb03ab5d6713e5d3343f6fc}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00128\ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a11472607ec18247e34b70de047ca5e4a}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ update();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\ currentState;\ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ QTimer\ *timer;\ }
+\DoxyCodeLine{00145\ \ \ \ \ QElapsedTimer\ elapsedTimer;\ }
+\DoxyCodeLine{00146\ \ \ \ \ qint64\ lastUpdateTime;\ }
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{class_game_board}{GameBoard}}\ *board;\ }
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{class_pacman}{Pacman}}\ *pacman;\ }
+\DoxyCodeLine{00150\ \ \ \ \ std::vector<Ghost*>\ ghosts;\ }
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{class_blinky}{Blinky}}\ *blinky;\ }
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{class_pinky}{Pinky}}\ *pinky;\ }
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{class_inky}{Inky}}\ *inky;\ }
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{class_clyde}{Clyde}}\ *clyde;\ }
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ std::vector<PowerUp*>\ powerUps;\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{float}\ powerUpTimer;\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{bool}\ powerUpActive;\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{int}\ ghostEatenMultiplier;\ }
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{int}\ score;\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{int}\ lives;\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{bool}\ gameOver;\ }
+\DoxyCodeLine{00165\ \ \ \ \ }
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{class_audio_manager}{AudioManager}}\ *audioManager;\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeGame();}
+\DoxyCodeLine{00172\ \ \ \ \ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ checkCollisions();}
+\DoxyCodeLine{00177\ \ \ \ \ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ drawScore(QPainter\ \&painter);}
+\DoxyCodeLine{00183\ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ drawPauseScreen(QPainter\ \&painter);}
+\DoxyCodeLine{00189\ \ \ \ \ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ respawnPacman();}
+\DoxyCodeLine{00194\ \ \ \ \ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ checkWinCondition();}
+\DoxyCodeLine{00199\ \ \ \ \ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ updateGhostModes(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00205\ \ \ \ \ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{void}\ activatePowerUp();}
+\DoxyCodeLine{00210\ \ \ \ \ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ updatePowerUpTimer(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00216\ \};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

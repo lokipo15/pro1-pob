@@ -1,7 +1,7 @@
-//
-// Created by Gabriel Boruń on 25/04/2025.
-// Co-authored by Konrad Gębski on 25/04/2025.
-//
+///
+/// Created by Gabriel Boruń on 25/04/2025.
+/// Co-authored by Konrad Gębski on 25/04/2025.
+///
 
 #include "Entity.h"
 #include "GameBoard.h"
@@ -12,11 +12,11 @@ Entity::Entity(const QPointF &startPos)
       targetPosition(startPos),
       currentDirection(None),
       nextDirection(None),
-      moveSpeed(5.0f) {  // Domyślna prędkość: 5 komórek na sekundę
+      moveSpeed(5.0f) {  /// Domyślna prędkość: 5 komórek na sekundę
 }
 
 QPoint Entity::getGridPosition() const {
-    // Konwersja pozycji float na pozycję na siatce
+    /// Konwersja pozycji float na pozycję na siatce
     return QPoint(
         static_cast<int>(std::round(position.x())),
         static_cast<int>(std::round(position.y()))
@@ -24,16 +24,16 @@ QPoint Entity::getGridPosition() const {
 }
 
 bool Entity::isAtGridCenter() const {
-    // Sprawdzenie czy encja jest wystarczająco blisko centrum komórki
-    float epsilon = 0.3f;  // Zwiększona tolerancja dla łatwiejszego skręcania
+    /// Sprawdzenie czy encja jest wystarczająco blisko centrum komórki
+    float epsilon = 0.3f;  /// Zwiększona tolerancja dla łatwiejszego skręcania
     float fracX = position.x() - std::floor(position.x());
     float fracY = position.y() - std::floor(position.y());
 
-    // Sprawdzamy czy jesteśmy blisko środka komórki (0.5, 0.5)
+    /// Sprawdzamy czy jesteśmy blisko środka komórki (0.5, 0.5)
     bool nearCenterX = std::abs(fracX - 0.5f) < epsilon;
     bool nearCenterY = std::abs(fracY - 0.5f) < epsilon;
 
-    // Lub blisko krawędzi komórki (0.0 lub 1.0)
+    /// Lub blisko krawędzi komórki (0.0 lub 1.0)
     bool nearEdgeX = fracX < epsilon || fracX > (1.0f - epsilon);
     bool nearEdgeY = fracY < epsilon || fracY > (1.0f - epsilon);
 
@@ -69,7 +69,7 @@ bool Entity::canMoveTo(const QPoint &gridPos, GameBoard *board) const {
 }
 
 void Entity::updateTargetPosition() {
-    // Aktualizuje pozycję docelową na podstawie obecnego kierunku
+    /// Aktualizuje pozycję docelową na podstawie obecnego kierunku
     QPoint currentGrid = getGridPosition();
 
     switch (currentDirection) {

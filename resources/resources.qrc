@@ -2,5 +2,9 @@
 <RCC version="1.0">
     <qresource prefix="/">
         <file>maps/level1.txt</file>
+        <file>sounds/pacman_beginning.wav</file>
+        <file>sounds/pacman_death.wav</file>
+        <file>sounds/pacman_eatfruit.wav</file>
+        <file>sounds/pacman_eatghost.wav</file>
     </qresource>
 </RCC>

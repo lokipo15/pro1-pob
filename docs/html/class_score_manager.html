@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POB Pro 1 - PacMan: Dokumentacja klasy ScoreManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POB Pro 1 - PacMan
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_score_manager.html','','class_score_manager-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy ScoreManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa zarządzająca wynikami gry.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_score_manager_8h_source.html">ScoreManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a4f3866ff832127664543349da5c4fbf4" id="r_a4f3866ff832127664543349da5c4fbf4"><td class="memItemLeft" align="right" valign="top"><a id="a4f3866ff832127664543349da5c4fbf4" name="a4f3866ff832127664543349da5c4fbf4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ScoreManager</b> ()</td></tr>
+<tr class="memdesc:a4f3866ff832127664543349da5c4fbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor managera wyników. <br /></td></tr>
+<tr class="memitem:a8158cfca6c5dd096f346e74df65fe146" id="r_a8158cfca6c5dd096f346e74df65fe146"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8158cfca6c5dd096f346e74df65fe146">saveScore</a> (const QString &amp;playerName, int score)</td></tr>
+<tr class="memdesc:a8158cfca6c5dd096f346e74df65fe146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisuje wynik gracza.  <br /></td></tr>
+<tr class="memitem:afaf1a2e67181b9ad80fb00e66567126e" id="r_afaf1a2e67181b9ad80fb00e66567126e"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="struct_score_entry.html">ScoreEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afaf1a2e67181b9ad80fb00e66567126e">loadTopScores</a> ()</td></tr>
+<tr class="memdesc:afaf1a2e67181b9ad80fb00e66567126e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje najlepsze wyniki.  <br /></td></tr>
+<tr class="memitem:a28eaf9919e2e638190966a49452bd7fb" id="r_a28eaf9919e2e638190966a49452bd7fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28eaf9919e2e638190966a49452bd7fb">isHighScore</a> (int score)</td></tr>
+<tr class="memdesc:a28eaf9919e2e638190966a49452bd7fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy wynik kwalifikuje się do top 10.  <br /></td></tr>
+<tr class="memitem:ad7360b0f2828ae3ce28c1cff74ea11da" id="r_ad7360b0f2828ae3ce28c1cff74ea11da"><td class="memItemLeft" align="right" valign="top"><a id="ad7360b0f2828ae3ce28c1cff74ea11da" name="ad7360b0f2828ae3ce28c1cff74ea11da"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>refreshScores</b> ()</td></tr>
+<tr class="memdesc:ad7360b0f2828ae3ce28c1cff74ea11da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odświeża listę wyników z pliku. <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Klasa zarządzająca wynikami gry. </p>
+<p>Odpowiada za zapisywanie, wczytywanie i sortowanie najlepszych wyników graczy. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a28eaf9919e2e638190966a49452bd7fb" name="a28eaf9919e2e638190966a49452bd7fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28eaf9919e2e638190966a49452bd7fb">&#9670;&#160;</a></span>isHighScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScoreManager::isHighScore </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>score</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sprawdza czy wynik kwalifikuje się do top 10. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">score</td><td>Wynik do sprawdzenia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>True jeśli wynik jest wystarczająco wysoki </dd></dl>
+<p>Zawsze sprawdź najnowsze dane z pliku</p>
+
+</div>
+</div>
+<a id="afaf1a2e67181b9ad80fb00e66567126e" name="afaf1a2e67181b9ad80fb00e66567126e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaf1a2e67181b9ad80fb00e66567126e">&#9670;&#160;</a></span>loadTopScores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; <a class="el" href="struct_score_entry.html">ScoreEntry</a> &gt; ScoreManager::loadTopScores </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wczytuje najlepsze wyniki. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Wektor najlepszych wyników </dd></dl>
+<p>Zawsze wczytaj najnowsze dane z pliku</p>
+
+</div>
+</div>
+<a id="a8158cfca6c5dd096f346e74df65fe146" name="a8158cfca6c5dd096f346e74df65fe146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8158cfca6c5dd096f346e74df65fe146">&#9670;&#160;</a></span>saveScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScoreManager::saveScore </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>playerName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>score</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zapisuje wynik gracza. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerName</td><td>Imię gracza </td></tr>
+    <tr><td class="paramname">score</td><td>Wynik gracza </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>True jeśli zapisano pomyślnie </dd></dl>
+<p>Wczytaj istniejące wyniki z pliku</p>
+<p>Zachowaj tylko top 10 wyników</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>src/<a class="el" href="_score_manager_8h_source.html">ScoreManager.h</a></li>
+<li>src/<b>ScoreManager.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_score_manager.html">ScoreManager</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

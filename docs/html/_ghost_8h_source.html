@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POB Pro 1 - PacMan: Plik źródłowy src/Ghost.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POB Pro 1 - PacMan
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_ghost_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Ghost.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_ghost_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef GHOST_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define GHOST_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_entity_8h.html">Entity.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QColor&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span><a class="code hl_class" href="class_game_board.html">GameBoard</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span><a class="code hl_class" href="class_pacman.html">Pacman</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_ghost.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="class_ghost.html#ac13c73d9b6c94786c988e9d129bb19c8">Ghost</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_entity.html#a69dceaa4d0b6c30da97723f83a357de3">Entity</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041">   29</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041">Mode</a> { </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041a59b4e4d81b72218ad63002c06697c82a">   30</a></span>        <a class="code hl_enumvalue" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041a59b4e4d81b72218ad63002c06697c82a">CHASE</a>,      </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041a21aa0aa1406a5ae4b58571826d7e255e">   31</a></span>        <a class="code hl_enumvalue" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041a21aa0aa1406a5ae4b58571826d7e255e">SCATTER</a>,    </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d">   32</a></span>        <a class="code hl_enumvalue" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d">FRIGHTENED</a>, </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041ad4a906903e8e5b135f507b8387ab6f61">   33</a></span>        <a class="code hl_enumvalue" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041ad4a906903e8e5b135f507b8387ab6f61">EATEN</a>       </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    };</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="class_ghost.html#ac13c73d9b6c94786c988e9d129bb19c8">Ghost</a>(<span class="keyword">const</span> QPointF &amp;startPos);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_ghost.html#ac8a7e59173e4df5251d904e652f71b83">   44</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_ghost.html#ac8a7e59173e4df5251d904e652f71b83">~Ghost</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#a18e4d17093a402c92a4aefee928d96ea">draw</a>(QPainter &amp;painter) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#aff1eed60a7debfad2db280ae68ba2532">move</a>(<a class="code hl_class" href="class_game_board.html">GameBoard</a> *board, <span class="keywordtype">float</span> deltaTime) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#aff1eed60a7debfad2db280ae68ba2532">move</a>(<a class="code hl_class" href="class_game_board.html">GameBoard</a> *board, <span class="keywordtype">float</span> deltaTime, <a class="code hl_class" href="class_pacman.html">Pacman</a> *pacman);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_ghost.html#ac729f7259245beb6fecc30cb829623c8">   70</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#ac729f7259245beb6fecc30cb829623c8">setMode</a>(<a class="code hl_enumeration" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041">Mode</a> mode) { <a class="code hl_variable" href="class_ghost.html#ad19d0b307a76e5a538beb8dfd09667f5">currentMode</a> = mode; }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_ghost.html#aa7f405a5edca46d02bb778d250e5d7d4">   75</a></span>    <a class="code hl_enumeration" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041">Mode</a> <a class="code hl_function" href="class_ghost.html#aa7f405a5edca46d02bb778d250e5d7d4">getMode</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_ghost.html#ad19d0b307a76e5a538beb8dfd09667f5">currentMode</a>; }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_ghost.html#a3d27792b048b42720c8fd36cd43bc38e">   80</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#a3d27792b048b42720c8fd36cd43bc38e">setColor</a>(<span class="keyword">const</span> QColor &amp;color) { <a class="code hl_variable" href="class_ghost.html#abdb57d9fd26ea4880e3590d9293bbcc3">normalColor</a> = color; }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#aa2606d94d293abe813f2a7f28270f386">updateModeTimer</a>(<span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_ghost.html#ae3811c2cf2d699827b3b864da2f1a8ba">   90</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#ae3811c2cf2d699827b3b864da2f1a8ba">resetModeTimer</a>() { <a class="code hl_variable" href="class_ghost.html#aa6672554fa3cbfc5ac7e26dd60b6f3ba">modeTimer</a> = 0.0f; }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#aceb07fd1ccf6223fa32545bd0cc53b0a">enterFrightenedMode</a>(<span class="keywordtype">float</span> duration);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#a82ccb928d0b0176cb6392f1bd69cd834">updateFrightenedMode</a>(<span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_ghost.html#afe3fcf86acc302ad0690d877b93864f9">  106</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_ghost.html#afe3fcf86acc302ad0690d877b93864f9">isVulnerable</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_ghost.html#ad19d0b307a76e5a538beb8dfd09667f5">currentMode</a> == <a class="code hl_enumvalue" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d">FRIGHTENED</a>; }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#a5b4b8e6ca0b6bcada10dcdc24f97a065">eatGhost</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_ghost.html#af86b5c14ee8e501b6b7fae2cce57efb4">  117</a></span>    <span class="keyword">virtual</span> QPoint <a class="code hl_function" href="class_ghost.html#af86b5c14ee8e501b6b7fae2cce57efb4">calculateTarget</a>(<a class="code hl_class" href="class_pacman.html">Pacman</a> *pacman) { <span class="keywordflow">return</span> <a class="code hl_function" href="class_entity.html#ae284253c07a9664cdedb5759f04918c6">getGridPosition</a>(); }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_ghost.html#a42519c68b15b19840103b636a26eac57">  123</a></span>    <span class="keyword">virtual</span> QPoint <a class="code hl_function" href="class_ghost.html#a42519c68b15b19840103b636a26eac57">getScatterCorner</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> QPoint(0, 0); }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_ghost.html#ad19d0b307a76e5a538beb8dfd09667f5">  126</a></span>    <a class="code hl_enumeration" href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041">Mode</a> <a class="code hl_variable" href="class_ghost.html#ad19d0b307a76e5a538beb8dfd09667f5">currentMode</a>;                   </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="class_ghost.html#abdb57d9fd26ea4880e3590d9293bbcc3">  127</a></span>    QColor <a class="code hl_variable" href="class_ghost.html#abdb57d9fd26ea4880e3590d9293bbcc3">normalColor</a>;                 </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_ghost.html#a51a690e2aa3180751554d476c7dd4bc5">  128</a></span>    QColor <a class="code hl_variable" href="class_ghost.html#a51a690e2aa3180751554d476c7dd4bc5">frightenedColor</a>;             </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="class_ghost.html#a9539bb2562ccd5b97fba7928baa946fc">  130</a></span>    <a class="code hl_enumeration" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">Direction</a> <a class="code hl_variable" href="class_ghost.html#a9539bb2562ccd5b97fba7928baa946fc">lastValidDirection</a>;       </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="class_ghost.html#ad8d5dd74ed4868dad5cd4cba18e38d34">  131</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_ghost.html#ad8d5dd74ed4868dad5cd4cba18e38d34">directionChangeTimer</a>;         </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="class_ghost.html#aa6672554fa3cbfc5ac7e26dd60b6f3ba">  133</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_ghost.html#aa6672554fa3cbfc5ac7e26dd60b6f3ba">modeTimer</a>;                    </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="class_ghost.html#af9a917a39597484eb07ee118130b4be5">  134</a></span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_ghost.html#af9a917a39597484eb07ee118130b4be5">SCATTER_TIME</a>;    </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_ghost.html#a85cdfe0e358f58fa8eaa77d10a12c5f7">  135</a></span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_ghost.html#a85cdfe0e358f58fa8eaa77d10a12c5f7">CHASE_TIME</a>;      </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="class_ghost.html#a6d21d8ebcdaf2efbd43e449e878b8023">  137</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_ghost.html#a6d21d8ebcdaf2efbd43e449e878b8023">frightenedTimer</a>;              </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="class_ghost.html#aaed9453e051bcda53fff5649d72990d2">  138</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_ghost.html#aaed9453e051bcda53fff5649d72990d2">frightenedDuration</a>;           </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="class_ghost.html#a2e4ddae07a63a0e05e5143e678ba1599">  139</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_ghost.html#a2e4ddae07a63a0e05e5143e678ba1599">blinkTimer</a>;                   </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <a class="code hl_enumeration" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">Direction</a> <a class="code hl_function" href="class_ghost.html#a612359018e9883141a71c79201bb1194">getRandomDirection</a>();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_enumeration" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">Direction</a> <a class="code hl_function" href="class_ghost.html#ac77b593eacc6b548df736e85be531354">getOppositeDirection</a>(<a class="code hl_enumeration" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">Direction</a> dir);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_ghost.html#a4b80d47c7b75cfddbf275d07e448a5d9">isIntersection</a>(<span class="keyword">const</span> QPoint &amp;pos, <a class="code hl_class" href="class_game_board.html">GameBoard</a> *board);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#a38e474f48134b4d0ecf5ec2d4e464e98">chooseDirectionAtIntersection</a>(<a class="code hl_class" href="class_game_board.html">GameBoard</a> *board);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#a53878184ac765d3ebc6341d7b9b3d45d">smoothMove</a>(<a class="code hl_class" href="class_game_board.html">GameBoard</a> *board, <span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_ghost.html#a781aa20f1e8ce4597ce2f124c25fa110">chooseTargetBasedDirection</a>(<span class="keyword">const</span> QPoint &amp;target, <a class="code hl_class" href="class_game_board.html">GameBoard</a> *board);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>};</div>
+</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_entity_8h_html"><div class="ttname"><a href="_entity_8h.html">Entity.h</a></div><div class="ttdoc">Bazowa klasa dla wszystkich ruchomych obiektów w grze.</div></div>
+<div class="ttc" id="aclass_entity_html_a69dceaa4d0b6c30da97723f83a357de3"><div class="ttname"><a href="class_entity.html#a69dceaa4d0b6c30da97723f83a357de3">Entity::Entity</a></div><div class="ttdeci">Entity(const QPointF &amp;startPos)</div><div class="ttdoc">Konstruktor encji.</div><div class="ttdef"><b>Definicja</b> Entity.cpp:10</div></div>
+<div class="ttc" id="aclass_entity_html_ac6ff3a9435d7dacb378891eadd127034"><div class="ttname"><a href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">Entity::Direction</a></div><div class="ttdeci">Direction</div><div class="ttdoc">Enumeracja kierunków ruchu.</div><div class="ttdef"><b>Definicja</b> Entity.h:30</div></div>
+<div class="ttc" id="aclass_entity_html_ae284253c07a9664cdedb5759f04918c6"><div class="ttname"><a href="class_entity.html#ae284253c07a9664cdedb5759f04918c6">Entity::getGridPosition</a></div><div class="ttdeci">QPoint getGridPosition() const</div><div class="ttdoc">Zwraca pozycję encji na siatce.</div><div class="ttdef"><b>Definicja</b> Entity.cpp:18</div></div>
+<div class="ttc" id="aclass_game_board_html"><div class="ttname"><a href="class_game_board.html">GameBoard</a></div><div class="ttdoc">Klasa reprezentująca planszę gry Pacman.</div><div class="ttdef"><b>Definicja</b> GameBoard.h:41</div></div>
+<div class="ttc" id="aclass_ghost_html_a18e4d17093a402c92a4aefee928d96ea"><div class="ttname"><a href="class_ghost.html#a18e4d17093a402c92a4aefee928d96ea">Ghost::draw</a></div><div class="ttdeci">void draw(QPainter &amp;painter) override</div><div class="ttdoc">Rysuje ducha na ekranie.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:38</div></div>
+<div class="ttc" id="aclass_ghost_html_a2e4ddae07a63a0e05e5143e678ba1599"><div class="ttname"><a href="class_ghost.html#a2e4ddae07a63a0e05e5143e678ba1599">Ghost::blinkTimer</a></div><div class="ttdeci">float blinkTimer</div><div class="ttdoc">Timer do animacji &quot;błyskania&quot;.</div><div class="ttdef"><b>Definicja</b> Ghost.h:139</div></div>
+<div class="ttc" id="aclass_ghost_html_a38e474f48134b4d0ecf5ec2d4e464e98"><div class="ttname"><a href="class_ghost.html#a38e474f48134b4d0ecf5ec2d4e464e98">Ghost::chooseDirectionAtIntersection</a></div><div class="ttdeci">void chooseDirectionAtIntersection(GameBoard *board)</div><div class="ttdoc">Wybiera kierunek na skrzyżowaniu.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:319</div></div>
+<div class="ttc" id="aclass_ghost_html_a3d27792b048b42720c8fd36cd43bc38e"><div class="ttname"><a href="class_ghost.html#a3d27792b048b42720c8fd36cd43bc38e">Ghost::setColor</a></div><div class="ttdeci">void setColor(const QColor &amp;color)</div><div class="ttdoc">Ustawia kolor ducha.</div><div class="ttdef"><b>Definicja</b> Ghost.h:80</div></div>
+<div class="ttc" id="aclass_ghost_html_a42519c68b15b19840103b636a26eac57"><div class="ttname"><a href="class_ghost.html#a42519c68b15b19840103b636a26eac57">Ghost::getScatterCorner</a></div><div class="ttdeci">virtual QPoint getScatterCorner() const</div><div class="ttdoc">Zwraca róg planszy dla trybu SCATTER (implementowane w klasach potomnych)</div><div class="ttdef"><b>Definicja</b> Ghost.h:123</div></div>
+<div class="ttc" id="aclass_ghost_html_a4b80d47c7b75cfddbf275d07e448a5d9"><div class="ttname"><a href="class_ghost.html#a4b80d47c7b75cfddbf275d07e448a5d9">Ghost::isIntersection</a></div><div class="ttdeci">bool isIntersection(const QPoint &amp;pos, GameBoard *board)</div><div class="ttdoc">Sprawdza czy pozycja jest skrzyżowaniem.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:307</div></div>
+<div class="ttc" id="aclass_ghost_html_a51a690e2aa3180751554d476c7dd4bc5"><div class="ttname"><a href="class_ghost.html#a51a690e2aa3180751554d476c7dd4bc5">Ghost::frightenedColor</a></div><div class="ttdeci">QColor frightenedColor</div><div class="ttdoc">Kolor gdy przestraszony.</div><div class="ttdef"><b>Definicja</b> Ghost.h:128</div></div>
+<div class="ttc" id="aclass_ghost_html_a53878184ac765d3ebc6341d7b9b3d45d"><div class="ttname"><a href="class_ghost.html#a53878184ac765d3ebc6341d7b9b3d45d">Ghost::smoothMove</a></div><div class="ttdeci">void smoothMove(GameBoard *board, float deltaTime)</div><div class="ttdoc">Wykonuje płynny ruch ducha.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:221</div></div>
+<div class="ttc" id="aclass_ghost_html_a5b4b8e6ca0b6bcada10dcdc24f97a065"><div class="ttname"><a href="class_ghost.html#a5b4b8e6ca0b6bcada10dcdc24f97a065">Ghost::eatGhost</a></div><div class="ttdeci">void eatGhost()</div><div class="ttdoc">Obsługuje zjedzenie ducha przez Pacmana.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:383</div></div>
+<div class="ttc" id="aclass_ghost_html_a612359018e9883141a71c79201bb1194"><div class="ttname"><a href="class_ghost.html#a612359018e9883141a71c79201bb1194">Ghost::getRandomDirection</a></div><div class="ttdeci">Direction getRandomDirection()</div><div class="ttdoc">Zwraca losowy kierunek ruchu.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:293</div></div>
+<div class="ttc" id="aclass_ghost_html_a6d21d8ebcdaf2efbd43e449e878b8023"><div class="ttname"><a href="class_ghost.html#a6d21d8ebcdaf2efbd43e449e878b8023">Ghost::frightenedTimer</a></div><div class="ttdeci">float frightenedTimer</div><div class="ttdoc">Licznik czasu trybu przestraszenia.</div><div class="ttdef"><b>Definicja</b> Ghost.h:137</div></div>
+<div class="ttc" id="aclass_ghost_html_a781aa20f1e8ce4597ce2f124c25fa110"><div class="ttname"><a href="class_ghost.html#a781aa20f1e8ce4597ce2f124c25fa110">Ghost::chooseTargetBasedDirection</a></div><div class="ttdeci">void chooseTargetBasedDirection(const QPoint &amp;target, GameBoard *board)</div><div class="ttdoc">Wybiera kierunek na podstawie pozycji celu.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:176</div></div>
+<div class="ttc" id="aclass_ghost_html_a82ccb928d0b0176cb6392f1bd69cd834"><div class="ttname"><a href="class_ghost.html#a82ccb928d0b0176cb6392f1bd69cd834">Ghost::updateFrightenedMode</a></div><div class="ttdeci">void updateFrightenedMode(float deltaTime)</div><div class="ttdoc">Aktualizuje tryb przestraszenia.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:369</div></div>
+<div class="ttc" id="aclass_ghost_html_a85cdfe0e358f58fa8eaa77d10a12c5f7"><div class="ttname"><a href="class_ghost.html#a85cdfe0e358f58fa8eaa77d10a12c5f7">Ghost::CHASE_TIME</a></div><div class="ttdeci">static const float CHASE_TIME</div><div class="ttdoc">Czas trwania trybu chase.</div><div class="ttdef"><b>Definicja</b> Ghost.h:135</div></div>
+<div class="ttc" id="aclass_ghost_html_a9539bb2562ccd5b97fba7928baa946fc"><div class="ttname"><a href="class_ghost.html#a9539bb2562ccd5b97fba7928baa946fc">Ghost::lastValidDirection</a></div><div class="ttdeci">Direction lastValidDirection</div><div class="ttdoc">Ostatni prawidłowy kierunek ruchu.</div><div class="ttdef"><b>Definicja</b> Ghost.h:130</div></div>
+<div class="ttc" id="aclass_ghost_html_aa2606d94d293abe813f2a7f28270f386"><div class="ttname"><a href="class_ghost.html#aa2606d94d293abe813f2a7f28270f386">Ghost::updateModeTimer</a></div><div class="ttdeci">void updateModeTimer(float deltaTime)</div><div class="ttdoc">Aktualizuje licznik czasu trybu.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:160</div></div>
+<div class="ttc" id="aclass_ghost_html_aa6672554fa3cbfc5ac7e26dd60b6f3ba"><div class="ttname"><a href="class_ghost.html#aa6672554fa3cbfc5ac7e26dd60b6f3ba">Ghost::modeTimer</a></div><div class="ttdeci">float modeTimer</div><div class="ttdoc">Licznik czasu aktualnego trybu.</div><div class="ttdef"><b>Definicja</b> Ghost.h:133</div></div>
+<div class="ttc" id="aclass_ghost_html_aa7f405a5edca46d02bb778d250e5d7d4"><div class="ttname"><a href="class_ghost.html#aa7f405a5edca46d02bb778d250e5d7d4">Ghost::getMode</a></div><div class="ttdeci">Mode getMode() const</div><div class="ttdoc">Pobiera aktualny tryb ducha.</div><div class="ttdef"><b>Definicja</b> Ghost.h:75</div></div>
+<div class="ttc" id="aclass_ghost_html_aad5b34c7031d2460db0fbae9b5428041"><div class="ttname"><a href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041">Ghost::Mode</a></div><div class="ttdeci">Mode</div><div class="ttdoc">Wyliczenie trybów zachowania ducha.</div><div class="ttdef"><b>Definicja</b> Ghost.h:29</div></div>
+<div class="ttc" id="aclass_ghost_html_aad5b34c7031d2460db0fbae9b5428041a21aa0aa1406a5ae4b58571826d7e255e"><div class="ttname"><a href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041a21aa0aa1406a5ae4b58571826d7e255e">Ghost::SCATTER</a></div><div class="ttdeci">@ SCATTER</div><div class="ttdoc">Tryb rozproszenia - udają się do swoich rogów.</div><div class="ttdef"><b>Definicja</b> Ghost.h:31</div></div>
+<div class="ttc" id="aclass_ghost_html_aad5b34c7031d2460db0fbae9b5428041a59b4e4d81b72218ad63002c06697c82a"><div class="ttname"><a href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041a59b4e4d81b72218ad63002c06697c82a">Ghost::CHASE</a></div><div class="ttdeci">@ CHASE</div><div class="ttdoc">Tryb pogoni za Pacmanem.</div><div class="ttdef"><b>Definicja</b> Ghost.h:30</div></div>
+<div class="ttc" id="aclass_ghost_html_aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d"><div class="ttname"><a href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041a883cbde2666d21cf2223540a5a3ce82d">Ghost::FRIGHTENED</a></div><div class="ttdeci">@ FRIGHTENED</div><div class="ttdoc">Tryb przestraszenia - można ich zjeść</div><div class="ttdef"><b>Definicja</b> Ghost.h:32</div></div>
+<div class="ttc" id="aclass_ghost_html_aad5b34c7031d2460db0fbae9b5428041ad4a906903e8e5b135f507b8387ab6f61"><div class="ttname"><a href="class_ghost.html#aad5b34c7031d2460db0fbae9b5428041ad4a906903e8e5b135f507b8387ab6f61">Ghost::EATEN</a></div><div class="ttdeci">@ EATEN</div><div class="ttdoc">Tryb po zjedzeniu - wracają do bazy.</div><div class="ttdef"><b>Definicja</b> Ghost.h:33</div></div>
+<div class="ttc" id="aclass_ghost_html_aaed9453e051bcda53fff5649d72990d2"><div class="ttname"><a href="class_ghost.html#aaed9453e051bcda53fff5649d72990d2">Ghost::frightenedDuration</a></div><div class="ttdeci">float frightenedDuration</div><div class="ttdoc">Czas trwania trybu przestraszenia.</div><div class="ttdef"><b>Definicja</b> Ghost.h:138</div></div>
+<div class="ttc" id="aclass_ghost_html_abdb57d9fd26ea4880e3590d9293bbcc3"><div class="ttname"><a href="class_ghost.html#abdb57d9fd26ea4880e3590d9293bbcc3">Ghost::normalColor</a></div><div class="ttdeci">QColor normalColor</div><div class="ttdoc">Normalny kolor ducha.</div><div class="ttdef"><b>Definicja</b> Ghost.h:127</div></div>
+<div class="ttc" id="aclass_ghost_html_ac13c73d9b6c94786c988e9d129bb19c8"><div class="ttname"><a href="class_ghost.html#ac13c73d9b6c94786c988e9d129bb19c8">Ghost::Ghost</a></div><div class="ttdeci">Ghost(const QPointF &amp;startPos)</div><div class="ttdoc">Konstruktor ducha.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:17</div></div>
+<div class="ttc" id="aclass_ghost_html_ac729f7259245beb6fecc30cb829623c8"><div class="ttname"><a href="class_ghost.html#ac729f7259245beb6fecc30cb829623c8">Ghost::setMode</a></div><div class="ttdeci">void setMode(Mode mode)</div><div class="ttdoc">Ustawia tryb zachowania ducha.</div><div class="ttdef"><b>Definicja</b> Ghost.h:70</div></div>
+<div class="ttc" id="aclass_ghost_html_ac77b593eacc6b548df736e85be531354"><div class="ttname"><a href="class_ghost.html#ac77b593eacc6b548df736e85be531354">Ghost::getOppositeDirection</a></div><div class="ttdeci">Direction getOppositeDirection(Direction dir)</div><div class="ttdoc">Zwraca kierunek przeciwny do podanego.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:297</div></div>
+<div class="ttc" id="aclass_ghost_html_ac8a7e59173e4df5251d904e652f71b83"><div class="ttname"><a href="class_ghost.html#ac8a7e59173e4df5251d904e652f71b83">Ghost::~Ghost</a></div><div class="ttdeci">virtual ~Ghost()=default</div><div class="ttdoc">Wirtualny destruktor.</div></div>
+<div class="ttc" id="aclass_ghost_html_aceb07fd1ccf6223fa32545bd0cc53b0a"><div class="ttname"><a href="class_ghost.html#aceb07fd1ccf6223fa32545bd0cc53b0a">Ghost::enterFrightenedMode</a></div><div class="ttdeci">void enterFrightenedMode(float duration)</div><div class="ttdoc">Wprowadza ducha w tryb przestraszenia.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:353</div></div>
+<div class="ttc" id="aclass_ghost_html_ad19d0b307a76e5a538beb8dfd09667f5"><div class="ttname"><a href="class_ghost.html#ad19d0b307a76e5a538beb8dfd09667f5">Ghost::currentMode</a></div><div class="ttdeci">Mode currentMode</div><div class="ttdoc">Aktualny tryb zachowania ducha.</div><div class="ttdef"><b>Definicja</b> Ghost.h:126</div></div>
+<div class="ttc" id="aclass_ghost_html_ad8d5dd74ed4868dad5cd4cba18e38d34"><div class="ttname"><a href="class_ghost.html#ad8d5dd74ed4868dad5cd4cba18e38d34">Ghost::directionChangeTimer</a></div><div class="ttdeci">float directionChangeTimer</div><div class="ttdoc">Timer do losowej zmiany kierunku.</div><div class="ttdef"><b>Definicja</b> Ghost.h:131</div></div>
+<div class="ttc" id="aclass_ghost_html_ae3811c2cf2d699827b3b864da2f1a8ba"><div class="ttname"><a href="class_ghost.html#ae3811c2cf2d699827b3b864da2f1a8ba">Ghost::resetModeTimer</a></div><div class="ttdeci">void resetModeTimer()</div><div class="ttdoc">Resetuje licznik czasu trybu.</div><div class="ttdef"><b>Definicja</b> Ghost.h:90</div></div>
+<div class="ttc" id="aclass_ghost_html_af86b5c14ee8e501b6b7fae2cce57efb4"><div class="ttname"><a href="class_ghost.html#af86b5c14ee8e501b6b7fae2cce57efb4">Ghost::calculateTarget</a></div><div class="ttdeci">virtual QPoint calculateTarget(Pacman *pacman)</div><div class="ttdoc">Oblicza cel ruchu ducha (implementowane w klasach potomnych)</div><div class="ttdef"><b>Definicja</b> Ghost.h:117</div></div>
+<div class="ttc" id="aclass_ghost_html_af9a917a39597484eb07ee118130b4be5"><div class="ttname"><a href="class_ghost.html#af9a917a39597484eb07ee118130b4be5">Ghost::SCATTER_TIME</a></div><div class="ttdeci">static const float SCATTER_TIME</div><div class="ttdoc">Czas trwania trybu scatter.</div><div class="ttdef"><b>Definicja</b> Ghost.h:134</div></div>
+<div class="ttc" id="aclass_ghost_html_afe3fcf86acc302ad0690d877b93864f9"><div class="ttname"><a href="class_ghost.html#afe3fcf86acc302ad0690d877b93864f9">Ghost::isVulnerable</a></div><div class="ttdeci">bool isVulnerable() const</div><div class="ttdoc">Sprawdza czy duch jest podatny na zjedzenie.</div><div class="ttdef"><b>Definicja</b> Ghost.h:106</div></div>
+<div class="ttc" id="aclass_ghost_html_aff1eed60a7debfad2db280ae68ba2532"><div class="ttname"><a href="class_ghost.html#aff1eed60a7debfad2db280ae68ba2532">Ghost::move</a></div><div class="ttdeci">void move(GameBoard *board, float deltaTime) override</div><div class="ttdoc">Porusza duchem na planszy.</div><div class="ttdef"><b>Definicja</b> Ghost.cpp:100</div></div>
+<div class="ttc" id="aclass_pacman_html"><div class="ttname"><a href="class_pacman.html">Pacman</a></div><div class="ttdoc">Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza.</div><div class="ttdef"><b>Definicja</b> Pacman.h:22</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="_ghost_8h.html">Ghost.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

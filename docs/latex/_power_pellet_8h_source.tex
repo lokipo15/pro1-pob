@@ -1,0 +1,30 @@
+\doxysection{Power\+Pellet.\+h}
+\hypertarget{_power_pellet_8h_source}{}\label{_power_pellet_8h_source}\index{src/PowerPellet.h@{src/PowerPellet.h}}
+\mbox{\hyperlink{_power_pellet_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ POWERPELLET\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ POWERPELLET\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_power_up_8h}{PowerUp.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_power_pellet_a3f103f4a0befdb6c5870ec7b9a3a3f38}{PowerPellet}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_power_up_a3c02cb0e50d8079b701907bfb0a3920d}{PowerUp}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_power_pellet_a3f103f4a0befdb6c5870ec7b9a3a3f38}{PowerPellet}}(\textcolor{keyword}{const}\ QPointF\ \&\mbox{\hyperlink{class_power_up_a4d3628b39a19c8408a1070b6c27d101d}{position}});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_power_pellet_af63bd962d1e7a4f77ffb9b03b49c1a57}{draw}}(QPainter\ \&painter)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_power_pellet_a4ec1c5c7469e208deac7cd0a77d905d3}{activate}}(\mbox{\hyperlink{class_pacman}{Pacman}}\ *pacman)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_power_pellet_aaae97af04903002c6454282398eec982}{getScore}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{float}\ animationTimer;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ visible;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ SCORE\_VALUE\ =\ 50;\ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ FRIGHTENED\_DURATION;\ }
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

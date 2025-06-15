@@ -1,7 +1,7 @@
-//
-// Created by Gabriel Boruń on 25/04/2025.
-// Co-authored by Konrad Gębski on 25/04/2025.
-//
+///
+/// Created by Gabriel Boruń on 25/04/2025.
+/// Co-authored by Konrad Gębski on 25/04/2025.
+///
 
 #include "GameOverScreen.h"
 #include <QPainter>
@@ -13,24 +13,24 @@ GameOverScreen::GameOverScreen(QWidget *parent)
     setFixedSize(600, 650);
     setFocusPolicy(Qt::StrongFocus);
 
-    // Tworzenie layoutu
+    /// Tworzenie layoutu
     layout = new QVBoxLayout(this);
     layout->setAlignment(Qt::AlignCenter);
     layout->setSpacing(20);
 
-    // Napis "Game Over"
+    /// Napis "Game Over"
     gameOverLabel = new QLabel("KONIEC GRY", this);
     gameOverLabel->setAlignment(Qt::AlignCenter);
     gameOverLabel->setStyleSheet("QLabel { color: red; font-size: 36px; font-weight: bold; }");
     layout->addWidget(gameOverLabel);
 
-    // Wynik
+    /// Wynik
     scoreLabel = new QLabel("Wynik: 0", this);
     scoreLabel->setAlignment(Qt::AlignCenter);
     scoreLabel->setStyleSheet("QLabel { color: yellow; font-size: 24px; font-weight: bold; }");
     layout->addWidget(scoreLabel);
 
-    // Layout dla wprowadzania imienia (domyślnie ukryty)
+    /// Layout dla wprowadzania imienia (domyślnie ukryty)
     nameLayout = new QHBoxLayout();
     nameLabel = new QLabel("Wprowadź imię:", this);
     nameLabel->setStyleSheet("QLabel { color: white; font-size: 16px; }");
@@ -67,12 +67,12 @@ GameOverScreen::GameOverScreen(QWidget *parent)
     nameLayout->addWidget(saveScoreButton);
     layout->addLayout(nameLayout);
 
-    hideNameInput(); // Domyślnie ukryj
+    hideNameInput(); /// Domyślnie ukryj
 
-    // Odstęp
+    /// Odstęp
     layout->addSpacing(30);
 
-    // Przycisk Restart
+    /// Przycisk Restart
     restartButton = new QPushButton("ZAGRAJ PONOWNIE", this);
     restartButton->setStyleSheet(
         "QPushButton { "
@@ -88,7 +88,7 @@ GameOverScreen::GameOverScreen(QWidget *parent)
     connect(restartButton, &QPushButton::clicked, this, &GameOverScreen::onRestartClicked);
     layout->addWidget(restartButton);
 
-    // Przycisk Menu Główne
+    /// Przycisk Menu Główne
     mainMenuButton = new QPushButton("MENU GŁÓWNE", this);
     mainMenuButton->setStyleSheet(
         "QPushButton { "
@@ -104,7 +104,7 @@ GameOverScreen::GameOverScreen(QWidget *parent)
     connect(mainMenuButton, &QPushButton::clicked, this, &GameOverScreen::onMainMenuClicked);
     layout->addWidget(mainMenuButton);
 
-    // Przycisk Tablica Wyników
+    /// Przycisk Tablica Wyników
     scoreboardButton = new QPushButton("NAJLEPSZE WYNIKI", this);
     scoreboardButton->setStyleSheet(
         "QPushButton { "
@@ -120,7 +120,7 @@ GameOverScreen::GameOverScreen(QWidget *parent)
     connect(scoreboardButton, &QPushButton::clicked, this, &GameOverScreen::onScoreboardClicked);
     layout->addWidget(scoreboardButton);
 
-    // Przycisk Wyjście
+    /// Przycisk Wyjście
     exitButton = new QPushButton("WYJŚCIE", this);
     exitButton->setStyleSheet(
         "QPushButton { "
@@ -176,10 +176,10 @@ void GameOverScreen::hideNameInput() {
 void GameOverScreen::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
 
-    // Tło
+    /// Tło
     painter.fillRect(rect(), Qt::black);
 
-    // Instrukcje nawigacji
+    /// Instrukcje nawigacji
     painter.setPen(Qt::white);
     painter.setFont(QFont("Arial", 12));
     painter.drawText(10, height() - 80, "Użyj strzałek ↑↓ do nawigacji");
@@ -195,7 +195,7 @@ void GameOverScreen::paintEvent(QPaintEvent *event) {
 }
 
 void GameOverScreen::keyPressEvent(QKeyEvent *event) {
-    // Jeśli pole imienia jest aktywne, obsłuż wprowadzanie tekstu
+    /// Jeśli pole imienia jest aktywne, obsłuż wprowadzanie tekstu
     if (isNewHighScore && !scoreSaved && nameInput->hasFocus()) {
         if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {
             onSaveScoreClicked();
@@ -204,7 +204,7 @@ void GameOverScreen::keyPressEvent(QKeyEvent *event) {
             nameInput->clearFocus();
             return;
         }
-        // Pozwól na normalne wprowadzanie tekstu
+        /// Pozwól na normalne wprowadzanie tekstu
         QWidget::keyPressEvent(event);
         return;
     }
@@ -239,7 +239,7 @@ void GameOverScreen::keyPressEvent(QKeyEvent *event) {
 }
 
 void GameOverScreen::updateButtonSelection() {
-    // Reset stylów
+    /// Reset stylów
     QString normalStyle =
         "QPushButton { "
         "background-color: %1; "
@@ -256,7 +256,7 @@ void GameOverScreen::updateButtonSelection() {
     scoreboardButton->setStyleSheet(normalStyle.arg("#9b59b6", "#8e44ad"));
     exitButton->setStyleSheet(normalStyle.arg("#e74c3c", "#c0392b"));
 
-    // Podświetl wybrany przycisk
+    /// Podświetl wybrany przycisk
     QString selectedStyle =
         "QPushButton { "
         "background-color: %1; "

@@ -1,7 +1,7 @@
-//
-// Created by Gabriel Boruń on 12/06/2025.
-// Co-authored by Konrad Gębski on 12/06/2025.
-//
+///
+/// Created by Gabriel Boruń on 12/06/2025.
+/// Co-authored by Konrad Gębski on 12/06/2025.
+///
 
 #include "WinScreen.h"
 #include <QPainter>
@@ -18,27 +18,27 @@ WinScreen::WinScreen(QWidget *parent)
 }
 
 void WinScreen::setupLayout() {
-    // Główny layout
+    /// Główny layout
     mainLayout = new QVBoxLayout(this);
     mainLayout->setAlignment(Qt::AlignCenter);
     mainLayout->setSpacing(30);
 
-    // Tytuł
+    /// Tytuł
     titleLabel = new QLabel("GRATULACJE! Wygrałeś!", this);
     titleLabel->setAlignment(Qt::AlignCenter);
     titleLabel->setStyleSheet("QLabel { color: yellow; font-size: 48px; font-weight: bold; }");
     mainLayout->addWidget(titleLabel);
 
-    // Wynik
+    /// Wynik
     scoreLabel = new QLabel("Twój wynik: 0", this);
     scoreLabel->setAlignment(Qt::AlignCenter);
     scoreLabel->setStyleSheet("QLabel { color: white; font-size: 24px; font-weight: bold; }");
     mainLayout->addWidget(scoreLabel);
 
-    // Odstęp
+    /// Odstęp
     mainLayout->addSpacing(30);
 
-    // Layout dla wprowadzenia imienia
+    /// Layout dla wprowadzenia imienia
     nameLayout = new QHBoxLayout();
     namePromptLabel = new QLabel("Twoje imię:", this);
     namePromptLabel->setStyleSheet("QLabel { color: white; font-size: 18px; }");
@@ -58,14 +58,14 @@ void WinScreen::setupLayout() {
     nameLayout->addWidget(nameInput);
     mainLayout->addLayout(nameLayout);
 
-    // Odstęp
+    /// Odstęp
     mainLayout->addSpacing(20);
 
-    // Layout dla przycisków
+    /// Layout dla przycisków
     buttonLayout = new QHBoxLayout();
     buttonLayout->setSpacing(20);
 
-    // Przycisk zapisania wyniku
+    /// Przycisk zapisania wyniku
     saveScoreButton = new QPushButton("ZAPISZ WYNIK", this);
     saveScoreButton->setStyleSheet(
         "QPushButton { "
@@ -84,7 +84,7 @@ void WinScreen::setupLayout() {
     connect(saveScoreButton, &QPushButton::clicked, this, &WinScreen::onSaveScoreClicked);
     buttonLayout->addWidget(saveScoreButton);
 
-    // Przycisk wyświetlenia tablicy wyników
+    /// Przycisk wyświetlenia tablicy wyników
     viewScoreboardButton = new QPushButton("TABLICA WYNIKÓW", this);
     viewScoreboardButton->setStyleSheet(
         "QPushButton { "
@@ -105,11 +105,11 @@ void WinScreen::setupLayout() {
 
     mainLayout->addLayout(buttonLayout);
 
-    // Druga linia przycisków
+    /// Druga linia przycisków
     QHBoxLayout *secondButtonLayout = new QHBoxLayout();
     secondButtonLayout->setSpacing(20);
 
-    // Przycisk zagraj ponownie
+    /// Przycisk zagraj ponownie
     playAgainButton = new QPushButton("ZAGRAJ PONOWNIE", this);
     playAgainButton->setStyleSheet(
         "QPushButton { "
@@ -128,7 +128,7 @@ void WinScreen::setupLayout() {
     connect(playAgainButton, &QPushButton::clicked, this, &WinScreen::onPlayAgainClicked);
     secondButtonLayout->addWidget(playAgainButton);
 
-    // Przycisk wyjścia
+    /// Przycisk wyjścia
     exitButton = new QPushButton("WYJDŹ", this);
     exitButton->setStyleSheet(
         "QPushButton { "
@@ -177,7 +177,7 @@ void WinScreen::checkIfHighScore() {
 }
 
 void WinScreen::updateButtonSelection() {
-    // Reset all button styles
+    /// Reset stylów
     QString normalStyle = 
         "background-color: #2c3e50; "
         "color: white; "
@@ -240,10 +240,10 @@ void WinScreen::keyPressEvent(QKeyEvent *event) {
 void WinScreen::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     
-    // Tło
+    /// Tło
     painter.fillRect(rect(), Qt::black);
     
-    // Dodaj efekt świecenia dla nowego rekordu
+    /// Dodaj efekt świecenia dla nowego rekordu
     if (isHighScore) {
         painter.setPen(QPen(Qt::yellow, 3));
         painter.drawRect(5, 5, width() - 10, height() - 10);

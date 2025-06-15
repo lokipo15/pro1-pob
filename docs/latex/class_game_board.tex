@@ -1,0 +1,234 @@
+\doxysection{Dokumentacja klasy Game\+Board}
+\hypertarget{class_game_board}{}\label{class_game_board}\index{GameBoard@{GameBoard}}
+
+
+Klasa reprezentująca planszę gry \doxylink{class_pacman}{Pacman}.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Board.\+h$>$}
+
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_board_ac622cadcc81b3ffb71d8feb4506c04ac}{Game\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor planszy gry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_board_aef097fdd165ec8666d95f22bbeaefd18}{draw}} (QPainter \&painter)
+\begin{DoxyCompactList}\small\item\em Rysuje planszę na ekranie. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_board_a0b8d678d285ef37f476dee7fdd2e8839}{is\+Wall}} (const QPoint \&pos) const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy dana pozycja to ściana. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_board_a1be80c1b5d2e1272256ef2d773f5988e}{is\+Collectible}} (const QPoint \&pos) const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy dana pozycja zawiera punkt do zebrania. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_board_a60425a1139d7d304211ad2febcdd1d95}{is\+Power\+Up}} (const QPoint \&pos) const
+\begin{DoxyCompactList}\small\item\em Sprawdza czy dana pozycja zawiera power-\/up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_board_a5ab8d16d8938dd12ccbe1ce3604eada4}{remove\+Collectible}} (const QPoint \&pos)
+\begin{DoxyCompactList}\small\item\em Usuwa punkt do zebrania z planszy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_board_ac632b0408e33210b21cd9ac72c5f07cd}{remove\+Power\+Up}} (const QPoint \&pos)
+\begin{DoxyCompactList}\small\item\em Usuwa power-\/up z planszy. \end{DoxyCompactList}\item 
+QPoint \mbox{\hyperlink{class_game_board_a990f43e96ff29f23c02e9e9c4cd9ae3d}{get\+Pacman\+Start\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera pozycję startową Pacmana. \end{DoxyCompactList}\item 
+std\+::vector$<$ QPoint $>$ \mbox{\hyperlink{class_game_board_ad89108697bf601dac4662de386ba2aea}{get\+Ghost\+Start\+Positions}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera pozycje startowe duchów. \end{DoxyCompactList}\item 
+std\+::vector$<$ QPoint $>$ \mbox{\hyperlink{class_game_board_aad694ac050802816b1a58ff64bfef679}{get\+Power\+Up\+Positions}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera pozycje power-\/upów na planszy. \end{DoxyCompactList}\item 
+const std\+::set$<$ QPoint, \mbox{\hyperlink{struct_q_point_compare}{QPoint\+Compare}} $>$ \& \mbox{\hyperlink{class_game_board_aa2c14bbe3a67a9b309dcbdc3ca835c99}{get\+Collectibles}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera zbiór wszystkich punktów do zebrania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa reprezentująca planszę gry \doxylink{class_pacman}{Pacman}. 
+
+Zarządza strukturą planszy, ścianami, punktami do zebrania, power-\/upami oraz pozycjami startowymi postaci. 
+
+\label{doc-constructors}
+\Hypertarget{class_game_board_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_game_board_ac622cadcc81b3ffb71d8feb4506c04ac}\index{GameBoard@{GameBoard}!GameBoard@{GameBoard}}
+\index{GameBoard@{GameBoard}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{GameBoard()}{GameBoard()}}
+{\footnotesize\ttfamily \label{class_game_board_ac622cadcc81b3ffb71d8feb4506c04ac} 
+Game\+Board\+::\+Game\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor planszy gry. 
+
+Created by Gabriel Boruń on 25/04/2025. Co-\/authored by Konrad Gębski on 25/04/2025. Konstruktor klasy \doxylink{class_game_board}{Game\+Board}
+
+Wywołanie inicjalizacji planszy
+
+\label{doc-func-members}
+\Hypertarget{class_game_board_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_game_board_aef097fdd165ec8666d95f22bbeaefd18}\index{GameBoard@{GameBoard}!draw@{draw}}
+\index{draw@{draw}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_game_board_aef097fdd165ec8666d95f22bbeaefd18} 
+void Game\+Board\+::draw (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{}\end{DoxyParamCaption})}
+
+
+
+Rysuje planszę na ekranie. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em painter} & Obiekt do rysowania \\
+\hline
+\end{DoxyParams}
+Rysuowanie planszy
+
+Rysowanie tła
+
+Rysowanie ścian, punktów do zbierania i power-\/upów
+
+Ściana
+
+Punkt do zebrania
+
+Power-\/up\Hypertarget{class_game_board_aa2c14bbe3a67a9b309dcbdc3ca835c99}\index{GameBoard@{GameBoard}!getCollectibles@{getCollectibles}}
+\index{getCollectibles@{getCollectibles}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{getCollectibles()}{getCollectibles()}}
+{\footnotesize\ttfamily \label{class_game_board_aa2c14bbe3a67a9b309dcbdc3ca835c99} 
+const std\+::set$<$ QPoint, \mbox{\hyperlink{struct_q_point_compare}{QPoint\+Compare}} $>$ \& Game\+Board\+::get\+Collectibles (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera zbiór wszystkich punktów do zebrania. 
+
+\begin{DoxyReturn}{Zwraca}
+Referencja do zbioru punktów do zebrania 
+\end{DoxyReturn}
+\Hypertarget{class_game_board_ad89108697bf601dac4662de386ba2aea}\index{GameBoard@{GameBoard}!getGhostStartPositions@{getGhostStartPositions}}
+\index{getGhostStartPositions@{getGhostStartPositions}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{getGhostStartPositions()}{getGhostStartPositions()}}
+{\footnotesize\ttfamily \label{class_game_board_ad89108697bf601dac4662de386ba2aea} 
+std\+::vector$<$ QPoint $>$ Game\+Board\+::get\+Ghost\+Start\+Positions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Pobiera pozycje startowe duchów. 
+
+\begin{DoxyReturn}{Zwraca}
+Wektor pozycji startowych duchów 
+\end{DoxyReturn}
+Zwraca liste pozycji startowych duchów\Hypertarget{class_game_board_a990f43e96ff29f23c02e9e9c4cd9ae3d}\index{GameBoard@{GameBoard}!getPacmanStartPosition@{getPacmanStartPosition}}
+\index{getPacmanStartPosition@{getPacmanStartPosition}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{getPacmanStartPosition()}{getPacmanStartPosition()}}
+{\footnotesize\ttfamily \label{class_game_board_a990f43e96ff29f23c02e9e9c4cd9ae3d} 
+QPoint Game\+Board\+::get\+Pacman\+Start\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Pobiera pozycję startową Pacmana. 
+
+\begin{DoxyReturn}{Zwraca}
+Pozycja startowa Pacmana na planszy 
+\end{DoxyReturn}
+Zwraca pozycję startową Pacmana
+
+Awaryjnie, gdyby nie znaleziono\Hypertarget{class_game_board_aad694ac050802816b1a58ff64bfef679}\index{GameBoard@{GameBoard}!getPowerUpPositions@{getPowerUpPositions}}
+\index{getPowerUpPositions@{getPowerUpPositions}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{getPowerUpPositions()}{getPowerUpPositions()}}
+{\footnotesize\ttfamily \label{class_game_board_aad694ac050802816b1a58ff64bfef679} 
+std\+::vector$<$ QPoint $>$ Game\+Board\+::get\+Power\+Up\+Positions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Pobiera pozycje power-\/upów na planszy. 
+
+\begin{DoxyReturn}{Zwraca}
+Wektor pozycji power-\/upów 
+\end{DoxyReturn}
+Zwraca pozycje power-\/upów\Hypertarget{class_game_board_a1be80c1b5d2e1272256ef2d773f5988e}\index{GameBoard@{GameBoard}!isCollectible@{isCollectible}}
+\index{isCollectible@{isCollectible}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{isCollectible()}{isCollectible()}}
+{\footnotesize\ttfamily \label{class_game_board_a1be80c1b5d2e1272256ef2d773f5988e} 
+bool Game\+Board\+::is\+Collectible (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos}{}\end{DoxyParamCaption}) const}
+
+
+
+Sprawdza czy dana pozycja zawiera punkt do zebrania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em pos} & Pozycja do sprawdzenia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+True jeśli pozycja zawiera punkt 
+\end{DoxyReturn}
+Sprawdzenie czy punkt\Hypertarget{class_game_board_a60425a1139d7d304211ad2febcdd1d95}\index{GameBoard@{GameBoard}!isPowerUp@{isPowerUp}}
+\index{isPowerUp@{isPowerUp}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{isPowerUp()}{isPowerUp()}}
+{\footnotesize\ttfamily \label{class_game_board_a60425a1139d7d304211ad2febcdd1d95} 
+bool Game\+Board\+::is\+Power\+Up (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos}{}\end{DoxyParamCaption}) const}
+
+
+
+Sprawdza czy dana pozycja zawiera power-\/up. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em pos} & Pozycja do sprawdzenia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+True jeśli pozycja zawiera power-\/up 
+\end{DoxyReturn}
+Sprawdzenie czy power-\/up\Hypertarget{class_game_board_a0b8d678d285ef37f476dee7fdd2e8839}\index{GameBoard@{GameBoard}!isWall@{isWall}}
+\index{isWall@{isWall}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{isWall()}{isWall()}}
+{\footnotesize\ttfamily \label{class_game_board_a0b8d678d285ef37f476dee7fdd2e8839} 
+bool Game\+Board\+::is\+Wall (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos}{}\end{DoxyParamCaption}) const}
+
+
+
+Sprawdza czy dana pozycja to ściana. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em pos} & Pozycja do sprawdzenia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+True jeśli pozycja to ściana 
+\end{DoxyReturn}
+Sprawdzenie czy ściana
+
+Wyjście poza planszę traktujemy jak ścianę\Hypertarget{class_game_board_a5ab8d16d8938dd12ccbe1ce3604eada4}\index{GameBoard@{GameBoard}!removeCollectible@{removeCollectible}}
+\index{removeCollectible@{removeCollectible}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{removeCollectible()}{removeCollectible()}}
+{\footnotesize\ttfamily \label{class_game_board_a5ab8d16d8938dd12ccbe1ce3604eada4} 
+void Game\+Board\+::remove\+Collectible (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+Usuwa punkt do zebrania z planszy. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em pos} & Pozycja punktu do usunięcia \\
+\hline
+\end{DoxyParams}
+Usuwa punkt do zebrania z planszy\Hypertarget{class_game_board_ac632b0408e33210b21cd9ac72c5f07cd}\index{GameBoard@{GameBoard}!removePowerUp@{removePowerUp}}
+\index{removePowerUp@{removePowerUp}!GameBoard@{GameBoard}}
+\doxysubsubsection{\texorpdfstring{removePowerUp()}{removePowerUp()}}
+{\footnotesize\ttfamily \label{class_game_board_ac632b0408e33210b21cd9ac72c5f07cd} 
+void Game\+Board\+::remove\+Power\+Up (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+Usuwa power-\/up z planszy. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em pos} & Pozycja power-\/up do usunięcia \\
+\hline
+\end{DoxyParams}
+Usuwa power-\/up z planszy
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_game_board_8h}{Game\+Board.\+h}}\item 
+src/Game\+Board.\+cpp\end{DoxyCompactItemize}

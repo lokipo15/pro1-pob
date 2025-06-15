@@ -1,0 +1,259 @@
+\doxysection{Dokumentacja klasy Game}
+\hypertarget{class_game}{}\label{class_game}\index{Game@{Game}}
+
+
+Główna klasa zarządzająca logiką gry \doxylink{class_pacman}{Pacman}.  
+
+
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+Diagram dziedziczenia dla Game\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Sygnały}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_a3828738518a273ce13a090006f246849}{game\+State\+Changed}} (\mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} new\+State)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany przy zmianie stanu gry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a4d5fb2ed620bbffc75a399d263d19be0}{score\+Changed}} (int new\+Score)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany przy zmianie wyniku. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a2521a818da4804e7d79c4b02347cc764}{lives\+Changed}} (int new\+Lives)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany przy zmianie liczby żyć \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_ac1a9dde49041f68e14234a41a862865d}{Game}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_game}{Game}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{\texorpdfstring{$\sim$}{\string~}\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{class_game}{Game}. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_ae8638ccdb0ef3bf39a6affa30aa1258f}\label{class_game_ae8638ccdb0ef3bf39a6affa30aa1258f} 
+void {\bfseries start\+Game} ()
+\begin{DoxyCompactList}\small\item\em Rozpoczyna nową grę \end{DoxyCompactList}\item 
+\Hypertarget{class_game_a9d9a79a0f7df3c7e55a3103c04ecbc87}\label{class_game_a9d9a79a0f7df3c7e55a3103c04ecbc87} 
+void {\bfseries pause\+Game} ()
+\begin{DoxyCompactList}\small\item\em Zatrzymuje grę (pauza) \end{DoxyCompactList}\item 
+\Hypertarget{class_game_a5ec2daf2a7fe95ee03dea84b4f5d6883}\label{class_game_a5ec2daf2a7fe95ee03dea84b4f5d6883} 
+void {\bfseries resume\+Game} ()
+\begin{DoxyCompactList}\small\item\em Wznawia zatrzymaną grę \end{DoxyCompactList}\item 
+\Hypertarget{class_game_a47c726a80fd133c0a4f6b8fba56d8832}\label{class_game_a47c726a80fd133c0a4f6b8fba56d8832} 
+void {\bfseries reset\+Game} ()
+\begin{DoxyCompactList}\small\item\em Resetuje grę do stanu początkowego. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \mbox{\hyperlink{class_game_adbbfae184c044c2d544b382704b2bacd}{get\+Current\+State}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca aktualny stan gry. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_adff34c2ddf03af26dcddad0a942bbcf7}{get\+Score}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca aktualny wynik gracza. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_af7962212d039de623b8eebc538ff7140}{get\+Lives}} () const
+\begin{DoxyCompactList}\small\item\em Zwraca liczbę pozostałych żyć \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_audio_manager}{Audio\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_a84d700bd37042ce4ab36a8070fe309db}{get\+Audio\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Zwraca wskaźnik na menedżer audio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_ae3d960780bb03ab5d6713e5d3343f6fc}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenie rysowania. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a11472607ec18247e34b70de047ca5e4a}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje naciśnięcie klawisza. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Główna klasa zarządzająca logiką gry \doxylink{class_pacman}{Pacman}. 
+
+Klasa odpowiedzialna za kontrolę stanu gry, aktualizację obiektów, obsługę kolizji i renderowanie interfejsu gry. 
+
+\label{doc-constructors}
+\Hypertarget{class_game_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_game_ac1a9dde49041f68e14234a41a862865d}\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily \label{class_game_ac1a9dde49041f68e14234a41a862865d} 
+Game\+::\+Game (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \doxylink{class_game}{Game}. 
+
+Inicjalizacja planszy i obiektów.
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & Wskaźnik na rodzica widget\textquotesingle{}u\\
+\hline
+\end{DoxyParams}
+Created by Gabriel Boruń on 25/04/2025. Co-\/authored by Konrad Gębski on 25/04/2025. Ustawienie focus policy, aby otrzymywać zdarzenia klawiatury
+
+Tworzenie i uruchamianie timera do aktualizacji gry
+
+Timer ustawiony na 16ms dla 60 FPS
+
+Inicjalizacja komponentów gry (ale nie rozpoczynamy gry)
+
+Inicjalizacja \doxylink{class_audio_manager}{Audio\+Manager}
+
+Konfiguracja ścieżek do plików dźwiękowych\Hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}\index{Game@{Game}!````~Game@{\texorpdfstring{$\sim$}{\string~}Game}}
+\index{````~Game@{\texorpdfstring{$\sim$}{\string~}Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Game()}{\string~Game()}}
+{\footnotesize\ttfamily \label{class_game_ae3d112ca6e0e55150d2fdbc704474530} 
+Game\+::\texorpdfstring{$\sim$}{\string~}\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destruktor klasy \doxylink{class_game}{Game}. 
+
+Destruktor. 
+
+\label{doc-func-members}
+\Hypertarget{class_game_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_game_a3828738518a273ce13a090006f246849}\index{Game@{Game}!gameStateChanged@{gameStateChanged}}
+\index{gameStateChanged@{gameStateChanged}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{gameStateChanged}{gameStateChanged}}
+{\footnotesize\ttfamily \label{class_game_a3828738518a273ce13a090006f246849} 
+void Game\+::game\+State\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}}}]{new\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany przy zmianie stanu gry. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em new\+State} & Nowy stan gry \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_a84d700bd37042ce4ab36a8070fe309db}\index{Game@{Game}!getAudioManager@{getAudioManager}}
+\index{getAudioManager@{getAudioManager}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getAudioManager()}{getAudioManager()}}
+{\footnotesize\ttfamily \label{class_game_a84d700bd37042ce4ab36a8070fe309db} 
+\mbox{\hyperlink{class_audio_manager}{Audio\+Manager}} \texorpdfstring{$\ast$}{*} Game\+::get\+Audio\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca wskaźnik na menedżer audio. 
+
+\begin{DoxyReturn}{Zwraca}
+Wskaźnik na \doxylink{class_audio_manager}{Audio\+Manager} 
+\end{DoxyReturn}
+\Hypertarget{class_game_adbbfae184c044c2d544b382704b2bacd}\index{Game@{Game}!getCurrentState@{getCurrentState}}
+\index{getCurrentState@{getCurrentState}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getCurrentState()}{getCurrentState()}}
+{\footnotesize\ttfamily \label{class_game_adbbfae184c044c2d544b382704b2bacd} 
+\mbox{\hyperlink{_game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} Game\+::get\+Current\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca aktualny stan gry. 
+
+\begin{DoxyReturn}{Zwraca}
+Aktualny stan gry 
+\end{DoxyReturn}
+\Hypertarget{class_game_af7962212d039de623b8eebc538ff7140}\index{Game@{Game}!getLives@{getLives}}
+\index{getLives@{getLives}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getLives()}{getLives()}}
+{\footnotesize\ttfamily \label{class_game_af7962212d039de623b8eebc538ff7140} 
+int Game\+::get\+Lives (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca liczbę pozostałych żyć 
+
+\begin{DoxyReturn}{Zwraca}
+Liczba żyć gracza 
+\end{DoxyReturn}
+\Hypertarget{class_game_adff34c2ddf03af26dcddad0a942bbcf7}\index{Game@{Game}!getScore@{getScore}}
+\index{getScore@{getScore}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getScore()}{getScore()}}
+{\footnotesize\ttfamily \label{class_game_adff34c2ddf03af26dcddad0a942bbcf7} 
+int Game\+::get\+Score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zwraca aktualny wynik gracza. 
+
+\begin{DoxyReturn}{Zwraca}
+Liczba zdobytych punktów 
+\end{DoxyReturn}
+\Hypertarget{class_game_a11472607ec18247e34b70de047ca5e4a}\index{Game@{Game}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily \label{class_game_a11472607ec18247e34b70de047ca5e4a} 
+void Game\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje naciśnięcie klawisza. 
+
+Movement/ruch gracza.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie klawiatury \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_a2521a818da4804e7d79c4b02347cc764}\index{Game@{Game}!livesChanged@{livesChanged}}
+\index{livesChanged@{livesChanged}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{livesChanged}{livesChanged}}
+{\footnotesize\ttfamily \label{class_game_a2521a818da4804e7d79c4b02347cc764} 
+void Game\+::lives\+Changed (\begin{DoxyParamCaption}\item[{int}]{new\+Lives}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany przy zmianie liczby żyć 
+
+
+\begin{DoxyParams}{Parametry}
+{\em new\+Lives} & Nowa liczba żyć \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_ae3d960780bb03ab5d6713e5d3343f6fc}\index{Game@{Game}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily \label{class_game_ae3d960780bb03ab5d6713e5d3343f6fc} 
+void Game\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje zdarzenie rysowania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie rysowania \\
+\hline
+\end{DoxyParams}
+Nie rysuj nic, menu jest obsługiwane przez \doxylink{class_main_menu}{Main\+Menu} widget
+
+Rysowanie planszy (zawiera power-\/upy z \doxylink{class_game_board}{Game\+Board})
+
+Rysowanie Pacmana
+
+Rysowanie duchów
+
+Rysowanie wyniku
+
+Rysowanie ekranu pauzy
+
+Rysowanie "{}\+Game Over"{} jeśli gra się skończyła\Hypertarget{class_game_a4d5fb2ed620bbffc75a399d263d19be0}\index{Game@{Game}!scoreChanged@{scoreChanged}}
+\index{scoreChanged@{scoreChanged}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{scoreChanged}{scoreChanged}}
+{\footnotesize\ttfamily \label{class_game_a4d5fb2ed620bbffc75a399d263d19be0} 
+void Game\+::score\+Changed (\begin{DoxyParamCaption}\item[{int}]{new\+Score}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany przy zmianie wyniku. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em new\+Score} & Nowy wynik \\
+\hline
+\end{DoxyParams}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_game_8h}{Game.\+h}}\item 
+src/Game.\+cpp\end{DoxyCompactItemize}

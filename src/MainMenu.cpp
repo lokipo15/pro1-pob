@@ -1,7 +1,7 @@
-//
-// Created by Gabriel Boruń on 25/04/2025.
-// Co-authored by Konrad Gębski on 25/04/2025.
-//
+///
+/// Created by Gabriel Boruń on 25/04/2025.
+/// Co-authored by Konrad Gębski on 25/04/2025.
+///
 
 #include "MainMenu.h"
 #include <QPainter>
@@ -14,21 +14,21 @@ MainMenu::MainMenu(QWidget *parent)
     setFixedSize(600, 650);
     setFocusPolicy(Qt::StrongFocus);
 
-    // Tworzenie layoutu
+    /// Tworzenie layoutu
     layout = new QVBoxLayout(this);
     layout->setAlignment(Qt::AlignCenter);
     layout->setSpacing(30);
 
-    // Tytuł gry
+    /// Tytuł gry
     titleLabel = new QLabel("PACMAN", this);
     titleLabel->setAlignment(Qt::AlignCenter);
     titleLabel->setStyleSheet("QLabel { color: yellow; font-size: 48px; font-weight: bold; }");
     layout->addWidget(titleLabel);
 
-    // Odstęp
+    /// Odstęp
     layout->addSpacing(50);
 
-    // Przycisk Start
+    /// Przycisk Start
     startButton = new QPushButton("ROZPOCZNIJ GRĘ", this);
     startButton->setStyleSheet(
         "QPushButton { "
@@ -48,7 +48,7 @@ MainMenu::MainMenu(QWidget *parent)
     connect(startButton, &QPushButton::clicked, this, &MainMenu::onStartGameClicked);
     layout->addWidget(startButton);
 
-    // Przycisk Najlepsze Wyniki
+    /// Przycisk Najlepsze Wyniki
     scoreboardButton = new QPushButton("NAJLEPSZE WYNIKI", this);
     scoreboardButton->setStyleSheet(
         "QPushButton { "
@@ -68,7 +68,7 @@ MainMenu::MainMenu(QWidget *parent)
     connect(scoreboardButton, &QPushButton::clicked, this, &MainMenu::onScoreboardClicked);
     layout->addWidget(scoreboardButton);
 
-    // Przycisk Exit
+    /// Przycisk Exit
     exitButton = new QPushButton("WYJŚCIE", this);
     exitButton->setStyleSheet(
         "QPushButton { "
@@ -94,10 +94,10 @@ MainMenu::MainMenu(QWidget *parent)
 void MainMenu::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
 
-    // Tło
+    /// Tło
     painter.fillRect(rect(), Qt::black);
 
-    // Instrukcje nawigacji
+    /// Instrukcje nawigacji
     painter.setPen(Qt::white);
     painter.setFont(QFont("Arial", 12));
     painter.drawText(10, height() - 60, "Użyj strzałek ↑↓ do nawigacji");
@@ -136,7 +136,7 @@ void MainMenu::keyPressEvent(QKeyEvent *event) {
 }
 
 void MainMenu::updateButtonSelection() {
-    // Reset stylów
+    /// Reset stylów
     startButton->setStyleSheet(
         "QPushButton { "
         "background-color: #2c3e50; "
@@ -173,7 +173,7 @@ void MainMenu::updateButtonSelection() {
         "}"
     );
 
-    // Podświetl wybrany przycisk
+    /// Podświetl wybrany przycisk
     QString selectedStyle =
         "QPushButton { "
         "background-color: #34495e; "

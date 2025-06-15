@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POB Pro 1 - PacMan: Dokumentacja klasy GameBoard</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POB Pro 1 - PacMan
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_game_board.html','','class_game_board-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Dokumentacja klasy GameBoard</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa reprezentująca planszę gry <a class="el" href="class_pacman.html" title="Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza.">Pacman</a>.  
+ <a href="#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_game_board_8h_source.html">GameBoard.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ac622cadcc81b3ffb71d8feb4506c04ac" id="r_ac622cadcc81b3ffb71d8feb4506c04ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac622cadcc81b3ffb71d8feb4506c04ac">GameBoard</a> ()</td></tr>
+<tr class="memdesc:ac622cadcc81b3ffb71d8feb4506c04ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor planszy gry.  <br /></td></tr>
+<tr class="memitem:aef097fdd165ec8666d95f22bbeaefd18" id="r_aef097fdd165ec8666d95f22bbeaefd18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef097fdd165ec8666d95f22bbeaefd18">draw</a> (QPainter &amp;painter)</td></tr>
+<tr class="memdesc:aef097fdd165ec8666d95f22bbeaefd18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rysuje planszę na ekranie.  <br /></td></tr>
+<tr class="memitem:a0b8d678d285ef37f476dee7fdd2e8839" id="r_a0b8d678d285ef37f476dee7fdd2e8839"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b8d678d285ef37f476dee7fdd2e8839">isWall</a> (const QPoint &amp;pos) const</td></tr>
+<tr class="memdesc:a0b8d678d285ef37f476dee7fdd2e8839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy dana pozycja to ściana.  <br /></td></tr>
+<tr class="memitem:a1be80c1b5d2e1272256ef2d773f5988e" id="r_a1be80c1b5d2e1272256ef2d773f5988e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1be80c1b5d2e1272256ef2d773f5988e">isCollectible</a> (const QPoint &amp;pos) const</td></tr>
+<tr class="memdesc:a1be80c1b5d2e1272256ef2d773f5988e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy dana pozycja zawiera punkt do zebrania.  <br /></td></tr>
+<tr class="memitem:a60425a1139d7d304211ad2febcdd1d95" id="r_a60425a1139d7d304211ad2febcdd1d95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60425a1139d7d304211ad2febcdd1d95">isPowerUp</a> (const QPoint &amp;pos) const</td></tr>
+<tr class="memdesc:a60425a1139d7d304211ad2febcdd1d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza czy dana pozycja zawiera power-up.  <br /></td></tr>
+<tr class="memitem:a5ab8d16d8938dd12ccbe1ce3604eada4" id="r_a5ab8d16d8938dd12ccbe1ce3604eada4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ab8d16d8938dd12ccbe1ce3604eada4">removeCollectible</a> (const QPoint &amp;pos)</td></tr>
+<tr class="memdesc:a5ab8d16d8938dd12ccbe1ce3604eada4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usuwa punkt do zebrania z planszy.  <br /></td></tr>
+<tr class="memitem:ac632b0408e33210b21cd9ac72c5f07cd" id="r_ac632b0408e33210b21cd9ac72c5f07cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac632b0408e33210b21cd9ac72c5f07cd">removePowerUp</a> (const QPoint &amp;pos)</td></tr>
+<tr class="memdesc:ac632b0408e33210b21cd9ac72c5f07cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usuwa power-up z planszy.  <br /></td></tr>
+<tr class="memitem:a990f43e96ff29f23c02e9e9c4cd9ae3d" id="r_a990f43e96ff29f23c02e9e9c4cd9ae3d"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a990f43e96ff29f23c02e9e9c4cd9ae3d">getPacmanStartPosition</a> () const</td></tr>
+<tr class="memdesc:a990f43e96ff29f23c02e9e9c4cd9ae3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera pozycję startową Pacmana.  <br /></td></tr>
+<tr class="memitem:ad89108697bf601dac4662de386ba2aea" id="r_ad89108697bf601dac4662de386ba2aea"><td class="memItemLeft" align="right" valign="top">std::vector&lt; QPoint &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad89108697bf601dac4662de386ba2aea">getGhostStartPositions</a> () const</td></tr>
+<tr class="memdesc:ad89108697bf601dac4662de386ba2aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera pozycje startowe duchów.  <br /></td></tr>
+<tr class="memitem:aad694ac050802816b1a58ff64bfef679" id="r_aad694ac050802816b1a58ff64bfef679"><td class="memItemLeft" align="right" valign="top">std::vector&lt; QPoint &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad694ac050802816b1a58ff64bfef679">getPowerUpPositions</a> () const</td></tr>
+<tr class="memdesc:aad694ac050802816b1a58ff64bfef679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera pozycje power-upów na planszy.  <br /></td></tr>
+<tr class="memitem:aa2c14bbe3a67a9b309dcbdc3ca835c99" id="r_aa2c14bbe3a67a9b309dcbdc3ca835c99"><td class="memItemLeft" align="right" valign="top">const std::set&lt; QPoint, <a class="el" href="struct_q_point_compare.html">QPointCompare</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2c14bbe3a67a9b309dcbdc3ca835c99">getCollectibles</a> () const</td></tr>
+<tr class="memdesc:aa2c14bbe3a67a9b309dcbdc3ca835c99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pobiera zbiór wszystkich punktów do zebrania.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Klasa reprezentująca planszę gry <a class="el" href="class_pacman.html" title="Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza.">Pacman</a>. </p>
+<p>Zarządza strukturą planszy, ścianami, punktami do zebrania, power-upami oraz pozycjami startowymi postaci. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="ac622cadcc81b3ffb71d8feb4506c04ac" name="ac622cadcc81b3ffb71d8feb4506c04ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac622cadcc81b3ffb71d8feb4506c04ac">&#9670;&#160;</a></span>GameBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameBoard::GameBoard </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor planszy gry. </p>
+<p>Created by Gabriel Boruń on 25/04/2025. Co-authored by Konrad Gębski on 25/04/2025. </p>
+<p>Konstruktor klasy <a class="el" href="class_game_board.html" title="Klasa reprezentująca planszę gry Pacman.">GameBoard</a></p>
+<p>Wywołanie inicjalizacji planszy</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="aef097fdd165ec8666d95f22bbeaefd18" name="aef097fdd165ec8666d95f22bbeaefd18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef097fdd165ec8666d95f22bbeaefd18">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameBoard::draw </td>
+          <td>(</td>
+          <td class="paramtype">QPainter &amp;</td>          <td class="paramname"><span class="paramname"><em>painter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rysuje planszę na ekranie. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">painter</td><td>Obiekt do rysowania </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Rysuowanie planszy</p>
+<p>Rysowanie tła</p>
+<p>Rysowanie ścian, punktów do zbierania i power-upów</p>
+<p>Ściana</p>
+<p>Punkt do zebrania</p>
+<p>Power-up</p>
+
+</div>
+</div>
+<a id="aa2c14bbe3a67a9b309dcbdc3ca835c99" name="aa2c14bbe3a67a9b309dcbdc3ca835c99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2c14bbe3a67a9b309dcbdc3ca835c99">&#9670;&#160;</a></span>getCollectibles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::set&lt; QPoint, <a class="el" href="struct_q_point_compare.html">QPointCompare</a> &gt; &amp; GameBoard::getCollectibles </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pobiera zbiór wszystkich punktów do zebrania. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Referencja do zbioru punktów do zebrania </dd></dl>
+
+</div>
+</div>
+<a id="ad89108697bf601dac4662de386ba2aea" name="ad89108697bf601dac4662de386ba2aea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad89108697bf601dac4662de386ba2aea">&#9670;&#160;</a></span>getGhostStartPositions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; QPoint &gt; GameBoard::getGhostStartPositions </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pobiera pozycje startowe duchów. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Wektor pozycji startowych duchów </dd></dl>
+<p>Zwraca liste pozycji startowych duchów</p>
+
+</div>
+</div>
+<a id="a990f43e96ff29f23c02e9e9c4cd9ae3d" name="a990f43e96ff29f23c02e9e9c4cd9ae3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a990f43e96ff29f23c02e9e9c4cd9ae3d">&#9670;&#160;</a></span>getPacmanStartPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint GameBoard::getPacmanStartPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pobiera pozycję startową Pacmana. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Pozycja startowa Pacmana na planszy </dd></dl>
+<p>Zwraca pozycję startową Pacmana</p>
+<p>Awaryjnie, gdyby nie znaleziono</p>
+
+</div>
+</div>
+<a id="aad694ac050802816b1a58ff64bfef679" name="aad694ac050802816b1a58ff64bfef679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad694ac050802816b1a58ff64bfef679">&#9670;&#160;</a></span>getPowerUpPositions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; QPoint &gt; GameBoard::getPowerUpPositions </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pobiera pozycje power-upów na planszy. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>Wektor pozycji power-upów </dd></dl>
+<p>Zwraca pozycje power-upów</p>
+
+</div>
+</div>
+<a id="a1be80c1b5d2e1272256ef2d773f5988e" name="a1be80c1b5d2e1272256ef2d773f5988e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be80c1b5d2e1272256ef2d773f5988e">&#9670;&#160;</a></span>isCollectible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameBoard::isCollectible </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sprawdza czy dana pozycja zawiera punkt do zebrania. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Pozycja do sprawdzenia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>True jeśli pozycja zawiera punkt </dd></dl>
+<p>Sprawdzenie czy punkt</p>
+
+</div>
+</div>
+<a id="a60425a1139d7d304211ad2febcdd1d95" name="a60425a1139d7d304211ad2febcdd1d95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60425a1139d7d304211ad2febcdd1d95">&#9670;&#160;</a></span>isPowerUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameBoard::isPowerUp </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sprawdza czy dana pozycja zawiera power-up. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Pozycja do sprawdzenia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>True jeśli pozycja zawiera power-up </dd></dl>
+<p>Sprawdzenie czy power-up</p>
+
+</div>
+</div>
+<a id="a0b8d678d285ef37f476dee7fdd2e8839" name="a0b8d678d285ef37f476dee7fdd2e8839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b8d678d285ef37f476dee7fdd2e8839">&#9670;&#160;</a></span>isWall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameBoard::isWall </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sprawdza czy dana pozycja to ściana. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Pozycja do sprawdzenia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>True jeśli pozycja to ściana </dd></dl>
+<p>Sprawdzenie czy ściana</p>
+<p>Wyjście poza planszę traktujemy jak ścianę</p>
+
+</div>
+</div>
+<a id="a5ab8d16d8938dd12ccbe1ce3604eada4" name="a5ab8d16d8938dd12ccbe1ce3604eada4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ab8d16d8938dd12ccbe1ce3604eada4">&#9670;&#160;</a></span>removeCollectible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameBoard::removeCollectible </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Usuwa punkt do zebrania z planszy. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Pozycja punktu do usunięcia </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Usuwa punkt do zebrania z planszy</p>
+
+</div>
+</div>
+<a id="ac632b0408e33210b21cd9ac72c5f07cd" name="ac632b0408e33210b21cd9ac72c5f07cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac632b0408e33210b21cd9ac72c5f07cd">&#9670;&#160;</a></span>removePowerUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameBoard::removePowerUp </td>
+          <td>(</td>
+          <td class="paramtype">const QPoint &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Usuwa power-up z planszy. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Pozycja power-up do usunięcia </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Usuwa power-up z planszy</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>src/<a class="el" href="_game_board_8h_source.html">GameBoard.h</a></li>
+<li>src/<b>GameBoard.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_game_board.html">GameBoard</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

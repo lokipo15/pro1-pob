@@ -1,0 +1,164 @@
+\doxysection{Dokumentacja klasy Game\+Over\+Screen}
+\hypertarget{class_game_over_screen}{}\label{class_game_over_screen}\index{GameOverScreen@{GameOverScreen}}
+
+
+Klasa reprezentująca ekran końca gry.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Over\+Screen.\+h$>$}
+
+Diagram dziedziczenia dla Game\+Over\+Screen\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_over_screen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Sygnały}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_over_screen_a1b79d9c4ac3235e512f6ef6ffcf2b9a6}\label{class_game_over_screen_a1b79d9c4ac3235e512f6ef6ffcf2b9a6} 
+void {\bfseries restart\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał żądania restartu gry. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_over_screen_accc00b88ffe8b9394d39291a4a2d39a7}\label{class_game_over_screen_accc00b88ffe8b9394d39291a4a2d39a7} 
+void {\bfseries main\+Menu\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał powrotu do menu głównego. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_over_screen_a06ce6f5d42076741b21251fc9737e826}\label{class_game_over_screen_a06ce6f5d42076741b21251fc9737e826} 
+void {\bfseries exit\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał wyjścia z gry. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_over_screen_aeac5ea5af3e0d23dbdbb5202945329ae}\label{class_game_over_screen_aeac5ea5af3e0d23dbdbb5202945329ae} 
+void {\bfseries scoreboard\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał wyświetlenia tablicy wyników. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_over_screen_a9669afefc6737cff26040a2478a7e54b}{Game\+Over\+Screen}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor ekranu końca gry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_over_screen_a6cdbca91cb1724bf1941b7f2d3964635}{set\+Score}} (int score)
+\begin{DoxyCompactList}\small\item\em Ustawia wynik końcowy gracza. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_score_manager}{Score\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_over_screen_a15bb6c2fbaa3abe054c8fb8079c95126}{get\+Score\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Pobiera wskaźnik na manager wyników. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_over_screen_ab9a28f0ea6fe584f32e119c896e0c9b9}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenia klawiatury. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_over_screen_ab50690d1eb493edb0a41cf2bd006ee7f}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje malowanie widget\textquotesingle{}u. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa reprezentująca ekran końca gry. 
+
+Wyświetla wynik gracza, opcje zapisu do tablicy wyników oraz przyciski nawigacyjne (restart, menu główne, wyjście). 
+
+\label{doc-constructors}
+\Hypertarget{class_game_over_screen_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_game_over_screen_a9669afefc6737cff26040a2478a7e54b}\index{GameOverScreen@{GameOverScreen}!GameOverScreen@{GameOverScreen}}
+\index{GameOverScreen@{GameOverScreen}!GameOverScreen@{GameOverScreen}}
+\doxysubsubsection{\texorpdfstring{GameOverScreen()}{GameOverScreen()}}
+{\footnotesize\ttfamily \label{class_game_over_screen_a9669afefc6737cff26040a2478a7e54b} 
+Game\+Over\+Screen\+::\+Game\+Over\+Screen (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor ekranu końca gry. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & Rodzic widget\textquotesingle{}u\\
+\hline
+\end{DoxyParams}
+Created by Gabriel Boruń on 25/04/2025. Co-\/authored by Konrad Gębski on 25/04/2025. Tworzenie layoutu
+
+Napis "{}\+Game Over"{}
+
+Wynik
+
+Layout dla wprowadzania imienia (domyślnie ukryty)
+
+Domyślnie ukryj
+
+Odstęp
+
+Przycisk Restart
+
+Przycisk Menu Główne
+
+Przycisk Tablica Wyników
+
+Przycisk Wyjście
+
+\label{doc-func-members}
+\Hypertarget{class_game_over_screen_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_game_over_screen_a15bb6c2fbaa3abe054c8fb8079c95126}\index{GameOverScreen@{GameOverScreen}!getScoreManager@{getScoreManager}}
+\index{getScoreManager@{getScoreManager}!GameOverScreen@{GameOverScreen}}
+\doxysubsubsection{\texorpdfstring{getScoreManager()}{getScoreManager()}}
+{\footnotesize\ttfamily \label{class_game_over_screen_a15bb6c2fbaa3abe054c8fb8079c95126} 
+\mbox{\hyperlink{class_score_manager}{Score\+Manager}} \texorpdfstring{$\ast$}{*} Game\+Over\+Screen\+::get\+Score\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pobiera wskaźnik na manager wyników. 
+
+\begin{DoxyReturn}{Zwraca}
+Wskaźnik na obiekt \doxylink{class_score_manager}{Score\+Manager} 
+\end{DoxyReturn}
+\Hypertarget{class_game_over_screen_ab9a28f0ea6fe584f32e119c896e0c9b9}\index{GameOverScreen@{GameOverScreen}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!GameOverScreen@{GameOverScreen}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily \label{class_game_over_screen_ab9a28f0ea6fe584f32e119c896e0c9b9} 
+void Game\+Over\+Screen\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje zdarzenia klawiatury. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie naciśnięcia klawisza \\
+\hline
+\end{DoxyParams}
+Jeśli pole imienia jest aktywne, obsłuż wprowadzanie tekstu
+
+Pozwól na normalne wprowadzanie tekstu\Hypertarget{class_game_over_screen_ab50690d1eb493edb0a41cf2bd006ee7f}\index{GameOverScreen@{GameOverScreen}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!GameOverScreen@{GameOverScreen}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily \label{class_game_over_screen_ab50690d1eb493edb0a41cf2bd006ee7f} 
+void Game\+Over\+Screen\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje malowanie widget\textquotesingle{}u. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie malowania \\
+\hline
+\end{DoxyParams}
+Tło
+
+Instrukcje nawigacji\Hypertarget{class_game_over_screen_a6cdbca91cb1724bf1941b7f2d3964635}\index{GameOverScreen@{GameOverScreen}!setScore@{setScore}}
+\index{setScore@{setScore}!GameOverScreen@{GameOverScreen}}
+\doxysubsubsection{\texorpdfstring{setScore()}{setScore()}}
+{\footnotesize\ttfamily \label{class_game_over_screen_a6cdbca91cb1724bf1941b7f2d3964635} 
+void Game\+Over\+Screen\+::set\+Score (\begin{DoxyParamCaption}\item[{int}]{score}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia wynik końcowy gracza. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em score} & Wynik gracza \\
+\hline
+\end{DoxyParams}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_game_over_screen_8h}{Game\+Over\+Screen.\+h}}\item 
+src/Game\+Over\+Screen.\+cpp\end{DoxyCompactItemize}

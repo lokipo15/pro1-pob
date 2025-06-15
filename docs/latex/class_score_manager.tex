@@ -1,0 +1,95 @@
+\doxysection{Dokumentacja klasy Score\+Manager}
+\hypertarget{class_score_manager}{}\label{class_score_manager}\index{ScoreManager@{ScoreManager}}
+
+
+Klasa zarządzająca wynikami gry.  
+
+
+
+
+{\ttfamily \#include $<$Score\+Manager.\+h$>$}
+
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_score_manager_a4f3866ff832127664543349da5c4fbf4}\label{class_score_manager_a4f3866ff832127664543349da5c4fbf4} 
+{\bfseries Score\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor managera wyników. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_score_manager_a8158cfca6c5dd096f346e74df65fe146}{save\+Score}} (const QString \&player\+Name, int score)
+\begin{DoxyCompactList}\small\item\em Zapisuje wynik gracza. \end{DoxyCompactList}\item 
+QVector$<$ \mbox{\hyperlink{struct_score_entry}{Score\+Entry}} $>$ \mbox{\hyperlink{class_score_manager_afaf1a2e67181b9ad80fb00e66567126e}{load\+Top\+Scores}} ()
+\begin{DoxyCompactList}\small\item\em Wczytuje najlepsze wyniki. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_score_manager_a28eaf9919e2e638190966a49452bd7fb}{is\+High\+Score}} (int score)
+\begin{DoxyCompactList}\small\item\em Sprawdza czy wynik kwalifikuje się do top 10. \end{DoxyCompactList}\item 
+\Hypertarget{class_score_manager_ad7360b0f2828ae3ce28c1cff74ea11da}\label{class_score_manager_ad7360b0f2828ae3ce28c1cff74ea11da} 
+void {\bfseries refresh\+Scores} ()
+\begin{DoxyCompactList}\small\item\em Odświeża listę wyników z pliku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa zarządzająca wynikami gry. 
+
+Odpowiada za zapisywanie, wczytywanie i sortowanie najlepszych wyników graczy. 
+
+\label{doc-func-members}
+\Hypertarget{class_score_manager_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_score_manager_a28eaf9919e2e638190966a49452bd7fb}\index{ScoreManager@{ScoreManager}!isHighScore@{isHighScore}}
+\index{isHighScore@{isHighScore}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{isHighScore()}{isHighScore()}}
+{\footnotesize\ttfamily \label{class_score_manager_a28eaf9919e2e638190966a49452bd7fb} 
+bool Score\+Manager\+::is\+High\+Score (\begin{DoxyParamCaption}\item[{int}]{score}{}\end{DoxyParamCaption})}
+
+
+
+Sprawdza czy wynik kwalifikuje się do top 10. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em score} & Wynik do sprawdzenia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+True jeśli wynik jest wystarczająco wysoki 
+\end{DoxyReturn}
+Zawsze sprawdź najnowsze dane z pliku\Hypertarget{class_score_manager_afaf1a2e67181b9ad80fb00e66567126e}\index{ScoreManager@{ScoreManager}!loadTopScores@{loadTopScores}}
+\index{loadTopScores@{loadTopScores}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{loadTopScores()}{loadTopScores()}}
+{\footnotesize\ttfamily \label{class_score_manager_afaf1a2e67181b9ad80fb00e66567126e} 
+QVector$<$ \mbox{\hyperlink{struct_score_entry}{Score\+Entry}} $>$ Score\+Manager\+::load\+Top\+Scores (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Wczytuje najlepsze wyniki. 
+
+\begin{DoxyReturn}{Zwraca}
+Wektor najlepszych wyników 
+\end{DoxyReturn}
+Zawsze wczytaj najnowsze dane z pliku\Hypertarget{class_score_manager_a8158cfca6c5dd096f346e74df65fe146}\index{ScoreManager@{ScoreManager}!saveScore@{saveScore}}
+\index{saveScore@{saveScore}!ScoreManager@{ScoreManager}}
+\doxysubsubsection{\texorpdfstring{saveScore()}{saveScore()}}
+{\footnotesize\ttfamily \label{class_score_manager_a8158cfca6c5dd096f346e74df65fe146} 
+bool Score\+Manager\+::save\+Score (\begin{DoxyParamCaption}\item[{const QString \&}]{player\+Name}{, }\item[{int}]{score}{}\end{DoxyParamCaption})}
+
+
+
+Zapisuje wynik gracza. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em player\+Name} & Imię gracza \\
+\hline
+{\em score} & Wynik gracza \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+True jeśli zapisano pomyślnie 
+\end{DoxyReturn}
+Wczytaj istniejące wyniki z pliku
+
+Zachowaj tylko top 10 wyników
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_score_manager_8h}{Score\+Manager.\+h}}\item 
+src/Score\+Manager.\+cpp\end{DoxyCompactItemize}

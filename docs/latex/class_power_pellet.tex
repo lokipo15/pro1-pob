@@ -1,0 +1,145 @@
+\doxysection{Dokumentacja klasy Power\+Pellet}
+\hypertarget{class_power_pellet}{}\label{class_power_pellet}\index{PowerPellet@{PowerPellet}}
+
+
+Klasa reprezentująca power-\/pellet (duży punkt mocy)  
+
+
+
+
+{\ttfamily \#include $<$Power\+Pellet.\+h$>$}
+
+Diagram dziedziczenia dla Power\+Pellet\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_power_pellet}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_power_pellet_a3f103f4a0befdb6c5870ec7b9a3a3f38}{Power\+Pellet}} (const QPointF \&\mbox{\hyperlink{class_power_up_a4d3628b39a19c8408a1070b6c27d101d}{position}})
+\begin{DoxyCompactList}\small\item\em Konstruktor power-\/pelletu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_power_pellet_af63bd962d1e7a4f77ffb9b03b49c1a57}{draw}} (QPainter \&painter) override
+\begin{DoxyCompactList}\small\item\em Rysuje power-\/pellet na ekranie z animacją \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_power_pellet_a4ec1c5c7469e208deac7cd0a77d905d3}{activate}} (\mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}pacman) override
+\begin{DoxyCompactList}\small\item\em Aktywuje efekt power-\/pelletu na Pacmanie. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_power_pellet_aaae97af04903002c6454282398eec982}{get\+Score}} () const override
+\begin{DoxyCompactList}\small\item\em Zwraca punkty za zebranie power-\/pelletu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne dziedziczone z \mbox{\hyperlink{class_power_up}{Power\+Up}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_power_up_a3c02cb0e50d8079b701907bfb0a3920d}{Power\+Up}} (const QPointF \&\mbox{\hyperlink{class_power_up_a4d3628b39a19c8408a1070b6c27d101d}{position}})
+\begin{DoxyCompactList}\small\item\em Konstruktor power-\/upu. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Power\+Up} ()=default
+\begin{DoxyCompactList}\small\item\em Wirtualny destruktor. \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_power_up_a84abf3abed8173db2b789b51ad610287}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera pozycję power-\/upu. \end{DoxyCompactList}\item 
+QPoint \mbox{\hyperlink{class_power_up_a1f8fc5d372ce5005790a9b61858d97db}{get\+Grid\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Pobiera pozycję na siatce planszy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Dodatkowe dziedziczone składowe}
+\doxysubsection*{Atrybuty chronione dziedziczone z \mbox{\hyperlink{class_power_up}{Power\+Up}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF {\bfseries position}
+\begin{DoxyCompactList}\small\item\em Pozycja power-\/upu na planszy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Statyczne atrybuty chronione dziedziczone z \mbox{\hyperlink{class_power_up}{Power\+Up}}}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bfseries CELL\+\_\+\+SIZE} = 30
+\begin{DoxyCompactList}\small\item\em Rozmiar komórki planszy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa reprezentująca power-\/pellet (duży punkt mocy) 
+
+Power-\/pellet to specjalny rodzaj power-\/up, który pozwala Pacmanowi na krótki czas zjeść duchy. Ma animację migania. 
+
+\label{doc-constructors}
+\Hypertarget{class_power_pellet_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_power_pellet_a3f103f4a0befdb6c5870ec7b9a3a3f38}\index{PowerPellet@{PowerPellet}!PowerPellet@{PowerPellet}}
+\index{PowerPellet@{PowerPellet}!PowerPellet@{PowerPellet}}
+\doxysubsubsection{\texorpdfstring{PowerPellet()}{PowerPellet()}}
+{\footnotesize\ttfamily \label{class_power_pellet_a3f103f4a0befdb6c5870ec7b9a3a3f38} 
+Power\+Pellet\+::\+Power\+Pellet (\begin{DoxyParamCaption}\item[{const QPointF \&}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor power-\/pelletu. 
+
+10 sekund trybu frightened
+
+
+\begin{DoxyParams}{Parametry}
+{\em position} & Pozycja na planszy \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_power_pellet_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_power_pellet_a4ec1c5c7469e208deac7cd0a77d905d3}\index{PowerPellet@{PowerPellet}!activate@{activate}}
+\index{activate@{activate}!PowerPellet@{PowerPellet}}
+\doxysubsubsection{\texorpdfstring{activate()}{activate()}}
+{\footnotesize\ttfamily \label{class_power_pellet_a4ec1c5c7469e208deac7cd0a77d905d3} 
+void Power\+Pellet\+::activate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pacman}{Pacman}} \texorpdfstring{$\ast$}{*}}]{pacman}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Aktywuje efekt power-\/pelletu na Pacmanie. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em pacman} & Wskaźnik na obiekt Pacmana \\
+\hline
+\end{DoxyParams}
+Power pellet nie wpływa bezpośrednio na Pacmana Logika frightened mode będzie w klasie \doxylink{class_game}{Game}
+
+Implementuje \mbox{\hyperlink{class_power_up_a2c91111a56fd994631e10f9be31b1d31}{Power\+Up}}.
+
+\Hypertarget{class_power_pellet_af63bd962d1e7a4f77ffb9b03b49c1a57}\index{PowerPellet@{PowerPellet}!draw@{draw}}
+\index{draw@{draw}!PowerPellet@{PowerPellet}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_power_pellet_af63bd962d1e7a4f77ffb9b03b49c1a57} 
+void Power\+Pellet\+::draw (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Rysuje power-\/pellet na ekranie z animacją 
+
+
+\begin{DoxyParams}{Parametry}
+{\em painter} & Obiekt do rysowania \\
+\hline
+\end{DoxyParams}
+Konwersja pozycji na piksele
+
+Rysowanie większego pellet (power pellet)
+
+Implementuje \mbox{\hyperlink{class_power_up_acdd8db907597b5806a4af6bda162f709}{Power\+Up}}.
+
+\Hypertarget{class_power_pellet_aaae97af04903002c6454282398eec982}\index{PowerPellet@{PowerPellet}!getScore@{getScore}}
+\index{getScore@{getScore}!PowerPellet@{PowerPellet}}
+\doxysubsubsection{\texorpdfstring{getScore()}{getScore()}}
+{\footnotesize\ttfamily \label{class_power_pellet_aaae97af04903002c6454282398eec982} 
+int Power\+Pellet\+::get\+Score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Zwraca punkty za zebranie power-\/pelletu. 
+
+\begin{DoxyReturn}{Zwraca}
+Liczba punktów (50) 
+\end{DoxyReturn}
+
+
+Implementuje \mbox{\hyperlink{class_power_up_a418b70456016d1ee8fc2d97524cf2cec}{Power\+Up}}.
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_power_pellet_8h}{Power\+Pellet.\+h}}\item 
+src/Power\+Pellet.\+cpp\end{DoxyCompactItemize}

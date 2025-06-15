@@ -1,0 +1,146 @@
+\doxysection{Dokumentacja klasy Win\+Screen}
+\hypertarget{class_win_screen}{}\label{class_win_screen}\index{WinScreen@{WinScreen}}
+
+
+Klasa reprezentująca ekran wygranej.  
+
+
+
+
+{\ttfamily \#include $<$Win\+Screen.\+h$>$}
+
+Diagram dziedziczenia dla Win\+Screen\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_win_screen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Sygnały}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_win_screen_a162ec025f47b9315b77797a4bfc177ba}\label{class_win_screen_a162ec025f47b9315b77797a4bfc177ba} 
+void {\bfseries save\+Score\+Requested} (const QString \&player\+Name, int score)
+\begin{DoxyCompactList}\small\item\em Sygnał zapisu wyniku. \end{DoxyCompactList}\item 
+\Hypertarget{class_win_screen_ae42b543bbc5dda96494216499807c66b}\label{class_win_screen_ae42b543bbc5dda96494216499807c66b} 
+void {\bfseries view\+Scoreboard\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał wyświetlenia tablicy wyników. \end{DoxyCompactList}\item 
+\Hypertarget{class_win_screen_afb559559ecce8652a3c795dc9e220386}\label{class_win_screen_afb559559ecce8652a3c795dc9e220386} 
+void {\bfseries play\+Again\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał ponownej gry. \end{DoxyCompactList}\item 
+\Hypertarget{class_win_screen_a7dcf8f6b7164ad18229a74f30af30539}\label{class_win_screen_a7dcf8f6b7164ad18229a74f30af30539} 
+void {\bfseries exit\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał wyjścia z gry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_win_screen_aabaec6e5ecbc2e18738920cac9e30810}{Win\+Screen}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor ekranu wygranej. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_win_screen_ad84b3584c150f529ba4056602b4cd45d}{set\+Score}} (int score)
+\begin{DoxyCompactList}\small\item\em Ustawia wynik gracza. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_win_screen_afbd9004dc64a21209f8a4b9a5f9d5fe6}{set\+Score\+Manager}} (\mbox{\hyperlink{class_score_manager}{Score\+Manager}} \texorpdfstring{$\ast$}{*}manager)
+\begin{DoxyCompactList}\small\item\em Ustawia manager wyników. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_win_screen_a269e9752a5d7b681dc8c025c81cc631d}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenia klawiatury. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_win_screen_ab16304f6addab075d2d223e60be8595d}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje malowanie widget\textquotesingle{}u. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa reprezentująca ekran wygranej. 
+
+Wyświetla gratulacje, wynik gracza i opcje\+: zapis wyniku, tablica wyników, ponowna gra, wyjście. 
+
+\label{doc-constructors}
+\Hypertarget{class_win_screen_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_win_screen_aabaec6e5ecbc2e18738920cac9e30810}\index{WinScreen@{WinScreen}!WinScreen@{WinScreen}}
+\index{WinScreen@{WinScreen}!WinScreen@{WinScreen}}
+\doxysubsubsection{\texorpdfstring{WinScreen()}{WinScreen()}}
+{\footnotesize\ttfamily \label{class_win_screen_aabaec6e5ecbc2e18738920cac9e30810} 
+Win\+Screen\+::\+Win\+Screen (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor ekranu wygranej. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & Rodzic widget\textquotesingle{}u\\
+\hline
+\end{DoxyParams}
+Created by Gabriel Boruń on 12/06/2025. Co-\/authored by Konrad Gębski on 12/06/2025. 
+
+\label{doc-func-members}
+\Hypertarget{class_win_screen_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_win_screen_a269e9752a5d7b681dc8c025c81cc631d}\index{WinScreen@{WinScreen}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!WinScreen@{WinScreen}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily \label{class_win_screen_a269e9752a5d7b681dc8c025c81cc631d} 
+void Win\+Screen\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje zdarzenia klawiatury. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie naciśnięcia klawisza \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_win_screen_ab16304f6addab075d2d223e60be8595d}\index{WinScreen@{WinScreen}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!WinScreen@{WinScreen}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily \label{class_win_screen_ab16304f6addab075d2d223e60be8595d} 
+void Win\+Screen\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje malowanie widget\textquotesingle{}u. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie malowania \\
+\hline
+\end{DoxyParams}
+Tło
+
+Dodaj efekt świecenia dla nowego rekordu\Hypertarget{class_win_screen_ad84b3584c150f529ba4056602b4cd45d}\index{WinScreen@{WinScreen}!setScore@{setScore}}
+\index{setScore@{setScore}!WinScreen@{WinScreen}}
+\doxysubsubsection{\texorpdfstring{setScore()}{setScore()}}
+{\footnotesize\ttfamily \label{class_win_screen_ad84b3584c150f529ba4056602b4cd45d} 
+void Win\+Screen\+::set\+Score (\begin{DoxyParamCaption}\item[{int}]{score}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia wynik gracza. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em score} & Osiągnięty wynik \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_win_screen_afbd9004dc64a21209f8a4b9a5f9d5fe6}\index{WinScreen@{WinScreen}!setScoreManager@{setScoreManager}}
+\index{setScoreManager@{setScoreManager}!WinScreen@{WinScreen}}
+\doxysubsubsection{\texorpdfstring{setScoreManager()}{setScoreManager()}}
+{\footnotesize\ttfamily \label{class_win_screen_afbd9004dc64a21209f8a4b9a5f9d5fe6} 
+void Win\+Screen\+::set\+Score\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_score_manager}{Score\+Manager}} \texorpdfstring{$\ast$}{*}}]{manager}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia manager wyników. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em manager} & Wskaźnik na obiekt \doxylink{class_score_manager}{Score\+Manager} \\
+\hline
+\end{DoxyParams}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_win_screen_8h}{Win\+Screen.\+h}}\item 
+src/Win\+Screen.\+cpp\end{DoxyCompactItemize}

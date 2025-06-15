@@ -1,7 +1,7 @@
-//
-// Created by Gabriel Boruń on 25/04/2025.
-// Co-authored by Konrad Gębski on 25/04/2025.
-//
+///
+/// Created by Gabriel Boruń on 25/04/2025.
+/// Co-authored by Konrad Gębski on 25/04/2025.
+///
 
 #include "Ghost.h"
 #include "GameBoard.h"
@@ -10,39 +10,39 @@
 #include <ctime>
 #include <cmath>
 
-// Mode timing constants
-const float Ghost::SCATTER_TIME = 7.0f;  // 7 sekund w trybie scatter
-const float Ghost::CHASE_TIME = 20.0f;   // 20 sekund w trybie chase
+/// stałe czasowe
+const float Ghost::SCATTER_TIME = 7.0f;  /// 7 sekund w trybie scatter
+const float Ghost::CHASE_TIME = 20.0f;   /// 20 sekund w trybie chase
 
 Ghost::Ghost(const QPointF &startPos)
     : Entity(startPos), currentMode(SCATTER), frightenedColor(Qt::blue),
       lastValidDirection(None), directionChangeTimer(0.0f), modeTimer(0.0f) {
 
-    // Inicjalizacja generatora liczb losowych
+    /// Inicjalizacja generatora liczb losowych
     static bool seeded = false;
     if (!seeded) {
         srand(static_cast<unsigned int>(time(nullptr)));
         seeded = true;
     }
 
-    // Losowy kolor
+    /// Losowy kolor
     int r = 128 + rand() % 128;
     int g = 128 + rand() % 128;
     int b = 128 + rand() % 128;
     normalColor = QColor(r, g, b);
 
-    moveSpeed = 6.0f;  // Duchy są wolniejsze od Pacmana
+    moveSpeed = 6.0f;  /// Duchy są wolniejsze od Pacmana
     currentDirection = getRandomDirection();
 }
 
 void Ghost::draw(QPainter &painter) {
     painter.setPen(Qt::NoPen);
 
-    // Wybór koloru w zależności od trybu
+    /// Wybór koloru w zależności od trybu
     if (currentMode == FRIGHTENED) {
-        // Mruganie pod koniec trybu frightened
+        /// Mruganie pod koniec trybu frightened
         if (frightenedTimer > frightenedDuration * 0.7f) {
-            // Mrugaj między niebieskim a białym
+            /// Mrugaj między niebieskim a białym
             if (static_cast<int>(blinkTimer * 8) % 2 == 0) {
                 painter.setBrush(frightenedColor);
             } else {
@@ -52,26 +52,26 @@ void Ghost::draw(QPainter &painter) {
             painter.setBrush(frightenedColor);
         }
     } else if (currentMode == EATEN) {
-        painter.setBrush(QColor(200, 200, 200, 100));  // Przezroczysty
+        painter.setBrush(QColor(200, 200, 200, 100));  /// Przezroczysty
     } else {
         painter.setBrush(normalColor);
     }
 
-    // Konwersja pozycji float na piksele
+    /// Konwersja pozycji float na piksele
     int pixelX = static_cast<int>(position.x() * CELL_SIZE);
     int pixelY = static_cast<int>(position.y() * CELL_SIZE);
 
-    // Rysowanie ducha
+    /// Rysowanie ducha
     QRect bodyRect(pixelX, pixelY, CELL_SIZE, CELL_SIZE);
 
-    // Górna część (półkole)
+    /// Górna część (półkole)
     painter.drawPie(bodyRect, 0, 180 * 16);
 
-    // Dolna część (prostokąt z falowanym dołem)
+    /// Dolna część (prostokąt z falowanym dołem)
     QRect lowerRect(pixelX, pixelY + CELL_SIZE/2, CELL_SIZE, CELL_SIZE/2);
     painter.drawRect(lowerRect);
 
-    // Oczy (tylko gdy nie jest zjedzony)
+    /// Oczy (tylko gdy nie jest zjedzony)
     if (currentMode != EATEN) {
         painter.setBrush(Qt::white);
         QRect leftEye(pixelX + CELL_SIZE/4 - 3, pixelY + CELL_SIZE/3, 6, 6);
@@ -79,10 +79,10 @@ void Ghost::draw(QPainter &painter) {
         painter.drawEllipse(leftEye);
         painter.drawEllipse(rightEye);
 
-        // Źrenice - kierunek zależy od trybu
+        /// Źrenice - kierunek zależy od trybu
         painter.setBrush(Qt::black);
         if (currentMode == FRIGHTENED) {
-            // W trybie frightened oczy są większe i "przestraszone"
+            /// W trybie frightened oczy są większe i "przestraszone"
             QRect leftPupil(leftEye.x() + 1, leftEye.y() + 3, 4, 2);
             QRect rightPupil(rightEye.x() + 1, rightEye.y() + 3, 4, 2);
             painter.drawEllipse(leftPupil);
@@ -96,11 +96,11 @@ void Ghost::draw(QPainter &painter) {
     }
 }
 
-// Stara metoda move (bez Pacmana) - używa losowego ruchu
+/// Stara metoda move (bez Pacmana) - używa losowego ruchu
 void Ghost::move(GameBoard *board, float deltaTime) {
     directionChangeTimer -= deltaTime;
 
-    // Sprawdź czy jesteśmy na skrzyżowaniu i czy trzeba wybrać nowy kierunek
+    /// Sprawdź czy jesteśmy na skrzyżowaniu i czy trzeba wybrać nowy kierunek
     if (isAtGridCenter()) {
         QPoint currentGrid = getGridPosition();
 
@@ -113,18 +113,18 @@ void Ghost::move(GameBoard *board, float deltaTime) {
         }
     }
 
-    // Płynny ruch
+    /// Płynny ruch
     smoothMove(board, deltaTime);
 }
 
-// Nowa metoda move (z Pacmanem) - używa inteligentnego ruchu
+/// Nowa metoda move (z Pacmanem) - używa inteligentnego ruchu
 void Ghost::move(GameBoard *board, float deltaTime, Pacman *pacman) {
-    // Aktualizuj tryb frightened jeśli aktywny
+    /// Aktualizuj tryb frightened jeśli aktywny
     updateFrightenedMode(deltaTime);
 
     directionChangeTimer -= deltaTime;
 
-    // Sprawdź czy jesteśmy na skrzyżowaniu i czy trzeba wybrać nowy kierunek
+    /// Sprawdź czy jesteśmy na skrzyżowaniu i czy trzeba wybrać nowy kierunek
     if (isAtGridCenter()) {
         QPoint currentGrid = getGridPosition();
 
@@ -137,15 +137,15 @@ void Ghost::move(GameBoard *board, float deltaTime, Pacman *pacman) {
             if (currentMode == FRIGHTENED) {
                 chooseDirectionAtIntersection(board);
             } else if (currentMode == EATEN) {
-                // W trybie eaten kieruj się do pozycji startowej
-                // Dla uproszczenia używamy pozycji (10, 10)
+                /// W trybie eaten kieruj się do pozycji startowej
+                /// Dla uproszczenia używamy pozycji (10, 10)
                 chooseTargetBasedDirection(QPoint(10, 10), board);
             } else {
-                // POPRAWKA: Prawidłowa logika wyboru targetu
+                /// POPRAWKA: Prawidłowa logika wyboru targetu
                 QPoint target;
                 if (currentMode == SCATTER) {
                     target = getScatterCorner();
-                } else { // CHASE
+                } else { /// CHASE
                     target = calculateTarget(pacman);
                 }
                 chooseTargetBasedDirection(target, board);
@@ -153,13 +153,13 @@ void Ghost::move(GameBoard *board, float deltaTime, Pacman *pacman) {
             }
     }
 
-    // Płynny ruch
+    /// Płynny ruch
     smoothMove(board, deltaTime);
 }
 
 void Ghost::updateModeTimer(float deltaTime) {
     if (currentMode == FRIGHTENED || currentMode == EATEN) {
-        return; // Nie aktualizuj timera w specjalnych trybach
+        return; /// Nie aktualizuj timera w specjalnych trybach
     }
 
     modeTimer += deltaTime;
@@ -182,7 +182,7 @@ void Ghost::chooseTargetBasedDirection(const QPoint &target, GameBoard *board) {
 
     for (int d = 1; d <= 4; d++) {
         Direction dir = static_cast<Direction>(d);
-        if (dir == opposite) continue;  // Nie zawracaj
+        if (dir == opposite) continue;  /// Nie zawracaj
 
         QPoint testPos = currentGrid;
         switch (dir) {
@@ -196,14 +196,14 @@ void Ghost::chooseTargetBasedDirection(const QPoint &target, GameBoard *board) {
         if (canMoveTo(testPos, board)) {
             possibleDirs.push_back(dir);
 
-            // Oblicz odległość do celu
+            /// Oblicz odległość do celu
             float dx = testPos.x() - target.x();
             float dy = testPos.y() - target.y();
             distances.push_back(sqrt(dx*dx + dy*dy));
         }
     }
 
-    // Wybierz kierunek z najmniejszą odległością do celu
+    /// Wybierz kierunek z najmniejszą odległością do celu
     if (!possibleDirs.empty()) {
         int bestIndex = 0;
         for (int i = 1; i < possibleDirs.size(); i++) {
@@ -213,7 +213,7 @@ void Ghost::chooseTargetBasedDirection(const QPoint &target, GameBoard *board) {
         }
         currentDirection = possibleDirs[bestIndex];
     } else {
-        // Jeśli brak opcji, zawróć
+        /// Jeśli brak opcji, zawróć
         currentDirection = opposite;
     }
 }
@@ -224,10 +224,10 @@ void Ghost::smoothMove(GameBoard *board, float deltaTime) {
         return;
     }
 
-    // Oblicz następną pozycję
+    /// Oblicz następną pozycję
     QPointF nextPos = calculateNextPosition(currentDirection, deltaTime);
 
-    // Sprawdź kolizję tak samo jak Pacman
+    /// Sprawdź kolizję tak samo jak Pacman
     bool canMove = true;
 
     switch (currentDirection) {
@@ -283,7 +283,7 @@ void Ghost::smoothMove(GameBoard *board, float deltaTime) {
         position = nextPos;
         lastValidDirection = currentDirection;
     } else {
-        // Zatrzymaj i wybierz nowy kierunek
+        /// Zatrzymaj i wybierz nowy kierunek
         QPoint currentGrid = getGridPosition();
         position = QPointF(currentGrid.x(), currentGrid.y());
         chooseDirectionAtIntersection(board);
@@ -291,7 +291,7 @@ void Ghost::smoothMove(GameBoard *board, float deltaTime) {
 }
 
 Entity::Direction Ghost::getRandomDirection() {
-    return static_cast<Direction>((rand() % 4) + 1);  // 1-4 (pomijamy None)
+    return static_cast<Direction>((rand() % 4) + 1);  /// 1-4 (pomijamy None)
 }
 
 Entity::Direction Ghost::getOppositeDirection(Direction dir) {
@@ -307,25 +307,25 @@ Entity::Direction Ghost::getOppositeDirection(Direction dir) {
 bool Ghost::isIntersection(const QPoint &pos, GameBoard *board) {
     int possibleDirections = 0;
 
-    // Sprawdź każdy kierunek
+    /// Sprawdź każdy kierunek
     if (canMoveTo(pos + QPoint(0, -1), board)) possibleDirections++;
     if (canMoveTo(pos + QPoint(0, 1), board)) possibleDirections++;
     if (canMoveTo(pos + QPoint(-1, 0), board)) possibleDirections++;
     if (canMoveTo(pos + QPoint(1, 0), board)) possibleDirections++;
 
-    return possibleDirections > 2;  // Więcej niż 2 kierunki = skrzyżowanie
+    return possibleDirections > 2;  /// Więcej niż 2 kierunki = skrzyżowanie
 }
 
 void Ghost::chooseDirectionAtIntersection(GameBoard *board) {
     QPoint currentGrid = getGridPosition();
     Direction opposite = getOppositeDirection(lastValidDirection);
 
-    // Lista możliwych kierunków (bez zawracania)
+    /// Lista możliwych kierunków (bez zawracania)
     std::vector<Direction> possibleDirs;
 
     for (int d = 1; d <= 4; d++) {
         Direction dir = static_cast<Direction>(d);
-        if (dir == opposite) continue;  // Nie zawracaj
+        if (dir == opposite) continue;  /// Nie zawracaj
 
         QPoint testPos = currentGrid;
         switch (dir) {
@@ -341,11 +341,11 @@ void Ghost::chooseDirectionAtIntersection(GameBoard *board) {
         }
     }
 
-    // Wybierz losowy kierunek z dostępnych
+    /// Wybierz losowy kierunek z dostępnych
     if (!possibleDirs.empty()) {
         currentDirection = possibleDirs[rand() % possibleDirs.size()];
     } else {
-        // Jeśli brak opcji, zawróć
+        /// Jeśli brak opcji, zawróć
         currentDirection = opposite;
     }
 }
@@ -356,14 +356,14 @@ void Ghost::enterFrightenedMode(float duration) {
     frightenedDuration = duration;
     blinkTimer = 0.0f;
 
-    // Zmień kierunek na przeciwny (jeśli się porusza)
+    /// Zmień kierunek na przeciwny (jeśli się porusza)
     if (currentDirection != None) {
         currentDirection = getOppositeDirection(currentDirection);
         lastValidDirection = currentDirection;
     }
 
-    // Zmniejsz prędkość w trybie frightened
-    moveSpeed = 4.0f; // Wolniejszy od normalnej prędkości (6.0f)
+    /// Zmniejsz prędkość w trybie frightened
+    moveSpeed = 4.0f; /// Wolniejszy od normalnej prędkości (6.0f)
 }
 
 void Ghost::updateFrightenedMode(float deltaTime) {
@@ -372,17 +372,17 @@ void Ghost::updateFrightenedMode(float deltaTime) {
     frightenedTimer += deltaTime;
     blinkTimer += deltaTime;
 
-    // Sprawdź czy czas frightened się kończy
+    /// Sprawdź czy czas frightened się kończy
     if (frightenedTimer >= frightenedDuration) {
-        currentMode = CHASE; // Wróć do trybu chase
-        moveSpeed = 6.0f; // Przywróć normalną prędkość
-        modeTimer = 0.0f; // Reset mode timer
+        currentMode = CHASE; /// Wróć do trybu chase
+        moveSpeed = 6.0f; /// Przywróć normalną prędkość
+        modeTimer = 0.0f; /// Reset mode timer
     }
 }
 
 void Ghost::eatGhost() {
     currentMode = EATEN;
-    moveSpeed = 12.0f; // Bardzo szybki powrót do bazy
-    // W prawdziwym Pacmanie duch wraca do bazy, ale dla uproszczenia
-    // możemy go po prostu zrestartować po krótkiej chwili
+    moveSpeed = 12.0f; /// Bardzo szybki powrót do bazy
+    /// W prawdziwym Pacmanie duch wraca do bazy, ale dla uproszczenia
+    /// możemy go po prostu zrestartować po krótkiej chwili
 }

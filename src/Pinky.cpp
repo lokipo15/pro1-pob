@@ -1,17 +1,17 @@
-//
-// Created by Gabriel Boruń on 25/04/2025.
-// Co-authored by Konrad Gębski on 25/04/2025.
-//
+///
+/// Created by Gabriel Boruń on 25/04/2025.
+/// Co-authored by Konrad Gębski on 25/04/2025.
+///
 
 #include "Pinky.h"
 #include "Pacman.h"
 
 Pinky::Pinky(const QPointF &startPos) : Ghost(startPos) {
-    normalColor = QColor(255, 184, 255);  // Różowy kolor
+    normalColor = QColor(255, 184, 255);  /// Różowy kolor
 }
 
 QPoint Pinky::calculateTarget(Pacman *pacman) {
-    // Pinky celuje 4 komórki przed Pacmanem
+    /// Pinky celuje 4 komórki przed Pacmanem
     QPoint pacmanPos = pacman->getGridPosition();
     Entity::Direction pacmanDir = pacman->getCurrentDirection();
 
@@ -31,7 +31,7 @@ QPoint Pinky::calculateTarget(Pacman *pacman) {
             target.setX(pacmanPos.x() + 4);
             break;
         default:
-            target = pacmanPos;  // Jeśli Pacman stoi, celuj w niego
+            target = pacmanPos;  /// Jeśli Pacman stoi, celuj w niego
             break;
     }
 
@@ -39,6 +39,6 @@ QPoint Pinky::calculateTarget(Pacman *pacman) {
 }
 
 QPoint Pinky::getScatterCorner() const {
-    // Lewy górny róg planszy
+    /// Lewy górny róg planszy
     return QPoint(1, 1);
 }

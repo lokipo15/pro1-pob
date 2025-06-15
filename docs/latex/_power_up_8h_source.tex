@@ -1,0 +1,34 @@
+\doxysection{Power\+Up.\+h}
+\hypertarget{_power_up_8h_source}{}\label{_power_up_8h_source}\index{src/PowerUp.h@{src/PowerUp.h}}
+\mbox{\hyperlink{_power_up_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ POWERUP\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ POWERUP\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pacman}{Pacman}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_power_up_a3c02cb0e50d8079b701907bfb0a3920d}{PowerUp}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_power_up_a3c02cb0e50d8079b701907bfb0a3920d}{PowerUp}}(\textcolor{keyword}{const}\ QPointF\ \&\mbox{\hyperlink{class_power_up_a4d3628b39a19c8408a1070b6c27d101d}{position}});}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_power_up_a87d1f26ac58ab427eb3c267505269bb5}{\string~PowerUp}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_power_up_acdd8db907597b5806a4af6bda162f709}{draw}}(QPainter\ \&painter)\ =\ 0;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_power_up_a2c91111a56fd994631e10f9be31b1d31}{activate}}(\mbox{\hyperlink{class_pacman}{Pacman}}\ *pacman)\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_power_up_a418b70456016d1ee8fc2d97524cf2cec}{getScore}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ QPointF\ \mbox{\hyperlink{class_power_up_a84abf3abed8173db2b789b51ad610287}{getPosition}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_power_up_a4d3628b39a19c8408a1070b6c27d101d}{position}};\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_power_up_a1f8fc5d372ce5005790a9b61858d97db}{getGridPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00062\ \ \ \ \ QPointF\ \mbox{\hyperlink{class_power_up_a4d3628b39a19c8408a1070b6c27d101d}{position}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_power_up_aba5a3837c602eaf0766f71511ab37184}{CELL\_SIZE}}\ =\ 30;\ \ \ \ }
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

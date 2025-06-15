@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POB Pro 1 - PacMan: Plik źródłowy src/Entity.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">POB Pro 1 - PacMan
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano za pomocą Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_entity_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Entity.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_entity_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef ENTITY_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define ENTITY_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QPointF&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QPoint&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="class_game_board.html">GameBoard</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span><a class="code hl_class" href="class_pacman.html">Pacman</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_entity.html">   25</a></span><span class="keyword">class </span><a class="code hl_function" href="class_entity.html#a69dceaa4d0b6c30da97723f83a357de3">Entity</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">   30</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">Direction</a> { </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297">   31</a></span>        <a class="code hl_enumvalue" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297">None</a>,  </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51">   32</a></span>        <a class="code hl_enumvalue" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51">Up</a>,    </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb">   33</a></span>        <a class="code hl_enumvalue" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb">Down</a>,  </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c">   34</a></span>        <a class="code hl_enumvalue" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c">Left</a>,  </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362">   35</a></span>        <a class="code hl_enumvalue" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362">Right</a>  </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    };</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="class_entity.html#a69dceaa4d0b6c30da97723f83a357de3">Entity</a>(<span class="keyword">const</span> QPointF &amp;startPos);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_entity.html#ac479d009ddde62dfb378ca0a70d81307">   47</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_entity.html#ac479d009ddde62dfb378ca0a70d81307">~Entity</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_entity.html#a8d7d83b17cda5e4f2254f0f01070c331">   53</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#a8d7d83b17cda5e4f2254f0f01070c331">draw</a>(QPainter &amp;painter) = 0;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_entity.html#ac60c3042032c2f66bac0bb363addf6ba">   60</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#ac60c3042032c2f66bac0bb363addf6ba">move</a>(<a class="code hl_class" href="class_game_board.html">GameBoard</a> *board, <span class="keywordtype">float</span> deltaTime) = 0;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    QPoint <a class="code hl_function" href="class_entity.html#ae284253c07a9664cdedb5759f04918c6">getGridPosition</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_entity.html#a7772c152c566454de1d20144147afb12">   72</a></span>    QPointF <a class="code hl_function" href="class_entity.html#a7772c152c566454de1d20144147afb12">getPosition</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_entity.html#a4cafeaa4555283d5839355c498f672a9">position</a>; }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_entity.html#a659e5b54903bd6416ddf16e1c3993ce1">   78</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#a659e5b54903bd6416ddf16e1c3993ce1">setPosition</a>(<span class="keyword">const</span> QPointF &amp;pos) { <a class="code hl_variable" href="class_entity.html#a4cafeaa4555283d5839355c498f672a9">position</a> = pos; }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_entity.html#a69ae771d228bd6f92318754e9632c59c">isAtGridCenter</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_entity.html#a3d98a18fc73a18d340f7309e9ea32f58">   90</a></span>    QPointF <a class="code hl_function" href="class_entity.html#a3d98a18fc73a18d340f7309e9ea32f58">getTargetPosition</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_entity.html#a341c5a42a6441fd6951d0b9b6d215429">targetPosition</a>; }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_entity.html#a4cafeaa4555283d5839355c498f672a9">   93</a></span>    QPointF <a class="code hl_variable" href="class_entity.html#a4cafeaa4555283d5839355c498f672a9">position</a>; </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_entity.html#a341c5a42a6441fd6951d0b9b6d215429">   94</a></span>    QPointF <a class="code hl_variable" href="class_entity.html#a341c5a42a6441fd6951d0b9b6d215429">targetPosition</a>; </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_entity.html#ad8036c2cfb6749a5d94134d88c779e5e">   95</a></span>    <a class="code hl_enumeration" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">Direction</a> <a class="code hl_variable" href="class_entity.html#ad8036c2cfb6749a5d94134d88c779e5e">currentDirection</a>; </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_entity.html#a071992c732954678a0393a4e56561adb">   96</a></span>    <a class="code hl_enumeration" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">Direction</a> <a class="code hl_variable" href="class_entity.html#a071992c732954678a0393a4e56561adb">nextDirection</a>; </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_entity.html#a62588bbdc2d530d9854cd07ca558c9aa">   98</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_entity.html#a62588bbdc2d530d9854cd07ca558c9aa">moveSpeed</a>; </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_entity.html#a69d77a7b2efe097c0352d933ea9567f1">  100</a></span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_entity.html#a69d77a7b2efe097c0352d933ea9567f1">CELL_SIZE</a> = 30; </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    QPointF <a class="code hl_function" href="class_entity.html#aad253e8a3c79d8bc022c88a32063c546">calculateNextPosition</a>(<a class="code hl_enumeration" href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">Direction</a> dir, <span class="keywordtype">float</span> deltaTime) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_entity.html#a714d5ff2b037813b99c4d5586558e236">canMoveTo</a>(<span class="keyword">const</span> QPoint &amp;gridPos, <a class="code hl_class" href="class_game_board.html">GameBoard</a> *board) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_entity.html#af23f754ef82eeeeb2470a049f00f5db3">updateTargetPosition</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>};</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#endif </span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="ttc" id="aclass_entity_html_a071992c732954678a0393a4e56561adb"><div class="ttname"><a href="class_entity.html#a071992c732954678a0393a4e56561adb">Entity::nextDirection</a></div><div class="ttdeci">Direction nextDirection</div><div class="ttdoc">Następny kierunek ruchu (buforowany)</div><div class="ttdef"><b>Definicja</b> Entity.h:96</div></div>
+<div class="ttc" id="aclass_entity_html_a341c5a42a6441fd6951d0b9b6d215429"><div class="ttname"><a href="class_entity.html#a341c5a42a6441fd6951d0b9b6d215429">Entity::targetPosition</a></div><div class="ttdeci">QPointF targetPosition</div><div class="ttdoc">Docelowa pozycja na siatce.</div><div class="ttdef"><b>Definicja</b> Entity.h:94</div></div>
+<div class="ttc" id="aclass_entity_html_a3d98a18fc73a18d340f7309e9ea32f58"><div class="ttname"><a href="class_entity.html#a3d98a18fc73a18d340f7309e9ea32f58">Entity::getTargetPosition</a></div><div class="ttdeci">QPointF getTargetPosition() const</div><div class="ttdoc">Zwraca docelową pozycję encji.</div><div class="ttdef"><b>Definicja</b> Entity.h:90</div></div>
+<div class="ttc" id="aclass_entity_html_a4cafeaa4555283d5839355c498f672a9"><div class="ttname"><a href="class_entity.html#a4cafeaa4555283d5839355c498f672a9">Entity::position</a></div><div class="ttdeci">QPointF position</div><div class="ttdoc">Aktualna pozycja encji w pikselach.</div><div class="ttdef"><b>Definicja</b> Entity.h:93</div></div>
+<div class="ttc" id="aclass_entity_html_a62588bbdc2d530d9854cd07ca558c9aa"><div class="ttname"><a href="class_entity.html#a62588bbdc2d530d9854cd07ca558c9aa">Entity::moveSpeed</a></div><div class="ttdeci">float moveSpeed</div><div class="ttdoc">Prędkość ruchu w komórkach na sekundę</div><div class="ttdef"><b>Definicja</b> Entity.h:98</div></div>
+<div class="ttc" id="aclass_entity_html_a659e5b54903bd6416ddf16e1c3993ce1"><div class="ttname"><a href="class_entity.html#a659e5b54903bd6416ddf16e1c3993ce1">Entity::setPosition</a></div><div class="ttdeci">void setPosition(const QPointF &amp;pos)</div><div class="ttdoc">Ustawia nową pozycję encji.</div><div class="ttdef"><b>Definicja</b> Entity.h:78</div></div>
+<div class="ttc" id="aclass_entity_html_a69ae771d228bd6f92318754e9632c59c"><div class="ttname"><a href="class_entity.html#a69ae771d228bd6f92318754e9632c59c">Entity::isAtGridCenter</a></div><div class="ttdeci">bool isAtGridCenter() const</div><div class="ttdoc">Sprawdza czy encja jest w centrum komórki siatki.</div><div class="ttdef"><b>Definicja</b> Entity.cpp:26</div></div>
+<div class="ttc" id="aclass_entity_html_a69d77a7b2efe097c0352d933ea9567f1"><div class="ttname"><a href="class_entity.html#a69d77a7b2efe097c0352d933ea9567f1">Entity::CELL_SIZE</a></div><div class="ttdeci">static const int CELL_SIZE</div><div class="ttdoc">Rozmiar pojedynczej komórki siatki w pikselach.</div><div class="ttdef"><b>Definicja</b> Entity.h:100</div></div>
+<div class="ttc" id="aclass_entity_html_a69dceaa4d0b6c30da97723f83a357de3"><div class="ttname"><a href="class_entity.html#a69dceaa4d0b6c30da97723f83a357de3">Entity::Entity</a></div><div class="ttdeci">Entity(const QPointF &amp;startPos)</div><div class="ttdoc">Konstruktor encji.</div><div class="ttdef"><b>Definicja</b> Entity.cpp:10</div></div>
+<div class="ttc" id="aclass_entity_html_a714d5ff2b037813b99c4d5586558e236"><div class="ttname"><a href="class_entity.html#a714d5ff2b037813b99c4d5586558e236">Entity::canMoveTo</a></div><div class="ttdeci">bool canMoveTo(const QPoint &amp;gridPos, GameBoard *board) const</div><div class="ttdoc">Sprawdza czy można przejść na daną pozycję</div><div class="ttdef"><b>Definicja</b> Entity.cpp:67</div></div>
+<div class="ttc" id="aclass_entity_html_a7772c152c566454de1d20144147afb12"><div class="ttname"><a href="class_entity.html#a7772c152c566454de1d20144147afb12">Entity::getPosition</a></div><div class="ttdeci">QPointF getPosition() const</div><div class="ttdoc">Zwraca aktualną pozycję encji.</div><div class="ttdef"><b>Definicja</b> Entity.h:72</div></div>
+<div class="ttc" id="aclass_entity_html_a8d7d83b17cda5e4f2254f0f01070c331"><div class="ttname"><a href="class_entity.html#a8d7d83b17cda5e4f2254f0f01070c331">Entity::draw</a></div><div class="ttdeci">virtual void draw(QPainter &amp;painter)=0</div><div class="ttdoc">Rysuje encję na ekranie.</div></div>
+<div class="ttc" id="aclass_entity_html_aad253e8a3c79d8bc022c88a32063c546"><div class="ttname"><a href="class_entity.html#aad253e8a3c79d8bc022c88a32063c546">Entity::calculateNextPosition</a></div><div class="ttdeci">QPointF calculateNextPosition(Direction dir, float deltaTime) const</div><div class="ttdoc">Oblicza następną pozycję na podstawie kierunku i czasu.</div><div class="ttdef"><b>Definicja</b> Entity.cpp:43</div></div>
+<div class="ttc" id="aclass_entity_html_ac479d009ddde62dfb378ca0a70d81307"><div class="ttname"><a href="class_entity.html#ac479d009ddde62dfb378ca0a70d81307">Entity::~Entity</a></div><div class="ttdeci">virtual ~Entity()=default</div><div class="ttdoc">Wirtualny destruktor.</div></div>
+<div class="ttc" id="aclass_entity_html_ac60c3042032c2f66bac0bb363addf6ba"><div class="ttname"><a href="class_entity.html#ac60c3042032c2f66bac0bb363addf6ba">Entity::move</a></div><div class="ttdeci">virtual void move(GameBoard *board, float deltaTime)=0</div><div class="ttdoc">Porusza encją na planszy.</div></div>
+<div class="ttc" id="aclass_entity_html_ac6ff3a9435d7dacb378891eadd127034"><div class="ttname"><a href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034">Entity::Direction</a></div><div class="ttdeci">Direction</div><div class="ttdoc">Enumeracja kierunków ruchu.</div><div class="ttdef"><b>Definicja</b> Entity.h:30</div></div>
+<div class="ttc" id="aclass_entity_html_ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297"><div class="ttname"><a href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034a1b66d0277cb46e92cf786111fc373297">Entity::None</a></div><div class="ttdeci">@ None</div><div class="ttdoc">Brak ruchu.</div><div class="ttdef"><b>Definicja</b> Entity.h:31</div></div>
+<div class="ttc" id="aclass_entity_html_ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362"><div class="ttname"><a href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034a1ceeb4d03c063ada13e6da521bf53362">Entity::Right</a></div><div class="ttdeci">@ Right</div><div class="ttdoc">Ruch w prawo.</div><div class="ttdef"><b>Definicja</b> Entity.h:35</div></div>
+<div class="ttc" id="aclass_entity_html_ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51"><div class="ttname"><a href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034a4803b5fc09325c357306efca6aec7d51">Entity::Up</a></div><div class="ttdeci">@ Up</div><div class="ttdoc">Ruch w górę</div><div class="ttdef"><b>Definicja</b> Entity.h:32</div></div>
+<div class="ttc" id="aclass_entity_html_ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb"><div class="ttname"><a href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034aca17a432012ff0ad12d64fb7002a8dfb">Entity::Down</a></div><div class="ttdeci">@ Down</div><div class="ttdoc">Ruch w dół</div><div class="ttdef"><b>Definicja</b> Entity.h:33</div></div>
+<div class="ttc" id="aclass_entity_html_ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c"><div class="ttname"><a href="class_entity.html#ac6ff3a9435d7dacb378891eadd127034af2ec72bbd78cf669332c54aba3b4636c">Entity::Left</a></div><div class="ttdeci">@ Left</div><div class="ttdoc">Ruch w lewo.</div><div class="ttdef"><b>Definicja</b> Entity.h:34</div></div>
+<div class="ttc" id="aclass_entity_html_ad8036c2cfb6749a5d94134d88c779e5e"><div class="ttname"><a href="class_entity.html#ad8036c2cfb6749a5d94134d88c779e5e">Entity::currentDirection</a></div><div class="ttdeci">Direction currentDirection</div><div class="ttdoc">Aktualny kierunek ruchu.</div><div class="ttdef"><b>Definicja</b> Entity.h:95</div></div>
+<div class="ttc" id="aclass_entity_html_ae284253c07a9664cdedb5759f04918c6"><div class="ttname"><a href="class_entity.html#ae284253c07a9664cdedb5759f04918c6">Entity::getGridPosition</a></div><div class="ttdeci">QPoint getGridPosition() const</div><div class="ttdoc">Zwraca pozycję encji na siatce.</div><div class="ttdef"><b>Definicja</b> Entity.cpp:18</div></div>
+<div class="ttc" id="aclass_entity_html_af23f754ef82eeeeb2470a049f00f5db3"><div class="ttname"><a href="class_entity.html#af23f754ef82eeeeb2470a049f00f5db3">Entity::updateTargetPosition</a></div><div class="ttdeci">void updateTargetPosition()</div><div class="ttdoc">Aktualizuje docelową pozycję encji.</div><div class="ttdef"><b>Definicja</b> Entity.cpp:71</div></div>
+<div class="ttc" id="aclass_game_board_html"><div class="ttname"><a href="class_game_board.html">GameBoard</a></div><div class="ttdoc">Klasa reprezentująca planszę gry Pacman.</div><div class="ttdef"><b>Definicja</b> GameBoard.h:41</div></div>
+<div class="ttc" id="aclass_pacman_html"><div class="ttname"><a href="class_pacman.html">Pacman</a></div><div class="ttdoc">Klasa reprezentująca Pacmana - główną postać sterowaną przez gracza.</div><div class="ttdef"><b>Definicja</b> Pacman.h:22</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="_entity_8h.html">Entity.h</a></li>
+    <li class="footer">Wygenerowano za pomocą <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

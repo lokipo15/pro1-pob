@@ -1,0 +1,51 @@
+\doxysection{Scoreboard\+Widget.\+h}
+\hypertarget{_scoreboard_widget_8h_source}{}\label{_scoreboard_widget_8h_source}\index{src/ScoreboardWidget.h@{src/ScoreboardWidget.h}}
+\mbox{\hyperlink{_scoreboard_widget_8h}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ SCOREBOARDWIDGET\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ SCOREBOARDWIDGET\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QVBoxLayout>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QScrollArea>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QKeyEvent>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_score_manager_8h}{ScoreManager.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scoreboard_widget_a76dbc6e8eb0a8150e74de5837a7b67cd}{ScoreboardWidget}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_scoreboard_widget_a76dbc6e8eb0a8150e74de5837a7b67cd}{ScoreboardWidget}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scoreboard_widget_aecab256ab8f834699c4374b4bf4d9f0e}{refreshScores}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ signals:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scoreboard_widget_a5e63a01b0eba2e894bce2242206d9e6d}{backRequested}}();\ \ \ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scoreboard_widget_a8d974df03fad2ee5e57b8755a96a20a7}{keyPressEvent}}(QKeyEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scoreboard_widget_a614268d30f35940b31b5693806413b69}{paintEvent}}(QPaintEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ onBackClicked();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ \ \ QVBoxLayout\ *layout;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ QLabel\ *titleLabel;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ QScrollArea\ *scrollArea;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ QWidget\ *scoresWidget;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ QVBoxLayout\ *scoresLayout;\ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ QPushButton\ *backButton;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_score_manager}{ScoreManager}}\ scoreManager;\ \ \ \ \ \ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ setupUI();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ updateScoreDisplay();}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

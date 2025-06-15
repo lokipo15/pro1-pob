@@ -1,0 +1,104 @@
+\doxysection{Dokumentacja klasy Scoreboard\+Widget}
+\hypertarget{class_scoreboard_widget}{}\label{class_scoreboard_widget}\index{ScoreboardWidget@{ScoreboardWidget}}
+
+
+Klasa widget\textquotesingle{}u tablicy wyników.  
+
+
+
+
+{\ttfamily \#include $<$Scoreboard\+Widget.\+h$>$}
+
+Diagram dziedziczenia dla Scoreboard\+Widget\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_scoreboard_widget}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Sygnały}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scoreboard_widget_a5e63a01b0eba2e894bce2242206d9e6d}\label{class_scoreboard_widget_a5e63a01b0eba2e894bce2242206d9e6d} 
+void {\bfseries back\+Requested} ()
+\begin{DoxyCompactList}\small\item\em Sygnał żądania powrotu do poprzedniego ekranu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scoreboard_widget_a76dbc6e8eb0a8150e74de5837a7b67cd}{Scoreboard\+Widget}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor widget\textquotesingle{}u tablicy wyników. \end{DoxyCompactList}\item 
+\Hypertarget{class_scoreboard_widget_aecab256ab8f834699c4374b4bf4d9f0e}\label{class_scoreboard_widget_aecab256ab8f834699c4374b4bf4d9f0e} 
+void {\bfseries refresh\+Scores} ()
+\begin{DoxyCompactList}\small\item\em Odświeża wyświetlaną listę wyników. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scoreboard_widget_a8d974df03fad2ee5e57b8755a96a20a7}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenia klawiatury. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scoreboard_widget_a614268d30f35940b31b5693806413b69}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Obsługuje malowanie widget\textquotesingle{}u. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa widget\textquotesingle{}u tablicy wyników. 
+
+Wyświetla listę najlepszych wyników graczy z możliwością przewijania. 
+
+\label{doc-constructors}
+\Hypertarget{class_scoreboard_widget_doc-constructors}
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\Hypertarget{class_scoreboard_widget_a76dbc6e8eb0a8150e74de5837a7b67cd}\index{ScoreboardWidget@{ScoreboardWidget}!ScoreboardWidget@{ScoreboardWidget}}
+\index{ScoreboardWidget@{ScoreboardWidget}!ScoreboardWidget@{ScoreboardWidget}}
+\doxysubsubsection{\texorpdfstring{ScoreboardWidget()}{ScoreboardWidget()}}
+{\footnotesize\ttfamily \label{class_scoreboard_widget_a76dbc6e8eb0a8150e74de5837a7b67cd} 
+Scoreboard\+Widget\+::\+Scoreboard\+Widget (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor widget\textquotesingle{}u tablicy wyników. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & Rodzic widget\textquotesingle{}u\\
+\hline
+\end{DoxyParams}
+Created by Gabriel Boruń on 25/04/2025. Co-\/authored by Konrad Gębski on 25/04/2025. 
+
+\label{doc-func-members}
+\Hypertarget{class_scoreboard_widget_doc-func-members}
+\doxysubsection{Dokumentacja funkcji składowych}
+\Hypertarget{class_scoreboard_widget_a8d974df03fad2ee5e57b8755a96a20a7}\index{ScoreboardWidget@{ScoreboardWidget}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!ScoreboardWidget@{ScoreboardWidget}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily \label{class_scoreboard_widget_a8d974df03fad2ee5e57b8755a96a20a7} 
+void Scoreboard\+Widget\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje zdarzenia klawiatury. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie naciśnięcia klawisza \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scoreboard_widget_a614268d30f35940b31b5693806413b69}\index{ScoreboardWidget@{ScoreboardWidget}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!ScoreboardWidget@{ScoreboardWidget}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily \label{class_scoreboard_widget_a614268d30f35940b31b5693806413b69} 
+void Scoreboard\+Widget\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Obsługuje malowanie widget\textquotesingle{}u. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Zdarzenie malowania \\
+\hline
+\end{DoxyParams}
+Instrukcje
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_scoreboard_widget_8h}{Scoreboard\+Widget.\+h}}\item 
+src/Scoreboard\+Widget.\+cpp\end{DoxyCompactItemize}
